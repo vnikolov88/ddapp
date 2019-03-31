@@ -1,0 +1,35 @@
+@import "_variables.scss";
+
+.emergency-contact {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+    justify-items: baseline;
+    padding: .5em;
+    background: hsl(30, 5%, 92%);
+    text-decoration: none;
+
+    span {
+        font-family: $Bold;
+        order: 1;
+        margin: 0;
+        justify-self: left;
+        font-size: 3.2vh;
+        color: hsl(60, 1%, 34%);
+    }
+
+    img {
+        max-width: 80%;
+        order: 2;
+        justify-self: right;
+    }
+}
+
+.emergency-contact-red {
+    background: $emergencyColorRed;
+
+    span {
+        font-size: 2em;
+        color: $BaseColor;
+    }
+}

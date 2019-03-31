@@ -1,0 +1,16 @@
+﻿@import "_variables.scss";
+
+.Title {
+    font-family: $Bold;
+    margin: 0;
+    padding: 2vh;
+    color: $TextColor;
+
+    &.Ellipse {
+        width: calc(100% - 5%);
+    }
+}
+
+.Title:empty {
+    display: none;
+}

@@ -1,0 +1,40 @@
+﻿@inject IModelProvider ModelProvider
+@using DDApp.AppStructure.Providers
+@model DataDrivenAppComponent
+@{
+    var isDataProviderEnabled = !string.IsNullOrWhiteSpace(Model.Provider?.Type);
+}
+<hr />
+<div class="row">
+    <div class="col-12">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="RenderType" class="control-label"></label>
+            <select asp-for="RenderType" class="form-control" asp-items="ModelProvider.RenderModels.Select(item => new SelectListItem(item, item))">
+                <option value="">--Remove on next save--</option>
+            </select>
+            <span asp-validation-for="RenderType" class="text-danger"></span>
+        </div>
+        <ul class="nav nav-pills col-12" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link @(isDataProviderEnabled ? null : "active")" id="pills-@Html.IdFor(model => model.Model)-tab" data-toggle="pill" href="#pills-@Html.IdFor(model => model.Model)" role="tab" aria-controls="pills-@Html.IdFor(model => model.Model)" aria-selected="true">Static Model</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(isDataProviderEnabled ? "active" : null)" id="pills-@Html.IdFor(model => model.Provider)-tab" data-toggle="pill" href="#pills-@Html.IdFor(model => model.Provider)" role="tab" aria-controls="pills-@Html.IdFor(model => model.Provider)" aria-selected="false">Data Provider</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade @(isDataProviderEnabled ? null : "show active")" id="pills-@Html.IdFor(model => model.Model)" role="tabpanel" aria-labelledby="pills-@Html.IdFor(model => model.Model)-tab">
+                <div class="form-row col-12">
+                    <label asp-for="Model" class="control-label"></label>
+                    <textarea asp-for="Model" class="col-12" style="min-height: 20vh"></textarea>
+                    <span asp-validation-for="Model" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="tab-pane fade @(isDataProviderEnabled ? "show active" : null)" id="pills-@Html.IdFor(model => model.Provider)" role="tabpanel" aria-labelledby="pills-@Html.IdFor(model => model.Provider)-tab">
+                @Html.EditorFor(model => model.Provider)
+            </div>
+        </div>
+    </div>
+</div>
+<hr />

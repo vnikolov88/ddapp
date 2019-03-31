@@ -1,0 +1,53 @@
+#pills-tab.grid-container { 
+    display: grid;  
+    grid-template-columns: 33% 32% 33%;
+    grid-template-rows: auto;
+    grid-gap: 1%;
+    align-items: center;
+    justify-items: baseline;
+    justify-content: space-between;    
+}
+
+#pills-tab {    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    .nav-item {
+        
+        text-align: center;
+        display: flex;
+        overflow: hidden;
+        justify-content: center;        
+        width: 100%;
+        height: 10vh;
+        margin: 0;
+
+        .nav-link {
+            cursor: pointer;           
+            word-break: break-word;
+            white-space: inherit;
+            padding: .36em;                       
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            align-self: center;
+        }
+    }
+}
+
+.tab-pane > .Title {
+    font-size: $TitleFontSize;
+}
+
+#pills-tabContent {
+    .tab-pane.Active {
+        display: block;
+    }
+    .tab-pane {
+        display: none;
+    }
+}

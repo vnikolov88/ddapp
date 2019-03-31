@@ -1,0 +1,8 @@
+﻿@model ListLite
+
+<@Model.Type class="ListLite">
+    @foreach (var item in Model.Content)
+    {
+        <li>@Html.Raw(item)</li>
+    }
+</@Model.Type>

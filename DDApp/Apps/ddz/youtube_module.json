@@ -1,0 +1,193 @@
+{
+  "dataTypes": {
+    // Example: https://www.googleapis.com/youtube/v3/videos?id={VIDEO_ID}&part=player,snippet&key={API_KEY}
+    "YouTubeVideo": {
+      "attributes": [ "[JsonConverter(typeof(JsonPathConverter))]" ],
+      "properties": {
+        "PublishedAt": {
+          "type": "System.DateTime",
+          "attributes": [ "[JsonProperty(\"items[0].snippet.publishedAt\")]" ]
+        },
+        "Title": {
+          "type": "System.String",
+          "attributes": [ "[JsonProperty(\"items[0].snippet.title\")]" ]
+        },
+        "Description": {
+          "type": "System.String",
+          "attributes": [ "[JsonProperty(\"items[0].snippet.description\")]" ]
+        },
+        "Image": {
+          "type": "System.String",
+          "attributes": [ "[JsonProperty(\"items[0].snippet.thumbnails.default.url\")]" ]
+        },
+        "VideoId": {
+          "type": "System.String",
+          "attributes": [ "[JsonProperty(\"items[0].snippet.resourceId.videoId\")]" ]
+        },
+        "EmbededHtml": {
+          "type": "System.String",
+          "attributes": [ "[JsonProperty(\"items[0].player.embedHtml\")]" ]
+        }
+      }
+    },
+    // Example: https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId={PLAYLIST_ID}&maxResults=25&key={API_KEY}
+    "YouTubePlayListItem": {
+      "attributes": [ "[JsonConverter(typeof(JsonPathConverter))]" ],
+      "properties": {
+        "PublishedAt": {
+          "type": "System.DateTime",
+          "attributes": [ "[JsonProperty(\"snippet.publishedAt\")]" ]
+        },
+        "Title": {
+          "type": "System.String",
+          "attributes": [ "[JsonProperty(\"snippet.title\")]" ]
+        },
+        "Description": {
+          "type": "System.String",
+          "attributes": [ "[JsonProperty(\"snippet.description\")]" ]
+        },
+        "Image": {
+          "type": "System.String",
+          "attributes": [ "[JsonProperty(\"snippet.thumbnails.default.url\")]" ]
+        },
+        "VideoId": {
+          "type": "System.String",
+          "attributes": [ "[JsonProperty(\"snippet.resourceId.videoId\")]" ]
+        }
+      }
+    },
+    "YouTubePlayList": {
+      "attributes": [ "[JsonConverter(typeof(JsonPathConverter))]" ],
+      "properties": {
+        "Items": {
+          "type": "List<YouTubePlayListItem>",
+          "attributes": [ "[JsonProperty(\"items\")]" ]
+        }
+      }
+    },
+    // Example: https://www.googleapis.com/youtube/v3/playlists?key={API_KEY}&channelId={CHANNEL_ID}&part=snippet&maxResults=25
+    "YouTubeChannelItem": {
+      "attributes": [ "[JsonConverter(typeof(JsonPathConverter))]" ],
+      "properties": {
+        "PlaylistId": {
+          "type": "System.String",
+          "attributes": [ "[JsonProperty(\"id\")]" ]
+        },
+        "PublishedAt": {
+          "type": "System.DateTime",
+          "attributes": [ "[JsonProperty(\"snippet.publishedAt\")]" ]
+        },
+        "Title": {
+          "type": "System.String",
+          "attributes": [ "[JsonProperty(\"snippet.title\")]" ]
+        },
+        "Description": {
+          "type": "System.String",
+          "attributes": [ "[JsonProperty(\"snippet.description\")]" ]
+        },
+        "Image": {
+          "type": "System.String",
+          "attributes": [ "[JsonProperty(\"snippet.thumbnails.default.url\")]" ]
+        }
+      }
+    },
+    "YouTubeChannel": {
+      "attributes": [ "[JsonConverter(typeof(JsonPathConverter))]" ],
+      "properties": {
+        "Items": {
+          "type": "List<YouTubeChannelItem>",
+          "attributes": [ "[JsonProperty(\"items\")]" ]
+        }
+      }
+    }
+  },
+  "pages": {
+    "PageYouTubeChannel": {
+      "title": "DIABETES-ERKLÄRFILME",
+      "titleIcon": "fab fa-youtube",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "YouTubeChannel",
+            "url": "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyDfqWYR8UqPJFnFYpglCnBH6GfAWUmvBgc&channelId=UCNxwshEljrBJXPri-w9IiLg&part=snippet&maxResults=25",
+            "mapper": [
+              {
+                "sourceType": "YouTubeChannel",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.LeftSideImg",
+                  "d => d.Subject": "s => \"\"",
+                  "d => d.Items": "s => { s.Items.Reverse(); return s.Items; }"
+                }
+              },
+              {
+                "sourceType": "YouTubeChannelItem",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Image": "s => s.Image",
+                  "d => d.DatePublished": "s => s.PublishedAt",
+                  "d => d.Link": "s => $\"PageYouTubePlayList?playlistId={s.PlaylistId}\"",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageYouTubePlayList": {
+      "title": "DIABETES-ERKLÄRFILME",
+      "titleIcon": "fab fa-youtube",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "YouTubePlayList",
+            "url": "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId={{playlistId}}&maxResults=25&key=AIzaSyDfqWYR8UqPJFnFYpglCnBH6GfAWUmvBgc",
+            "mapper": [
+              {
+                "sourceType": "YouTubePlayList",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.LeftSideImg",
+                  "d => d.Subject": "s => \"\"",
+                  "d => d.Items": "s => s.Items"
+                }
+              },
+              {
+                "sourceType": "YouTubePlayListItem",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Image": "s => s.Image",
+                  "d => d.DatePublished": "s => s.PublishedAt",
+                  "d => d.Link": "s => $\"PageYouTubeVideo?id={s.VideoId}\"",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageYouTubeVideo": {
+      "title": "DIABETES-ERKLÄRFILME",
+      "titleIcon": "fab fa-youtube",
+      "components": [
+        {
+          "renderType": "Movie",
+          "provider": {
+            "type": "YouTubeVideo",
+            "url": "https://www.googleapis.com/youtube/v3/videos?id={{id}}&key=AIzaSyDfqWYR8UqPJFnFYpglCnBH6GfAWUmvBgc&part=player,snippet",
+            "mapper": [
+              {
+                "sourceType": "YouTubeVideo",
+                "destinationType": "Movie"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

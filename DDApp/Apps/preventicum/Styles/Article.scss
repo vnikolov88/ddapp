@@ -1,0 +1,56 @@
+@import "_variables.scss";
+
+.Article {
+    display: grid;
+    grid-template-rows: auto;
+    font-family: $Regular;
+    padding: 0;
+
+    h5 {
+        margin: 0;
+        just-self: left;
+        font-size: $TextFontSize;
+    }
+
+    h5:first-of-type {
+        padding-top: 0.9em;
+    }
+
+    img {
+        align-self: center;
+        width: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    p {
+        margin: 0;
+        padding: 0.2em 0.5em;
+    }
+
+    section {
+        padding: .5em 1em;
+        margin: 0;
+        color: $ActiveNugget;
+
+        strong {
+            font-style: italic;
+        }
+
+        span.red-bullet {            
+            color: $iconCircleColor;
+        }
+    }
+
+    img[src="/preventicum/img/img-1.png"] {
+        width: 100%;
+    }
+
+    p + ul {
+        padding-bottom: 1.5em;
+    }
+}
+
+.HasBorder, .Profile {
+    border-bottom-color: $BackgroundPrimary;
+}

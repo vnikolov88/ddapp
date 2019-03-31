@@ -1,0 +1,10 @@
+﻿@model DetailedListView
+<ul>
+    @foreach(var item in Model.Elements)
+{
+    <li>
+        @item.Title<br />
+        @item.Description
+    </li>
+}
+</ul>

@@ -1,0 +1,75 @@
+@import "_variables.scss";
+
+.Search {
+    display: grid;
+    grid-template-rows: 100%;
+    height: 100vh;
+    max-width: 100%;
+    align-items: center;
+    background-color: #ecebea;    
+    font-family: $SemiBold;
+
+    form {
+        display: inline-grid;
+        grid-template-rows: 45% 55%;
+        height: auto;
+        align-self: baseline;
+        align-items: center;
+        justify-items: baseline;
+        align-items: center;
+        height: 17vh;
+        max-height: 17.3vh;
+    }
+
+    i {
+        padding: 3vw 3vw 3vw 3vw;
+        font-size: 5.5vh;
+        color: $AccentColor;
+    }
+
+    span {
+        color: $TextColor;
+        font-size: 3.0vh;
+        padding-left: 3vw;
+        padding-bottom: 1vh;
+        padding-top: 1vh;
+        display: block;
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        max-width: 100%;
+        margin: 0vh auto;
+        background-color: $BaseColor;
+        box-shadow: inset 0vw 1vw 1vw #d4d4d4;
+    }
+
+    .input-field {
+        border: none;
+        background-color: transparent;
+        width: 64vw;
+        max-width: 64vw;
+        font-family: $Regular;
+
+        &::-webkit-input-placeholder {
+            font-family: $Regular;
+            font-size: 16px;
+        }
+
+        &::-moz-placeholder {
+            font-family: $Regular;
+            font-size: 16px;
+        }
+
+        &:-ms-input-placeholder {
+            font-family: $Regular;
+            font-size: 16px;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

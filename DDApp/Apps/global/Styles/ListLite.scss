@@ -1,0 +1,22 @@
+﻿@import "_variables.scss";
+
+ul, ol, dt {
+    font-family: $Regular;
+    font-size: 2.3vh;
+    padding: 0 1.5em;
+    margin: 1.5em 0;
+    list-style: none;
+
+    li {
+        margin-bottom: 0.5em;
+    }
+}
+
+ul li::before {
+    content: ".";
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}

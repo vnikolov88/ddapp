@@ -1,0 +1,30 @@
+﻿@model Article
+
+<div class="@Model.Style Article">
+
+    @if (!string.IsNullOrEmpty(Model.Title))
+    {
+        <h4 class="Title">@Model.Title</h4>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.DatePublished))
+    {
+        <span> @Model.DatePublished</span>
+    }
+
+    @if (Model.Sources?.Length > 1)
+    {
+        @await Html.PartialAsync("ImageGallery.cshtml", Model)
+    }
+    else if(Model.Sources?.Length == 1)
+    {
+        @await Html.PartialAsync("Image.cshtml", Model)
+    }
+
+    @if (!string.IsNullOrEmpty(Model.Description))
+    {
+        <section>@Html.Raw(Model.Description)</section>
+    }
+</div>
+
+

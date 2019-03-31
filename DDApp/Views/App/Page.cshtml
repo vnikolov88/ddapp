@@ -1,0 +1,12 @@
+﻿@model HydratedAppPage
+
+@await Html.PartialAsync("../App/PageHeader.cshtml")
+
+<section id="PageContainer">
+    @foreach (var component in Model.Components)
+    {
+        @Html.DisplayFor(model => component, component.GetType().Name as string)
+    }
+</section>
+
+<!--<link rel="stylesheet" href="./app.min.css" />-->

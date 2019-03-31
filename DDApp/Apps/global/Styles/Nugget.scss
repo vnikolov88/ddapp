@@ -1,0 +1,41 @@
+#NuggetPillsContainer.grid-container {
+    grid-template-columns: 33% 33%;
+    grid-template-rows: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#NuggetPillsContainer {
+    height: 7vh;
+    max-height: 7vh;
+    width: 100%;
+    max-width: 100%;
+    padding-top: 0;
+    font-size: 2.3vh;
+
+    .NuggetTitle {
+        cursor: pointer;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;        
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#NuggetContainer {
+    .Nugget.Active {
+        display: block;
+    }
+
+    .Nugget {
+        text-align: center;
+
+        img {
+            max-width: 100%;
+        }
+
+        display: none;
+    }
+}

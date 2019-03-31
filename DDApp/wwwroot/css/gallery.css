@@ -1,0 +1,128 @@
+﻿.simple-gallery-wrapper {
+    display: block;
+}
+
+.simple-gallery {
+    width: 100%;
+    position: relative;
+    display: block;
+    margin: 0 auto !important;
+}
+
+.simple-gallery .controlls {
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+}
+
+.simple-gallery .controlls.prev {
+    left: 0px;
+}
+
+.simple-gallery .controlls.next {
+    right: 0px;
+}
+
+.simple-gallery .controlls button {
+    position: relative;
+    top: calc(50% - 9vw);
+    display: block;
+    width: 18vw;
+    height: 18vw;
+    border: 0px;
+    background-color: transparent;
+    outline: 0px;
+    font-size: 12vw;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.64);
+}
+
+.simple-gallery .pager {
+    position: absolute;
+    bottom: 10px;
+    z-index: 2;
+    display: none;
+    width: 100%;
+}
+
+.simple-gallery .pager ul {
+    list-style: none;
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+}
+
+.simple-gallery .pager ul li {
+    display: inline-block;
+}
+
+.simple-gallery .pager ul li button,
+.simple-gallery .pager ul li button:focus {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 0px;
+    margin: 5px 10px;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: 0px;
+}
+
+.simple-gallery .pager ul li.active button {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.simple-gallery .slides li > img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.simple-gallery ul.slides {
+    padding: 0px;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+}
+
+.simple-gallery ul.slides li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-out; /* Safari */
+    transition: all 0.5s ease-out;
+}
+
+.simple-gallery ul.slides li.skeleton {
+    position: relative;
+    width: 100%;
+    max-height: 700px;
+    visibility: hidden;
+    font-size: 0px;
+    line-height: 0;
+}
+
+.simple-gallery ul.slides li.active {
+    z-index: 1;
+    opacity: 1;
+    -webkit-transition: all 1s ease-in; /* Safari */
+    transition: all 1s ease-in;
+}
+
+/*List :before reset*/
+.simple-gallery .slides li:before {
+    content: "";
+    color: unset;
+    padding: unset;
+    font-size: unset;
+    vertical-align: unset;
+    display: unset;
+    margin-left: unset;
+    width: unset;
+}

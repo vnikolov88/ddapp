@@ -1,0 +1,36 @@
+﻿@model DDApp.AppStructure.DataDrivenApp
+
+<div class="component">
+        <form asp-action="EditApp" class="col-8">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Logo" class="control-label"></label>
+                <input asp-for="Logo" class="form-control" />
+                <span asp-validation-for="Logo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <ul>
+                    @foreach (var page in Model.Pages)
+                    {
+                        <li>
+                            <a asp-action="EditPage" asp-route-page="@(page.Key)">@($"{page.Value.Title} ({page.Key})")</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <nav class="navbar fixed-top navbar-light bg-light">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">@ViewBag.AppCode</li>
+                </ol>
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </nav>
+        </form>
+        <form asp-action="CreateAppPage" class="col-4">
+            <div class="form-group">
+                <label for="page">Page Code</label>
+                <input name="page" />
+                <button>Create Page</button>
+            </div>
+        </form>
+</div>
+

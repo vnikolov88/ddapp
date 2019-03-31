@@ -1,0 +1,201 @@
+@import "_variables.scss";
+
+.navbar.grid-container {
+    grid-area: nav;
+    display: grid !important;
+    grid-template-columns: 20% 50% 20%;
+    grid-gap: 4.05%;
+    grid-template-rows: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.navbar {    
+    font-family: $SemiBold !important;
+    margin: 0;
+    padding: 0.5em 0;
+    background-color: $BaseColor;
+    color: #1b4b89;
+    box-shadow: 0vw 0.4vh 1vh #888888;
+    border: none;
+    z-index: 10;
+    max-height: $NavigationHeight;
+    position: fixed;
+    max-width: inherit;
+    width: 100%;
+    position: relative;
+
+    .navbar-brand {
+        /*navbar-brand grid*/
+        order: 2;
+        max-width: 70%;
+        /*navbar-brand Styles*/
+        text-align: center;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .iconCircle {
+        /*iconCircle grid*/
+        order: 3;
+        /*iconCircle Styles*/
+        font-size: 4vh;
+        padding: 1.13em;
+    }
+
+    #loading-indicator {
+        /*loading-indicator grid*/
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: calc(100% - 89.5vh);
+        z-index: 1000;
+
+        .loader {
+            height: 4px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loader:before {
+            display: block;
+            position: absolute;
+            content: "";
+            left: -200px;
+            width: 200px;
+            height: 4px;
+            background-color: $AccentColor;
+            animation: loading 2s linear infinite;
+        }
+
+        @keyframes loading {
+            from {
+                left: -200px;
+                width: 30%;
+            }
+
+            50% {
+                width: 30%;
+            }
+
+            70% {
+                width: 70%;
+            }
+
+            80% {
+                left: 50%;
+            }
+
+            95% {
+                left: 120%;
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+    }
+
+    .loading#loading-indicator {
+        display: block;
+    }
+
+    i {
+        font-size: 6vh;
+        cursor: pointer;
+        line-height: 9vh;
+        color: #d4d4d4;
+    }
+
+    & i.fas.fa-phone {
+        position: relative;
+        color: $BaseColor;
+        font-size: 1.2em;
+        top: 1.5vh;
+        left: 0.15em;
+    }
+
+    & i.fas.fa-phone:before {
+        position: absolute;
+        top: -6vh;
+        left: -3vh;
+    }
+}
+
+.iconCircle {
+    font-size: 4vh;
+    border-radius: 50%;
+    background-color: #1b4b89;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 0%;
+    order: 3;
+}
+
+
+
+.dropdown {
+    display: block;
+    z-index: 9;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    //the exact max-height of NavMenu
+    top: 10vh;
+    left: 0;
+
+    &:hover, :focus, :active {
+        border: none;
+        background-color: $BaseColor;
+        outline: none;
+        text-decoration: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    #NavMenu.dropdown-content {
+        /*NavMenu grid*/
+        position: relative;
+        z-index: 4;
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        opacity: 0;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        background-color: $BaseColor;
+        width: 70vw;
+        overflow: hidden;
+        z-index: 4;
+        box-shadow: 0.4vh 0.4vh 1vh #888888;
+
+         a {
+            width: auto;
+            white-space: pre-line;
+            overflow: hidden;
+            font-family: $Bold;
+            color: $TextColor;
+            padding: 1.5vh 3vw;
+            text-decoration: none;
+            display: block;
+            border-top: solid $BackgroundPrimary 0.8vh;
+
+        }
+    }
+
+    .overlap-visible {
+        -webkit-opacity: 1 !important;
+        -moz-opacity: 1 !important;
+        opacity: 1 !important;
+    }
+}

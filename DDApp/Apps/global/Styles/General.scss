@@ -1,0 +1,136 @@
+@import "_variables.scss";
+
+body {
+    display: grid;
+    grid-template-areas: 'nav' 'main';
+    margin: 0 auto;
+    max-width: 56em;
+    .Title {
+        a {
+            text-decoration: none;
+            color: $TextColor;
+        }
+    }
+}
+
+.grid-container {
+    display: grid;
+}
+
+
+main .Container.grid-container {
+    display: grid;
+    grid-template-rows: auto;    
+    grid-template-columns: 100%;    
+    align-items: center;
+}
+
+
+main {    
+    /*main Styles*/
+    padding: 0;    
+    max-width: inherit;
+    .Container {
+        max-width: 100%;
+        .Title {
+            font-size: $TitleFontSize;
+            font-family: $Bold;
+            color: $TextColor;
+            line-height: 4vh;
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .Container:last-child, 
+    .Container a.ItemWrapper:last-child, 
+    #PageContainer a.ItemWrapper:last-child {
+        margin-bottom: 0;
+    }
+}
+
+main .PageHeader:empty {
+    display: none !important;
+    background: orange;
+}
+
+h4 {
+    font-family: $Bold;
+    padding: 2vw 0 2vw 3vw;
+    color: #575756;
+    margin: 0;
+    line-height: 5vh;
+}
+
+.Ellipse {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Link-details {
+
+    p.Menu {
+        font-family: $SemiBold;
+        color: $TextColor;
+    }
+
+    p.Menu.Ellipse {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    p {
+        padding: 0;
+    }
+}
+
+.Circle {
+    float: right;
+    margin-right: 5vw;
+    width: 5.5vh;
+    height: 5.5vh;
+    background-color: $AccentColor;
+    border-radius: 50%;
+    line-height: 6vh;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 3vh;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    i {
+        color: $BaseColor;
+    }
+
+    .fa-play:before {
+        position: relative;
+        left: 0.1em;
+        top: 0em;
+    }
+}
+
+.ItemWrapper {
+    padding: 0.5em 0;
+    margin: 0 0 0.5em 0;
+}
+
+#json_output {
+    background-color: #303030;
+    width: 100%;
+    float: left;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

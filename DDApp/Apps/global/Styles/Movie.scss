@@ -1,0 +1,26 @@
+@import "_variables.scss";
+
+.Movie {
+    p {
+        font-family: $Regular;
+        color: #575756;
+        font-size: $TextFontSize;        
+        max-width: 100vw;
+        overflow-y: auto;
+        overflow-x: auto;
+        word-break: break-word;
+        padding: 2vh;    
+        margin: 0 auto;
+        color: $TextColor;        
+    }
+
+    i {
+        padding-top: 0.7vh;
+    }
+}
+iframe {
+    width: 100%;
+    height: 30vh;
+    border:0;
+}
+

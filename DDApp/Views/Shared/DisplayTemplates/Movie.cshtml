@@ -1,0 +1,11 @@
+﻿@model Movie
+@using System.Text.RegularExpressions
+<div class="Movie">
+    <h4>@Model.Title</h4>
+    @Html.Raw(Model.EmbededHtml)
+    <p>
+        <span>@Html.Raw(Regex.Replace(Model.Description,
+                @"((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)",
+                "<a target='_blank' href='/ondevice/$1'>$1</a>"))</span>
+    </p>
+</div>

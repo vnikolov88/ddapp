@@ -1,0 +1,65 @@
+﻿@model DataDrivenAppPage
+
+<div class="row">
+    <div class="col-md-12">
+        <form action="" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="card text-white bg-primary ">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TitleImage" class="control-label"></label>
+                        <input asp-for="TitleImage" class="form-control" />
+                        <span asp-validation-for="TitleImage" class="text-danger"></span>
+                        <label asp-for="TitleIcon" class="control-label"></label>
+                        <input asp-for="TitleIcon" class="form-control" />
+                        <span asp-validation-for="TitleIcon" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TabGroups" class="control-label"></label>
+                        <div id="pageTabs" class="col-12">
+                        @foreach (var item in Model.TabGroups ?? new Dictionary<string, uint>())
+                        {
+                            <div class="row">
+                                <input type="hidden" value="@item.Key" name="TabGroups.Index" />
+                                <input class="col-8" value="@item.Key" name="TabGroups[@(item.Key)].Key" />
+                                <input class="col-4" value="@item.Value" type="number" name="TabGroups[@(item.Key)].Value" />
+                            </div>
+                        }
+                        </div>
+                        <button id="addTab">Add Tab</button>
+                    </div>
+                </div>
+            </div>
+            <div id="pageComponents" class="form-group">
+                @Html.EditorFor(model => model.Components)
+            </div>
+            <nav class="navbar fixed-top navbar-light bg-light">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-action="EditApp">@ViewBag.AppCode</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">@ViewBag.Page</li>
+                </ol>
+                <a asp-action="CreateAppComponent">Add Component</a>
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </nav>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('addTab').addEventListener('click', (ev) => {
+        const pageTabs = document.getElementById('pageTabs');
+        const newTab = document.createElement('div');
+        const newTabName = `newTab${pageTabs.children.length}`;
+        newTab.className = 'row';
+        newTab.innerHTML = `<input type="hidden" value="${newTabName}" name="TabGroups.Index" />
+            <input class="col-8" value="${newTabName}" name="TabGroups[${newTabName}].Key" />
+            <input class="col-4" value="0" type="number" name="TabGroups[${newTabName}].Value" />`;
+        pageTabs.appendChild(newTab);
+        ev.preventDefault();
+    });
+</script>

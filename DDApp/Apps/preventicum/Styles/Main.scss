@@ -1,0 +1,39 @@
+@import "../../global/Styles/Article";
+@import "../../global/Styles/Contact";
+@import "../../global/Styles/General";
+@import "../../global/Styles/Item";
+@import "../../global/Styles/Movie";
+@import "../../global/Styles/Nav";
+@import "../../global/Styles/PageHeader";
+@import "../../global/Styles/Search";
+@import "../../global/Styles/TitleLite";
+@import "../../global/Styles/Nugget";
+@import "../../global/Styles/ListLite";
+@import "../../global/Styles/Tabs";
+@import "../../global/Styles/ErrorIndicator";
+@import "../../global/Styles/DescriptionList";
+@import "../../global/Styles/ResultList";
+@import "../../global/Styles/ResultItem";
+@import "../../preventicum/Styles/Nav";
+@import "../../preventicum/Styles/PageHeader";
+@import "../../preventicum/Styles/Nugget";
+@import "../../preventicum/Styles/AnchorLite";
+@import "../../preventicum/Styles/ListLite";
+@import "../../preventicum/Styles/Tabs";
+@import "../../preventicum/Styles/Article";
+@import "../../preventicum/Styles/Item";
+@import "../../preventicum/Styles/ResultItem";
+
+.Ellipse {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;    
+}

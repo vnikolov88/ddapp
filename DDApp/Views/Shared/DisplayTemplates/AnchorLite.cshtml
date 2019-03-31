@@ -1,0 +1,14 @@
+﻿@model AnchorLite
+
+<a id="@Model.Id" class="@Model.Class" href="@Model.Href">
+    <span>@Model.Text</span>
+    @if (!string.IsNullOrEmpty(Model.ImageSource))
+    {
+        <img src="@Model.ImageSource">
+    }
+
+    @if (!string.IsNullOrEmpty(Model.Icon))
+    {
+        <i class="@Model.Icon"></i>
+    }
+</a>

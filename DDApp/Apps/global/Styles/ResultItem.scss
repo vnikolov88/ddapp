@@ -1,0 +1,109 @@
+@import "_variables.scss";
+
+.ResultItem {
+    text-decoration: none;
+    border-bottom: 3.5px solid $AccentColor;
+    font-family: $Regular;
+
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:visited {
+        color: inherit;
+    }
+}
+
+.grid-container.ResultItem {
+    grid-template-rows: auto;
+    grid-template-columns: 100%;
+    grid-gap: 0.2em;
+}
+
+.ThreeRowsResult-ResultItem, .SingleRowResult-ResultItem {
+    section {
+        display: inline-grid;
+        padding: 0.5em 0.2em;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+
+        &span:first-of-type {
+            font-weight: bold;
+        }
+    }
+
+    .ResultItem-Row-One {
+        grid-template-columns: 51% auto;
+        grid-template-rows: 100%;
+        grid-gap: 1.5em;
+        max-height: 10vh;
+
+
+        .ResultItem-Name-Info {
+            display: inline-grid;
+            grid-template-rows: 30% auto;
+            grid-template-columns: 100%;
+            grid-gap: 0.2em;
+
+            .ResultItem-ItemName {
+                font-family: inherit;
+            }
+        }
+
+        .ResultItem-ShortDescription {
+            justify-self: end;
+        }
+    }
+
+    .ResultItem-Row-Two {
+        grid-template-columns: 32% auto;
+        grid-template-rows: 100%;
+        grid-gap: 1.5em;
+        max-height: 20vh;
+
+        .ResultItem-Location-Info {
+            display: inline-grid;
+            grid-template-rows: 45% auto;
+            grid-template-columns: 100%;
+            grid-gap: 0.2em;
+        }
+
+        img {
+            height: 100px;
+            object-fit: contain;
+            justify-self: end;
+        }
+    }
+
+    .ResultItem-Row-Three {
+        grid-template-columns: 75% auto;
+        grid-template-rows: 100%;
+        grid-gap: 1.5em;
+        max-height: 10vh;
+
+        i {
+            justify-self: end;
+        }
+    }
+}
+
+
+.SingleRowResult-ResultItem {
+    section {
+        padding: 0.6em 1em;
+    }
+
+    .ResultItem-Row-One {
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-gap: 1.5em;
+        max-height: 10vh;
+    }
+
+    .ResultItem-Row-Two {
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+    }
+}

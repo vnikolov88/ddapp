@@ -1,0 +1,26 @@
+@import "_variables.scss";
+
+.ResultList:last-child {
+    border-bottom: 3.5px solid $iconCircleColor;    
+}
+
+.ResultItem {
+    border-top-color: $iconCircleColor;
+}
+
+.ThreeRowsResult-ResultItem {
+    section {
+        background: $ItemLightColor;
+        color: $TextColor;
+        font-family: $Bold;
+        line-height: 1em;
+        padding: .8em .2em
+    }
+
+    .ResultItem-Row-One {
+        .ResultItem-ShortDescription {
+            font-family: $Bold;
+            color: $iconCircleColor;
+        }
+    }
+}

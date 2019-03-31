@@ -1,0 +1,20 @@
+﻿@model Search
+@{ 
+    var passthrueParameters = System.Web.HttpUtility.ParseQueryString(Model.Action?.Split('?').LastOrDefault() ?? string.Empty);
+}
+<div class="Search">
+
+    <form method="get" action="@Model.Action">
+        <span>@Model.Title</span>
+        <div class="input-container">
+            <i class="@Model.FirstIcon colBlue pull-left icon"></i>
+
+            @foreach(var parameterKey in passthrueParameters.AllKeys)
+            {
+            <input name="@parameterKey" type="hidden" value="@passthrueParameters[parameterKey]" />
+            }
+            <input name="search" type="text" class="input-field" />
+            <i class="@Model.SecondIcon colBlue pull-right icon"></i>
+        </div>
+    </form>
+</div>

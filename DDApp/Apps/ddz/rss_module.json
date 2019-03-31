@@ -1,0 +1,388 @@
+{
+  "dataTypes": {
+    "RssImage": {
+      "properties": {
+        "Title": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"title\")]" ]
+        },
+        "Link": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"link\")]" ]
+        },
+        "Url": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"url\")]" ]
+        }
+      }
+    },
+    "RssItemEnclosure": {
+      "properties": {
+        "Url": {
+          "type": "System.String",
+          "attributes": [ "[XmlAttribute(\"url\")]" ]
+        },
+        "MimeType": {
+          "type": "System.String",
+          "attributes": [ "[XmlAttribute(\"type\")]" ]
+        }
+      }
+    },
+    "RssItem": {
+      "properties": {
+        "Title": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"title\")]" ]
+        },
+        "Link": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"link\")]" ]
+        },
+        "PubDate": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"pubDate\")]" ]
+        },
+        "Description": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"description\")]" ]
+        },
+        "Guid": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"guid\")]" ]
+        },
+        "Enclosure": {
+          "type": "RssItemEnclosure[]",
+          "attributes": [ "[XmlElement(\"enclosure\")]" ]
+        }
+      }
+    },
+    "RssChannel": {
+      "properties": {
+        "Title": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"title\")]" ]
+        },
+        "Link": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"link\")]" ]
+        },
+        "Description": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"description\")]" ]
+        },
+        "Language": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"language\")]" ]
+        },
+        "PubDate": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"pubDate\")]" ]
+        },
+        "LastBuildDate": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"lastBuildDate\")]" ]
+        },
+        "Copyright": {
+          "type": "System.String",
+          "attributes": [ "[XmlElement(\"copyright\")]" ]
+        },
+        "Image": {
+          "type": "RssImage",
+          "attributes": [ "[XmlElement(\"image\")]" ]
+        },
+        "Items": {
+          "type": "RssItem[]",
+          "attributes": [ "[XmlElement(\"item\")]" ]
+        }
+      }
+    },
+    "RSS": {
+      "attributes": [ "[XmlRoot(\"rss\")]" ],
+      "properties": {
+        "Channel": {
+          "type": "RssChannel",
+          "attributes": [ "[XmlElement(\"channel\")]" ]
+        }
+      }
+    }
+  },
+  // Pages for News, Events and Studies
+  "pages": {
+    "PageNews": {
+      "title": "NEWS",
+      "titleIcon": "fas fa-newspaper",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "RSS",
+            "url": "https://ddz.de/de/news.rss",
+            "mapper": [
+              {
+                "sourceType": "RSS",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.LeftSideImg",
+                  "d => d.Subject": "s => s.Channel.Title",
+                  "d => d.Items": "s => s.Channel.Items"
+                }
+              },
+              {
+                "sourceType": "RssItem",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Image": "s => s?.Enclosure?.FirstOrDefault()?.Url",
+                  "d => d.DatePublished": "s => s.PubDate",
+                  "d => d.Link": "s => \"PageNews2?id=\" + s.Title.GetGUID()",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageNews2": {
+      "title": "NEWS",
+      "titleIcon": "fas fa-newspaper",
+      "components": [
+        {
+          "renderType": "Article",
+          "provider": {
+            "type": "RSS",
+            "url": "https://ddz.de/de/news.rss",
+            "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
+            "mapper": [
+              {
+                "sourceType": "RssItem",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
+                  "d => d.Sources": "s => s.Enclosure.Select(x => x.Url)"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "RSS",
+            "url": "https://ddz.de/de/news.rss",
+            "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
+            "mapper": [
+              {
+                "sourceType": "RssItem",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.OneRowItem",
+                  "d => d.Subject": "s => string.Empty",
+                  "d => d.Items": "s => new RssItem[]{ s }"
+                }
+              },
+              {
+                "sourceType": "RssItem",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Title": "s => \"Weiterlesen\"",
+                  "d => d.Link": "s => s.Link.OnDevice()",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageEvents": {
+      "title": "VERANSTALTUNGEN",
+      "titleIcon": "fas fa-info",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "RSS",
+            "url": "https://ddz.de/de/events.rss",
+            "mapper": [
+              {
+                "sourceType": "RSS",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.LeftSideImg",
+                  "d => d.Subject": "s => s.Channel.Title",
+                  "d => d.Items": "s => s.Channel.Items"
+                }
+              },
+              {
+                "sourceType": "RssItem",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Image": "s => s.Enclosure?.FirstOrDefault()?.Url",
+                  "d => d.DatePublished": "s => s.PubDate",
+                  "d => d.Link": "s => \"PageEvents2?id=\" + s.Title.GetGUID()",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageEvents2": {
+      "title": "VERANSTALTUNGEN",
+      "titleIcon": "fas fa-info",
+      "components": [
+        {
+          "renderType": "Article",
+          "provider": {
+            "type": "RSS",
+            "url": "https://ddz.de/de/events.rss",
+            "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
+            "mapper": [
+              {
+                "sourceType": "RssItem",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
+                  "d => d.Sources": "s => s.Enclosure?.Select(x => x.Url)"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "/ondevice/tel:+49-(0)-211-33-82-692",
+                "Title": "+49-(0)-211-33-82-692",
+                "Icon": "fas fa-phone"
+              },
+              {
+                "Link": "/ondevice/mailto:annette.behrend@ddz.de",
+                "Title": "annette.behrend@ddz.de",
+                "Icon": "far fa-envelope"
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "RSS",
+            "url": "https://ddz.de/de/events.rss",
+            "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
+            "mapper": [
+              {
+                "sourceType": "RssItem",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.OneRowItem",
+                  "d => d.Subject": "s => string.Empty",
+                  "d => d.Items": "s => new RssItem[]{ s }"
+                }
+              },
+              {
+                "sourceType": "RssItem",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Title": "s => \"Weiterlesen\"",
+                  "d => d.Link": "s => s.Link.OnDevice()",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageStudies": {
+      "title": "KLINISCHE STUDIEN",
+      "titleIcon": "fas fa-microscope",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "RSS",
+            "url": "https://ddz.de/de/studies.rss",
+            "mapper": [
+              {
+                "sourceType": "RSS",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.LeftSideImg",
+                  "d => d.Subject": "s => s.Channel.Title",
+                  "d => d.Items": "s => s.Channel.Items"
+                }
+              },
+              {
+                "sourceType": "RssItem",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Image": "s => s.Enclosure?.FirstOrDefault()?.Url",
+                  "d => d.DatePublished": "s => s.PubDate",
+                  "d => d.Link": "s => \"PageStudies2?id=\" + s.Title.GetGUID()",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageStudies2": {
+      "title": "KLINISCHE STUDIEN",
+      "titleIcon": "fas fa-microscope",
+      "components": [
+        {
+          "renderType": "Article",
+          "provider": {
+            "type": "RSS",
+            "url": "https://ddz.de/de/studies.rss",
+            "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
+            "mapper": [
+              {
+                "sourceType": "RssItem",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
+                  "d => d.Sources": "s => s.Enclosure?.Select(x => x.Url)"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "RSS",
+            "url": "https://ddz.de/de/studies.rss",
+            "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
+            "mapper": [
+              {
+                "sourceType": "RssItem",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.OneRowItem",
+                  "d => d.Subject": "s => string.Empty",
+                  "d => d.Items": "s => new RssItem[]{ s }"
+                }
+              },
+              {
+                "sourceType": "RssItem",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Title": "s => \"Weiterlesen\"",
+                  "d => d.Link": "s => s.Link.OnDevice()",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

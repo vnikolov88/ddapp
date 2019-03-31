@@ -1,0 +1,120 @@
+@import "_variables.scss";
+
+body main > .PageHeader .iconCircle {
+    padding: 0em;
+}
+
+.PageHeader.grid-container {
+    grid-template-columns: 15% 60% 25%;
+    grid-template-rows: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.PageHeader {    
+    background-color: $BackgroundPrimary;
+    color: $TextColor;
+    font-family: $Regular;
+    z-index: 2;
+    border-bottom: 3px solid $AccentColor;
+    padding: .5em 0;
+    max-width: inherit;
+    width: 100%;
+    z-index: 8;
+    font-size: $TitleFontSize;
+
+    h5 {
+        /*h5 grid*/
+        max-width: 100%;
+        order: 2;
+        /*h5 Styles*/
+        font-size: 1rem;
+        margin: 0;
+        max-width: 100%;
+        justify-self: left;
+        font-size: $TextFontSize;
+        text-transform: capitalize;
+    }
+
+    i, &i.fas.fa-angle-double-left {
+        /*Back button grid*/
+        order: 1;
+        display: inline-block;
+        /*Back button Styles*/
+        font-size: 1.8rem;
+        margin: 0;
+    }
+
+    div:empty {
+        display: none;
+    }
+
+    .iconCircle {
+        /*iconCircle grid*/
+        order: 3;
+        /*iconCircle Styles*/
+        height: auto;
+        width: auto;
+        font-size: 4vh;
+        background-color: #fff;
+        position: relative;
+        padding: 1em;
+
+        img {
+            width: 5.5vh;
+            height: 5.5vh;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        &i:empty {
+            display: none;
+        }
+
+        i {
+            color: $AccentColor;
+            line-height: 2.5vh;
+            display: inline-grid;
+            align-self: center;
+            justify-self: center;
+
+            &.fas, &.fab {
+                background-color: #fff;
+                border-radius: 50%;
+                padding: .4em .25em;
+            }
+
+            &:before {
+              font-size: 4vh;
+            }
+
+            &.fas.fa-info-circle {
+                top: 1.8vh;
+                left: 1vh;
+            }
+
+            &.fas.fa-info {
+                top: 1vh;
+                left: 1.5vh;
+                padding: .6em 0.8em;
+            }
+        }
+    }
+}
+
+body main > .PageHeader .iconCircle > img {
+    display: none;
+}
+
+body main > .PageHeader .iconCircle > img[src="/ddz/img/DDZ-roundpng.png"] {
+    display: unset;
+}
+
+@media screen and (max-width: 320px) and (max-width: 375px) {
+    main > .PageHeader + div:nth-child(2) {
+        margin-top: calc(100% - 58%);
+    }
+}

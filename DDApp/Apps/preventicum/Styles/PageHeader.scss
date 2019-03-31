@@ -1,0 +1,10 @@
+@import "_variables.scss";
+
+.PageHeader {
+    background: $BackgroundSecondary;
+    border-bottom: 3.5px solid $BackgroundPrimary;
+}
+
+body main > .PageHeader .iconCircle > img {
+    display: unset;
+}

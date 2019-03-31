@@ -1,0 +1,7 @@
+@model ResultList
+@{
+    Model.Items?.ForEach(x => x.Style = x.Style ?? Model.Style);
+}
+<div class="ResultList">
+    @Html.DisplayFor(model => model.Items)
+</div>

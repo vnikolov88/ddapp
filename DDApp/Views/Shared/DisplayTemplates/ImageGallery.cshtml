@@ -1,0 +1,25 @@
+﻿@model Article
+
+<div class="simple-gallery-wrapper">
+    <div class="simple-gallery">
+        <div class="controlls prev">
+            <button><i class="fas fa-angle-left"></i></button>
+        </div>
+
+        <div class="controlls next">
+            <button><i class="fas fa-angle-right"></i></button>
+        </div>
+
+        <div class="pager">
+            <ul></ul>
+        </div>
+
+        <ul class="slides">
+            <li class="skeleton"><img src="@Model.Sources?.FirstOrDefault()" onload="new simpleGallery(this.parentElement.parentElement.parentElement);"></li>
+            @foreach (var source in Model.Sources)
+            {
+                <li><img src="@source"></li>
+            }
+        </ul>
+    </div>
+</div>

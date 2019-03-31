@@ -1,0 +1,423 @@
+{
+  "dataTypes": {
+    "Picture": {
+      "properties": {
+        "thumb": "System.String",
+        "xs": "System.String",
+        "s": "System.String",
+        "m": "System.String",
+        "l": "System.String",
+        "xl": "System.String"
+      }
+    },
+    "Address": {
+      "properties": {
+        "Street": "System.String",
+        "StreetNr": "System.String",
+        "Postcode": "System.String",
+        "Place": "System.String",
+        "Url": "System.String",
+        "Latitude": "System.Nullable<System.Double>",
+        "Longitude": "System.Nullable<System.Double>"
+      },
+      "methods": {
+        "GetMapUrl": "(uint zoom) => $\"https://api.mapbox.com/v4/ferdijeute.k8km6fdm/url-bit.ly%2f1JJK3XY({Longitude},{Latitude})/{Longitude},{Latitude},{zoom}/120x80@2x.png?access_token=pk.eyJ1IjoiZmVyZGlqZXV0ZSIsImEiOiIwWkRRUW5ZIn0.aBIsPCWLwLXwmd_QOiJC4w\""
+      }
+    },
+    "ContactPerson": {
+      "properties": {
+        "Title": "System.String",
+        "FirstName": "System.String",
+        "LastName": "System.String",
+        "MainAreaOfFocus": "System.String",
+        "Phone": "System.String",
+        "Fax": "System.String",
+        "Email": "System.String",
+        "CV": "System.String",
+        "Address": "Address",
+        "Pictures": "Picture[]"
+      },
+      "methods": {
+        "GetGUID": "() => $\"{Title},{FirstName},{LastName}\".GetGUID()"
+      }
+    },
+    "MedicalService": {
+      "properties": {
+        "Code": "System.String",
+        "Designation": "System.String",
+        "Explanations": "System.String"
+      }
+    },
+    "MedicalEquipment": {
+      "properties": {
+        "Code": "System.String",
+        "Notfallverfuegbarkeit_24h": "System.String",
+        "Explanations": "System.String"
+      }
+    },
+    "Department": {
+      "properties": {
+        "Name": "System.String",
+        "Key": "System.String",
+        "ClassificationNumbers": "System.Collections.Generic.List<System.String>",
+        "Address": "Address",
+        "MedicalServices": "MedicalService[]",
+        "Pictures": "Picture[]",
+        "Description": "System.String",
+        "Doctors": "ContactPerson[]"
+      }
+    },
+    "Hospital": {
+      "properties": {
+        "Name": "System.String",
+        "IK": "System.String",
+        "Description": "System.String",
+        "Pictures": "Picture[]",
+        "Address": "Address",
+        "Departments": "System.Collections.Generic.List<Department>",
+        "MedicalEquipments": "System.Collections.Generic.List<MedicalEquipment>"
+      }
+    }
+  },
+  "pages": {
+    "PageHospital": {
+      "title": "DEUTSCHES DIABETES-ZENTRUM",
+      "titleImage": "/ddz/img/DDZ-roundpng.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
+                  "d => d.Sources": "s => s.Pictures.Select(x => x.thumb)",
+                  "d => d.Title": "s => s.Name",
+                  "d => d.Description": "s => s.Description"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "SocialBar",
+          "model": {
+            "items": [
+              {
+                "Href": "/ondevice/http://www.facebook.com/sharer.php?u=https://diabetesinformationsdienst.de/diabetes-cockpit/",
+                "Class": "facebook-social-item",
+                "Icon": "fab fa-facebook-f"
+              },
+              {
+                "Href": "/ondevice/https://twitter.com/intent/tweet?text=Diabetes-Cockpit+%E2%80%93+BMI%2C+Blutdruck%2C+Blutzucker+bewerten%20via%20%40diabinfodienst&url=https://diabetesinformationsdienst.de/diabetes-cockpit/",
+                "Class": "twitter-social-item",
+                "Icon": "fab fa-twitter"
+              },
+              {
+                "Href": "/ondevice/https://plusone.google.com/_/+1/confirm?hl=en&url=https://diabetesinformationsdienst.de/diabetes-cockpit/&name=Diabetes-Cockpit+%E2%80%93+BMI%2C+Blutdruck%2C+Blutzucker+bewerten",
+                "Class": "google-social-item",
+                "Icon": "fab fa-google"
+              },
+              {
+                "Href": "/ondevice/whatsapp://send?text=Diabetes-Cockpit+%E2%80%93+BMI%2C+Blutdruck%2C+Blutzucker+bewerten - https://diabetesinformationsdienst.de/diabetes-cockpit/",
+                "Class": "whatsapp-social-item",
+                "Icon": "fab fa-whatsapp"
+              },
+              {
+                "Href": "/ondevice/tg://msg?text=Diabetes-Cockpit+%E2%80%93+BMI%2C+Blutdruck%2C+Blutzucker+bewerten - https://diabetesinformationsdienst.de/diabetes-cockpit/",
+                "Class": "mail-social-item",
+                "Icon": "fas fa-paper-plane"
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "/ondevice/tel:+4921133820",
+                "Title": "+4921133820",
+                "Icon": "fas fa-phone"
+              },
+              {
+                "Link": "/ondevice/mailto:kontakt@ddz.de",
+                "Title": "kontakt@ddz.de",
+                "Icon": "far fa-envelope"
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.LeftSideImg",
+                  "d => d.Link": "s => $\"/ondevice/geo:{s.Address.Latitude},{s.Address.Longitude}&q={Uri.EscapeDataString(s.Name)}\"",
+                  "d => d.Title": "s => $\"{s.Address.Street} {s.Address.StreetNr}\"",
+                  "d => d.Description": "s => $\"{s.Address.Postcode} {s.Address.Place}\"",
+                  "d => d.Image": "s => s.Address.GetMapUrl(12)",
+                  "d => d.Icon": "s => \"fas fa-map-marked\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.OneRowItem",
+                  "d => d.Items": "s => s.Departments"
+                }
+              },
+              {
+                "sourceType": "Department",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Link": "s => \"PageDepartment?departmentKey=\" + s.Key",
+                  "d => d.Title": "s => s.Name",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageDepartment": {
+      "title": "DEUTSCHES DIABETES-ZENTRUM",
+      "titleImage": "/ddz/img/DDZ-roundpng.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "reducer": "(x, qc) => x.Departments.FirstOrDefault(department => department.Key == qc.departmentKey)",
+            "mapper": [
+              {
+                "sourceType": "Department",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
+                  "d => d.Sources": "s => s.Pictures.Select(x => x.thumb)",
+                  "d => d.Title": "s => s.Name"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "reducer": "(x, qc) => x.Departments.FirstOrDefault(department => department.Key == qc.departmentKey)",
+            "mapper": [
+              {
+                "sourceType": "Department",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.LeftSideImg",
+                  "d => d.Items": "s => new Department[] { s }"
+                }
+              },
+              {
+                "sourceType": "Department",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Link": "s => $\"/ondevice/geo:{s.Address.Latitude},{s.Address.Longitude}&q={Uri.EscapeDataString(s.Name)}\"",
+                  "d => d.Title": "s => $\"{s.Address.Street} {s.Address.StreetNr}\"",
+                  "d => d.Description": "s => $\"{s.Address.Postcode} {s.Address.Place}\"",
+                  "d => d.Image": "s => s.Address.GetMapUrl(12)",
+                  "d => d.Icon": "s => \"fas fa-map-marked\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "reducer": "(x, qc) => x.Departments.FirstOrDefault(department => department.Key == qc.departmentKey)",
+            "mapper": [
+              {
+                "sourceType": "Department",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.OneRowItem",
+                  "d => d.Items": "s => new Department[] { s }"
+                }
+              },
+              {
+                "sourceType": "Department",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Link": "s => $\"/ondevice/{s.Address.Url}\"",
+                  "d => d.Title": "s => \"Webseite des Instituts\"",
+                  "d => d.Description": "s => string.Empty",
+                  "d => d.Icon": "s => \"fas fa-globe-europe\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "reducer": "(x, qc) => x.Departments.FirstOrDefault(department => department.Key == qc.departmentKey)",
+            "mapper": [
+              {
+                "sourceType": "Department",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.LeftSideImg",
+                  "d => d.Items": "s => s.Doctors"
+                }
+              },
+              {
+                "sourceType": "ContactPerson",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Link": "s => $\"PageDoctor?doctor_id={s.GetGUID()}\"",
+                  "d => d.Image": "s => s.Pictures.Select(x => x.thumb).FirstOrDefault()",
+                  "d => d.Title": "s => $\"{s.LastName}, {s.FirstName}, {s.Title}\"",
+                  "d => d.Description": "s => s.MainAreaOfFocus",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageDoctor": {
+      "title": "DEUTSCHES DIABETES-ZENTRUM",
+      "titleImage": "/ddz/img/DDZ-roundpng.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "reducer": "(x, qc) => x.Departments.SelectMany(tlhow => tlhow.Doctors).FirstOrDefault(doctor => doctor.GetGUID().ToString() == qc.doctor_id)",
+            "mapper": [
+              {
+                "sourceType": "ContactPerson",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Style": "s => Article.ImageStyle.Profile",
+                  "d => d.Sources": "s => s.Pictures.Select(x => x.thumb)",
+                  "d => d.Title": "s => $\"{s.LastName}, {s.FirstName}, {s.Title}\""
+                }
+              }
+            ]
+          }
+        },
+        // List of contact details
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "reducer": "(x, qc) => x.Departments.SelectMany(tlhow => tlhow.Doctors).FirstOrDefault(doctor => doctor.GetGUID().ToString() == qc.doctor_id)",
+            "mapper": [
+              {
+                "sourceType": "ContactPerson",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.CV) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
+                  "d => d.Title": "s => s.CV",
+                  "d => d.Link": "s => s.CV.OnDevice()",
+                  "d => d.Icon": "s => \"fas fa-user\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "reducer": "(x, qc) => x.Departments.SelectMany(tlhow => tlhow.Doctors).FirstOrDefault(doctor => doctor.GetGUID().ToString() == qc.doctor_id)",
+            "mapper": [
+              {
+                "sourceType": "ContactPerson",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Phone) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
+                  "d => d.Title": "s => s.Phone",
+                  "d => d.Link": "s => s.Phone.OnDeviceCall()",
+                  "d => d.Icon": "s => \"fas fa-phone\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "reducer": "(x, qc) => x.Departments.SelectMany(tlhow => tlhow.Doctors).FirstOrDefault(doctor => doctor.GetGUID().ToString() == qc.doctor_id)",
+            "mapper": [
+              {
+                "sourceType": "ContactPerson",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Address?.Url) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
+                  "d => d.Title": "s => s.Address.Url",
+                  "d => d.Link": "s => s.Address.Url.OnDevice()",
+                  "d => d.Icon": "s => \"fas fa-globe-europe\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "reducer": "(x, qc) => x.Departments.SelectMany(tlhow => tlhow.Doctors).FirstOrDefault(doctor => doctor.GetGUID().ToString() == qc.doctor_id)",
+            "mapper": [
+              {
+                "sourceType": "ContactPerson",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Email) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
+                  "d => d.Title": "s => s.Email",
+                  "d => d.Link": "s => s.Email.OnDeviceMail()",
+                  "d => d.Icon": "s => \"far fa-envelope\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

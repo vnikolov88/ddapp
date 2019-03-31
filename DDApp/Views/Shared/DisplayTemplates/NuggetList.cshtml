@@ -1,0 +1,11 @@
+@model NuggetList
+
+<div id="NuggetPillsContainer" class="grid-container">
+    @foreach (var nuget in Model.Nuggets)
+    {
+        <span id="pills-@nuget.Title-tab" class="NuggetTitle">@nuget.Title</span>
+    }
+</div>
+<div id="NuggetContainer" class="grid-container">
+    @Html.DisplayFor(model => model.Nuggets);
+</div>

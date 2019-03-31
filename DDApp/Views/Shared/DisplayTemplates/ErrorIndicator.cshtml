@@ -1,0 +1,9 @@
+﻿@model ErrorIndicator
+
+<div class="ItemWrapper">
+    <div class="ErrorIndicator">
+        <code>@Model.MainEvent</code>
+        <details><summary>Inner</summary><p>@Model.InnerEvent</p></details>
+        <details><summary>Trace</summary><p>@Model.StackTrace</p></details>
+    </div>
+</div>

@@ -1,0 +1,408 @@
+@import "_variables.scss";
+
+.Hidden {
+    display: none;
+}
+
+.OneRowItem, .OneRowItemLarge {
+    ul, ol {
+        li {
+            font-family: $Regular;
+            color: $TextColor;
+            text-decoration: none;
+        }
+    }
+}
+
+.Profile {
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+}
+
+.OneRowItem {
+    background: $BackgroundPrimary;
+
+    h4:empty {
+        display: none;
+    }
+
+    img {
+        /*img grid*/
+        order: 2;
+        /*img Styles*/
+        display: none;
+    }
+
+    .Link-details {
+        p {
+            margin: 0;
+        }
+
+        p.Ellipse {
+            word-break: break-word;
+            white-space: inherit;
+        }
+
+        p:nth-child(2), p:nth-child(3) {
+            display: none;
+        }
+    }
+
+    .Circle {
+        /*Circle grid*/
+        align-self: center;
+        justify-self: center;
+        order: 2;
+        /*Circle Styles*/
+        width: 5.5vh;
+        height: 5.5vh;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.OneRowItemIconColorInverted .Circle {
+    width: 5.5vh;
+    height: 5.5vh;
+    margin: 0;
+}
+
+.OneRowItemLarge.grid-container, .OneRowItem.grid-container {
+    grid-template-columns: 70% 24%;    
+    grid-gap: 4.5%;
+    grid-template-rows: 100%;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.OneRowItemLarge .Link-details, .OneRowItem .Link-details, .OneRowItemIconColorInverted .Link-details {
+    display: grid;
+    grid-template-rows: auto;
+    justify-self: left;
+    align-self: center;
+    margin-left: 6vw;
+    font-size: $TextFontSize;
+}
+
+.OneRowItemLarge {    
+    background-color: $BackgroundSecondary;
+    height: 13vh;
+    max-height: 13.3vh;
+    text-decoration: none;    
+
+    img {
+        /*img Grid*/
+        justify-self: center;
+        align-self: center;
+        order: 2;
+        /*img Styles*/
+        background: $BaseColor;
+        border-radius: 50%;
+        max-width: 100%;
+        width: 8vh;
+        height: 8vh;
+    }
+
+    img[src="/img/image_placeholder.png"] {
+        display: none;
+    }
+
+    .Link-details {
+        order: 1;        
+        p.Menu.Ellipse {
+            font-size: $TitleFontSize;
+            font-family: $SemiBold;
+        }
+
+        p {
+            line-height: 4.5vh;
+            word-break: break-word;
+            white-space: normal;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .Circle {
+        /*Circle grid*/
+        order: 2;
+        /*Styles*/
+        z-index: 1;
+        width: 8vh;
+        height: 8vh;
+        background-color: $BaseColor;
+        border-radius: 50%;
+        text-align: center;
+        vertical-align: middle;
+        margin: 2.1vh 2.2vh;
+        margin: 0;
+        padding: 0;
+        float: unset;
+
+        &:empty {
+            display: none;
+        }
+
+        i {
+            color: $AccentColor;
+            font-size: 4vh;
+            border-radius: 50%;
+            line-height: 8vh;
+        }
+    }
+}
+
+.OneRowItemLarge + .Circle {
+    display: none;
+}
+
+
+.OneRowItemIconColorInverted.grid-container {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+}
+
+.OneRowItemIconColorInverted {
+    background: $BackgroundSecondary;
+    text-decoration: none;
+    
+    img[src="/img/image_placeholder.png"] {
+        display: none;
+    }
+
+    a {
+        height: 9vh;
+        text-decoration: none;
+        img {
+            display: none;
+        }
+    }
+
+    h4:empty {
+        display: none;
+    }
+
+    .Link-details {
+        /*Link-details grid*/
+        order: 1;
+        display: grid;
+        grid-template-rows: auto;
+
+        p {
+            margin: 0;
+            max-width: 100%;
+            text-decoration: none;
+        }
+
+        p:empty {
+            display: none;
+        }
+
+        p.Ellipse {
+            white-space: nowrap;
+            font-size: 2.1vh;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+
+    .Circle {
+        /*Circle grid*/
+        align-self: center;
+        justify-self: center;
+        order: 2;
+        /*Circle Styles*/
+        background-color: $BaseColor;
+
+        i {
+            color: $AccentColor;
+        }
+    }
+}
+
+
+.TwoRowsItem {
+
+    a {
+        height: 13.9vh;
+    }
+
+    .Link-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        p.Menu.Ellipse {
+            margin-top: 1.5vh;
+            margin-bottom: 1.5vh;
+        }
+
+        p.Ellipse {
+            white-space: initial;
+            font-size: 2.2vh;
+            width: 100%;
+            float: left;
+            line-height: 2.5vh;
+        }
+    }
+
+    .Circle {
+        line-height: 13.9vh;
+    }
+}
+
+
+.TwoRowsItemShortText {
+
+    a {
+        height: 13.9vh;
+    }
+
+    .Link-details {
+
+        p.Menu.Ellipse {
+            margin-top: 2.8vh;
+            margin-bottom: 1.5vh;
+            padding-top: 1.5vh;
+        }
+
+        p.Ellipse {
+            white-space: initial;
+            font-size: 2.2vh;
+            width: 100%;
+            float: left;
+            line-height: 2.7vh;
+            max-height: 10vh;
+        }
+    }
+
+    .Circle {
+        line-height: 13.9vh;
+    }
+}
+
+
+.ThreeRowsItem {
+
+    a {
+        height: 13vh;
+    }
+
+    .Link-details {
+
+        p.Ellipse {
+            white-space: initial;
+        }
+
+        p.Menu {
+            margin-top: 1vh;
+        }
+
+        p:last-child {
+            font-family: $SemiBold;
+        }
+
+        p {
+            width: 100%;
+            float: left;
+            margin-bottom: 0.4vh;
+        }
+    }
+
+    .Circle {
+        line-height: 12vh;
+    }
+}
+
+.Container .LeftSideImg.grid-container:first-child {
+    margin-top: 0;
+}
+
+.LeftSideImg.grid-container {
+    grid-template-columns: 25% 50% 20%;
+    grid-template-rows: 100%;
+    grid-gap: 1.3%;
+    align-items: center;
+    justify-items: center;
+    margin: .2em 0;
+    padding: .5em 0em .5em 1em;
+}
+
+.LeftSideImg {       
+    background: $BackgroundPrimary;
+    text-decoration: none;
+    img {
+        /*img grid*/
+        order: 1;
+        /*img Styles*/
+        object-fit: cover;
+        max-width: 100%;
+        max-height: 90%;
+    }
+
+    .Link-details {
+        /*Link-details grid*/
+        display: grid;
+        grid-template-rows: auto;
+        order: 2;
+        /*Link-details Styles*/
+        max-width: 100%;
+        width: auto;
+        float: unset;
+        padding: 1em 0.5em;
+        margin: 0;
+        color: $TextColor;
+        align-items: center;
+        justify-self: baseline;
+        font-size: $TextFontSize;
+
+        p.Menu {
+            font-family: $SemiBold;
+        }
+
+        p {
+            font-family: $Regular;
+            height: 6vh;
+            line-height: 3vh;
+            float: left;
+            margin: 0;
+            padding: 0;
+            height: min-content;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            white-space: unset;
+            overflow: hidden;
+        }
+
+        p:nth-child(2):not(empty) {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        p:nth-child(3) {
+            display: none;
+        }
+    }
+
+    .Ellipse {
+        white-space: initial;
+    }
+
+    .Circle {
+        /*Circle grid*/
+        order: 3;
+        /*Circle Styles*/
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+}

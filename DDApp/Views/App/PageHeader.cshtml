@@ -1,0 +1,20 @@
+@model HydratedAppPage
+
+@if (!string.IsNullOrEmpty(Model.Title)) { 
+
+    <section class="PageHeader grid-container">
+        <h5 class="Ellipse">@Model.Title</h5>
+        <i class="fas fa-angle-double-left" onclick="window.history.back();"></i>
+        <div class="iconCircle">
+            @if (!string.IsNullOrEmpty(Model.TitleImage))
+            {
+                <img src="@Model.TitleImage" />
+            }
+
+            @if(!string.IsNullOrEmpty(Model.TitleIcon)) { 
+                <i class="@Model.TitleIcon"></i>
+            }
+        </div>
+        <div></div>
+    </section>
+}

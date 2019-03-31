@@ -1,0 +1,65 @@
+﻿@import "_variables.scss";
+
+.contact {
+    a {
+        height: 15.2vh;
+        padding: 1.5vh;
+        background: $BackgroundPrimary;
+        margin-bottom: 3px;
+        display: block;
+    }
+
+    img, .Link-details, .Circle {
+        display: inline-block;
+        float: left;
+    }
+
+    img {
+        height: 100%;
+        width: 11.2vh;
+    }
+
+    .Link-details {
+        padding-left: 1.5vh;
+        width: calc(100% - 23vh);
+        padding-top: 1.5vh;
+        color: $TextColor;
+
+        p.Menu {
+            font-family: $SemiBold;
+            font-size: 2.3vh;
+        }
+
+        p {
+            font-family: $Regular;
+            display: table-cell;
+            height: 6vh;
+            line-height: 3vh;
+            width: 100%;
+            float: left;
+            margin: 0;
+            padding: 0;
+            font-size: 2.3vh;
+        }
+    }
+
+    .Ellipse {
+        white-space: initial;
+    }
+
+    .Circle {
+        vertical-align: middle;
+        line-height: 15vh;
+        position: absolute;
+        right: 0;
+
+
+        i {
+            background-color: $BaseColor;
+            border-radius: 50%;
+            vertical-align: middle;
+            padding: 0;
+        }
+    }
+}
+

@@ -1,0 +1,11 @@
+@import "_variables.scss";
+
+.navbar {
+    .navbar-brand {
+        max-width: 49%;
+    }
+}
+
+.iconCircle {
+    background: $iconCircleColor;
+}

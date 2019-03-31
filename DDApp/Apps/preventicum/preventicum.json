@@ -1,0 +1,207 @@
+{
+  "logo": "/preventicum/img/preventicum-logo.jpg",
+  "quickCallNumber": "+4921133820",
+  "quickCallNumberIcon": "fas fa-phone",
+  "navigation": {
+    "PREVENTICUM": "unsere-standorte",
+    "UNSER SERVICE FÜR SIE": "service",
+    "AKTUELLES & \nVERANSTALTUNGEN": "veranstaltungen",
+    "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE": "herzinfarkt-schlaganfall-aneurysma-thrombose",
+    "NOTDIENSTE, NOTFÄLLE": "notdienste-notfalle"
+  },
+  "pages": {
+    "Page1": {
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItemLarge",
+            "items": [
+              {
+                "Link": "unsere-standorte",
+                "Title": "PREVENTICUM",
+                "Image": "/preventicum/img/icon-1.png"
+              },
+              {
+                "Link": "service",
+                "Title": "UNSER SERVICE FÜR SIE",
+                "Image": "/preventicum/img/icon-2.png"
+              },
+              {
+                "Link": "veranstaltungen",
+                "Title": "AKTUELLES & \nVERANSTALTUNGEN",
+                "Image": "/preventicum/img/icon-3.png"
+              },
+              {
+                "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
+                "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE",
+                "Image": "/preventicum/img/icon-5.png"
+              },
+              {
+                "Link": "notdienste-notfalle",
+                "Title": "NOTDIENSTE, NOTFÄLLE",
+                "Image": "/preventicum/img/icon-6.png"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    // List of Preventicum hospitals
+    "unsere-standorte": {
+      "title": "unsere standorter",
+      "titleImage": "/preventicum/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "PageHospital?hospital_id=ODkzYzBkMzBkMjcyNWFjZg==",
+                "Title": "Preventicum Essen",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageHospital?hospital_id=NjhhYzc3YzM2MWMyZGVmZg==",
+                "Title": "Preventicum Düsseldorf",
+                "Icon": "fas fa-play"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    // Where is this linked to ???
+    "zeckenentfernung-zeckenkarte": {
+      "title": "ZECKENENTFERNUNG",
+      "titleImage": "/preventicum/img/icon-5.png",
+      "components": [
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "type": "h1",
+            "text": "Zeckenkarte"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/preventicum/img/img-2.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<span class='red-bullet'>1.</span>Die Karte flach auf der Haut an die Zecke heranschieben. Dabei versuchen die Zecke seitlich in den „Schnabel“ der Karte zu führen."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/preventicum/img/img-3.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": " <span class='red-bullet'>2.</span>Die Karte ohne Bewegungsunterbrechung weiter führen und dabei nun die Zecke vom Körper entfernen."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/preventicum/img/img-4.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<span class='red-bullet'>3.</span>Die entfernte Zecke entsorgen. Einstichstelle beobachten:<br/> An <b>Borreliose</b> denken. Bei ausweitender Rötung: Arzt aufsuchen!<br/> <b>Bewohner eines Risikogebiets oder dorthin Reisende sollten sich gegen FSME impfen lassen!</b> <br/> Bei Unsicherheit konsultieren Sie bitte Ihren Arzt. Mehr Infos unter <a href='www.zecken.de'>www.zecken.de</a>."
+          }
+        }
+
+      ]
+    },
+    // Empty pages
+    "service": {
+      "title": "UNSER SERVICE FÜR SIE",
+      "titleImage": "/preventicum/img/icon-2.png",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "/ondevice/mailto:rezept@preventicum.de",
+                "Title": "Rezeptbestellung",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "/ondevice/mailto:termin@preventicum.de",
+                "Title": "Terminanfrage",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "/ondevice/mailto:videotermin@preventicum.de",
+                "Title": "Videoterminanfrage",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "/ondevice/mailto:rückruf@preventicum.de",
+                "Title": "Bitte um Rückruf",
+                "Icon": "fas fa-play"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "veranstaltungen": {
+      "title": "AKTUELLES & VERANSTALTUNGEN",
+      "titleImage": "/preventicum/img/icon-3.png",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "",
+                "Title": "Aktuelles",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "",
+                "Title": "Veranstaltungen",
+                "Icon": "fas fa-play"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    "PageSearch": {
+      "title": "DIABETES-WEGWEISER",
+      "titleIcon": "fas fa-map-marker-alt",
+      "components": [
+        {
+          "renderType": "Search",
+          "model": {
+            "Title": "Suche",
+            "FirstIcon": "fas fa-map-marker-alt",
+            "SecondIcon": "fas fa-play"
+          }
+        }
+      ]
+    }
+  }
+}

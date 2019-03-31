@@ -1,0 +1,35 @@
+﻿#social-bar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    max-height: 12em;
+    align-items: center;
+    justify-items: baseline;
+    justify-content: space-between;
+
+    a {
+        padding: 2em 2em;
+        margin: 0;
+        text-align: center;
+        border-radius: 0;
+        width: 1%;
+        display: table-cell;
+        opacity: 1 !important;
+        display: inline-block;
+        margin: 2px;
+        height: 20px;
+        overflow: hidden;
+        color: hsl(0, 0%, 100%);
+        background: hsl(0, 0%, 27%);
+        position: relative;
+        transition: 0.3s;
+        border-radius: 2px;
+        width: 11.11%;
+        border-radius: 0;
+    }
+}
+
+#social-bar a > span:empty {
+    display: none;
+}

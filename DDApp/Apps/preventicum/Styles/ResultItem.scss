@@ -1,0 +1,83 @@
+@import "_variables.scss";
+
+.ResultItem {
+    border-bottom-color: $BackgroundPrimary;
+}
+
+
+.ThreeRowsResult-ResultItem {
+    section {
+        background: $ItemLightColor;
+        color: $TextColor;
+    }
+
+    .ResultItem-Row-One {
+        .ResultItem-Name-Info {
+
+            .ResultItem-ItemName {
+                font-family: $Bold;
+            }
+        }
+
+        .ResultItem-ShortDescription {
+            font-family: $Bold;
+            color: $BackgroundPrimary;
+        }
+    }
+
+    .ResultItem-Row-Two {
+
+        .ResultItem-Location-Info {
+
+            .ResultItem-Description {
+                font-family: $Bold;
+            }
+        }
+    }
+
+    .ResultItem-Row-Three {
+
+        .ResultItem-ContactInfo {
+            font-family: $Bold;
+        }
+    }
+}
+
+
+.SingleRowResult-ResultItem {
+    section {
+        background: $ItemLightColor;
+        color: $TextColor;
+    }
+
+    .ResultItem-Row-One {
+        .ResultItem-Name-Info {
+
+            .ResultItem-ItemName {
+                font-family: $Bold;
+            }
+        }
+
+        .ResultItem-ShortDescription {
+            font-family: $Bold;
+            color: $BackgroundPrimary;
+        }
+    }
+
+    .ResultItem-Row-Two {
+
+        .ResultItem-Location-Info {
+
+            .ResultItem-Description {
+                font-family: $Bold;
+            }
+        }
+    }
+
+    .ResultItem-Row-Three {
+
+        .ResultItem-ContactInfo {
+            font-family: $Bold;
+        }
+    }
+}

@@ -1,0 +1,98 @@
+@import "_variables.scss";
+
+.pageheadline {
+    display: none;
+}
+
+.Article {    
+    background-color: $BaseColor;
+    font-family: $Regular;
+    color: $TextColor;
+    font-size: 2.4vh;
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .Title {
+        padding: .7em .5em 0;
+        margin: 0;
+    }
+
+    h1, h2, h3, h4, h5 {
+        font-size: $TitleFontSize;
+        font-family: $Bold;
+        margin: 0 auto;
+        padding: 2vh 0 0 0;
+        color: $TextColor;
+        line-height: 4vh;
+    }
+
+    span {
+        font-size: $TextFontSize;
+        font-family: $Bold;
+        margin: 0 auto;
+        color: $TextColor;
+    }
+
+    section {
+        font-family: $Regular;
+        color: $TextColor;
+        padding: 2vh 0 2vh 0;
+        margin: 0;
+        font-size: $TextFontSize;
+        line-height: 3.4vh;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        span.red-bullet {
+            font-size: 1em;
+        }
+    }
+}
+
+
+.Article .Title, .Article section {
+    padding: 2vh;
+}
+
+.Article .Title + section {
+    padding-top: 0;
+}
+
+.Article p:empty {
+    display: none;
+}
+
+.PageTitle {
+    font-size: 20px;
+    color: $TextColor;
+    font-family: $SemiBold;
+    margin: 0 auto;
+    padding: 2vh 0 2vh 2vh;
+    background-color: $BaseColor;
+}
+
+.HasBorder, .Profile {
+    border-bottom: 3px solid $AccentColor;
+}
+
+.Profile > div {
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    background-color: $BackgroundPrimary;
+    border-bottom: 3px solid $AccentColor;
+}
