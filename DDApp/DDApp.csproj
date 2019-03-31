@@ -22,10 +22,10 @@
     <PackageReference Include="StackExchange.Redis" Version="1.2.6" />
   </ItemGroup>
 
-  <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
+  <!--<Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
     <Exec Command="npm install" />
     <Exec Command="gulp default" />
-  </Target>
+  </Target>-->
 
   <ItemGroup>
     <None Update="DDApp.service">
