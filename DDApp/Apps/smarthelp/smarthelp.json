@@ -1643,7 +1643,6 @@
         }
       ]
     },
-
     "herzinfarkt-herzdruckmassage": {
       "title": "HERZINFARKT",
       "titleImage": "/smarthelp/img/icon-5.png",
@@ -2523,6 +2522,7 @@
         }
       ]
     },
+    
     "apotheken-notdeinst": {
       "title": "APOTHEKEN-NOTDIENST",
       "titleImage": "/smarthelp/img/icon-4.png",
