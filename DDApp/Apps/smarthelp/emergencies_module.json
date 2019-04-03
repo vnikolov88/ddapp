@@ -3,7 +3,7 @@
     // Main page
     "herzinfarkt-schlaganfall-aneurysma-thrombose": {
       "title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE",
-      "titleImage": "/preventicum/img/icon-5.png",
+      "titleImage": "img/icon-2.png",
       "components": [
         {
           "renderType": "ItemList",
@@ -97,7 +97,7 @@
     // Heart attack
     "herzinfarkt": {
       "title": "HERZINFARKT",
-      "titleImage": "/preventicum/img/icon-5.png",
+      "titleImage": "img/icon-5.png",
       "tabGroups": {
         "(mögliche) Symptome": 2,
         "Handeln Sie sofort!": 5,
@@ -110,12 +110,12 @@
             "nuggets": [
               {
                 "title": "Mann",
-                "image": "/preventicum/img/img-21.png",
+                "image": "img/img-21.png",
                 "imageDescription": "Mann"
               },
               {
                 "title": "Frau",
-                "image": "/preventicum/img/img-22.png",
+                "image": "img/img-22.png",
                 "imageDescription": "Frau"
               }
             ]
@@ -124,7 +124,7 @@
         {
           "renderType": "Article",
           "model": {
-            "description": "<b>Starke Schmerzen</b>, die in andere Körperteile strahlen, zum Beispiel in <span class='red-bullet'>Arme</span>, die Partie zwischen den <span class='red-bullet'>Schulterblättern</span> oder dem <span class='red-bullet'>Oberbauch</span> (vgl. Abbildungen) und ca. <b>fünf Minuten</b> anhalten."
+            "description": "<p><b>Starke Schmerzen</b>, die in andere Körperteile strahlen, zum Beispiel in <span class='red-bullet'>Arme</span>, die Partie zwischen den <span class='red-bullet'>Schulterblättern</span> oder dem <span class='red-bullet'>Oberbauch</span> (vgl. Abbildungen) und ca. <b>fünf Minuten</b> anhalten.</p>"
           }
         },
         {
@@ -141,7 +141,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:+49 228-19240",
             "text": "+49 228-19240",
-            "imageSource": "/preventicum/img/icon-6.png"
+            "imageSource": "img/icon-6.png"
           }
         },
         {
@@ -186,7 +186,6 @@
         {
           "renderType": "Search",
           "model": {
-            "Action": "hospital-search-results?search-type=heart-attack",
             "Title": "Suche",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
@@ -196,13 +195,11 @@
     },
     "herzinfarkt-herzdruckmassage": {
       "title": "HERZINFARKT",
-      "titleImage": "/preventicum/img/icon-5.png",
+      "titleImage": "img/icon-5.png",
       "components": [
         {
           "renderType": "TitleLite",
           "model": {
-            "type": "h3",
-            "class": "",
             "text": "Herzdruckmassage"
           }
         },
@@ -216,7 +213,6 @@
           "renderType": "TitleLite",
           "model": {
             "type": "h3",
-            "class": "",
             "text": "1. Bewusstsein prüfen"
           }
         },
@@ -224,7 +220,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/preventicum/img/img-24.png"
+              "img/img-24.png"
             ]
           }
         },
@@ -243,7 +239,6 @@
           "renderType": "TitleLite",
           "model": {
             "type": "h3",
-            "class": "",
             "text": "2.Atmung kontrollieren"
           }
         },
@@ -251,7 +246,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/preventicum/img/img-25.png"
+              "img/img-25.png"
             ]
           }
         },
@@ -270,7 +265,6 @@
           "renderType": "TitleLite",
           "model": {
             "type": "h3",
-            "class": "",
             "text": "3.Herzdruckmassage"
           }
         },
@@ -278,7 +272,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/preventicum/img/img-27.png"
+              "img/img-27.png"
             ]
           }
         },
@@ -297,7 +291,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/preventicum/img/img-28.png"
+              "img/img-28.png"
             ]
           }
         },
@@ -323,7 +317,6 @@
           "renderType": "TitleLite",
           "model": {
             "type": "h3",
-            "class": "",
             "text": "4.Beatmung"
           }
         },
@@ -343,7 +336,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/preventicum/img/img-29.png"
+              "img/img-29.png"
             ]
           }
         },
@@ -351,7 +344,6 @@
           "renderType": "TitleLite",
           "model": {
             "type": "h3",
-            "class": "",
             "text": "Im Wechsel:"
           }
         },
@@ -371,9 +363,9 @@
     // Stroke
     "schlaganfall": {
       "title": "SCHLAGANFALL",
-      "titleImage": "/preventicum/img/icon-5.png",
+      "titleImage": "img/icon-5.png",
       "tabGroups": {
-        "(mögliche) Symptome": 4,
+        "(mögliche) Symptome": 21,
         "Handeln Sie sofort!": 11,
         "Kliniksuche": 1
       },
@@ -382,7 +374,6 @@
           "renderType": "TitleLite",
           "model": {
             "type": "h3",
-            "class": "",
             "text": "Sprach-/Sprechstörungen"
           }
         },
@@ -390,20 +381,134 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/preventicum/img/img-30.png"
+              "img/img-30.png"
             ]
           }
         },
         {
           "renderType": "Article",
           "model": {
-            "description": "Nicht in der Lage <b>vollständige Sätze</b> zu bilden. Nicht in der Lage das <b>Gegenüber zu verstehen</b><br/> <b>Alle Anzeichen</b> können <span class='red-bullet'>dauernd vorhanden sein</span>, ohne Rückbildung oder sie <span class='red-bullet'>dauern nur Minuten</span>, sind dann aber auch <b>Hinweis für einen drohenden Schlaganfall</b>."
+            "description": "Nicht in der Lage <b>vollständige Sätze</b> zu bilden. Nicht in der Lage das <b>Gegenüber zu verstehen</b><br/>"
           }
         },
         {
           "renderType": "Article",
           "model": {
             "description": "<b>Alle Anzeichen</b> können <span class='red-bullet'>dauernd vorhanden sein</span>, ohne Rückbildung oder sie <span class='red-bullet'>dauern nur Minuten</span>, sind dann aber auch <b>Hinweis für einen drohenden Schlaganfall</b>."
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "type": "h3",
+            "text": "Schwäche und Gefühlsstörung einer Körperhälfte"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "img/img-8.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<span class='red-bullet'>Arm</span> oder <span class='red-bullet'>Hand</span> sind <b>ungeschickt</b>. Nicht dazu in der Lage Dinge festzuhalten, alles <b>fällt aus der Hand</b>. <span class='red-bullet'>Gesicht</span> und <span class='red-bullet'>Arm</span> einer Seite fühlen sich <b>pelzig</b> an."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<b>Alle Anzeichen</b> können <span class='red-bullet'>dauernd vorhanden sein</span>, ohne Rückbildung oder sie <span class='red-bullet'>dauern nur Minuten</span>, sind dann aber auch <b>Hinweis für einen drohenden Schlaganfall</b>."
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "type": "h3",
+            "text": "Schwindel"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "img/img-9.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<b>Doppelsichtigkeit</b> und <b>Übelkeit</b>. Alles dreht sich. Zu einer Seite wegfallen."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<b>Alle Anzeichen</b> können <span class='red-bullet'>dauernd vorhanden sein</span>, ohne Rückbildung oder sie <span class='red-bullet'>dauern nur Minuten</span>, sind dann aber auch <b>Hinweis für einen drohenden Schlaganfall</b>."
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "type": "h3",
+            "text": "Schwäche und Gefühlsstörung einer Körperhälfte"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "img/img-10.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<span class='red-bullet'>Arm</span> oder <span class='red-bullet'>Hand</span> sind <b>ungeschickt</b>. Nicht dazu in der Lage Dinge festzuhalten, alles <b>fällt aus der Hand</b>. <span class='red-bullet'>Gesicht</span> und <span class='red-bullet'>Arm</span> einer Seite fühlen sich <b>pelzig</b> an."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<b>Alle Anzeichen</b> können <span class='red-bullet'>dauernd vorhanden sein</span>, ohne Rückbildung oder sie <span class='red-bullet'>dauern nur Minuten</span>, sind dann aber auch <b>Hinweis für einen drohenden Schlaganfall</b>."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<b>Das Risiko einer Thrombose ist bei Krebspatienten, nach Operationen, Unfall, Bettruhe, Schwangerschaft oder Wochenbett erhöht.</b>"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Schmerzen",
+            "description": "Ziehende, krampfartige oder muskelkaterartige Schmerzen in einem Bein, Arm oder der Leiste können auf eine Thrombose hindeuten. Besonders beim Auftreten (selten treten beidseits Thrombosen auf)."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Schwellung oder Spannungsgefühl",
+            "description": "Unter Umständen schwillt ein Bein an, es tritt ein Spannungsgefühl auf. Die Venen können deutlich sichtbarer werden als sonst."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Erwärmung und/oder Verfärbung",
+            "description": "Seltener fällt eine bläuliche Verfärbung oder ein roter, überwärmter (Venen)-Strang am Bein/Arm auf."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<b>Treten neu Luftnot, Brustschmerz, (Blut-)Husten oder Kreislaufprobleme auf, deutet dies auf eine Lungenembolie hin.</b>"
           }
         },
         {
@@ -420,7 +525,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:+49 228-19240",
             "text": "112 NOTUF",
-            "imageSource": "/preventicum/img/img-23.png"
+            "imageSource": "img/img-23.png"
           }
         },
         {
@@ -449,7 +554,7 @@
         {
           "renderType": "Article",
           "model": {
-            "sources": [ "/preventicum/img/img-31.png" ]
+            "sources": [ "img/img-31.png" ]
           }
         },
         {
@@ -464,7 +569,7 @@
         {
           "renderType": "Article",
           "model": {
-            "sources": [ "/preventicum/img/img-32.png" ]
+            "sources": [ "img/img-32.png" ]
           }
         },
         {
@@ -479,7 +584,8 @@
         {
           "renderType": "Article",
           "model": {
-            "sources": [ "/preventicum/img/img-33.png" ]
+            "sources": [ "img/img-33.png" ],
+            "description": "<br/>"
           }
         },
         {
@@ -514,7 +620,7 @@
     },
     "schlaganfall-fast-test": {
       "title": "SCHLAGANFALL",
-      "titleImage": "/preventicum/img/icon-5.png",
+      "titleImage": "img/icon-5.png",
       "components": [
         {
           "renderType": "TitleLite",
@@ -547,7 +653,7 @@
     },
     "schlaganfall-video-beispiel": {
       "title": "SCHLAGANFALL",
-      "titleImage": "/preventicum/img/icon-2.png",
+      "titleImage": "img/icon-2.png",
       "components": [
         //MOVIE component
       ]
@@ -555,7 +661,7 @@
     // Thrombosis
     "thrombose": {
       "title": "THROMBOSE",
-      "titleImage": "/preventicum/img/icon-5.png",
+      "titleImage": "img/icon-5.png",
       "tabGroups": {
         "(mögliche) Symptome": 8,
         "Handeln Sie sofort!": 6,
@@ -646,7 +752,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:+49 228-19240",
             "text": "112 NOTRUF",
-            "imageSource": "/preventicum/img/icon-6.png"
+            "imageSource": "img/icon-6.png"
           }
         },
         {
@@ -681,14 +787,13 @@
     // Aneurysmal
     "aneurysma": {
       "title": "ANEURYSMA",
-      "titleImage": "/preventicum/img/icon-5.png",
+      "titleImage": "img/icon-5.png",
       "components": [
         {
           "renderType": "ItemList",
           "model": {
             "style": "OneRowItemLarge",
             "items": [
-
               {
                 "Link": "aneurysma-hirnblutung",
                 "Title": "Hirnblutung",
@@ -720,7 +825,7 @@
     },
     "aneurysma-hirnblutung": {
       "title": "HIRNBLUTUNG ",
-      "titleImage": "/preventicum/img/icon-5.png",
+      "titleImage": "img/icon-5.png",
       "tabGroups": {
         "(mögliche) Symptome": 1,
         "Handeln Sie sofort!": 4,
@@ -752,7 +857,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:+49 228-19240",
             "text": "112 NOTRUF",
-            "imageSource": "/preventicum/img/img-23.png"
+            "imageSource": "img/img-23.png"
           }
         },
         {
@@ -785,7 +890,7 @@
     },
     "aneurysma-brustschmerz": {
       "title": "BRUSTSCHMERZ ",
-      "titleImage": "/preventicum/img/icon-5.png",
+      "titleImage": "img/icon-5.png",
       "tabGroups": {
         "(mögliche) Symptome": 1,
         "Handeln Sie sofort!": 4,
@@ -816,7 +921,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:+49 228-19240",
             "text": "112 NOTRUF",
-            "imageSource": "/preventicum/img/img-23.png"
+            "imageSource": "img/img-23.png"
           }
         },
         {
@@ -851,7 +956,7 @@
     // Sepsis (blood poisoning)
     "blutvergiftung-sepsis": {
       "title": "BLUTVERGIFTUNG/SEPSIS",
-      "titleImage": "/preventicum/img/icon-5.png",
+      "titleImage": "img/icon-5.png",
       "tabGroups": {
         "(mögliche) Symptome": 1,
         "Handeln Sie sofort!": 5,
@@ -887,7 +992,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:+49 228-19240",
             "text": "112 NOTRUF",
-            "imageSource": "/preventicum/img/img-23.png"
+            "imageSource": "img/img-23.png"
           }
         },
         {
@@ -927,7 +1032,7 @@
     // Allergic skock
     "allergischer-shock-allergischer-shock": {
       "title": "ALLERGISCHER SCHOCK",
-      "titleImage": "/preventicum/img/icon-5.png",
+      "titleImage": "img/icon-5.png",
       "tabGroups": {
         "(mögliche) Symptome": 1,
         "Handeln Sie sofort!": 8,
@@ -985,7 +1090,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:+49 228-19240",
             "text": "112 NOTRUF",
-            "imageSource": "/preventicum/img/img-23.png"
+            "imageSource": "img/img-23.png"
           }
         },
         {
@@ -1030,6 +1135,5 @@
         }
       ]
     }
-    
   }
 }

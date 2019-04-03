@@ -48,7 +48,7 @@
     // Main page
     "notdienste-notfalle": {
       "title": "NOTDIENSTE, NOTFÄLLE",
-      "titleImage": "/preventicum/img/icon-6.png",
+      "titleImage": "img/icon-6.png",
       "components": [
         {
           "renderType": "ItemList",
@@ -137,53 +137,57 @@
     // Mockups, need implementation
     "apotheken-notdeinst": {
       "title": "APOTHEKEN-NOTDIENST",
-      "titleImage": "/preventicum/img/icon-6.png",
+      "titleImage": "img/icon-4.png",
       "components": [
         {
-          "renderType": "ItemList",
+          "renderType": "Search",
           "model": {
-            "style": "OneRowItem",
-            "items": [
-              {
-                "Link": "",
-                "Title": "Rezeptbestellung",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "",
-                "Title": "Terminanfrage",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "",
-                "Title": "Videoterminanfrage",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "",
-                "Title": "Bitte um Rückruf",
-                "Icon": "fas fa-play"
-              }
-            ]
+            "Title": "Suche",
+            "FirstIcon": "fas fa-map-marker-alt",
+            "SecondIcon": "fas fa-play"
           }
         }
       ]
     },
     "notfalle-arzt-notdienst": {
       "title": "ARZT-NOTDIENST",
-      "titleImage": "/preventicum/img/icon-4.png",
+      "titleImage": "img/icon-4.png",
       "components": [
         {
           "renderType": "Article",
           "model": {
-            "content": "<a class='emergency-contact emergency-contact-red' href='tel:+49 228-19240'><span>BUNDESWEITE HOTLINE 116117</span><img src='/preventicum/img/img-23.png'/></a>  <br/> <a class='emergency-contact emergency-contact-red' href='tel:+49 228-19240'><span>GIFTNOTRUF 030/1 92 40</span><img src='/preventicum/img/img-23.png'/></a>"
+            "description": "<br/>"
+          }
+        },
+        {
+          "renderType": "AnchorLite",
+          "model": {
+            "class": "emergency-contact emergency-contact-red",
+            "href": "tel:+49 228-19240",
+            "text": "BUNDESWEITE: HOTLINE 116117",
+            "imagesource": "img/img-23.png"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<br/>"
+          }
+        },
+        {
+          "renderType": "AnchorLite",
+          "model": {
+            "class": "emergency-contact emergency-contact-red",
+            "href": "tel:+49 030-19240",
+            "text": "GIFTNOTRUF 030/1 92 40",
+            "imagesource": "img/img-23.png"
           }
         }
       ]
     },
     "notfalle-von-a-bis-z": {
       "title": "NOTFÄLLE VON A BIS Z ",
-      "titleImage": "/preventicum/img/icon-6.png",
+      "titleImage": "img/icon-4.png",
       "components": [
         {
           "renderType": "ItemList",
@@ -242,7 +246,7 @@
     },
     "alkoholvergiftung": {
       "title": "ALKOHOLVERGIFTUNG",
-      "titleImage": "/preventicum/img/icon-6.png",
+      "titleImage": "img/icon-6.png",
       "components": [
         {
           "renderType": "Article",
@@ -254,7 +258,7 @@
     },
     "notfalle-5-w-fragen": {
       "title": "5-W-FRAGEN",
-      "titleImage": "/preventicum/img/icon-4.png",
+      "titleImage": "img/icon-4.png",
       "components": [
         {
           "renderType": "Article",

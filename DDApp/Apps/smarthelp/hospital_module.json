@@ -118,7 +118,7 @@
   "pages": {
     "PageHospital": {
       "title": "Preventicum Essen",
-      "titleImage": "/preventicum/img/icon-1.png",
+      "titleImage": "img/icon-1.png",
       "components": [
         {
           "renderType": "Article",
@@ -206,7 +206,7 @@
     },
     "PageDepartment": {
       "title": "Unsere Fachärzte",
-      "titleImage": "/preventicum/img/icon-1.png",
+      "titleImage": "img/icon-1.png",
       "components": [
         {
           "renderType": "Article",
@@ -290,7 +290,7 @@
     },
     "PageDoctor": {
       "title": "PREVENTICUM ESSEN",
-      "titleImage": "/preventicum/img/icon-1.png",
+      "titleImage": "img/icon-1.png",
       "components": [
         {
           "renderType": "Article",
