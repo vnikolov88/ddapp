@@ -55,13 +55,11 @@ namespace DDApp.AppStructure.Providers
 
                 app = JsonConvert.DeserializeObject<DataDrivenApp>(appJson, _jsonSettings);
                 #region Load app modules
-                var appModules = await _appStorage.GetAppModulesAsync(appCode).ConfigureAwait(false);
-
-                foreach(var module in appModules)
+                foreach(var moduleName in app.Modules)
                 {
+                    var module = await _appStorage.GetAppModuleAsync(moduleName).ConfigureAwait(false);
                     app.LoadAppModule( JsonConvert.DeserializeObject<DataDrivenApp>(module, _jsonSettings) );
                 }
-
                 #endregion Load app modules
                 _memoryCache.Set(appCode, app, cacheEntryOptions);
                 return app;

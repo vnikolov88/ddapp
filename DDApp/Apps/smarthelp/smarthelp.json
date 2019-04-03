@@ -10,6 +10,12 @@
     "NOTDIENSTE, NOTFÄLLE": "/smarthelp/notdienste-notfalle",
     "SMART HELP - SUCHE": "/smarthelp/smarthelp-suche"
   },
+  "modules": [
+    "hospital",
+    "emergencies",
+    "emergencies_baby",
+    "emergency_services"
+  ],
   "pages": {
     "Page1": {
       "components": [

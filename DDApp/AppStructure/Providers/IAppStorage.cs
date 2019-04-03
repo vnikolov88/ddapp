@@ -8,8 +8,9 @@ namespace DDApp.AppStructure.Providers
     {
         IChangeToken GetAppChangeToken(string appCode);
         IEnumerable<string> GetAllAppCodes();
+        IEnumerable<string> GetAllAppModuleNames();
         Task<string> GetAppAsync(string appCode);
         Task SetAppAsync(string appCode, string appContent);
-        Task<IList<string>> GetAppModulesAsync(string appCode);
+        Task<string> GetAppModuleAsync(string moduleName);
     }
 }

@@ -25,6 +25,11 @@ namespace DDApp.AppStructure.Providers
             throw new NotImplementedException();
         }
 
+        public IEnumerable<string> GetAllAppModuleNames()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<string> GetAppAsync(string appCode)
         {
             var appKey = $"DDApp:{appCode}";
@@ -37,7 +42,7 @@ namespace DDApp.AppStructure.Providers
             await _cache.StringSetAsync(appKey, appContent);
         }
 
-        public async Task<IList<string>> GetAppModulesAsync(string appCode)
+        public async Task<string> GetAppModuleAsync(string moduleName)
         {
             throw new NotImplementedException();
         }
