@@ -1,7 +1,7 @@
 {
   "logo": "/ddz/img/DDZ_wortmarke.jpg",
   "quickCallNumber": "+4921133820",
-  "quickCallNumberIcon":  "fas fa-phone",
+  "quickCallNumberIcon": "fas fa-phone",
   "navigation": {
     "DEUTSCHES\nDIABETES-ZENTRUM": "PageHospital?ik=YWNlNzExNzdhM2MwZTEzMA==",
     "NEWS": "PageNews",
@@ -14,6 +14,11 @@
     "Datenschutzerklärung": "/ondevice/https://ddz.de/de/haftungsausschluss",
     "Haftungsausschluss": "/ondevice/https://ddz.de/de/datenschutzerklaerung"
   },
+  "modules": [
+    "hospital",
+    "rss",
+    "youtube"
+  ],
   "pages": {
     "Page1": {
       "components": [

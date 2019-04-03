@@ -9,6 +9,11 @@
     "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE": "herzinfarkt-schlaganfall-aneurysma-thrombose",
     "NOTDIENSTE, NOTFÄLLE": "notdienste-notfalle"
   },
+  "modules": [
+    "hospital",
+    "emergencies",
+    "emergency_services"
+  ],
   "pages": {
     "Page1": {
       "components": [

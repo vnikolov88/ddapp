@@ -9,7 +9,8 @@ namespace DDApp.AppStructure
     [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class DataDrivenApp : WithGUID, IDataDrivenAppModule
     {
-        public static readonly DataDrivenApp Empty = new DataDrivenApp{
+        public static readonly DataDrivenApp Empty = new DataDrivenApp {
+            Modules = new List<string>(),
             DataTypes = new Dictionary<string, DataDrivenAppDataType>(),
             Pages = new Dictionary<string, DataDrivenAppPage>(),
             Logo = string.Empty
@@ -19,12 +20,14 @@ namespace DDApp.AppStructure
         public string QuickCallNumber { get; set; }
         public string QuickCallNumberIcon { get; set; }
         public string QuickCallNumberText { get; set; }
+        public IList<string> Modules { get; set; }
         public IDictionary<string, DataDrivenAppDataType> DataTypes { get; set; }
         public IDictionary<string, string> Navigation { get; set; }
         public IDictionary<string, DataDrivenAppPage> Pages { get; set; }
 
         public DataDrivenApp()
         {
+            Modules = new List<string>();
             DataTypes = new Dictionary<string, DataDrivenAppDataType>();
             Navigation = new Dictionary<string, string>();
             Pages = new Dictionary<string, DataDrivenAppPage>();
