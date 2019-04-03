@@ -1,0 +1,272 @@
+{
+  "dataTypes": {
+    "PharmacyAddressViewModel": {
+      "properties": {
+        "Street": "System.String",
+        "ZipCode": "System.String",
+        "Place": "System.String",
+        "PoBoxNo": "System.String",
+        "PoBoxZipCode": "System.String",
+        "State": "System.String",
+        "NielsenArea": "System.String",
+        "County": "System.String",
+        "KvArea": "System.String",
+        "OccupationName": "System.String",
+        "Latitude": "System.Nullable<System.Double>",
+        "Longitude": "System.Nullable<System.Double>"
+      }
+    },
+    "Pharmacy": {
+      "properties": {
+        "Id": "System.String",
+        "Name": "System.String",
+        "Department": "System.String",
+        "Salutation": "System.String",
+        "Appellation": "System.String",
+        "Title": "System.String",
+        "EmailTitle": "System.String",
+        "FirstName": "System.String",
+        "LastName": "System.String",
+        "Phone": "System.String",
+        "DistanceFromLocation": "System.String",
+        "Address": "PharmacyAddressViewModel",
+        //"TLHOW": "PharmacyAddressViewModel"
+        "MakeKey": "System.Int32"
+      }
+    },
+    "PharmacyResults": {
+      "properties": {
+        "TotalItems": "System.Int32",
+        "TotalPages": "System.Int32",
+        "CurrentPage": "System.Int32",
+        "ItemsPerPage": "System.Int32",
+        "Items": "Pharmacy[]"
+      }
+    }
+  },
+  "pages": {
+    // Main page
+    "notdienste-notfalle": {
+      "title": "NOTDIENSTE, NOTFÄLLE",
+      "titleImage": "img/icon-6.png",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "pharmacy-search",
+                "Title": "Apotheken-Notdienst",
+                "Icon": "fas fa-play",
+                "Description": "Ganz Deutschland"
+              },
+              {
+                "Link": "notfalle-arzt-notdienst",
+                "Title": "Arzt-Notdienst",
+                "Icon": "fas fa-play",
+                "Description": "Die wichtigsten Nummern"
+              },
+              {
+                "Link": "notfalle-von-a-bis-z",
+                "Title": "Notfälle von A bis Z",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "notfalle-5-w-fragen",
+                "Title": "5-W-FRAGEN",
+                "Icon": "fas fa-play",
+                "Description": "WO, WAS, WIE, WELCHE, WARTEN"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    // Pharmacy search
+    "pharmacy-search": {
+      "title": "DIABETES-WEGWEISER",
+      "titleIcon": "fas fa-map-marker-alt",
+      "components": [
+        {
+          "renderType": "Search",
+          "model": {
+            "Action": "pharmacy-search-results",
+            "Title": "Suche",
+            "FirstIcon": "fas fa-map-marker-alt",
+            "SecondIcon": "fas fa-play"
+          }
+        }
+      ]
+    },
+    "pharmacy-search-results": {
+      "title": "DIABETES-WEGWEISER",
+      "titleIcon": "fas fa-map-marker-alt",
+      "components": [
+        {
+          "renderType": "ResultList",
+          "provider": {
+            "type": "PharmacyResults",
+            "url": "http://doctor-help.com:8668/api/v1/pharmacy/list?distance=100&address={{base64:search}}&page=1&pageSize=50",
+            "mapper": [
+              {
+                "sourceType": "PharmacyResults",
+                "destinationType": "ResultList",
+                "mapping": {
+                  "d => d.Style": "s => ResultItemStyle.ThreeRowsResult",
+                  "d => d.Items": "s => s.Items"
+                }
+              },
+              {
+                "sourceType": "Pharmacy",
+                "destinationType": "ResultItem",
+                "mapping": {
+                  "d => d.ItemName": "s => s.Name",
+                  "d => d.AdditionalInfo": "s => s.DistanceFromLocation",
+                  "d => d.Description": "s => \"Addresse:\"",
+                  "d => d.Location": "s => $\"{s.Address.Street}{s.Address.Place}\"",
+                  "d => d.ContactInfo": "s => s.Phone",
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fal fa-info-circle\" }"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    // Mockups, need implementation
+    "apotheken-notdeinst": {
+      "title": "APOTHEKEN-NOTDIENST",
+      "titleImage": "img/icon-4.png",
+      "components": [
+        {
+          "renderType": "Search",
+          "model": {
+            "Title": "Suche",
+            "FirstIcon": "fas fa-map-marker-alt",
+            "SecondIcon": "fas fa-play"
+          }
+        }
+      ]
+    },
+    "notfalle-arzt-notdienst": {
+      "title": "ARZT-NOTDIENST",
+      "titleImage": "img/icon-4.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<br/>"
+          }
+        },
+        {
+          "renderType": "AnchorLite",
+          "model": {
+            "class": "emergency-contact emergency-contact-red",
+            "href": "tel:+49 228-19240",
+            "text": "BUNDESWEITE: HOTLINE 116117",
+            "imagesource": "img/img-23.png"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<br/>"
+          }
+        },
+        {
+          "renderType": "AnchorLite",
+          "model": {
+            "class": "emergency-contact emergency-contact-red",
+            "href": "tel:+49 030-19240",
+            "text": "GIFTNOTRUF 030/1 92 40",
+            "imagesource": "img/img-23.png"
+          }
+        }
+      ]
+    },
+    "notfalle-von-a-bis-z": {
+      "title": "NOTFÄLLE VON A BIS Z ",
+      "titleImage": "img/icon-4.png",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "alkoholvergiftung",
+                "Title": "Alkoholvergiftung",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "allergischer-shock-allergischer-shock",
+                "Title": "Allergischer Schock",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "",
+                "Title": "Arzeneimittelvergiftung",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "",
+                "Title": "Augenverletzung",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "",
+                "Title": "Beerenvergiftung",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "",
+                "Title": "Bissverletzung",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "",
+                "Title": "Blasen an den Füßen",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "",
+                "Title": "Blutende Wunden",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "",
+                "Title": "...",
+                "Icon": "fas fa-play"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "alkoholvergiftung": {
+      "title": "ALKOHOLVERGIFTUNG",
+      "titleImage": "img/icon-6.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Die <b>Alkoholvergiftung</b> (Alkoholintoxikation) ist die häufigste Vergiftung. Die Beschwerden hängen von der <b>Blutalkoholkonzentration</b> (BAK) ab.<br/> ...<br/> ..."
+          }
+        }
+      ]
+    },
+    "notfalle-5-w-fragen": {
+      "title": "5-W-FRAGEN",
+      "titleImage": "img/icon-4.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "description": " "
+          }
+        }
+      ]
+    }
+  }
+}

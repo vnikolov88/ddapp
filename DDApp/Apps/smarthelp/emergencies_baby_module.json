@@ -1,0 +1,1335 @@
+{
+  "pages": {
+    // Main page
+    "notfallversorgung": {
+      "title": "Baby und Kinder – Notfälle",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "fremdkorper",
+                "Title": "Verschlucken, Fremdkörper, (Ersticken)",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "wiederbelebung-baby",
+                "Title": "Wiederbelebung bei Babies ( Reanimation)",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "wiederbelebung-kind",
+                "Title": "Wiederbelebung bei Kindern (Reanimation)",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "kinder-notfallbox",
+                "Title": "Kindernotfall-Box",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "vergiftung-intoxikation",
+                "Title": "Vergifung, Intoxikation",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "ertrinkungsunfall-liebe-eltern",
+                "Title": "Ertrinkungsunfall",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "zeckenentfernung",
+                "Title": "ZECKENSCHUTZ – ENTENFERNUNG",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "plotzlicher-kindstod",
+                "Title": "Plötzlicher Kindstod/SIDS",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "zahnverletzung",
+                "Title": "Zahnverletzung",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "pseudokrupp",
+                "Title": "Pseudokrupp",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "fieber",
+                "Title": "Fieber",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "stabile-seitenlage",
+                "Title": "Stabile Seitenlage",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "verbrennung",
+                "Title": "Verbrennung",
+                "Icon": "fas fa-play"
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
+        }
+      ]
+    },
+    "fremdkorper": {
+      "title": "VERSCHLUCKEN, FREMDKÖRPER, (ERSTICKEN)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "erste-hilfe-fremdkorper",
+                "Title": "Erste Hilfe",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "saugling",
+                "Title": "Rückenschläge beim Säugling",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "kompressionen-beim-baby",
+                "Title": "Thoraxkompressionen beim Baby und Kind",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "handgriff-beim-kind",
+                "Title": "Heimlich-Handgriff beim Kind über 1 Jahr",
+                "Icon": "fas fa-play"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "erste-hilfe-fremdkorper": {
+      "title": "VERSCHLUCKEN, FREMDKÖRPER, (ERSTICKEN)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Erste Hilfe",
+            "description": "Kleinkinder nehmen häufig etwas in den Mund und verschlucken es manchmal. Dies können Nahrungsmittel sein, oder auch Kunststoffteile (z.B. Lego). Meistens werden kleinere Gegenstände auf dem natürlichen Weg wieder ausgeschieden. Ausnahmen gibt es (z.B. Kleinstbatterien/Magnete).<br /> <b><i>Im Notfall rufen Sie an bei der Informationszentrale gegen Vergiftungen.</i></b>"
+          }
+        },
+        {
+          "renderType": "AnchorLite",
+          "model": {
+            "class": "emergency-contact",
+            "href": "/ondevice/tel:+49228-19240",
+            "text": "+49 228-19240",
+            "imageSource": "/smarthelp/img/icon-6.png"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<b><i>Wenn das Kind Atemnot hat, sollten Sie sofort handeln!</i></b><br /><br /> Für das weitere Vorgehen ist es wichtig abzuschätzen wie schwerwiegend die Verlegung der Atemwege ist. Ein spontaner Hustenstoß ist wahrscheinlich effektiver und sicherer als jedes durch einen Helfer ausgeführte Manöver. Halten Sie das Kind bei vornüber gebeugten Oberkörper und ermuntern es zu weiterem Husten. <br /> Bleibt der Husten aus oder er ist ineffektiv, sind die Atemwege wahrscheinlich komplett verlegt. Handeln Sie rasch und beherzt! Rufen Sie um Hilfe und beurteilen Sie den Schweregrad:"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/smarthelp/img/img-20.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "Content": "<span class='red-bullet'><b>*Ineffektives Husten:</b> keine Stimme, leiser oder stiller Husten, Zyanose (bläuliche Verfärbung der Haut), zunehmender Bewußtseinsverlust</span>"
+          }
+        }
+
+
+      ]
+    },
+    "saugling": {
+      "title": "VERSCHLUCKEN, FREMDKÖRPER, (ERSTICKEN)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Rückenschläge beim Säugling"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/smarthelp/img/img-11.png"
+            ]
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "Bauchlage, Kopf nach unten, damit die Entfernung des Fremdkörpers durch die Schwerkraft unterstützt wird",
+              "Kopf des Säuglings mit der Hand am Kieferwinkel stützen",
+              "Nicht auf den Hals drücken</li> <li>Verabreichen Sie mit dem Handballen bis zu 5 kräftige Schläge auf die Mitte des Rückens zwischen die Schulterblätter",
+              "Ziel ist, die Verlegung mit jedem einzelnen Schlag zu beseitigen, und nicht, alle 5 Schläge zu verabreichen",
+              "Prinzipiell gleiche Vorgehensweise bei Kindern über einem Jahr. Kann das Kind aufgrund seiner Größe nicht mehr auf dem Schoß des Helfers kopftief gelagert werden, bringen Sie es in eine vornüber gebeugte Position und verabreichen so die Rückenschläge"
+            ]
+          }
+        }
+      ]
+    },
+    "kompressionen-beim-baby": {
+      "title": "VERSCHLUCKEN, FREMDKÖRPER, (ERSTICKEN)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Thoraxkompressionen beim Baby und Kind"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/smarthelp/img/img-12.png"
+            ]
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "Führen die Rückenschläge zu keiner Besserung, führen Sie bei Säuglingen Thoraxkompressionen durch. Drehen Sie den Säugling in Rückenlage mit dem Kopf nach unten. Legen Sie dazu Ihren freien Arm auf den Rücken des Kindes und umfassen mit der Hand den Hinterkopf des Kindes",
+              "Der Druckpunkt zur Kompression ist die Mitte des Brustbeines",
+              "Verabreichen Sie 5 Kompressionen wie bei der Herzdruckmassage. Drücken Sie etwas kräftiger und etwas langsamer. Durch den entstehenden Druck wird versucht den Fremdkörper zu lösen",
+              "Bei Kindern unter einem Jahr darf das Heimlich-Manöver nicht (!) angewendet werden. Es besteht die Gefahr der Leberverletzung!",
+              "Nach der Anwendung von Rückenschlägen und/oder Thoraxkompression sollte körperliche Untersuchung durch einen Kinderarzt erfolgen"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
+        }
+      ]
+    },
+    "handgriff-beim-kind": {
+      "title": "VERSCHLUCKEN, FREMDKÖRPER, (ERSTICKEN)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Heimlich-Handgriff beim Kind über 1 Jahr",
+            "description": "Wenn Ihr Kind den verschluckten Gegenstand nicht selbständig aushusten kann, müssen Sie rasch reagieren!<br /> Verabreichen Sie mit dem Handballen bis zu 5 scharfe Schläge zwischen die Schulterblätter. Das Ziel besteht darin, den Fremdkörper mit jedem einzelnen Schlag zu beseitigen und nicht unbedingt alle 5 Schläge zu verabreichen.<br />Wenn es nicht gelingt den Fremdkörper mithilfe der Rückenschläge zu entfernen, können Sie den <b>„Heimlich-Handgriff“</b> anwenden:"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/smarthelp/img/img-13.png"
+            ]
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "content": [
+              "Nur bei Kindern <b>über einem Jahr</b> erfolgt das sogenannte Heimlich-Manöver oder Heimlich-Handgriff",
+              "Stehen oder knien Sie hinter Ihrem Kind",
+              "Beugen Sie Ihr Kind nach vorne (damit der Fremdkörper „frei herausfallen kann“)",
+              "Ballen Sie die Faust und  platzieren Sie die Faust zwischen Bauchnabel und Unterrand des Brustbeines",
+              "Umfassen Sie die Faust mit Ihrer anderen Hand und ziehen Sie kräftig nach innen oben",
+              "Wiederholen Sie diesen Vorgang 5 Mal",
+              "<b><i>Wichtig: Kein Heimlich-Manöver bei Kinder unter einem Jahr!</i></b>",
+              "Nach der Anwendung des Heimlich-Manövers sollte umgehend eine Untersuchung durch einen Kinderarzt erfolgen"
+            ]
+          }
+        }
+      ]
+    },
+    "wiederbelebung-baby": {
+      "title": "Wiederbelebung bei Babies ( Reanimation)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Sprechen und fassen Sie Ihre Kind an. Bei Säuglingen setzten Sie einen leichen Schmerzreiz z.B. durch leichtes Kneifen in die Oberarminnenseite. Achtung: Schütteln Sie niemals Ihr Kind! Dies kann zu gefährlichen Verletzungen führen! Sollte eine Reaktion Ihres Kindes ausbleiben, versuchen Sie durch lautes Rufen Hilfe herbeizuholen. Wenn Sie alleine sind erfolgt die Alarmierung des Notarztes erst nach einer Minute Reanimation/Wiederbelebung."
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "atmung-baby",
+                "Title": "Überprüfung der Atmung",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "beatmung-baby",
+                "Title": "Beatmung",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "herzdruckmassage-baby",
+                "Title": "Herzdruckmassage (Thoraxkompression)",
+                "Icon": "fas fa-play"
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
+        }
+      ]
+    },
+    "atmung-baby": {
+      "title": "Wiederbelebung bei Babies ( Reanimation)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Überprüfung der Atmung"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/smarthelp/img/img-14.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Legen Sie Ihr Kind auf den Rücken, am besten auf den Boden. Stellen Sie sicher, dass sich der Kopf in neutraler Position befindet und das Kinn angehoben ist. Beim Säugling ist der Kopf in Rückenlage in der Regel nach vorn gebeugt, sodass eine leichte Streckung erforderlich sein kann.<br/>Bei so geöffneten Atemwegen halten Sie Ihr Ohr über Mund und Nase des Kindes, wobei der Blick auf Bauch und Brust gerichtet ist, so dass evtl. vorhandene Atembewegungen erkannt werden. Gleichzeitig wird versucht Atemgeräusche zu hören bzw. die Ausatemluft an der Wange zu spüren. Dieser Vorgang sollte nicht länger als 10 Sekunden dauern! Wenn Sie keine Atmung feststellen können oder sich nicht sicher sind – beginnen Sie mit der Beatmung!"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
+        }
+      ]
+    },
+    "beatmung-baby": {
+      "title": "Wiederbelebung bei Babies ( Reanimation)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Beatmung"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/smarthelp/img/img-15.png"
+            ]
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "Content": [
+              "Atmen Sie normal ein. Umschließen Sie mit Ihrem Mund den Mund und die Nase Ihres Kindes. Beobachten Sie bei der Beatmung den Brustkorb Ihres Kindes",
+              "Der Brustkorb muss sich heben! Fangen Sie mit fünf Beatmungen an",
+              "Wenn Sie nach den fünf Beatmungen keine Lebenszeichen (Husten, Abwehr) beobachten, müssen Sie sofort mit der Herzdruckmassage beginnen"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
+        }
+      ]
+    },
+    "herzdruckmassage-baby": {
+      "title": "Wiederbelebung bei Babies ( Reanimation)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Herzdruckmassage (Thoraxkompression)"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/smarthelp/img/img-34.png"
+            ]
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "content": [
+              "Bei Säuglingen/Babys wird diese durch leichten Druck (2-3 cm Tiefe) auf das Brustbein mit <span class='red-bullet'>zwei Fingern</span> gemacht. Drücken Sie 30 Mal mit einer Frequenz von 120/min. Das sind zwei Kompressionen pro Sekunde",
+              "Seien Sie nicht ängstlich und haben Sie keine Angst vor Verletzungen!",
+              "Nach 30 Kompressionen erfolgen zwei Beatmungen. Versuchen Sie bei dem Wechsel zwischen Beatmung und Herzdruckmassage so wenig Zeit wie möglich zu verlieren",
+              "Wenn Sie zu zweit sind, übernimmt einer die Beatmung und einer die Herzdruckmassage"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
+        }
+      ]
+    },
+    "wiederbelebung-kind": {
+      "title": "Wiederbelebung bei Kindern (Reanimation)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Überprüfung der Bewusstseinslage:",
+            "description": "Je nach Alter sprechen oder fassen Sie Ihr Kind an. Achtung: Schütteln Sie niemals Ihr Kind! Es kann zu gefährlichen Verletzungen kommen! Sollte eine Reaktion ausbleiben, versuchen Sie durch lautes Rufen Hilfe herbeizuholen. Wenn Sie alleine sind, erfolgt die Alarmierung des Rettungsdienstes erst nach einer Reanimationsdauer von 1 Minute (s.u.)."
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "atmung-kind",
+                "Title": "Überprüfung der Atmung",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "beatmung-kind",
+                "Title": "Beatmung",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "herzdruckmassage-kind",
+                "Title": "Herzdruckmassage (Thoraxkompression)",
+                "Icon": "fas fa-play"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "atmung-kind": {
+      "title": "Wiederbelebung bei Kindern (Reanimation)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Überprüfung der Atmung"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/smarthelp/img/img-16.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Legen Sie Ihr Kind auf den Rücken, wählen Sie eine harte Unterlage. Den Kopf des Kindes vorsichtig nach hinten strecken (nicht zu weit, da sich ansonsten die Atemwege verengen), das Kinn mit zwei Fingern festhalten.<br/> Bei so geöffneten Atemwegen halten Sie Ihr Ohr über Mund und Nase des Kindes, wobei der Blick auf Bauch und Brust gerichtet ist, so dass evtl. vorhandene Atembewegungen erkannt werden. Gleichzeitig wird versucht Atemgeräusche zu hören bzw. die Ausatemluft an der Wange zu spüren. Dieser Vorgang sollte nicht länger als 10 Sekunden dauern! Wenn Sie keine Atmung feststellen können, beginnen Sie mit der Beatmung!"
+          }
+        }
+      ]
+    },
+    "beatmung-kind": {
+      "title": "Wiederbelebung bei Kindern (Reanimation)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Beatmung",
+            "sources": [
+              "/smarthelp/img/img-17.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Atmen Sie normal ein. Umschließen Sie mit Ihrem Mund den Mund Ihres Kindes. Die Nase des Kindes wird mit Daumen und Zeigefinger der auf der Stirn liegenden Hand verschlossen. Beobachten Sie bei der Beatmung den Brustkorb Ihres Kindes. Der Brustkorb muss sich heben! Fangen Sie mit fünf Beatmungen an. Wenn Sie nach den 5 Beatmungen keine Lebenszeichen (Husten, Abwehr) müssen Sie sofort mit der Herzdruckmassage beginnen."
+          }
+        }
+      ]
+    },
+    "herzdruckmassage-kind": {
+      "title": "Wiederbelebung bei Kindern (Reanimation)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Herzdruckmassage (Thoraxkompression)",
+            "sources": [
+              "/smarthelp/img/img-18.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Bei Säuglingen wird diese durch leichten Druck (2-3 cm Tiefe) auf das Brustbein mit zwei Fingern gemacht.<br /> Beim älteren Kind durch Druck des Handballens auf das untere Brustbein. Drücken Sie 30 Mal mit einer Frequenz von 120/min. Das sind zwei Kompressionen pro Sekunde. Seien Sie nicht ängstlich und haben Sie keine Angst vor Verletzungen! Nach 30 Kompressionen erfolgen zwei Beatmungen. Versuchen Sie bei dem Wechsel zwischen Beatmung und Herzdruckmassage so wenig Zeit wie möglich zu verlieren. Wenn Sie zu zweit sind, übernimmt einer die Beatmung und einer die Herzdruckmassage."
+          }
+        }
+      ]
+    },
+    "kinder-notfallbox": {
+      "title": "KINDER-NOTFALLBOX",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Kinder wollen die Welt entdecken! Kleinere Blessuren und Verletzungen sind im Leben eines Kindes unvermeidbar. Ob zu Hause, unterwegs oder im Urlaub – mit der Kindernotfall-Box sind Sie auf der sicheren Seite!"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Inhalt der Kindernotfall-Box",
+            "sources": [
+              "/smarthelp/img/img-19.png"
+            ]
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "Fieberthermometer",
+              "Zeckenkarte",
+              "Kalt-/Warm-Kompresse",
+              "Sterile Wundpflaster in verschiedenen Größen",
+              "Sterile Wundauflagen/Kompressen",
+              "Wundpflaster zum Zuschneiden",
+              "Elastische Fixierbinde",
+              "Gummibärchen"
+            ]
+          }
+        }
+      ]
+    },
+    "vergiftung-intoxikation": {
+      "title": "EINATMUNG , AUGEN-und HAUTKONTAKT",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "erste-hilfe-intoxikation",
+                "Title": "Erste Hilfe",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "einatmung-intoxikation",
+                "Title": "Erstmaßnahmen bei Einatmung",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "einatmung-intoxikation",
+                "Title": "Erstmaßnahmen bei Augenkontakt",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "einatmung-intoxikation",
+                "Title": "Erstmaßnahmen bei Hautkontakt",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "einatmung-intoxikation",
+                "Title": "Erste Hilfe bei Bewusstlosigkeit",
+                "Icon": "fas fa-play"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "erste-hilfe-intoxikation": {
+      "title": "VERSCHLUCKEN, FREMDKÖRPER, (ERSTICKEN)",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Erste Hilfe",
+            "description": "<b>Kontaktieren Sie immer die Informationszentrale gegen Vergifungen/Gifzentrale Berlin. Hier wird Ihnen rund um die Uhr geholfen! Der Anruf ist für Sie kostenfrei</b><br />"
+          }
+        },
+        {
+          "renderType": "AnchorLite",
+          "model": {
+            "class": "emergency-contact",
+            "href": "/ondevice/tel:+49 228-19240",
+            "text": "+49 228-19240",
+            "imageSource": "/smarthelp/img/icon-6.png"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Lassen Sie das Kind Wasser, Tee oder Saf in kleinen Schlücken und Mengen trinken. Bei Säuren-und Laugenvergifungen sollte dies so schnell wie möglich erfolgen.<br /> Auf <strong>KEINEN</strong> Fall Erbrechen auslösen!"
+          }
+        },
+
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/smarthelp/img/img-1.png"
+            ]
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "content": [
+              "<b><i>Vorsicht</i></b> – Milch ist kein Gegengif, sondern beschleunigt in vielen Fällen die Gifaufnahme durch den Darm",
+              "<b><i>Vorsicht</i></b> – bitte stecken Sie Ihrem Kind nicht den Finger in den Hals! Es besteht die Gefahr daß Erbrochenes in die Lunge gerät",
+              "<b><i>Vorsicht</i></b> - Ebenso sollte kein Salzwasser verabreicht werden um ein Erbrechen auszulösen. Dies hat zum Teil fatale Folgen",
+              "<b><i>Vorsicht</i></b> - medizinische Kohle sollte nur durch ärztliches Personal verabreicht werden"
+            ]
+          }
+        }
+      ]
+    },
+    "einatmung-intoxikation": {
+      "title": "EINATMUNG , AUGEN-und HAUTKONTAKT",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Erstmaßnahmen bei Einatmung",
+            "description": "Für frische Luf sorgen, Vorsicht bei geschlossenen <br/> Räumen, Silos und Gruben.<br/>Betrofene Person warm zudecken, ruhig halten.<br/>"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Erstmaßnahmen bei Augenkontakt",
+            "description": "Besonders bei Verätzungen durch Säuren, Laugen und Kalk: Augen sofort mindestens 10 Minuten unter fließendem Wasser spülen. Augenlider dabei gut offen halten. Wasserfluß direkt auf das Auge richten, um noch vorhandene Säure- bzw. Laugenreste so schnell wie möglich zu verdünnen und auszuspülen."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Erstmaßnahmen bei Hautkontakt",
+            "description": "Benetzte Kleider sofort entfernen. <br/> Betroffene Hautpartien ausgiebig unter fließendem Wasser spülen."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Erstmaßnahmen bei Bewusstlosigkeit",
+            "description": "Bewusstlose in stabile Seitenlage bringen, Kopf nach unten gewendet."
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "Keine Flüssigkeiten einflößen",
+              "Keinen Brechversuch unternehmen",
+              "Unverzüglich den Notarzt rufen!"
+            ]
+          }
+        }
+      ]
+    },
+    "ertrinkungsunfall-liebe-eltern": {
+      "title": "ERTRINKUNGSUNFALL",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Wasser übt eine ungemeine Anziehungskraft auf Kinder aus. Die Gefahren werden leider häufig unterschätzt. Für Kleinkinder können schon Wassertiefen von wenigen Zentimetern zur tödlichen Gefahr werden. Ertrinken ist in Deutschland nach Verkehrsunfällen die zweithäufigste tödliche Unfallursache im Kindesalter. Die meisten Kinder ertrinken nicht während des Badeurlaubes, sondern beim Spielen in der häuslichen Umgebung."
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "content": [
+              "<b><i>Lassen Sie Ihr Kind nicht unbeaufsichtigt in der Badewanne!</i></b>",
+              "<b><i>Lassen Sie Ihre Kinder in der Nähe von Gewässern nie unbeaufsichtigt!</i></b>",
+              "<b><i>Lassen Sie Ihre Kinder in der Nähe von Gewässern nie unbeaufsichtigt!</i></b>",
+              "<b><i>Melden Sie Ihr Kind in einem Schwimmkurs an oder bringen Sie es ihm selber bei!</i></b>",
+              "<b><i>Sichern Sie Teiche, Schwimmbecken und Regentonnen ausreichend ab!</i></b>"
+            ]
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Sollte es zu einem Ertrinkungsunfall kommen:"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "content": [
+              "Bergen Sie das Kind aus dem Wasser",
+              "Legen Sie es mit dem Rücken auf den Boden",
+              "Versuchen Sie nicht Wasser aus der Lunge des Kindes zu bekommen!",
+              "Überprüfen Sie die Atmung und den Bewußtseinszustand Ihres Kindes",
+              "Bei erhaltener Eigenatmung bringen Sie Ihr Kind in die stabile Seitenlage und rufen den Rettungsdienst. <b>Lassen Sie Ihr Kind nicht alleine.</b> Überprüfen Sie fortlaufend den Bewußtseinzustand und die Atmung.",
+              "Können Sie keine normale Atmung bei Ihrem Kind feststellen, beginnen Sie mit 5 initialen Beatmungen.",
+              "Erfolgt keine Reaktion beginnen Sie mit Wiederbelebung/Reanimation: 30 Thoraxkompressionen und 2 Beatmungen im Wechsel (analog zur Wiederbelebung/Reanimation Kind)"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<b><i>Wenn Sie alleine sind, erfolgt die Alarmierung des Rettungsdienstes erst nach einer Reanimationsdauer von einer Minute!</b></i>"
+          }
+        }
+      ]
+    },
+    "zeckenentfernung": {
+      "title": "ZECKENSCHUTZ – ENTENFERNUNG",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Wie kann ich meine Kinder vor Zecken schützen?",
+            "description": "Einen sicheren Schutz vor Zecken gibt es leider nicht. Sie können jedoch einiges tun, um Zeckenbisse bei Ihrem Kind zu vermeiden.<br/> Zecken fallen nicht wie viele Menschen glauben von den Bäumen, sondern sitzen hauptsächlich auf Gräsern, in Büschen und im Unterholz im Wald. Lange Kleidung schützt Ihr Kind! Nach einem Aufenthalt im Wald oder auf einer Wiese sollten Sie Ihr Kind nach Zecken untersuchen. Die häufigsten Stellen an denen sich Zecken festsaugen sind: Arme, Kniekehlen, Hals und Kopf. Da die Infektionswahrscheinlichkeit mit der Länge der Haftzeit der Zecke zunimmt, ist ein tägliches Absuchen der Haut Ihres Kindes empfehlenswert!"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Zeckenentfernung",
+            "description": "Das wichtigste bei der Zeckenentfernung ist ein geeignetes Hilfsmittel. Wir empfehlen eine Zeckenkarte oder eine geeignete Zeckenzange. Achten Sie beim Entfernen der Zecke darauf, diese nicht zu zerdrücken oder zu zerquetschen. Dabei können gefährliche Körperflüssigkeiten der Zecke auf den Menschen übertragen werden. Dies können Sie verhindern, wenn Sie versuchen die Zecke mit einer Zeckenzange/Zeckenkarte möglichst körpernah zu greifen. Die Zecke sollte so langsam wie möglich aus der Haut gezogen werden. Lassen Sie sich ruhig 20-30 Sekunden Zeit und üben einen gleichmäßigen Zug auf die Zecke aus. Ruckartige Bewegungen sollten Sie vermeiden!<br/> Trotz aller Bemühungen können noch Reste der Zecke in der Haut verbleiben. Hierbei handelt es sich meistens um den Stechapparat der Zecke. Dies kommt häufiger vor und ist nicht schlimm. Der Stechapparat wir mit der Zeit selbständig abgestoßen. <br/>"
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "zeckenentfernung-zeckenkarte",
+                "Title": "Zeckenkarte",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "zeckenentfernung-zeckenzange",
+                "Title": "Zeckenzange",
+                "Icon": "fas fa-play"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "zeckenentfernung-zeckenkarte": {
+      "title": "ZECKENSCHUTZ – ENTENFERNUNG",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Zeckenkarte",
+            "sources": [
+              "/smarthelp/img/img-2.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<span class='red-bullet'>1.</span>Die Karte flach auf der Haut an die Zecke heranschieben. Dabei versuchen die Zecke seitlich in den „Schnabel“ der Karte zu führen."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/smarthelp/img/img-3.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<span class='red-bullet'>2.</span>Die Karte ohne Bewegungsunterbrechung weiter führen und dabei nun die Zecke vom Körper entfernen."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [
+              "/smarthelp/img/img-4.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<br/> <p><span class='red-bullet'>3.</span>Die entfernte Zecke entsorgen. Einstichstelle beobachten: <br/> An <b>Borreliose</b> denken. Bei ausweitender Rötung: Arzt aufsuchen!<br /><b>Bewohner eines Risikogebiets oder dorthin Reisende sollten sich gegen FSME impfen lassen!</b><br /> Bei Unsicherheit konsultieren Sie bitte Ihren Arzt. Mehr Infos unter <a href='/ondevice/www.zecken.de'><b>www.zecken.de</b></a> ."
+          }
+        }
+      ]
+    },
+    "zeckenentfernung-zeckenzange": {
+      "title": "ZECKENSCHUTZ – ENTENFERNUNG",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Zeckenzange",
+            "sources": [
+              "/smarthelp/img/img-5.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<span class='red-bullet'>1.</span>Die Zange direkt über der Zecke möglichst senkrecht positionieren."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Zeckenzange",
+            "sources": [
+              "/smarthelp/img/img-6.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<span class='red-bullet'>2.</span>Die Zange hautnah zugreifen lassen. Hinterleibder Zecke nicht zerquetschen. Drehbewegungen helfen die Zecke aus der Haut zu lösen. Die Drehrichtung ist dabei nicht wichtig."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Zeckenzange",
+            "sources": [
+              "/smarthelp/img/img-7.png"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<span class='red-bullet'>3.</span>Die Zecke senkrecht herausziehen. Einstichstelle beobachten:<br/> An <b>Borreliose</b> denken. Bei ausweitender Rötung: Arzt aufsuchen!<br/> <b>Bewohner eines Risikogebiets oder dorthin Reisende sollten sich gegen FSME impfen lassen!</b><br/> Bei Unsicherheit konsultieren Sie bitte Ihren Arzt. Mehr Infos unter <a href='/ondevice/www.zecken.de'><b>www.zecken.de</b></a>."
+          }
+        }
+
+      ]
+    },
+    "plotzlicher-kindstod": {
+      "title": "Plötzlicher Kindstod/SIDS",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Der Plötzliche Säuglingstod (Sudden Infant Death Syndrome; SIDS) ist der plötzliche und unerwartete Tod eines zuvor normal und gesund erscheinenden Säuglings, ohne dass ein eindeutiger medizinischer Grund gefunden wird. Eine eindeutige Erklärung für den plötzlichen Säuglingstod gibt es bisher nicht. Man geht von einer multifaktoriellen Genese aus. In zahlreichen Studien konnten Risikofaktoren für den Plötzlichen Säuglingstod, sowie schützende Maßnahmen ermittelt werden. Bei Beachtung der schützenden Maßnahmen kann das Risiko für einen Plötzlichen Säuglingstod erheblich minimiert werden."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Wann ist das Risiko am größten?",
+            "description": "Die Auswertungen der letzten Jahrzehnte zeigen, dass sich die meisten Todesfälle zwischen dem 2. und 5. Lebensmonat ereignen."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Immer auf dem Rücken und im Babyschlafsack!",
+            "description": "Diese Maßnahme allein vermindert das Risiko des plötzlichen Säuglingstodes um mehr als 50 Prozent!"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Kein Kopfkissen. Keine Decke.",
+            "description": "Kopfkissen, Bettdecken, Nestchen und Stofftiere können die Atemwege Ihres Kindes verlegen und gehören nicht in ein Babybett!"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Im eigenen Babybett. Im Elternschlafzimmer.",
+            "description": "Säuglinge sollten im elterlichen Schlafzimmer, aber im eigenen Bett schlafen. Schlafen Sie nicht mit Ihrem Kind in einem Bett!"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Überwärmung vermeiden.",
+            "description": "Vermeiden Sie eine Überwärmung Ihres Kindes (Schlafzimmer nicht über 18 °C heizen, keine Mütze innerhalb des Hauses, Gitterbett, feste luftdurchlässige Matratze, kein Babyfell). Stellen Sie das Babybett nicht neben die Heizung oder in die pralle Sonne."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Rauchfreie Umgebung.",
+            "description": "Rauchen Sie nicht im Haus. Sorgen Sie für eine rauchfreie Umgebung."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Lassen Sie Ihr Kind impfen!",
+            "description": "Kinder die entsprechend der Empfehlungen geimpft sind weisen ein deutlich niedrigeres Risiko für den Plötzlichen Säuglingstod auf."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Weitere Gefahrenquellen ausschließen:",
+            "description": "Hängen Sie keine Schnüre oder Bänder in Reichweite Ihres Kindes auf. Verzichten Sie auf Halskettchen, Ohrringe u. ä."
+          }
+        }
+      ]
+    },
+    "zahnverletzung": {
+      "title": "Zahnverletzung",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Liebe Eltern, Zahnunfälle nehmen in ihrer Häufigkeit weltweit zu. Bereits jedes dritte bis  vierte Kind hat bis zu seinem 16. Lebensjahr einen Zahnunfall erlitten. Meist sind durch Unfall die oberen Schneidezähne betroffen. Durch richtiges Verhalten nach Zahnunfällen können die Folgen beträchtlich gemildert werden."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Ein Zahn ist ausgeschlagen (Zahnavulsion, Avulsion)",
+            "description": "Dies ist die schlimmste Zahnverletzung, für den Zahn besteht höchste Gefahr. Grundsätzlich können ausgeschlagene Zähne zurückgepflanzt werden und wieder normal einwachsen. Allerdings darf ein Zahn nicht mehr als 20-30 Minuten trocken sein! Ausgeschlagene Zähne müssen sofort gesucht und in ein zellverträgliches Medium <b><i>(Zahnrettungsbox)</i></b> eingegeben werden! <b><i>Zahnarzt aufsuchen!</i></b> Der Zahnarzt wird einen ausgeschlagenen Zahn wieder zurücksetzen und schienen."
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Grundsätze"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "content": [
+              "Die Wurzeloberfläche darf nicht austrocknen.",
+              "Der Zahn muss sofort feucht gehalten werden.",
+              "Die Wurzeloberfläche darf nicht berührt werden.",
+              "Die Wurzeloberfläche darf nicht desinfiziert werden."
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Zahn suchen!",
+            "description": "Zahn sofort in ein spezielles Nährmedium eingeben (<b><i>Zahnrettungsboxen</i></b>: z.B. SOS Zahnbox oder Dentosafe)."
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Wenn keine Zahnrettungsbox vorhanden ist:"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "content": [
+              "<b><i>H-Milch:</b></i> für begrenzte Zeit kann ein ausgeschlagener Zahn in Sterilmilch gelagert werden diese sollte fettarm und gekühlt sein (Zwischenlösung für max. 1-2 Stunden)",
+              "<b><i>Kunststoff-Folie:</b></i> Zahn zum Feuchthalten in Kunststoff-Folie (Gefrierbeutel usw.) einwickeln (Zwischenlösung für max. 30-60 Min.) Kochsalz-Lösung (NaCl 0,9%): vom Apotheker/Arzt – nicht selbst mischen (Zwischenlösung für max. 30 Min.)",
+              "<b><i>völlig ungeeignet</b></i>: normales Wasser, trockene Aufbewahrung, Speichel"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<b><i>Vorsicht: Beim Lagern unter der Zunge / in der Wangentasche besteht die Gefahr, dass der Zahn verschluckt oder gar eingeatmet wird. Dies kann lebensbedrohlich sein.</b></i>"
+          }
+        }
+      ]
+    },
+    "pseudokrupp": {
+      "title": "Pseudokrupp",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Was ist Pseudokrupp?",
+            "description": "Unter Pseudokrupp versteht man eine unspezifische Entzündung der oberen Atemwege im Bereich des Kehlkopfes, unterhalb der Stimmritze."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Ursache",
+            "description": "Pseudokrupp tritt meist in Folge viraler Infektionen auf. Die häufigsten Erreger sind Erkältungsviren."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Folge",
+            "description": "Durch einen Virusinfekt kommt es zur Schwellung der Schleimhaut im Bereich des Kehlkopfes. Durch die Schwellung der Schleimhaut kommt es zu einer Verengung der Atemwege."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Symptome",
+            "description": "Beim Pseudokrupp tritt ein charakteristischer bellender Husten auf. Das Einatmen Ihres Kindes hört sich krächzend an (der Mediziner nennt dieses Einatemgeräusch „Stridor“)."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Wer ist betroffen?",
+            "description": "Meist sind Kinder zwischen 6 Monaten und 3 Jahren betroffen. Pseudokrupp tritt meistens in den Wintermonaten auf, da es zu dieser Jahreszeit auch am häufigsten zu Infekten der Atemwege kommt. Interessanterweise tritt der Pseudokrupp vor allem in den Abend und Nachstunden auf. Dies liegt u.a. daran, daß abends und nachts der körpereigene Kortisolspiegel am niedrigsten ist."
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Was ist zu tun?"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "content": [
+              "Bleiben Sie ruhig! Beruhigen Sie Ihr Kind! Durch Aufregung verschlimmert sich die Symptomatik!",
+              "Kalte Luft fördert ein Abschwellen der Schleimhäute.",
+              "Öffnen Sie die Fenster oder gehen Sie mit Ihrem Kind auf den Balkon."
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Wann ins Krankenhaus?",
+            "description": "Eine Vorstellung beim Kinderarzt oder im Krankenhaus ist immer dann notwendig, wenn die Symptome durch die ergriffenen Maßnahmen (Beruhigung; kühle Luft) eher zunehmen."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Wichtig",
+            "description": "<b><i>Im Zweifel immer den Rettungsdienst rufen! (Tel.: 112)</b></i>"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Wenn Sie selbst mit Ihrem Kind ins Krankenhaus oder zum Kinderarzt fahren, öffnen sie während der Autofahrt die Fenster, so kann die kühle Fahrluft weiter zur Symptomlinderung führen. Fahren Sie nicht alleine mit Ihrem Kind im Auto – wenn Sie fahren, können Sie sich nicht um Ihr Kind kümmern!"
+          }
+        }
+      ]
+    },
+    "fieber": {
+      "title": "Fieber",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Von Fieber spricht man wenn die Körpertemperatur über 38,5° C ansteigt. Die Erhöhung der Körpertemperatur ist eine Abwehrreaktion, die dazu beiträgt eine Infektion zu bekämpfen. Somit ist Fieber eine wichtige Abwehrfunktion, die Ihr Kind schützt. Man spricht auch von „körpereigenem Antibiotikum“. Sollte Ihr Kind Fieber haben, sollten Sie darauf achten, dass es ausreichend trinkt. Wenn Ihr Kind durch das Fieber sehr beeinträchtigt ist, können Sie das Fieber mit Ibuprofen oder Paracetamol senken (beachten Sie, daß diese  Medikamente nach Körpergewicht dosiert werden – lesen Sie die Packungsbeilage!)."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Sie sollten nicht allein die gemessene Körpertemperatur Ihres Kindes behandeln – nicht jede Temperaturerhöhung ist behandlungsbedürftig!"
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Wann zum Kinderarzt?"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "content": [
+              "Körpertemperatur > 39°C welches länger als 24 Stunden andauert",
+              "Körpertemperatur 40°C oder mehr",
+              "Schlechter Allgemeinzustand, Apathie, Wesensveränderung Trinkschwäche",
+              "<b><i>Nackensteifgkeit (dies kann Ausdruck einer Hirnhautentzündung sein – stellen Sie Ihr Kind umgehend einem Kinderarzt vor!)</i></b>",
+              "<b><i>Säuglinge mit Fieber sollten immer umgehend einem Kinderarzt vorgestellt werden</i></b>"
+            ]
+          }
+        }
+      ]
+    },
+    "stabile-seitenlage": {
+      "title": "Stabile Seitenlage",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Was bezweckt die stabile Seitenlage?",
+            "description": "Die stabile Seitenlage soll sicherstellen, dass die Atemwege des Kindes offengehalten werden. Der Mund des Kindes ist bei der stabilen Seitenlage der tiefste Punkt des Körpers und der Kopf ist leicht nach hinten überstreckt. Dadurch soll vermieden werden, dass Blut oder Erbrochenes in die Atemwege gelangt. Gelangen Blut oder Erbrochenes in die Atemwege kann es zum Ersticken kommen."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Wer sollte in die stabile Seitenlage gelegt werden?",
+            "description": "Kinder ohne Bewusstsein, die aber noch selbstständig atmen."
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Wie bringe ich mein Kind in die stabile Seitenlage?"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "content": [
+              "Knien Sie seitlich neben Ihrem Kind und legen Sie den Ihnen zugewandten Arm rechtwinkelig zum Körper, die Handinnenfläche des Armes zeigt nach oben.",
+              "Legen Sie den gegenüber liegenden Arm über den Brustkorb, und halten Sie den Handrücken gegen die Ihnen zugewandte Wange Ihres Kindes.",
+              "Mit Ihrer anderen Hand greifen Sie das gegenüber liegende Bein knapp über dem Knie, und ziehen Sie es hoch, wobei der Fuß auf dem Boden bleibt.",
+              "Während Sie die Hand Ihres Kindes weiterhin gegen die Wange gedrückt halten, ziehen Sie am entfernt liegenden Bein, um Ihr Kind zu Ihnen heran auf die Seite zu rollen.",
+              "Das obere Bein Ihres Kindes sollte in Knie- und Hüftgelenk rechtwinklig gebeugt sein.",
+              "Jetzt wir der Kopf Ihres Kindes leicht nach hinten überstreckt, um die Atemwege offen zu halten. Das Gesicht Ihres Kindes sollte noch unten gerichtet sein, um den Abfluss von Blut und Erbrochenem zu ermöglichen."
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "<b><i>Wichtig: Bleiben Sie bei Ihrem Kind und überprüfen regelmäßig die Atmung!</i></b>"
+          }
+        }
+      ]
+    },
+    "verbrennung": {
+      "title": "VERBRENNUNG",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "verbrennung-handeln-sie-sofort",
+                "Title": "Handeln Sie sofort!",
+                "Icon": "fas fa-play"
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Vorsichtsmaßnahmen"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "content": [
+              "heiße Getränke und/oder Wasserkocher immer außer Reichweite von Kindern. Nehmen Sie Ihr Baby nicht auf den Schoß, wenn Sie etwas „Heißes“ trinken",
+              "Verwenden Sie keine herunterhängenden Tischdecken!",
+              "Bügeleisen und Wasserkocher außer Reichweite der Babies/Kinder (Kabel nicht runterhängen lassen)",
+              "Um den Herd sollten Sie ein Schutzgitter aufbauen",
+              "Pfannenstiele nach hinten drehen. Kochen Sie auf den hinteren Herdplatten",
+              "Testen Sie selber das Essen des Babies vorab zwecks Temperatur",
+              "Vor dem Baden Ihres Kinds – prüfen Sie die Wassertemperatur",
+              "Besonders beim Grillen sollten Sie Vorsicht halten. Lassen Sie ihr Kind auf keinen Fall in der Nähe des Grills spielen",
+              "Lassen Sie ihr Kind nie allein mit offenem Feuer. Frühzeitig den richtigen Umgang mit Feuer zeigen",
+              "Besuchen Sie einen Erste-Hilfe-Kurs oder frischen Sie Ihre Kenntnisse regelmäßig auf"
+            ]
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Worauf müssen Sie achten"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "content": [
+              "Bügeleisen",
+              "Heise Getränke",
+              "Herd/Ofen: erwärmte Platten/Pfannen/Töpfe",
+              "Grill",
+              "Wasserkocher",
+              "Mikrowelle",
+              "Warmwasserflaschen",
+              "Feuerzeug",
+              "Heiße Badewanne (nicht über 36 Grad)"
+            ]
+          }
+
+        }
+      ]
+    },
+    "verbrennung-handeln-sie-sofort": {
+      "title": "VERBRENNUNG",
+      "titleImage": "/smarthelp/img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Handeln Sie sofort!",
+            "description": "Handelt es sich um eine sehr kleine Verletzung, können Sie diese selbst versorgen. Ansonsten:"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Schnelles Handeln ist lebensrettend.",
+            "description": "Fahren Sie nicht selbst ins Krankenhaus, lassen Sie sich vom Rettungswagen bringen. Diese wissen welche Klinik auf Verbrennungen spezialisiert ist. Falls Ihr Kind Rauch eingeatmet haben könnte, teilen Sie es mit!"
+          }
+        },
+        {
+          "renderType": "AnchorLite",
+          "model": {
+            "class": "emergency-contact emergency-contact-red",
+            "href": "/ondevice/tel:+49 228-19240",
+            "text": "112 NOTRUF",
+            "imageSource": "/smarthelp/img/img-23.png"
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Brand"
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Bleiben Sie ruhig."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Handelt es sich um eine sehr kleine Brandwunde können Sie die Stelle kühlen. Lassen Sie kaltes Wasser darüberlaufen (mehrere Minuten). Verwenden Sie kein Eiswasser. Hören Sie auf, sobald ihr Kind weniger Schmerzen hat und/oder das Kühlen unangenehm wird."
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Wenn die Verbrennung größer ist, Notruf wählen!"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Zusammenfassung:"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "Den Patienten mit Decken, durch Wälzen am Boden, oder Wasser löschen",
+              "Feuerlöscher nie auf den Kopf richten",
+              "Bei Brandwunden nur Wasser, keine Hausmittel anwenden (Mehl, ...)",
+              "Kühlen mit Wasser und feuchten Tüchern (bis zu eine Stunde nach dem Unfall)",
+              "Danach Brandwunden steril abdecken"
+            ]
+          }
+        },
+        {
+          "renderType": "TitleLite",
+          "model": {
+            "text": "Verbrühung"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "Bei Verbrühungen müssen Sie die Kleidung rasch, aber vorsichtig entfernen (eventuell mit der Schere aufschneiden statt über den Kopf ziehen).<br/>Eingebrannte Kleider nicht entfernen. Halten Sie Ihr Baby/Kind warm. Vor allem Babys und kleine Kinder kühlen schnell aus. Hüllen Sie es in eine leichte Decke.<br/>Zusammenfassung:"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "Kleidung rasch, aber vorsichtig entfernen.",
+              "Brandblasen nicht öffnen! Infektionsgefahr!"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
