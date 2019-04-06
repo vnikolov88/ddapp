@@ -45,14 +45,19 @@
 
 
 .SingleRowResult-ResultItem {
+    background: $ItemLightColor;
+    
+
     section {
-        background: $ItemLightColor;
         color: $TextColor;
+    }
+
+    i {
+        color: $iconCircleColor;
     }
 
     .ResultItem-Row-One {
         .ResultItem-Name-Info {
-
             .ResultItem-ItemName {
                 font-family: $Bold;
             }
@@ -62,22 +67,12 @@
             font-family: $Bold;
             color: $BackgroundPrimary;
         }
-    }
-
-    .ResultItem-Row-Two {
 
         .ResultItem-Location-Info {
 
             .ResultItem-Description {
-                font-family: $Bold;
+                font-family: $SemiBold;
             }
-        }
-    }
-
-    .ResultItem-Row-Three {
-
-        .ResultItem-ContactInfo {
-            font-family: $Bold;
         }
     }
 }

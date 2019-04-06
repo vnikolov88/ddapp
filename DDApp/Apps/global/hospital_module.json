@@ -174,7 +174,8 @@
                 "mapping": {
                   "d => d.ItemName": "s => s.Name",
                   "d => d.Description": "s => $\"{s.Name}, {s.Street}, {s.City} \"",
-                  "d => d.Link": "s => $\"/ondevice/geo:{s.Latitude},{s.Longitude}&q={Uri.EscapeDataString(s.Name)}\""
+                  "d => d.Link": "s => $\"/ondevice/geo:{s.Latitude},{s.Longitude}&q={Uri.EscapeDataString(s.Name)}\"",
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fas fa-map-marker-alt\" }"
                 }
               }
             ]

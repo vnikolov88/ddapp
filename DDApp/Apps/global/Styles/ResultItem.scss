@@ -90,20 +90,57 @@
 }
 
 
-.SingleRowResult-ResultItem {
+//.SingleRowResult-ResultItem {
+    //section {
+      //  padding: 0.6em 1em;
+    //}
+
+    //.ResultItem-Row-One {
+      //  grid-template-columns: 100%;
+        //grid-template-rows: 100%;
+        //grid-gap: 1.5em;
+        //max-height: 10vh;
+    //}
+
+//}
+
+
+.grid-container.ResultItem.SingleRowResult-ResultItem {
+    grid-template-columns: 80% 20%;
+    grid-gap: unset;
+    &:hover {
+        cursor: pointer;
+    }
     section {
         padding: 0.6em 1em;
     }
 
-    .ResultItem-Row-One {
-        grid-template-columns: 100%;
-        grid-template-rows: 100%;
-        grid-gap: 1.5em;
-        max-height: 10vh;
+    i {
+        align-self: center;
+        justify-self: center;
+        font-size: 1.8em;
     }
 
-    .ResultItem-Row-Two {
+    .ResultItem-Row-One {
         grid-template-columns: 100%;
-        grid-template-rows: 100%;
+        grid-template-rows: unset;
+        grid-gap: .8em;
+        max-height: unset;
+        .ResultItem-Name-Info {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            .ResultItem-ItemName {
+                font-family: $Bold;
+            }
+        }
+
+        .ResultItem-Location-Info {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
     }
 }
