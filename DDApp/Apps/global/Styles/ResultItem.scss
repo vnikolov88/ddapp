@@ -89,22 +89,6 @@
     }
 }
 
-
-//.SingleRowResult-ResultItem {
-    //section {
-      //  padding: 0.6em 1em;
-    //}
-
-    //.ResultItem-Row-One {
-      //  grid-template-columns: 100%;
-        //grid-template-rows: 100%;
-        //grid-gap: 1.5em;
-        //max-height: 10vh;
-    //}
-
-//}
-
-
 .grid-container.ResultItem.SingleRowResult-ResultItem {
     grid-template-columns: 80% 20%;
     grid-gap: unset;
