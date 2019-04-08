@@ -113,9 +113,8 @@
             </span>
         </section>
 
-        @if (!string.IsNullOrEmpty(Model.ContactInfoIcon.Icon))
+        @if (!string.IsNullOrEmpty(Model.ContactInfoIcon?.Icon))
         {
-
             <i class="@Model.ContactInfoIcon.Icon"></i>
         }
     }
