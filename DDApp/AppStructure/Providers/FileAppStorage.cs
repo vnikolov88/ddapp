@@ -22,6 +22,11 @@ namespace DDApp.AppStructure.Providers
             return _env.ContentRootFileProvider.Watch($"Apps/{appCode}/");
         }
 
+        public IChangeToken GetAppModuleChangeToken(string moduleName)
+        {
+            return _env.ContentRootFileProvider.Watch($"Apps/global/{moduleName}_module.json");
+        }
+
         public IEnumerable<string> GetAllAppCodes()
         {
             var contents = _env.ContentRootFileProvider.GetDirectoryContents("Apps/");

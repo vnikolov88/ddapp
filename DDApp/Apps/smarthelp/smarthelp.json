@@ -45,25 +45,11 @@
                 "Image": "/smarthelp/img/icon-4.png"
               },
               {
-                "Link": "smarthelp-suche",
+                "Link": "hospital-cluster-search",
                 "Title": "SMART HELP - SUCHE",
                 "Image": "/smarthelp/img/icon-5.png"
               }
             ]
-          }
-        }
-      ]
-    },
-    "smarthelp-suche": {
-      "title": "SMART HELP - SUCHE",
-      "titleImage": "/smarthelp/img/icon-5.png",
-      "components": [
-        {
-          "renderType": "Search",
-          "model": {
-            "Title": "Suche",
-            "FirstIcon": "fas fa-map-marker-alt",
-            "SecondIcon": "fas fa-play"
           }
         }
       ]

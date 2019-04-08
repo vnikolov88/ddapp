@@ -20,6 +20,11 @@ namespace DDApp.AppStructure.Providers
             throw new NotImplementedException();
         }
 
+        public IChangeToken GetAppModuleChangeToken(string moduleName)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<string> GetAllAppCodes()
         {
             throw new NotImplementedException();

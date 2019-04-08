@@ -57,6 +57,8 @@ namespace DDApp.AppStructure.Providers
                 #region Load app modules
                 foreach(var moduleName in app.Modules)
                 {
+                    var moduleChangeToken = _appStorage.GetAppModuleChangeToken(moduleName);
+                    cacheEntryOptions.AddExpirationToken(moduleChangeToken);
                     var module = await _appStorage.GetAppModuleAsync(moduleName).ConfigureAwait(false);
                     app.LoadAppModule( JsonConvert.DeserializeObject<DataDrivenApp>(module, _jsonSettings) );
                 }
@@ -133,15 +135,23 @@ namespace DDApp.AppStructure.Providers
             var appPageKey = $"DDApp:{appCode}:{pageCode}:{query}";
             if (_memoryCache.TryGetValue(appPageKey, out HydratedAppPage hydratedPage))
                 return hydratedPage;
-            
-            hydratedPage = await HydrateAsync(appCode, pageCode, query);
+
+            var app = await GetAppAsync(appCode).ConfigureAwait(false);
+            var appContext = await GetAppContextAsync(appCode).ConfigureAwait(false);
+
+            hydratedPage = await HydrateAsync(app, appContext, pageCode, query);
+
             if (hydratedPage?.CanCache == true)
             {
                 var changeToken = _appStorage.GetAppChangeToken(appCode);
                 var cacheEntryOptions = new MemoryCacheEntryOptions()
                         .AddExpirationToken(changeToken)
                         .SetSlidingExpiration(_appPageTTL);
-
+                foreach (var moduleName in app.Modules)
+                {
+                    var moduleChangeToken = _appStorage.GetAppModuleChangeToken(moduleName);
+                    cacheEntryOptions.AddExpirationToken(moduleChangeToken);
+                }
                 _memoryCache.Set(appPageKey, hydratedPage, cacheEntryOptions);
             }
 
@@ -179,15 +189,13 @@ namespace DDApp.AppStructure.Providers
         }
 
         private async Task<HydratedAppPage> HydrateAsync(
-            string appCode,
+            DataDrivenApp app,
+            IAppContext appContext,
             string pageCode,
             string query)
         {
-            var app = await GetAppAsync(appCode).ConfigureAwait(false);
-            if (app == null || !app.Pages.ContainsKey(pageCode)) return HydratedAppPage.Empty;
-
-            var appContext = await GetAppContextAsync(appCode).ConfigureAwait(false);
-            if (appContext == null) return HydratedAppPage.Empty;
+            if (app == null || appContext == null || !app.Pages.ContainsKey(pageCode))
+                return HydratedAppPage.Empty;
 
             var appPage = app.Pages[pageCode];
 

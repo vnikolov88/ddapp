@@ -7,6 +7,7 @@ namespace DDApp.AppStructure.Providers
     public interface IAppStorage
     {
         IChangeToken GetAppChangeToken(string appCode);
+        IChangeToken GetAppModuleChangeToken(string moduleName);
         IEnumerable<string> GetAllAppCodes();
         IEnumerable<string> GetAllAppModuleNames();
         Task<string> GetAppAsync(string appCode);

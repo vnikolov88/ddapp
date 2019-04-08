@@ -195,6 +195,17 @@ namespace DDApp.AppStructure.Providers
             }
         }
 
+        /// <summary>
+        /// Get a formated expresion from a template and a query context,
+        /// [Valid template components]
+        /// {{formater:param}}
+        /// {{param}}
+        /// {{param?}}
+        /// {{formater:param?}}
+        /// </summary>
+        /// <param name="template">the template for the url</param>
+        /// <param name="query">the query context of the current page</param>
+        /// <returns>a valid URL</returns>
         private string GetQueriedExpresion(string template,
             IDictionary<string, StringValues> query)
         {
@@ -202,15 +213,24 @@ namespace DDApp.AppStructure.Providers
             var result = new string(template);
             while ((match = Regex.Match(result, "{{[^{}]+}}")) != Match.Empty)
             {
+                var value = string.Empty;
                 var components = Regex.Matches(match.Value, "[^{}:]+");
-                var identifier = components.Last().Value;
+                var identifier = components.Last().Value.TrimEnd('?');
+                var isOptional = components.Last().Value.EndsWith('?');
                 var formatter = components.Count == 2 ? components.First().Value: null;
 
                 if (!query.ContainsKey(identifier))
-                    throw new ArgumentException($"Missing parameter from query context in [{template}]",
-                        identifier, new Exception($"Current match state [{result}]"));
-
-                var value = GetValueUsingFormater(query[identifier], formatter);
+                {
+                    if (!isOptional)
+                    {
+                        throw new ArgumentException($"Missing parameter from query context in [{template}]",
+                            identifier, new Exception($"Current match state [{result}]"));
+                    }
+                }
+                else
+                {
+                    value = GetValueUsingFormater(query[identifier], formatter);
+                }
                 result = result.Replace(match.Value, value);
             }
 

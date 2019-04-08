@@ -187,6 +187,7 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
+            "Action": "hospital-search-results?search-type=heart-attack",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
           }
