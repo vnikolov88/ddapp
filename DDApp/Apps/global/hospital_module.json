@@ -168,6 +168,39 @@
         }
       ]
     },
+    "hospital-search-clustered-results": {
+      "title": "",
+      "titleIcon": "fas fa-map-marker-alt",
+      "components": [
+        {
+          "renderType": "ResultList",
+          "provider": {
+            "type": "HospitalResults",
+            "url": "https://localhost:44325/api/v2/hospital/?param1={{param1}}&param2={{param2}}&param3={{param3}}&distance=1000&address={{base64:search}}&page=1&pageSize=100&sortByPatientCount=true",
+            "mapper": [
+              {
+                "sourceType": "HospitalResults",
+                "destinationType": "ResultList",
+                "mapping": {
+                  "d => d.Style": "s => ResultItemStyle.SingleRowResult",
+                  "d => d.Items": "s => s.Items"
+                }
+              },
+              {
+                "sourceType": "Hospital",
+                "destinationType": "ResultItem",
+                "mapping": {
+                  "d => d.ItemName": "s => s.CurrentDepartment().Name",
+                  "d => d.Description": "s => $\"{s.Name}, {s.CurrentDepartment().Address.Place}, {s.DistanceFromLocation} km.\"",
+                  "d => d.Link": "s => $\"/ondevice/geo:{s.CurrentDepartment().Address.Latitude},{s.CurrentDepartment().Address.Longitude}&q={Uri.EscapeDataString(s.CurrentDepartment().Name)}\"",
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fas fa-map-marker-alt\" }"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
     // Cluster search selection
     "hospital-cluster-search": {
       "title": "",
@@ -199,10 +232,9 @@
       "components": [
         {
           "renderType": "Search",
-
           "model": {
             "Title": "Suche",
-            "Action": "hospital-search-results?search-type=heart-attack",
+            "Action": "hospital-search-clustered-results",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
           }
