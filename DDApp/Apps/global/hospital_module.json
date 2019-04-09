@@ -158,7 +158,7 @@
                 "destinationType": "ResultItem",
                 "mapping": {
                   "d => d.ItemName": "s => s.CurrentDepartment().Name",
-                  "d => d.Description": "s => $\"{s.Name}, {s.CurrentDepartment().Address.Place}, {s.DistanceFromLocation} km.\"",
+                  "d => d.Description": "s => $\"{s.Name}, {s.CurrentDepartment().Address.Place}, {s.DistanceFromLocation:0.##} km.\"",
                   "d => d.Link": "s => $\"/ondevice/geo:{s.CurrentDepartment().Address.Latitude},{s.CurrentDepartment().Address.Longitude}&q={Uri.EscapeDataString(s.CurrentDepartment().Name)}\"",
                   "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fas fa-map-marker-alt\" }"
                 }

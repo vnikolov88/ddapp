@@ -13,6 +13,9 @@
         "Zip": "System.String",
         "City": "System.String",
         "Region": "System.String"
+      },
+      "methods": {
+        "GetMapUrl": "(uint zoom) => $\"https://api.mapbox.com/v4/ferdijeute.k8km6fdm/url-bit.ly%2f1JJK3XY({GeographicalPoint.Longitude},{GeographicalPoint.Latitude})/{GeographicalPoint.Longitude},{GeographicalPoint.Latitude},{zoom}/120x80@2x.png?access_token=pk.eyJ1IjoiZmVyZGlqZXV0ZSIsImEiOiIwWkRRUW5ZIn0.aBIsPCWLwLXwmd_QOiJC4w\""
       }
     },
     "PharmacyOpeningTimeDate": {
@@ -45,6 +48,10 @@
         "DistanceMetric": "System.Double",
         "ElectronicAddresses": "IDictionary<string, PharmacyElectronicAddress>",
         "PrimaryEmail": "PharmacyElectronicAddress"
+      },
+      "methods": {
+        "GetOpeningTimes": "() => OpeningTimes.Select(x => x.Value).OrderBy(x => x.Start.Date).Select(x => $\"{x.Start.Date:HH:mm tt}-{x.End.Date:HH:mm tt}\").FirstOrDefault()",
+        "GetAllOpeningTimes": "() => string.Join(',', OpeningTimes.Select(x => x.Value).OrderBy(x => x.Start.Date).Select(x => $\"{x.Start.Date}-{x.End.Date}\"))"
       }
     },
     "PharmacyResults": {
@@ -186,11 +193,13 @@
                 "destinationType": "ResultItem",
                 "mapping": {
                   "d => d.ItemName": "s => s.Name",
+                  "d => d.DatePublished": "s => s.GetOpeningTimes()",
                   "d => d.AdditionalInfo": "s => $\"{s.DistanceMetric:0.##} km\"",
                   "d => d.Description": "s => \"Addresse:\"",
                   "d => d.Location": "s => $\"{s.Location.Zip} {s.Location.Street}, {s.Location.City}\"",
                   "d => d.ContactInfo": "s => s.Phone",
-                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fal fa-info-circle\" }"
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Image = \"img/icon-6.png\" }",
+                  "d => d.Image": "s => s.Location.GetMapUrl(12)"
                 }
               }
             ]
