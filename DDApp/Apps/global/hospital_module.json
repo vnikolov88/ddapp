@@ -176,7 +176,7 @@
           "renderType": "ResultList",
           "provider": {
             "type": "HospitalResults",
-            "url": "https://localhost:44325/api/v2/hospital/?param1={{param1}}&param2={{param2}}&param3={{param3}}&distance=1000&address={{base64:search}}&page=1&pageSize=100&sortByPatientCount=true",
+            "url": "http://116.203.112.43:9999/api/v2/hospital/?param1={{param1}}&param2={{param2}}&param3={{param3}}&distance=1000&address={{base64:search}}&page=1&pageSize=100&sortByPatientCount=true",
             "mapper": [
               {
                 "sourceType": "HospitalResults",
@@ -210,7 +210,7 @@
           "renderType": "ItemList",
           "provider": {
             "type": "ParamsResults",
-            "url": "https://localhost:44325/api/v2/clustering?param1={{param1?}}&param2={{param2?}}",
+            "url": "http://116.203.112.43:9999/api/v2/clustering?param1={{param1?}}&param2={{param2?}}",
             "mapper": [
               {
                 "sourceType": "ParamsResults",

@@ -1,37 +1,50 @@
 {
   "dataTypes": {
-    "PharmacyAddressViewModel": {
+    "GeographicalPoint": {
       "properties": {
+        "Latitude": "System.String",
+        "Longitude": "System.String"
+      }
+    },
+    "PharmacyLocation": {
+      "properties": {
+        "GeographicalPoint": "GeographicalPoint",
         "Street": "System.String",
-        "ZipCode": "System.String",
-        "Place": "System.String",
-        "PoBoxNo": "System.String",
-        "PoBoxZipCode": "System.String",
-        "State": "System.String",
-        "NielsenArea": "System.String",
-        "County": "System.String",
-        "KvArea": "System.String",
-        "OccupationName": "System.String",
-        "Latitude": "System.Nullable<System.Double>",
-        "Longitude": "System.Nullable<System.Double>"
+        "Zip": "System.String",
+        "City": "System.String",
+        "Region": "System.String"
+      }
+    },
+    "PharmacyOpeningTimeDate": {
+      "properties": {
+        "Date": "DateTime",
+        "TimeZone": "System.String"
+      }
+    },
+    "PharmacyOpeningTime": {
+      "properties": {
+        "Start": "PharmacyOpeningTimeDate",
+        "End": "PharmacyOpeningTimeDate"
+      }
+    },
+    "PharmacyElectronicAddress": {
+      "properties": {
+        "Approved": "System.Boolean",
+        "Identifier": "System.String",
+        "Type": "System.String",
+        "Usage": "System.String"
       }
     },
     "Pharmacy": {
       "properties": {
         "Id": "System.String",
         "Name": "System.String",
-        "Department": "System.String",
-        "Salutation": "System.String",
-        "Appellation": "System.String",
-        "Title": "System.String",
-        "EmailTitle": "System.String",
-        "FirstName": "System.String",
-        "LastName": "System.String",
+        "Location": "PharmacyLocation",
         "Phone": "System.String",
-        "DistanceFromLocation": "System.String",
-        "Address": "PharmacyAddressViewModel",
-        //"TLHOW": "PharmacyAddressViewModel"
-        "MakeKey": "System.Int32"
+        "OpeningTimes": "IDictionary<string, PharmacyOpeningTime>",
+        "DistanceMetric": "System.Double",
+        "ElectronicAddresses": "IDictionary<string, PharmacyElectronicAddress>",
+        "PrimaryEmail": "PharmacyElectronicAddress"
       }
     },
     "PharmacyResults": {
@@ -56,7 +69,7 @@
             "style": "OneRowItem",
             "items": [
               {
-                "Link": "pharmacy-search",
+                "Link": "pharmacy-search-emergency",
                 "Title": "Apotheken-Notdienst",
                 "Icon": "fas fa-play",
                 "Description": "Ganz Deutschland"
@@ -122,9 +135,60 @@
                 "destinationType": "ResultItem",
                 "mapping": {
                   "d => d.ItemName": "s => s.Name",
-                  "d => d.AdditionalInfo": "s => s.DistanceFromLocation",
+                  "d => d.AdditionalInfo": "s => s.DistanceMetric",
                   "d => d.Description": "s => \"Addresse:\"",
-                  "d => d.Location": "s => $\"{s.Address.Street}{s.Address.Place}\"",
+                  "d => d.Location": "s => $\"{s.Location.Zip} {s.Location.Street}, {s.Location.City}\"",
+                  "d => d.ContactInfo": "s => s.Phone",
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fal fa-info-circle\" }"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    // Pharmacy Extended search
+    "pharmacy-search-emergency": {
+      "title": "APOTHEKEN-NOTDIENST",
+      "titleImage": "img/icon-4.png",
+      "components": [
+        {
+          "renderType": "Search",
+          "model": {
+            "Action": "pharmacy-search-extended-results?pharmacyType=list-emergency",
+            "Title": "Suche",
+            "FirstIcon": "fas fa-map-marker-alt",
+            "SecondIcon": "fas fa-play"
+          }
+        }
+      ]
+    },
+    "pharmacy-search-extended-results": {
+      "title": "APOTHEKEN-NOTDIENST",
+      "titleImage": "img/icon-4.png",
+      "components": [
+        {
+          "renderType": "ResultList",
+          "provider": {
+            "type": "PharmacyResults",
+            "url": "http://116.203.112.43:9999/api/v1/pharmacy/{{pharmacyType}}?distance=100&address={{base64:search}}&page=1&pageSize=50",
+            "mapper": [
+              {
+                "sourceType": "PharmacyResults",
+                "destinationType": "ResultList",
+                "mapping": {
+                  "d => d.Style": "s => ResultItemStyle.ThreeRowsResult",
+                  "d => d.Items": "s => s.Items"
+                }
+              },
+              {
+                "sourceType": "Pharmacy",
+                "destinationType": "ResultItem",
+                "mapping": {
+                  "d => d.ItemName": "s => s.Name",
+                  "d => d.AdditionalInfo": "s => $\"{s.DistanceMetric:0.##} km\"",
+                  "d => d.Description": "s => \"Addresse:\"",
+                  "d => d.Location": "s => $\"{s.Location.Zip} {s.Location.Street}, {s.Location.City}\"",
                   "d => d.ContactInfo": "s => s.Phone",
                   "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fal fa-info-circle\" }"
                 }
