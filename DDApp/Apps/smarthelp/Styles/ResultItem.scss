@@ -22,6 +22,18 @@
             font-family: $Bold;
             color: $iconCircleColor;
         }
+
+        .ResultItem-DatePublished {
+            font-family: $Regular;
+        }
+    }
+
+    .ResultItem-Row-Two {
+        .ResultItem-Location-Info {
+            .ResultItem-Location {
+                font-family: $Regular;
+            }
+        }
     }
 }
 
