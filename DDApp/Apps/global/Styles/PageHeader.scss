@@ -36,6 +36,10 @@ body main > .PageHeader .iconCircle {
         text-transform: capitalize;
     }
 
+    &h5:empty {
+        display: none;
+    }
+
     i, &i.fas.fa-angle-double-left {
         /*Back button grid*/
         order: 1;

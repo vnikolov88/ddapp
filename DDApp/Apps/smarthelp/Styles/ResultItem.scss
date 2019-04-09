@@ -5,7 +5,7 @@
 }
 
 .ResultItem {
-    border-top-color: $iconCircleColor;
+    border-bottom-color: $iconCircleColor;
 }
 
 .ThreeRowsResult-ResultItem {
@@ -21,6 +21,40 @@
         .ResultItem-ShortDescription {
             font-family: $Bold;
             color: $iconCircleColor;
+        }
+    }
+}
+
+
+.SingleRowResult-ResultItem {
+    background: $ItemLightColor;
+    
+
+    section {
+        color: $TextColor;
+    }
+
+    i {
+        color: $iconCircleColor;
+    }
+
+    .ResultItem-Row-One {
+        .ResultItem-Name-Info {
+            .ResultItem-ItemName {
+                font-family: $Bold;
+            }
+        }
+
+        .ResultItem-ShortDescription {
+            font-family: $Bold;
+            color: $BackgroundPrimary;
+        }
+
+        .ResultItem-Location-Info {
+
+            .ResultItem-Description {
+                font-family: $SemiBold;
+            }
         }
     }
 }
