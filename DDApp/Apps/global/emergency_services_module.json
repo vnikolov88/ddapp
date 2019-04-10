@@ -194,7 +194,7 @@
                 "mapping": {
                   "d => d.ItemName": "s => s.Name",
                   "d => d.DatePublished": "s => s.GetOpeningTimes()",
-                  "d => d.AdditionalInfo": "s => $\"{s.DistanceMetric:0.##} km\"",
+                  "d => d.AdditionalInfo": "s => $\"{s.DistanceMetric / 1000:0.##} km\"",
                   "d => d.Description": "s => \"Addresse:\"",
                   "d => d.Location": "s => $\"{s.Location.Zip} {s.Location.Street}, {s.Location.City}\"",
                   "d => d.ContactInfo": "s => s.Phone",
