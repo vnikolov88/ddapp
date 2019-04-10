@@ -6,7 +6,8 @@ namespace DDApp.AppStructure.RenderModels
     public enum ResultItemStyle
     {
         SingleRowResult,
-        ThreeRowsResult
+        ThreeRowsResult,
+        TwoRowsResultWithItemList
     }
 
     public class ResultList

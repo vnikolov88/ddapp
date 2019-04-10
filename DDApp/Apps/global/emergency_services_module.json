@@ -336,7 +336,73 @@
         {
           "renderType": "Article",
           "model": {
-            "description": " "
+            "description": "<b>NOTRUF 112 Damit die Rettungsleitstelle die geeigneten Rettungsmittel einsetzen kann, sind einige Informationen erforderlich. Bitte gehen Sie nach folgendem Schema vor und warten Sie am Schluß auf alle Fälle auf Rückfragen des Leitstellenpersonals.</b>"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "1. Wo ist es passiert?"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "genauer Notfall-Ort",
+              "Straßenname",
+              "Hausnummer/ Stockwerk",
+              "Kilometerangabe",
+              "Fahrtrichtung (bei Autobahn)"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "2. Was ist passiert?"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "welche Art von Notfall?",
+              "welche Fahrzeuge sind beteiligt?",
+              "laufen gefährliche Flüssigkeiten aus?",
+              "Kilometerangabe"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "3. Wie viele Personen sind verletzt/erkrankt?"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "4. Welche Verletzungen/Erkrankungen?"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "5. Warten auf Rückfragen"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "fehlende Punkte werden erfragt",
+              "gibt es eine Rückrufnummer?",
+              "wer ruft an?"
+            ]
           }
         }
       ]
