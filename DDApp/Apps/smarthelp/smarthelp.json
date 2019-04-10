@@ -12,9 +12,11 @@
   },
   "modules": [
     "hospital",
+    "stroke_unit",
     "emergencies",
     "emergencies_baby",
-    "emergency_services"
+    "emergency_services",
+    "defibrillator"
   ],
   "pages": {
     "Page1": {
@@ -50,20 +52,6 @@
                 "Image": "/smarthelp/img/icon-5.png"
               }
             ]
-          }
-        }
-      ]
-    },
-    "defib-suche": {
-      "title": "DEFIBRILLATOR - SUCHE",
-      "titleImage": "/smarthelp/img/icon-3.png",
-      "components": [
-        {
-          "renderType": "Search",
-          "model": {
-            "Title": "Suche",
-            "FirstIcon": "fas fa-map-marker-alt",
-            "SecondIcon": "fas fa-play"
           }
         }
       ]
