@@ -91,27 +91,23 @@
         "Items": "Hospital[]"
       }
     },
-    "StrokeUnit": {
-      "properties": {
-        "Name": "System.String",
-        "Street": "System.String",
-        "PostCode": "System.String",
-        "City": "System.String",
-        "Latitude": "System.Double",
-        "Longitude": "System.Double"
-      }
-    },
-    "StrokeUnitResults": {
+    "ParamsResults": {
       "attributes": [ "[JsonConverter(typeof(JsonPathConverter))]" ],
       "properties": {
-        "TotalItems": "System.Int32",
-        "TotalPages": "System.Int32",
-        "CurrentPage": "System.Int32",
-        "ItemsPerPage": "System.Int32",
         "Items": {
-          "type": "StrokeUnit[]",
+          "type": "string[]",
           "attributes": [ "[JsonProperty(\"$\")]" ]
         }
+      },
+      "methods": {
+        "GetNextStepUrl": "(string current, IDictionary<string, object> qc) => qc.ContainsKey(\"param2\") ? GetDestinationSearch(current, qc): GetParams(current, qc)",
+        // Helpers for destination search
+        "GetDestinationSearch": "(string current, IDictionary<string, object> qc) => $\"smarthelp-suche?{GetParam1(current, qc)}{GetParam2(current, qc)}{GetParam3(current, qc)}\"",
+        // Helpers for params stages of the search
+        "GetParam1": "(string current, IDictionary<string, object> qc) => $\"param1={(qc.ContainsKey(\"param1\") ? qc[\"param1\"]: current)}\"",
+        "GetParam2": "(string current, IDictionary<string, object> qc) => $\"{(qc.ContainsKey(\"param2\") ? $\"&param2={qc[\"param2\"]}\": (qc.ContainsKey(\"param1\") ? $\"&param2={current}\": string.Empty))}\"",
+        "GetParam3": "(string current, IDictionary<string, object> qc) => $\"{(qc.ContainsKey(\"param3\") ? $\"&param3={qc[\"param3\"]}\": (qc.ContainsKey(\"param2\") ? $\"&param3={current}\": string.Empty))}\"",
+        "GetParams": "(string current, IDictionary<string, object> qc) => $\"hospital-cluster-search?{GetParam1(current, qc)}{GetParam2(current, qc)}\""
       }
     }
   },
@@ -139,8 +135,9 @@
                 "destinationType": "ResultItem",
                 "mapping": {
                   "d => d.ItemName": "s => s.CurrentDepartment().Name",
-                  "d => d.Description": "s => $\"{s.Name}, {s.CurrentDepartment().Address.Place}, {s.DistanceFromLocation} km.\"",
-                  "d => d.Link": "s => $\"/ondevice/geo:{s.CurrentDepartment().Address.Latitude},{s.CurrentDepartment().Address.Longitude}&q={Uri.EscapeDataString(s.CurrentDepartment().Name)}\""
+                  "d => d.Description": "s => $\"{s.Name}, {s.CurrentDepartment().Address.Place}, {s.DistanceFromLocation:0.##} km.\"",
+                  "d => d.Link": "s => $\"/ondevice/geo:{s.CurrentDepartment().Address.Latitude},{s.CurrentDepartment().Address.Longitude}&q={Uri.EscapeDataString(s.CurrentDepartment().Name)}\"",
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fas fa-map-marker-alt\" }"
                 }
               }
             ]
@@ -148,36 +145,79 @@
         }
       ]
     },
-
-    // Search results - schlaganfall
-    "stroke-units-search-results": {
+    "hospital-search-clustered-results": {
       "title": "",
       "titleIcon": "fas fa-map-marker-alt",
       "components": [
         {
           "renderType": "ResultList",
           "provider": {
-            "type": "StrokeUnitResults",
-            "url": "http://116.203.112.43:9999/api/v1/strokeunits/with-location?address={{base64:search}}",
+            "type": "HospitalResults",
+            "url": "http://116.203.112.43:9999/api/v2/hospital/?param1={{param1}}&param2={{param2}}&param3={{param3}}&distance=1000&address={{base64:search}}&page=1&pageSize=100&sortByPatientCount=true",
             "mapper": [
               {
-                "sourceType": "StrokeUnitResults",
+                "sourceType": "HospitalResults",
                 "destinationType": "ResultList",
                 "mapping": {
-                  "d => d.Style": "s => ResultItemStyle.SingleRowResult",
+                  "d => d.Style": "s => ResultItemStyle.TwoRowsResultWithItemList",
                   "d => d.Items": "s => s.Items"
                 }
               },
               {
-                "sourceType": "StrokeUnit",
+                "sourceType": "Hospital",
                 "destinationType": "ResultItem",
                 "mapping": {
-                  "d => d.ItemName": "s => s.Name",
-                  "d => d.Description": "s => $\"{s.Name}, {s.Street}, {s.City} \"",
-                  "d => d.Link": "s => $\"/ondevice/geo:{s.Latitude},{s.Longitude}&q={Uri.EscapeDataString(s.Name)}\""
+                  "d => d.ItemName": "s => s.CurrentDepartment().Name",
+                  "d => d.AdditionalInfo": "s => $\"{s.DistanceFromLocation:0.##}km\"",
+                  "d => d.Image": "s => null",
+                  "d => d.Link": "s => $\"/ondevice/geo:{s.CurrentDepartment().Address.Latitude},{s.CurrentDepartment().Address.Longitude}&q={Uri.EscapeDataString(s.CurrentDepartment().Name)}\"",
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fas fa-map-marker-alt\" }",
+                  "d => d.Items": "s => s.Departments.Select(department => new Item { Title = department.Name, Icon = \"fas fa-play\" })",
+                  "d => d.ItemListStyle": "s => ItemStyle.OneRowItem"
+
                 }
               }
             ]
+          }
+        }
+      ]
+    },
+    // Cluster search selection
+    "hospital-cluster-search": {
+      "title": "",
+      "titleIcon": "fas fa-map-marker-alt",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "ParamsResults",
+            "url": "http://116.203.112.43:9999/api/v2/clustering?param1={{param1?}}&param2={{param2?}}",
+            "mapper": [
+              {
+                "sourceType": "ParamsResults",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.OneRowItem",
+                  "d => d.Items": "(s, qc) => s.Items.Select(item => new Item { Title = item, Link = s.GetNextStepUrl(item.Base64Encode(), qc as IDictionary<string, object>), Icon = \"fas fa-play\" })"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    // Destination stage for the hospital search
+    "smarthelp-suche": {
+      "title": "SMART HELP - SUCHE",
+      "titleImage": "/smarthelp/img/icon-5.png",
+      "components": [
+        {
+          "renderType": "Search",
+          "model": {
+            "Title": "Suche",
+            "Action": "hospital-search-clustered-results",
+            "FirstIcon": "fas fa-map-marker-alt",
+            "SecondIcon": "fas fa-play"
           }
         }
       ]

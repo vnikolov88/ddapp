@@ -1,0 +1,63 @@
+{
+  "dataTypes": {
+    "StrokeUnit": {
+      "properties": {
+        "Name": "System.String",
+        "Street": "System.String",
+        "PostCode": "System.String",
+        "City": "System.String",
+        "Latitude": "System.Double",
+        "Longitude": "System.Double"
+      }
+    },
+    "StrokeUnitResults": {
+      "attributes": [ "[JsonConverter(typeof(JsonPathConverter))]" ],
+      "properties": {
+        "TotalItems": "System.Int32",
+        "TotalPages": "System.Int32",
+        "CurrentPage": "System.Int32",
+        "ItemsPerPage": "System.Int32",
+        "Items": {
+          "type": "StrokeUnit[]",
+          "attributes": [ "[JsonProperty(\"$\")]" ]
+        }
+      }
+    }
+  },
+  "pages": {
+    // Search results - schlaganfall
+    "stroke-units-search-results": {
+      "title": "",
+      "titleIcon": "fas fa-map-marker-alt",
+      "components": [
+        {
+          "renderType": "ResultList",
+          "provider": {
+            "type": "StrokeUnitResults",
+            "url": "http://116.203.112.43:9999/api/v1/strokeunits/with-location?address={{base64:search}}",
+            "mapper": [
+              {
+                "sourceType": "StrokeUnitResults",
+                "destinationType": "ResultList",
+                "mapping": {
+                  "d => d.Style": "s => ResultItemStyle.SingleRowResult",
+                  "d => d.Items": "s => s.Items"
+                }
+              },
+              {
+                "sourceType": "StrokeUnit",
+                "destinationType": "ResultItem",
+                "mapping": {
+                  "d => d.ItemName": "s => s.Name",
+                  "d => d.Description": "s => $\"{s.Name}, {s.Street}, {s.City} \"",
+                  "d => d.Link": "s => $\"/ondevice/geo:{s.Latitude},{s.Longitude}&q={Uri.EscapeDataString(s.Name)}\"",
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fas fa-map-marker-alt\" }"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

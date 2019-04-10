@@ -324,13 +324,17 @@
     margin-top: 0;
 }
 
+.Container + .LeftSideImg.grid-container {
+    margin: .2em 0;
+}
+
 .LeftSideImg.grid-container {
     grid-template-columns: 25% 50% 20%;
     grid-template-rows: 100%;
     grid-gap: 1.3%;
     align-items: center;
     justify-items: center;
-    margin: .2em 0;
+    //margin: .2em 0;
     padding: .5em 0em .5em 1em;
 }
 

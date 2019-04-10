@@ -19,6 +19,9 @@ namespace DDApp.AppStructure
             IModelProvider modelProvider,
             IRuntimeProvider runtimeProvider)
         {
+            if (app == null)
+                throw new ArgumentNullException(nameof(app));
+
             var context = new AppContext(modelProvider, runtimeProvider);
             context.RuntimeProvider.RegisterRuntimeTypes(app);
             context.ModelProvider.BuildAndCacheMappings(app);

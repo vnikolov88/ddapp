@@ -25,7 +25,6 @@ function requestPage (link, push) {
                     history.pushState(link, document.title, link.href);
             }
             loadingIndication.classList.remove('loading');
-            _hidePageHeaderWhenItemsEmpty();
             nuggetList.init();
             _scrollToTop();
         }
@@ -64,15 +63,6 @@ function _scrollToTop() {
     });
 }
 
-
-function _hidePageHeaderWhenItemsEmpty() {
-    let pageHeader = document.querySelector(".PageHeader");
-    let child = document.querySelector(".Ellipse");
-
-    if (child.textContent === "")
-        pageHeader.style = "display: none";
-}
-
 attachLinkClickHandlers(document);
 
 history.replaceState({
@@ -82,6 +72,5 @@ history.replaceState({
 }, document.title, location.href);
 
 (function () {
-    _hidePageHeaderWhenItemsEmpty();
     nuggetList.init();
 })();

@@ -35,20 +35,20 @@
     }
 
     .ResultItem-Row-One {
-        grid-template-columns: 51% auto;
+        grid-template-columns: 60% 30%;
         grid-template-rows: 100%;
-        grid-gap: 1.5em;
         max-height: 10vh;
+        align-items: center;
 
 
         .ResultItem-Name-Info {
             display: inline-grid;
-            grid-template-rows: 30% auto;
+            grid-template-rows: 50% 50%;
             grid-template-columns: 100%;
-            grid-gap: 0.2em;
 
             .ResultItem-ItemName {
                 font-family: inherit;
+                min-height: 1em;
             }
         }
 
@@ -58,52 +58,135 @@
     }
 
     .ResultItem-Row-Two {
-        grid-template-columns: 32% auto;
+        grid-template-columns: 60% 30%;
         grid-template-rows: 100%;
-        grid-gap: 1.5em;
         max-height: 20vh;
+        align-items: center;
 
         .ResultItem-Location-Info {
             display: inline-grid;
-            grid-template-rows: 45% auto;
+            grid-template-rows: 50% 50%;
             grid-template-columns: 100%;
-            grid-gap: 0.2em;
+            width: 90%;
         }
 
         img {
-            height: 100px;
+            width: 100%;
             object-fit: contain;
             justify-self: end;
         }
     }
 
     .ResultItem-Row-Three {
-        grid-template-columns: 75% auto;
+        grid-template-columns: 60% 30%;
         grid-template-rows: 100%;
-        grid-gap: 1.5em;
         max-height: 10vh;
+        align-items: center;
 
-        i {
-            justify-self: end;
+        i, img {
+            justify-self: end;                       
+        }
+
+        img {
+            width: 2em;
+        }
+    }
+}
+
+.grid-container.ResultItem.SingleRowResult-ResultItem {
+    grid-template-columns: 80% 20%;
+    grid-gap: unset;
+    &:hover {
+        cursor: pointer;
+    }
+    section {
+        padding: 0.6em 1em;
+    }
+
+    i {
+        align-self: center;
+        justify-self: center;
+        font-size: 1.8em;
+    }
+
+    .ResultItem-Row-One {
+        grid-template-columns: 100%;
+        grid-template-rows: unset;
+        grid-gap: .8em;
+        max-height: unset;
+        .ResultItem-Name-Info {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            .ResultItem-ItemName {
+                font-family: $Bold;
+            }
+        }
+
+        .ResultItem-Location-Info {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
     }
 }
 
 
-.SingleRowResult-ResultItem {
+.TwoRowsResultWithItemList-ResultItem {
     section {
-        padding: 0.6em 1em;
+        display: inline-grid;
+        padding: 0.5em 0.2em;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+
+        &span:first-of-type {
+            font-weight: bold;
+        }
     }
 
     .ResultItem-Row-One {
-        grid-template-columns: 100%;
+        grid-template-columns: 60% 30%;
         grid-template-rows: 100%;
-        grid-gap: 1.5em;
         max-height: 10vh;
+        align-items: center;
+
+
+        .ResultItem-Name-Info {
+            display: inline-grid;
+            grid-template-rows: 50% 50%;
+            grid-template-columns: 100%;
+
+            .ResultItem-ItemName {
+                font-family: inherit;
+                min-height: 1em;
+            }
+        }
+
+        .ResultItem-ShortDescription {
+            justify-self: end;
+        }
     }
 
     .ResultItem-Row-Two {
         grid-template-columns: 100%;
         grid-template-rows: 100%;
+        max-height: 20vh;
+        align-items: center;
+
+        .ResultItem-Location-Info {
+            display: inline-grid;
+            grid-template-rows: 50% 50%;
+            grid-template-columns: 100%;
+            width: 90%;
+        }
+
+        img {
+            width: 100%;
+            object-fit: contain;
+            justify-self: end;
+        }
     }
 }

@@ -1,37 +1,57 @@
 {
   "dataTypes": {
-    "PharmacyAddressViewModel": {
+    "GeographicalPoint": {
       "properties": {
+        "Latitude": "System.String",
+        "Longitude": "System.String"
+      }
+    },
+    "PharmacyLocation": {
+      "properties": {
+        "GeographicalPoint": "GeographicalPoint",
         "Street": "System.String",
-        "ZipCode": "System.String",
-        "Place": "System.String",
-        "PoBoxNo": "System.String",
-        "PoBoxZipCode": "System.String",
-        "State": "System.String",
-        "NielsenArea": "System.String",
-        "County": "System.String",
-        "KvArea": "System.String",
-        "OccupationName": "System.String",
-        "Latitude": "System.Nullable<System.Double>",
-        "Longitude": "System.Nullable<System.Double>"
+        "Zip": "System.String",
+        "City": "System.String",
+        "Region": "System.String"
+      },
+      "methods": {
+        "GetMapUrl": "(uint zoom) => $\"https://api.mapbox.com/v4/ferdijeute.k8km6fdm/url-bit.ly%2f1JJK3XY({GeographicalPoint.Longitude},{GeographicalPoint.Latitude})/{GeographicalPoint.Longitude},{GeographicalPoint.Latitude},{zoom}/120x80@2x.png?access_token=pk.eyJ1IjoiZmVyZGlqZXV0ZSIsImEiOiIwWkRRUW5ZIn0.aBIsPCWLwLXwmd_QOiJC4w\""
+      }
+    },
+    "PharmacyOpeningTimeDate": {
+      "properties": {
+        "Date": "DateTime",
+        "TimeZone": "System.String"
+      }
+    },
+    "PharmacyOpeningTime": {
+      "properties": {
+        "Start": "PharmacyOpeningTimeDate",
+        "End": "PharmacyOpeningTimeDate"
+      }
+    },
+    "PharmacyElectronicAddress": {
+      "properties": {
+        "Approved": "System.Boolean",
+        "Identifier": "System.String",
+        "Type": "System.String",
+        "Usage": "System.String"
       }
     },
     "Pharmacy": {
       "properties": {
         "Id": "System.String",
         "Name": "System.String",
-        "Department": "System.String",
-        "Salutation": "System.String",
-        "Appellation": "System.String",
-        "Title": "System.String",
-        "EmailTitle": "System.String",
-        "FirstName": "System.String",
-        "LastName": "System.String",
+        "Location": "PharmacyLocation",
         "Phone": "System.String",
-        "DistanceFromLocation": "System.String",
-        "Address": "PharmacyAddressViewModel",
-        //"TLHOW": "PharmacyAddressViewModel"
-        "MakeKey": "System.Int32"
+        "OpeningTimes": "IDictionary<string, PharmacyOpeningTime>",
+        "DistanceMetric": "System.Double",
+        "ElectronicAddresses": "IDictionary<string, PharmacyElectronicAddress>",
+        "PrimaryEmail": "PharmacyElectronicAddress"
+      },
+      "methods": {
+        "GetOpeningTimes": "() => OpeningTimes.Select(x => x.Value).OrderBy(x => x.Start.Date).Select(x => $\"{x.Start.Date:HH:mm tt}-{x.End.Date:HH:mm tt}\").FirstOrDefault()",
+        "GetAllOpeningTimes": "() => string.Join(',', OpeningTimes.Select(x => x.Value).OrderBy(x => x.Start.Date).Select(x => $\"{x.Start.Date}-{x.End.Date}\"))"
       }
     },
     "PharmacyResults": {
@@ -56,7 +76,7 @@
             "style": "OneRowItem",
             "items": [
               {
-                "Link": "pharmacy-search",
+                "Link": "pharmacy-search-emergency",
                 "Title": "Apotheken-Notdienst",
                 "Icon": "fas fa-play",
                 "Description": "Ganz Deutschland"
@@ -122,11 +142,64 @@
                 "destinationType": "ResultItem",
                 "mapping": {
                   "d => d.ItemName": "s => s.Name",
-                  "d => d.AdditionalInfo": "s => s.DistanceFromLocation",
+                  "d => d.AdditionalInfo": "s => s.DistanceMetric",
                   "d => d.Description": "s => \"Addresse:\"",
-                  "d => d.Location": "s => $\"{s.Address.Street}{s.Address.Place}\"",
+                  "d => d.Location": "s => $\"{s.Location.Zip} {s.Location.Street}, {s.Location.City}\"",
                   "d => d.ContactInfo": "s => s.Phone",
                   "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fal fa-info-circle\" }"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    // Pharmacy Extended search
+    "pharmacy-search-emergency": {
+      "title": "APOTHEKEN-NOTDIENST",
+      "titleImage": "img/icon-4.png",
+      "components": [
+        {
+          "renderType": "Search",
+          "model": {
+            "Action": "pharmacy-search-extended-results?pharmacyType=list-emergency",
+            "Title": "Suche",
+            "FirstIcon": "fas fa-map-marker-alt",
+            "SecondIcon": "fas fa-play"
+          }
+        }
+      ]
+    },
+    "pharmacy-search-extended-results": {
+      "title": "APOTHEKEN-NOTDIENST",
+      "titleImage": "img/icon-4.png",
+      "components": [
+        {
+          "renderType": "ResultList",
+          "provider": {
+            "type": "PharmacyResults",
+            "url": "http://116.203.112.43:9999/api/v1/pharmacy/{{pharmacyType}}?distance=100&address={{base64:search}}&page=1&pageSize=50",
+            "mapper": [
+              {
+                "sourceType": "PharmacyResults",
+                "destinationType": "ResultList",
+                "mapping": {
+                  "d => d.Style": "s => ResultItemStyle.ThreeRowsResult",
+                  "d => d.Items": "s => s.Items"
+                }
+              },
+              {
+                "sourceType": "Pharmacy",
+                "destinationType": "ResultItem",
+                "mapping": {
+                  "d => d.ItemName": "s => s.Name",
+                  "d => d.DatePublished": "s => s.GetOpeningTimes()",
+                  "d => d.AdditionalInfo": "s => $\"{s.DistanceMetric:0.##} km\"",
+                  "d => d.Description": "s => \"Addresse:\"",
+                  "d => d.Location": "s => $\"{s.Location.Zip} {s.Location.Street}, {s.Location.City}\"",
+                  "d => d.ContactInfo": "s => s.Phone",
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Image = \"img/icon-6.png\" }",
+                  "d => d.Image": "s => s.Location.GetMapUrl(12)"
                 }
               }
             ]
@@ -263,7 +336,73 @@
         {
           "renderType": "Article",
           "model": {
-            "description": " "
+            "description": "<b>NOTRUF 112 Damit die Rettungsleitstelle die geeigneten Rettungsmittel einsetzen kann, sind einige Informationen erforderlich. Bitte gehen Sie nach folgendem Schema vor und warten Sie am Schluß auf alle Fälle auf Rückfragen des Leitstellenpersonals.</b>"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "1. Wo ist es passiert?"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "genauer Notfall-Ort",
+              "Straßenname",
+              "Hausnummer/ Stockwerk",
+              "Kilometerangabe",
+              "Fahrtrichtung (bei Autobahn)"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "2. Was ist passiert?"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "welche Art von Notfall?",
+              "welche Fahrzeuge sind beteiligt?",
+              "laufen gefährliche Flüssigkeiten aus?",
+              "Kilometerangabe"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "3. Wie viele Personen sind verletzt/erkrankt?"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "4. Welche Verletzungen/Erkrankungen?"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "5. Warten auf Rückfragen"
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "fehlende Punkte werden erfragt",
+              "gibt es eine Rückrufnummer?",
+              "wer ruft an?"
+            ]
           }
         }
       ]

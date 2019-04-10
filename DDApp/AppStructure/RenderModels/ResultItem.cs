@@ -39,5 +39,15 @@ namespace DDApp.AppStructure.RenderModels
         /// Style is mandatory in order to change the appearance of the items
         /// </summary>
         public ResultItemStyle? Style { get; set; }
+
+        /// <summary>
+        /// Sets the style for the ItemList inside the ResultItem
+        /// </summary>
+        public ItemStyle ItemListStyle { get; set; }
+
+        /// <summary>
+        /// Contains ItemList inside the ResultItem
+        /// </summary>
+        public IEnumerable<Item> Items { get; set; }
     }
 }
