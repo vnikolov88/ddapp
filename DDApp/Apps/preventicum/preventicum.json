@@ -11,6 +11,7 @@
   },
   "modules": [
     "hospital",
+    "stroke_unit",
     "emergencies",
     "emergency_services"
   ],
