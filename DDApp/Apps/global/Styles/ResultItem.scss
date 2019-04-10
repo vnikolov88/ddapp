@@ -132,3 +132,61 @@
         }
     }
 }
+
+
+.TwoRowsResultWithItemList-ResultItem {
+    section {
+        display: inline-grid;
+        padding: 0.5em 0.2em;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+
+        &span:first-of-type {
+            font-weight: bold;
+        }
+    }
+
+    .ResultItem-Row-One {
+        grid-template-columns: 60% 30%;
+        grid-template-rows: 100%;
+        max-height: 10vh;
+        align-items: center;
+
+
+        .ResultItem-Name-Info {
+            display: inline-grid;
+            grid-template-rows: 50% 50%;
+            grid-template-columns: 100%;
+
+            .ResultItem-ItemName {
+                font-family: inherit;
+                min-height: 1em;
+            }
+        }
+
+        .ResultItem-ShortDescription {
+            justify-self: end;
+        }
+    }
+
+    .ResultItem-Row-Two {
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        max-height: 20vh;
+        align-items: center;
+
+        .ResultItem-Location-Info {
+            display: inline-grid;
+            grid-template-rows: 50% 50%;
+            grid-template-columns: 100%;
+            width: 90%;
+        }
+
+        img {
+            width: 100%;
+            object-fit: contain;
+            justify-self: end;
+        }
+    }
+}

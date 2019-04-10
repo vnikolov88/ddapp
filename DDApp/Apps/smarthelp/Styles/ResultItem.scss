@@ -70,3 +70,32 @@
         }
     }
 }
+
+.TwoRowsResultWithItemList-ResultItem {
+    section {
+        background: $ItemLightColor;
+        color: $TextColor;
+        font-family: $Bold;
+        line-height: 1em;
+        padding: .8em .2em
+    }
+
+    .ResultItem-Row-One {
+        .ResultItem-ShortDescription {
+            font-family: $Bold;
+            color: $iconCircleColor;
+        }
+
+        .ResultItem-DatePublished {
+            font-family: $Regular;
+        }
+    }
+
+    .ResultItem-Row-Two {
+        .ResultItem-Location-Info {
+            .ResultItem-Location {
+                font-family: $Regular;
+            }
+        }
+    }
+}

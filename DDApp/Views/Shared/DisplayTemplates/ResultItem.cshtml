@@ -2,7 +2,7 @@
 
 @if (Model.Style == ResultItemStyle.TwoRowsResultWithItemList)
 {
-<div class="grid-container ResultItem-ContactInfo @Model.Style-ResultItem">
+<div class="grid-container ResultItem @Model.Style-ResultItem">
     <section class="ResultItem-Row-One">
         <span class="ResultItem-Name-Info">
             @if (!string.IsNullOrEmpty(Model.ItemName))
@@ -27,29 +27,9 @@
     </section>
 
     <section class="ResultItem-Row-Two">
-        <span class="ResultItem-Location-Info">
-            @if (!string.IsNullOrEmpty(Model.Description))
-            {
-                <span class="ResultItem-Description">
-                    @Model.Description
-                </span>
-            }
-
-            @if (!string.IsNullOrEmpty(Model.Location))
-            {
-                <span class="ResultItem-Location">
-                    @Model.Location
-                </span>
-            }
-        </span>
-
-        @if (!string.IsNullOrEmpty(Model.Image))
-        {
-            <img src="@Model.Image" alt="@Model.Location" />
-        }
+        <img src="@(!string.IsNullOrEmpty(Model.Image) ? Model.Image : "/img/hospital_placeholder.png")" alt="@Model.Location" />        
     </section>
 
-    @* ItemList *@
     @{
         Model.Items?.ForEach(x => x.Style = x.Style ?? Model.ItemListStyle);
     }
