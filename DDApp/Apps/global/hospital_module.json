@@ -182,7 +182,7 @@
                 "sourceType": "HospitalResults",
                 "destinationType": "ResultList",
                 "mapping": {
-                  "d => d.Style": "s => ResultItemStyle.SingleRowResult",
+                  "d => d.Style": "s => ResultItemStyle.TwoRowsResultWithItemList",
                   "d => d.Items": "s => s.Items"
                 }
               },
@@ -195,8 +195,9 @@
                   //"d => d.Image": "s => s.???",
                   //"d => d.AdditionalInfo": "s => $\"{s.distanceFromLocation:0.##} km\"",
                   "d => d.Link": "s => $\"/ondevice/geo:{s.CurrentDepartment().Address.Latitude},{s.CurrentDepartment().Address.Longitude}&q={Uri.EscapeDataString(s.CurrentDepartment().Name)}\"",
-                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fas fa-map-marker-alt\" }"
-                  //"d => d.Items": "s => s.departments"
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fas fa-map-marker-alt\" }",
+                  "d => d.Items": "s => s.Departments.Select(department => new Item { Title = department.Name, Icon = \"fas fa-play\" })",
+                  "d => d.ItemListStyle": "s => ItemStyle.OneRowItem"
 
                 }
               }

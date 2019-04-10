@@ -1,121 +1,183 @@
 @model ResultItem
 
-<a class="grid-container ResultItem @Model.Style-ResultItem" href="@Model.Link">
-    @if (Model.Style == ResultItemStyle.ThreeRowsResult)
-    {
-        <section class="ResultItem-Row-One">
-            <span class="ResultItem-Name-Info">
-                @if (!string.IsNullOrEmpty(Model.ItemName))
-                {
-                    <span class="ResultItem-ItemName Ellipse">
-                        @Model.ItemName
-                    </span>
-                }
-                @if (!string.IsNullOrEmpty(Model.DatePublished))
-                {
-                    <span class="ResultItem-DatePublished">
-                        @Model.DatePublished
-                    </span>
-                }
-            </span>
-            @if (!string.IsNullOrEmpty(Model.AdditionalInfo))
+@if (Model.Style == ResultItemStyle.TwoRowsResultWithItemList)
+{
+<div class="grid-container ResultItem-ContactInfo @Model.Style-ResultItem">
+    <section class="ResultItem-Row-One">
+        <span class="ResultItem-Name-Info">
+            @if (!string.IsNullOrEmpty(Model.ItemName))
             {
-                <span class="ResultItem-ShortDescription">
-                    @Model.AdditionalInfo
+                <span class="ResultItem-ItemName Ellipse">
+                    @Model.ItemName
                 </span>
             }
-        </section>
-
-        <section class="ResultItem-Row-Two">
-            <span class="ResultItem-Location-Info">
-                @if (!string.IsNullOrEmpty(Model.Description))
-                {
-                    <span class="ResultItem-Description">
-                        @Model.Description
-                    </span>
-                }
-
-                @if (!string.IsNullOrEmpty(Model.Location))
-                {
-                    <span class="ResultItem-Location">
-                        @Model.Location
-                    </span>
-                }
-            </span>
-
-            @if (!string.IsNullOrEmpty(Model.Image))
+            @if (!string.IsNullOrEmpty(Model.DatePublished))
             {
-                <img src="@Model.Image" alt="@Model.Location" />
+                <span class="ResultItem-DatePublished">
+                    @Model.DatePublished
+                </span>
             }
-        </section>
+        </span>
+        @if (!string.IsNullOrEmpty(Model.AdditionalInfo))
+        {
+            <span class="ResultItem-ShortDescription">
+                @Model.AdditionalInfo
+            </span>
+        }
+    </section>
 
-        <section class="ResultItem-Row-Three">
-
-            @if (!string.IsNullOrEmpty(Model.ContactInfo))
+    <section class="ResultItem-Row-Two">
+        <span class="ResultItem-Location-Info">
+            @if (!string.IsNullOrEmpty(Model.Description))
             {
-                <span class="ResultItem-ContactInfo">
-                    @Model.ContactInfo
+                <span class="ResultItem-Description">
+                    @Model.Description
                 </span>
             }
 
-            @if (!string.IsNullOrEmpty(Model.ContactInfoIcon.Image))
+            @if (!string.IsNullOrEmpty(Model.Location))
             {
-                <img src="@Model.ContactInfoIcon.Image" class="ResultItem-ContactInfo-Image" />
+                <span class="ResultItem-Location">
+                    @Model.Location
+                </span>
             }
+        </span>
 
-            @if (!string.IsNullOrEmpty(Model.ContactInfoIcon.Icon))
+        @if (!string.IsNullOrEmpty(Model.Image))
+        {
+            <img src="@Model.Image" alt="@Model.Location" />
+        }
+    </section>
+
+    @* ItemList *@
+    @{
+        Model.Items?.ForEach(x => x.Style = x.Style ?? Model.ItemListStyle);
+    }
+    <div class="Container grid-container ">
+        @Html.DisplayFor(model => model.Items)
+    </div>
+</div>
+}
+else
+{
+    <a class="grid-container ResultItem @Model.Style-ResultItem" href="@Model.Link">
+        @if (Model.Style == ResultItemStyle.ThreeRowsResult)
+        {
+            <section class="ResultItem-Row-One">
+                <span class="ResultItem-Name-Info">
+                    @if (!string.IsNullOrEmpty(Model.ItemName))
+                    {
+                        <span class="ResultItem-ItemName Ellipse">
+                            @Model.ItemName
+                        </span>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.DatePublished))
+                    {
+                        <span class="ResultItem-DatePublished">
+                            @Model.DatePublished
+                        </span>
+                    }
+                </span>
+                @if (!string.IsNullOrEmpty(Model.AdditionalInfo))
+                {
+                    <span class="ResultItem-ShortDescription">
+                        @Model.AdditionalInfo
+                    </span>
+                }
+            </section>
+
+            <section class="ResultItem-Row-Two">
+                <span class="ResultItem-Location-Info">
+                    @if (!string.IsNullOrEmpty(Model.Description))
+                    {
+                        <span class="ResultItem-Description">
+                            @Model.Description
+                        </span>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.Location))
+                    {
+                        <span class="ResultItem-Location">
+                            @Model.Location
+                        </span>
+                    }
+                </span>
+
+                @if (!string.IsNullOrEmpty(Model.Image))
+                {
+                    <img src="@Model.Image" alt="@Model.Location" />
+                }
+            </section>
+
+            <section class="ResultItem-Row-Three">
+
+                @if (!string.IsNullOrEmpty(Model.ContactInfo))
+                {
+                    <span class="ResultItem-ContactInfo">
+                        @Model.ContactInfo
+                    </span>
+                }
+
+                @if (!string.IsNullOrEmpty(Model.ContactInfoIcon.Image))
+                {
+                    <img src="@Model.ContactInfoIcon.Image" class="ResultItem-ContactInfo-Image" />
+                }
+
+                @if (!string.IsNullOrEmpty(Model.ContactInfoIcon.Icon))
+                {
+
+                    <i class="@Model.ContactInfoIcon.Icon"></i>
+                }
+            </section>
+
+        }
+
+        @if (Model.Style == ResultItemStyle.SingleRowResult)
+        {
+            <section class="ResultItem-Row-One">
+                <span class="ResultItem-Name-Info">
+                    @if (!string.IsNullOrEmpty(Model.ItemName))
+                    {
+                        <span class="ResultItem-ItemName">
+                            @Model.ItemName
+                        </span>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.DatePublished))
+                    {
+                        <span class="ResultItem-DatePublished">
+                            @Model.DatePublished
+                        </span>
+                    }
+                </span>
+                @if (!string.IsNullOrEmpty(Model.AdditionalInfo))
+                {
+                    <span class="ResultItem-ShortDescription">
+                        @Model.AdditionalInfo
+                    </span>
+                }
+
+                <span class="ResultItem-Location-Info">
+                    @if (!string.IsNullOrEmpty(Model.Description))
+                    {
+                        <span class="ResultItem-Description">
+                            @Model.Description
+                        </span>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.Location))
+                    {
+                        <span class="ResultItem-Location">
+                            @Model.Location
+                        </span>
+                    }
+                </span>
+            </section>
+
+            @if (!string.IsNullOrEmpty(Model.ContactInfoIcon?.Icon))
             {
-
                 <i class="@Model.ContactInfoIcon.Icon"></i>
             }
-        </section>
-
-    }
-
-    @if (Model.Style == ResultItemStyle.SingleRowResult)
-    {
-        <section class="ResultItem-Row-One">
-            <span class="ResultItem-Name-Info">
-                @if (!string.IsNullOrEmpty(Model.ItemName))
-                {
-                    <span class="ResultItem-ItemName">
-                        @Model.ItemName
-                    </span>
-                }
-                @if (!string.IsNullOrEmpty(Model.DatePublished))
-                {
-                    <span class="ResultItem-DatePublished">
-                        @Model.DatePublished
-                    </span>
-                }
-            </span>
-            @if (!string.IsNullOrEmpty(Model.AdditionalInfo))
-            {
-                <span class="ResultItem-ShortDescription">
-                    @Model.AdditionalInfo
-                </span>
-            }
-
-            <span class="ResultItem-Location-Info">
-                @if (!string.IsNullOrEmpty(Model.Description))
-                {
-                    <span class="ResultItem-Description">
-                        @Model.Description
-                    </span>
-                }
-
-                @if (!string.IsNullOrEmpty(Model.Location))
-                {
-                    <span class="ResultItem-Location">
-                        @Model.Location
-                    </span>
-                }
-            </span>
-        </section>
-
-        @if (!string.IsNullOrEmpty(Model.ContactInfoIcon?.Icon))
-        {
-            <i class="@Model.ContactInfoIcon.Icon"></i>
         }
-    }
-</a>
+
+    </a>
+}
