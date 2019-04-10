@@ -1,5 +1,13 @@
 import nuggetList from "./nugget.js";
 
+function adjustNavigation() {
+    let navBarHeight = document.getElementById("navbar-1").clientHeight;
+    document.getElementsByTagName("main")[0].style.paddingTop = navBarHeight + "px";
+    let navBar2 = document.getElementById("navbar-2");
+    if (navBar2 !== null)
+        document.getElementById("PageContainer").style.paddingTop = navBar2.clientHeight + "px";
+}
+
 const mainContentArea = document.querySelector('body > main');
 const loadingIndication = document.getElementById('loading-indicator');
 window.addEventListener('popstate', function (e) {
@@ -20,9 +28,10 @@ function requestPage (link, push) {
                 attachLinkClickHandlers(mainContentArea);
 
                 document.title = xhr.getResponseHeader('Page-Title');
-
                 if (push)
                     history.pushState(link, document.title, link.href);
+
+                adjustNavigation();
             }
             loadingIndication.classList.remove('loading');
             nuggetList.init();
@@ -73,4 +82,5 @@ history.replaceState({
 
 (function () {
     nuggetList.init();
+    adjustNavigation();
 })();
