@@ -35,6 +35,13 @@ body main > .PageHeader .iconCircle {
         justify-self: left;
         font-size: $TextFontSize;
         text-transform: capitalize;
+        //
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        word-break: break-all;
+        white-space: normal;
     }
 
     &h5:empty {
