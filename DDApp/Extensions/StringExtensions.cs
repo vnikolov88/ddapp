@@ -13,7 +13,7 @@ namespace DDApp.Extensions
 
         public static string OnDeviceMail(this string email) => $"/ondevice/mailto:{email}";
 
-        public static string ProxyRemoteUrl(this string url) => url.StartsWith('/') ? url : $"/proxyremote/{url.Base64Encode()}"; // Note: we dont proxy local requests
+        public static string ProxyRemoteUrl(this string url) => url.StartsWith("http") ? $"/proxyremote/{url.Base64Encode()}" : url; // Note: we dont proxy local requests
 
         public static string Base64Encode(this string plainText)
         {
