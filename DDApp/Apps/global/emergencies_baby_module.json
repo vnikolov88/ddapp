@@ -27,7 +27,7 @@
               },
               {
                 "Link": "kinder-notfallbox",
-                "Title": "Kindernotfall-Box",
+                "Title": "Kindernotfallbox",
                 "Icon": "fas fa-play"
               },
               {
@@ -42,7 +42,7 @@
               },
               {
                 "Link": "zeckenentfernung",
-                "Title": "ZECKENSCHUTZ – ENTENFERNUNG",
+                "Title": "Zeckenschutz – Entenfernung",
                 "Icon": "fas fa-play"
               },
               {
@@ -87,7 +87,7 @@
       ]
     },
     "fremdkorper": {
-      "title": "VERSCHLUCKEN, FREMDKÖRPER, (ERSTICKEN)",
+      "title": "Verschlucken, Fremdkörper, (Ersticken)",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -117,11 +117,17 @@
               }
             ]
           }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
         }
       ]
     },
     "erste-hilfe-fremdkorper": {
-      "title": "VERSCHLUCKEN, FREMDKÖRPER, (ERSTICKEN)",
+      "title": "Verschlucken, Fremdkörper, (Ersticken)",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -165,7 +171,7 @@
       ]
     },
     "saugling": {
-      "title": "VERSCHLUCKEN, FREMDKÖRPER, (ERSTICKEN)",
+      "title": "Verschlucken, Fremdkörper, (Ersticken)",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -198,7 +204,7 @@
       ]
     },
     "kompressionen-beim-baby": {
-      "title": "VERSCHLUCKEN, FREMDKÖRPER, (ERSTICKEN)",
+      "title": "Verschlucken, Fremdkörper, (Ersticken)",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -237,7 +243,7 @@
       ]
     },
     "handgriff-beim-kind": {
-      "title": "VERSCHLUCKEN, FREMDKÖRPER, (ERSTICKEN)",
+      "title": "Verschlucken, Fremdkörper, (Ersticken)",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -273,7 +279,7 @@
       ]
     },
     "wiederbelebung-baby": {
-      "title": "Wiederbelebung bei Babies ( Reanimation)",
+      "title": "Wiederbelebung bei Babys ( Reanimation)",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -314,7 +320,7 @@
       ]
     },
     "atmung-baby": {
-      "title": "Wiederbelebung bei Babies ( Reanimation)",
+      "title": "Wiederbelebung bei Babys ( Reanimation)",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -346,7 +352,7 @@
       ]
     },
     "beatmung-baby": {
-      "title": "Wiederbelebung bei Babies ( Reanimation)",
+      "title": "Wiederbelebung bei Babys ( Reanimation)",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -383,7 +389,7 @@
       ]
     },
     "herzdruckmassage-baby": {
-      "title": "Wiederbelebung bei Babies ( Reanimation)",
+      "title": "Wiederbelebung bei Babys ( Reanimation)",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -451,6 +457,12 @@
                 "Icon": "fas fa-play"
               }
             ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
           }
         }
       ]
@@ -524,7 +536,7 @@
       ]
     },
     "kinder-notfallbox": {
-      "title": "KINDER-NOTFALLBOX",
+      "title": "Kindernotfallbox",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -557,11 +569,17 @@
               "Gummibärchen"
             ]
           }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
         }
       ]
     },
     "vergiftung-intoxikation": {
-      "title": "EINATMUNG , AUGEN-und HAUTKONTAKT",
+      "title": "Vergiftung, Intoxikation",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -596,11 +614,17 @@
               }
             ]
           }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
         }
       ]
     },
     "erste-hilfe-intoxikation": {
-      "title": "VERSCHLUCKEN, FREMDKÖRPER, (ERSTICKEN)",
+      "title": "Vergiftung, Intoxikation",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -622,7 +646,7 @@
         {
           "renderType": "Article",
           "model": {
-            "description": "Lassen Sie das Kind Wasser, Tee oder Saf in kleinen Schlücken und Mengen trinken. Bei Säuren-und Laugenvergifungen sollte dies so schnell wie möglich erfolgen.<br /> Auf <strong>KEINEN</strong> Fall Erbrechen auslösen!"
+            "description": "Lassen Sie das Kind Wasser, Tee oder Saf in kleinen Schlücken und Mengen trinken. Bei Säuren-und Laugenvergiftungen sollte dies so schnell wie möglich erfolgen.<br /> Auf <strong>KEINEN</strong> Fall Erbrechen auslösen!"
           }
         },
 
@@ -638,7 +662,7 @@
           "renderType": "ListLite",
           "model": {
             "content": [
-              "<b><i>Vorsicht</i></b> – Milch ist kein Gegengif, sondern beschleunigt in vielen Fällen die Gifaufnahme durch den Darm",
+              "<b><i>Vorsicht</i></b> – Milch ist kein Gegeggift, sondern beschleunigt in vielen Fällen die Gifaufnahme durch den Darm",
               "<b><i>Vorsicht</i></b> – bitte stecken Sie Ihrem Kind nicht den Finger in den Hals! Es besteht die Gefahr daß Erbrochenes in die Lunge gerät",
               "<b><i>Vorsicht</i></b> - Ebenso sollte kein Salzwasser verabreicht werden um ein Erbrechen auszulösen. Dies hat zum Teil fatale Folgen",
               "<b><i>Vorsicht</i></b> - medizinische Kohle sollte nur durch ärztliches Personal verabreicht werden"
@@ -648,14 +672,14 @@
       ]
     },
     "einatmung-intoxikation": {
-      "title": "EINATMUNG , AUGEN-und HAUTKONTAKT",
+      "title": "Vergiftung, Intoxikation",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
           "renderType": "Article",
           "model": {
             "Title": "Erstmaßnahmen bei Einatmung",
-            "description": "Für frische Luf sorgen, Vorsicht bei geschlossenen <br/> Räumen, Silos und Gruben.<br/>Betrofene Person warm zudecken, ruhig halten.<br/>"
+            "description": "Für frische Luft sorgen, Vorsicht bei geschlossenen <br/> Räumen, Silos und Gruben.<br/>Betroffene Personen warm zudecken, ruhig halten.<br/>"
           }
         },
         {
@@ -693,12 +717,13 @@
       ]
     },
     "ertrinkungsunfall-liebe-eltern": {
-      "title": "ERTRINKUNGSUNFALL",
+      "title": "Ertrinkungsunfall",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
           "renderType": "Article",
           "model": {
+            "title": "Liebe Eltern,",
             "description": "Wasser übt eine ungemeine Anziehungskraft auf Kinder aus. Die Gefahren werden leider häufig unterschätzt. Für Kleinkinder können schon Wassertiefen von wenigen Zentimetern zur tödlichen Gefahr werden. Ertrinken ist in Deutschland nach Verkehrsunfällen die zweithäufigste tödliche Unfallursache im Kindesalter. Die meisten Kinder ertrinken nicht während des Badeurlaubes, sondern beim Spielen in der häuslichen Umgebung."
           }
         },
@@ -739,11 +764,17 @@
           "model": {
             "description": "<b><i>Wenn Sie alleine sind, erfolgt die Alarmierung des Rettungsdienstes erst nach einer Reanimationsdauer von einer Minute!</b></i>"
           }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
         }
       ]
     },
     "zeckenentfernung": {
-      "title": "ZECKENSCHUTZ – ENTENFERNUNG",
+      "title": "Zeckenschutz – Entenfernung",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -777,11 +808,17 @@
               }
             ]
           }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
         }
       ]
     },
     "zeckenentfernung-zeckenkarte": {
-      "title": "ZECKENSCHUTZ – ENTENFERNUNG",
+      "title": "Zeckenschutz – Entenfernung",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -830,7 +867,7 @@
       ]
     },
     "zeckenentfernung-zeckenzange": {
-      "title": "ZECKENSCHUTZ – ENTENFERNUNG",
+      "title": "Zeckenschutz – Entenfernung",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -946,6 +983,12 @@
             "title": "Weitere Gefahrenquellen ausschließen:",
             "description": "Hängen Sie keine Schnüre oder Bänder in Reichweite Ihres Kindes auf. Verzichten Sie auf Halskettchen, Ohrringe u. ä."
           }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
         }
       ]
     },
@@ -956,7 +999,7 @@
         {
           "renderType": "Article",
           "model": {
-            "description": "Liebe Eltern, Zahnunfälle nehmen in ihrer Häufigkeit weltweit zu. Bereits jedes dritte bis  vierte Kind hat bis zu seinem 16. Lebensjahr einen Zahnunfall erlitten. Meist sind durch Unfall die oberen Schneidezähne betroffen. Durch richtiges Verhalten nach Zahnunfällen können die Folgen beträchtlich gemildert werden."
+            "description": "Zahnunfälle nehmen in ihrer Häufigkeit weltweit zu. Bereits jedes dritte bis  vierte Kind hat bis zu seinem 16. Lebensjahr einen Zahnunfall erlitten. Meist sind durch Unfall die oberen Schneidezähne betroffen. Durch richtiges Verhalten nach Zahnunfällen können die Folgen beträchtlich gemildert werden."
           }
         },
         {
@@ -1010,6 +1053,12 @@
           "renderType": "Article",
           "model": {
             "description": "<b><i>Vorsicht: Beim Lagern unter der Zunge / in der Wangentasche besteht die Gefahr, dass der Zahn verschluckt oder gar eingeatmet wird. Dies kann lebensbedrohlich sein.</b></i>"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
           }
         }
       ]
@@ -1088,6 +1137,12 @@
           "model": {
             "description": "Wenn Sie selbst mit Ihrem Kind ins Krankenhaus oder zum Kinderarzt fahren, öffnen sie während der Autofahrt die Fenster, so kann die kühle Fahrluft weiter zur Symptomlinderung führen. Fahren Sie nicht alleine mit Ihrem Kind im Auto – wenn Sie fahren, können Sie sich nicht um Ihr Kind kümmern!"
           }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
         }
       ]
     },
@@ -1123,6 +1178,12 @@
               "<b><i>Nackensteifgkeit (dies kann Ausdruck einer Hirnhautentzündung sein – stellen Sie Ihr Kind umgehend einem Kinderarzt vor!)</i></b>",
               "<b><i>Säuglinge mit Fieber sollten immer umgehend einem Kinderarzt vorgestellt werden</i></b>"
             ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
           }
         }
       ]
@@ -1169,11 +1230,17 @@
           "model": {
             "description": "<b><i>Wichtig: Bleiben Sie bei Ihrem Kind und überprüfen regelmäßig die Atmung!</i></b>"
           }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Inhalte teilweise übernommen von <a class='red-bullet' href='/ondevice/www.kindernotfall-bonn.de'>www.kindernotfall-bonn.de</a>"
+          }
         }
       ]
     },
     "verbrennung": {
-      "title": "VERBRENNUNG",
+      "title": "Verbrennung",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
@@ -1238,7 +1305,7 @@
       ]
     },
     "verbrennung-handeln-sie-sofort": {
-      "title": "VERBRENNUNG",
+      "title": "Verbrennung",
       "titleImage": "/smarthelp/img/icon-1.png",
       "components": [
         {
