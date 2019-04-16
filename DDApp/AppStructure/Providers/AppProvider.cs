@@ -93,7 +93,12 @@ namespace DDApp.AppStructure.Providers
                 var modelProvider = new ModelProvider(_logger, _memoryCache, runtimeProvider);
                 var app = await GetAppAsync(appCode);
                 appContext = AppContext.Create(app, modelProvider, runtimeProvider);
-
+                // Attach all module change tokens
+                foreach (var moduleName in app.Modules)
+                {
+                    var moduleChangeToken = _appStorage.GetAppModuleChangeToken(moduleName);
+                    cacheEntryOptions.AddExpirationToken(moduleChangeToken);
+                }
                 _memoryCache.Set($"context:{appCode}", appContext, cacheEntryOptions);
                 return appContext;
             }
