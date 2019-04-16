@@ -62,6 +62,25 @@
         "ItemsPerPage": "System.Int32",
         "Items": "Pharmacy[]"
       }
+    },
+    // ApothekenDE articles
+    "PharmacyArticle": {
+      "properties": {
+        "Id": "System.Int32",
+        "Title ": "System.String",
+        "Short": "System.String",
+        "BodyText": "System.String",
+        "Author": "System.String"
+      }
+    },
+    "PharmacyArticleResults": {
+      "properties": {
+        "TotalItems": "System.Int32",
+        "TotalPages": "System.Int32",
+        "CurrentPage": "System.Int32",
+        "ItemsPerPage": "System.Int32",
+        "Items": "PharmacyArticle[]"
+      }
     }
   },
   "pages": {
@@ -178,7 +197,7 @@
           "renderType": "ResultList",
           "provider": {
             "type": "PharmacyResults",
-            "url": "http://116.203.112.43:9999/api/v1/pharmacy/{{pharmacyType}}?distance=100&address={{base64:search}}&page=1&pageSize=50",
+            "url": "http://116.203.112.43:9999/api/v2/pharmacy/{{pharmacyType}}?distance=100&address={{base64:search}}&page=1&pageSize=50",
             "mapper": [
               {
                 "sourceType": "PharmacyResults",
@@ -198,8 +217,64 @@
                   "d => d.Description": "s => \"Addresse:\"",
                   "d => d.Location": "s => $\"{s.Location.Zip} {s.Location.Street}, {s.Location.City}\"",
                   "d => d.ContactInfo": "s => s.Phone",
-                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Image = \"img/icon-6.png\" }",
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Image = \"img/icon-4.png\" }",
                   "d => d.Image": "s => s.Location.GetMapUrl(12)"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    // Articles from ApothekenDE
+    "notfalle-von-a-bis-z": {
+      "title": "NOTFÄLLE VON A BIS Z ",
+      "titleImage": "img/icon-4.png",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "PharmacyArticleResults",
+            "url": "http://116.203.112.43:9999/api/v2/article/list-emergency?page=1&pageSize=50",
+            "mapper": [
+              {
+                "sourceType": "PharmacyArticleResults",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.OneRowItem",
+                  "d => d.Items": "s => s.Items"
+                }
+              },
+              {
+                "sourceType": "PharmacyArticle",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Title": "s => s.Title",
+                  "d => d.Link": "s => $\"notfalle-article?articleId={s.Id}\"",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "notfalle-article": {
+      "title": "NOTFÄLLE VON A BIS Z ",
+      "titleImage": "img/icon-6.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "provider": {
+            "type": "PharmacyArticleResults",
+            "url": "http://116.203.112.43:9999/api/v2/article/list-emergency?page=1&pageSize=50",
+            "reducer": "(s, qc) => s.Items.FirstOrDefault(x => x.Id.ToString() == qc.articleId)",
+            "mapper": [
+              {
+                "sourceType": "PharmacyArticle",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Description": "s => s.BodyText"
                 }
               }
             ]
@@ -254,77 +329,6 @@
             "href": "tel:+49 030-19240",
             "text": "GIFTNOTRUF 030/1 92 40",
             "imagesource": "img/img-23.png"
-          }
-        }
-      ]
-    },
-    "notfalle-von-a-bis-z": {
-      "title": "NOTFÄLLE VON A BIS Z ",
-      "titleImage": "img/icon-4.png",
-      "components": [
-        {
-          "renderType": "ItemList",
-          "model": {
-            "style": "OneRowItem",
-            "items": [
-              {
-                "Link": "alkoholvergiftung",
-                "Title": "Alkoholvergiftung",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "allergischer-shock-allergischer-shock",
-                "Title": "Allergischer Schock",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "",
-                "Title": "Arzeneimittelvergiftung",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "",
-                "Title": "Augenverletzung",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "",
-                "Title": "Beerenvergiftung",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "",
-                "Title": "Bissverletzung",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "",
-                "Title": "Blasen an den Füßen",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "",
-                "Title": "Blutende Wunden",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "",
-                "Title": "...",
-                "Icon": "fas fa-play"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "alkoholvergiftung": {
-      "title": "ALKOHOLVERGIFTUNG",
-      "titleImage": "img/icon-6.png",
-      "components": [
-        {
-          "renderType": "Article",
-          "model": {
-            "description": "Die <b>Alkoholvergiftung</b> (Alkoholintoxikation) ist die häufigste Vergiftung. Die Beschwerden hängen von der <b>Blutalkoholkonzentration</b> (BAK) ab.<br/> ...<br/> ..."
           }
         }
       ]
