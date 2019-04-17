@@ -105,7 +105,7 @@
       "title": "HERZINFARKT",
       "titleImage": "img/icon-5.png",
       "tabGroups": {
-        "(mögliche) Symptome": 2,
+        "(mögliche) Symptome": 1,
         "Handeln Sie sofort!": 5,
         "Kliniksuche": 1
       },
@@ -116,22 +116,17 @@
             "nuggets": [
               {
                 "title": "Mann",
-                "image": "img/men-symptom-2.png",
-                "imageDescription": "Mann",
-                "content": "<p><b>Starke Schmerzen</b>, die in andere Körperteile strahlen, zum Beispiel in <span class='red-bullet'>Arme</span>, die Partie zwischen den <span class='red-bullet'>Schulterblättern</span> oder dem <span class='red-bullet'>Oberbauch</span> (vgl. Abbildungen) und ca. <b>fünf Minuten</b> anhalten.</p>"
+                "images": [ "img/men-symptom-1.png", "img/men-symptom-2.png", "img/men-symptom-3.png", "img/men-symptom-4.png", "img/men-symptom-5.png", "img/men-symptom-6.png" ],
+                "imageDescription": [ "Herzinfarkt-Symptom-1", "Herzinfarkt-Symptom-2", "Herzinfarkt-Symptom-3", "Herzinfarkt-Symptom-4", "Herzinfarkt-Symptom-5", "Herzinfarkt-Symptom-6" ],
+                "descriptions": [ "<p><b>Starke Schmerzen</b>, die in andere Körperteile strahlen, zum Beispiel in <span class='red-bullet'>Arme</span>, die Partie zwischen den <span class='red-bullet'>Schulterblättern</span> oder dem <span class='red-bullet'>Oberbauch</span> (vgl. Abbildungen) und ca. <b>fünf Minuten</b> anhalten.</p>", "<p><b>Engegefühl</b> im <span class='red-bullet'>Herzbereich</span>. Betroffene haben das Gefühl, ein <b>schwerer Gegenstand</b> würde auf ihrer <span class='red-bullet'>Brust</span> liegen.</p>", "<p><b>Brenndendes Gefühl</b>, das unangenehm durch den <span class='red-bullet'>ganzen Körper</span> fließt</p>", "<p><b>Atemnot</b>, wird durch das Engegefühl im <span class='red-bullet'>Brustkorb</span> hervorgerufen.</p>", "<p><b>Übelkeit, Erbrechen, Schmerzen</b> im <span class='red-bullet'>Oberbauch</span> treten <b>besonders bei Frauen</b> häufig als Anzeichen auf. Sollten die Symptome in Kombination und/ oder sehr stark auftreten, könnte dies auf einen Herzinfarkt hindeuten.</p>", "<p><b>Blässe</b> und <b>kalter Schweiß</b> treten ebenfalls <b>öfter bei Frauen</b> auf. Sie befällt eine bisher unbekannte <b>Angst</b>, die sich durch ein <b>bleiches und fahles</b> <span class='red-bullet'>Gesicht</span> und <b>kalten Schweiß</b> äußert.</p>" ]
               },
               {
                 "title": "Frau",
-                "image": "img/img-22.png",
-                "imageDescription": "Frau"
+                "images": [ "img/women-symptom-1.png", "img/women-symptom-2.png", "img/women-symptom-3.png", "img/women-symptom-4.png", "img/women-symptom-5.png", "img/women-symptom-6.png" ],
+                "imageDescription": [ "Herzinfarkt-Symptom-1", "Herzinfarkt-Symptom-2", "Herzinfarkt-Symptom-3", "Herzinfarkt-Symptom-4", "Herzinfarkt-Symptom-5", "Herzinfarkt-Symptom-6" ],
+                "descriptions": [ "<p><b>Starke Schmerzen</b>, die in andere Körperteile strahlen, zum Beispiel in <span class='red-bullet'>Arme</span>, die Partie zwischen den <span class='red-bullet'>Schulterblättern</span> oder dem <span class='red-bullet'>Oberbauch</span> (vgl. Abbildungen) und ca. <b>fünf Minuten</b> anhalten.</p>", "<p><b>Engegefühl</b> im <span class='red-bullet'>Herzbereich</span>. Betroffene haben das Gefühl, ein <b>schwerer Gegenstand</b> würde auf ihrer <span class='red-bullet'>Brust</span> liegen.</p>", "<p><b>Brenndendes Gefühl</b>, das unangenehm durch den <span class='red-bullet'>ganzen Körper</span> fließt</p>", "<p><b>Atemnot</b>, wird durch das Engegefühl im <span class='red-bullet'>Brustkorb</span> hervorgerufen.</p>", "<p><b>Übelkeit, Erbrechen, Schmerzen</b> im <span class='red-bullet'>Oberbauch</span> treten <b>besonders bei Frauen</b> häufig als Anzeichen auf. Sollten die Symptome in Kombination und/ oder sehr stark auftreten, könnte dies auf einen Herzinfarkt hindeuten.</p>", "<p><b>Blässe</b> und <b>kalter Schweiß</b> treten ebenfalls <b>öfter bei Frauen</b> auf. Sie befällt eine bisher unbekannte <b>Angst</b>, die sich durch ein <b>bleiches und fahles</b> <span class='red-bullet'>Gesicht</span> und <b>kalten Schweiß</b> äußert.</p>" ]
               }
             ]
-          }
-        },
-        {
-          "renderType": "Article",
-          "model": {
-            "description": "<p><b>Starke Schmerzen</b>, die in andere Körperteile strahlen, zum Beispiel in <span class='red-bullet'>Arme</span>, die Partie zwischen den <span class='red-bullet'>Schulterblättern</span> oder dem <span class='red-bullet'>Oberbauch</span> (vgl. Abbildungen) und ca. <b>fünf Minuten</b> anhalten.</p>"
           }
         },
         {
