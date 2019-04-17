@@ -116,8 +116,9 @@
             "nuggets": [
               {
                 "title": "Mann",
-                "image": "img/img-21.png",
-                "imageDescription": "Mann"
+                "image": "img/men-symptom-2.png",
+                "imageDescription": "Mann",
+                "content": "<p><b>Starke Schmerzen</b>, die in andere Körperteile strahlen, zum Beispiel in <span class='red-bullet'>Arme</span>, die Partie zwischen den <span class='red-bullet'>Schulterblättern</span> oder dem <span class='red-bullet'>Oberbauch</span> (vgl. Abbildungen) und ca. <b>fünf Minuten</b> anhalten.</p>"
               },
               {
                 "title": "Frau",
@@ -178,7 +179,7 @@
               {
                 "Link": "defib-suche",
                 "Title": "Defibrillatorsuche",
-                "Image": "img/icon-7-30.png"
+                "Image": "img/defibrilator-search.png"
               },
               {
                 "Link": "herzinfarkt-herzdruckmassage",

@@ -1,32 +1,35 @@
 @model Item
 
-<a class="ItemWrapper @Model.Style grid-container" href="@Model.Link">
-    <img src="@(Model.Image?.ProxyRemoteUrl() ?? "/img/image_placeholder.png")" />
-    <div class="Link-details ">
-        <p class="Menu Ellipse">@Model.Title</p>
-        @if (!string.IsNullOrEmpty(Model.Description))
-        {
-            <p class="Ellipse">@Model.Description</p>
-        }
+    <a class="ItemWrapper @Model.Style grid-container" href="@Model.Link">
+        <div class="Link-details ">
+            <p class="Menu Ellipse">@Model.Title</p>
+            @if (!string.IsNullOrEmpty(Model.Description))
+            {
+                <p class="Ellipse">@Model.Description</p>
+            }
 
 
-        @if (Model.DescriptionList != null)
-        {
-            <@Model.DescriptionList.Type class="DescriptionList">
-                @foreach (var item in Model.DescriptionList.Content)
-                {
-                    <li>@item</li>
-                }
-            </@Model.DescriptionList.Type>
-        }
+            @if (Model.DescriptionList != null)
+            {
+                <@Model.DescriptionList.Type class="DescriptionList">
+                    @foreach (var item in Model.DescriptionList.Content)
+                    {
+                        <li>@item</li>
+                    }
+                </@Model.DescriptionList.Type>
+            }
 
-        <p class="Ellipse">@Model.DatePublished</p>
-    </div>
-
-    @if (!string.IsNullOrWhiteSpace(Model.Icon))
-    {
-        <div class="Circle">
-            <i class="@Model.Icon"></i>
+            <p class="Ellipse">@Model.DatePublished</p>
         </div>
-    }
-</a>
+
+        @if (!string.IsNullOrWhiteSpace(Model.Icon))
+        {
+            <div class="Circle">
+                <i class="@Model.Icon"></i>
+            </div>
+        }
+        else
+        {
+            <img src="@(Model.Image?.ProxyRemoteUrl() ?? "/img/image_placeholder.png")" />
+        }
+    </a>

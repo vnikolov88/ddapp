@@ -34,7 +34,8 @@
         /*img grid*/
         order: 2;
         /*img Styles*/
-        display: none;
+        //display: none;
+        object-fit: contain;
     }
 
     .Link-details {

@@ -2,5 +2,7 @@
 
 <div class="Nugget" id="pills-@Model.Title">
     <img src="@Model.Image" alt="@Model.ImageDescription" />
-    @Html.Raw(@Model.Content)
+    <section>
+        @Html.Raw(@Model.Content)
+    </section>
 </div>
