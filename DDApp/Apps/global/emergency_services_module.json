@@ -282,21 +282,6 @@
         }
       ]
     },
-    // Mockups, need implementation
-    "apotheken-notdeinst": {
-      "title": "APOTHEKEN-NOTDIENST",
-      "titleImage": "img/icon-4.png",
-      "components": [
-        {
-          "renderType": "Search",
-          "model": {
-            "Title": "Suche",
-            "FirstIcon": "fas fa-map-marker-alt",
-            "SecondIcon": "fas fa-play"
-          }
-        }
-      ]
-    },
     "notfalle-arzt-notdienst": {
       "title": "ARZT-NOTDIENST",
       "titleImage": "img/icon-4.png",
@@ -311,7 +296,7 @@
           "renderType": "AnchorLite",
           "model": {
             "class": "emergency-contact emergency-contact-red",
-            "href": "tel:+49 228-19240",
+            "href": "tel:116117",
             "text": "BUNDESWEITE: HOTLINE 116117",
             "imagesource": "img/img-23.png"
           }
