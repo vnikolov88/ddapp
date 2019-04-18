@@ -8,8 +8,8 @@ namespace DDApp.AppStructure.RenderModels
     public class Nugget
     {
         public string Title { get; set; }
-        public string Image { get; set; }
-        public string ImageDescription { get; set; }
-        public string Content { get; set; }
+        public string[] Images { get; set; }
+        public string[] ImageDescription { get; set; }
+        public string[] Descriptions { get; set; }
     }
 }

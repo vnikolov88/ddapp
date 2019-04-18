@@ -19,3 +19,19 @@
 body main #pills-tab {
     padding: 0.2em 0;
 }
+
+
+#NuggetContainer .Nugget {
+    section {
+        color: $TextColor;
+
+        span.red-bullet {
+            color: $iconCircleColor;
+            font-weight: bolder;
+        }
+
+        .strong {
+            font-weight: bold;
+        }
+    }
+}

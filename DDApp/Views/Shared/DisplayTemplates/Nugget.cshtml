@@ -1,6 +1,14 @@
 ﻿@model Nugget
 
 <div class="Nugget" id="pills-@Model.Title">
-    <img src="@Model.Image" alt="@Model.ImageDescription" />
-    @Html.Raw(@Model.Content)
+    @if(Model.Images.Length != 0) { 
+        @for (var image = 0; image < Model.Images.Length; image += 1)
+        {
+            <img src="@Model.Images[image]" alt="@Model.ImageDescription[image]" />
+
+            <section>
+                @Html.Raw(Model.Descriptions[image])
+            </section>
+        }
+    }
 </div>
