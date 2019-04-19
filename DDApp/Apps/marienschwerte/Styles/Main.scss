@@ -1,0 +1,40 @@
+@import "../../global/Styles/Article";
+@import "../../global/Styles/Contact";
+@import "../../global/Styles/General";
+@import "../../global/Styles/Item";
+@import "../../global/Styles/Movie";
+@import "../../global/Styles/Nav";
+@import "../../global/Styles/PageHeader";
+@import "../../global/Styles/Search";
+@import "../../global/Styles/ListLite";
+@import "../../global/Styles/TitleLite";
+@import "../../global/Styles/Nugget";
+@import "../../global/Styles/DescriptionList";
+@import "../../global/Styles/Tabs";
+@import "../../global/Styles/ErrorIndicator";
+@import "../../global/Styles/ResultList";
+@import "../../global/Styles/ResultItem";
+@import "../../marienschwerte/Styles/AnchorLite";
+@import "../../marienschwerte/Styles/Article";
+@import "../../marienschwerte/Styles/Item";
+@import "../../marienschwerte/Styles/ListLite";
+@import "../../marienschwerte/Styles/Nav";
+@import "../../marienschwerte/Styles/Nugget";
+@import "../../marienschwerte/Styles/Tabs";
+@import "../../marienschwerte/Styles/PageHeader";
+@import "../../marienschwerte/Styles/Search";
+@import "../../marienschwerte/Styles/ResultItem";
+
+.Ellipse {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;    
+}

@@ -48,15 +48,11 @@
             max-height: 2em;
 
             .ResultItem-ItemName {
-                font-family: inherit;
-                min-height: 1em;
+                word-break: break-all;
                 display: -webkit-box;
-                -webkit-line-clamp: 3;
+                -webkit-line-clamp: 1;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
-                word-break: break-all;
-                white-space: normal;
-                height: 2em;
             }
         }
 
@@ -73,9 +69,18 @@
 
         .ResultItem-Location-Info {
             display: inline-grid;
-            grid-template-rows: 50% 50%;
+            //grid-template-rows: 50% 50%;
+            grid-template-rows: 25% 70%;
             grid-template-columns: 100%;
             width: 90%;
+            min-height: 5em;
+
+            span.ResultItem-Location {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
         }
 
         img {

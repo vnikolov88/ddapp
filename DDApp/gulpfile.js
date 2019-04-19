@@ -9,7 +9,7 @@ var gulp = require("gulp"),
 
 gulp.task('default', ['styles', 'code']);
 
-var apps = ['ddz', 'smarthelp', 'preventicum'];
+var apps = ['ddz', 'smarthelp', 'preventicum', 'marienschwerte'];
 
 gulp.task('styles', function () {
     apps.map(function(app) {

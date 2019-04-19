@@ -1,0 +1,60 @@
+{
+  "title": "marienschwerte",
+  "quickCallNumberIcon": "fas fa-phone",
+  "quickCallNumberText": "",
+  "logo": "/marienschwerte/img/smartHelp-logo.png",
+  "navigation": {
+    "Baby und Kinder – Notfälle": "/marienschwerte/notfallversorgung",
+    "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE": "/marienschwerte/herzinfarkt-schlaganfall-aneurysma-thrombose",
+    "DEFIBRILLATOR - SUCHE": "/marienschwerte/defib-suche",
+    "NOTDIENSTE, NOTFÄLLE": "/marienschwerte/notdienste-notfalle",
+    "SMART HELP - SUCHE": "/marienschwerte/smarthelp-suche"
+  },
+  "modules": [
+    "hospital",
+    "stroke_unit",
+    "emergencies",
+    "emergencies_baby",
+    "emergency_services",
+    "defibrillator"
+  ],
+  "pages": {
+    "Page1": {
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItemLarge",
+            "items": [
+              {
+                "Link": "notfallversorgung",
+                "Title": "Baby und Kinder – Notfälle",
+                "Image": "/marienschwerte/img/icon-1.png"
+              },
+              {
+                "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
+                "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE",
+                "Image": "/marienschwerte/img/icon-2.png"
+              },
+              {
+                "Link": "defib-suche",
+                "Title": "DEFIBRILLATOR - SUCHE",
+                "Image": "/marienschwerte/img/icon-3.png"
+              },
+              {
+                "Link": "notdienste-notfalle",
+                "Title": "NOTDIENSTE, NOTFÄLLE",
+                "Image": "/marienschwerte/img/icon-4.png"
+              },
+              {
+                "Link": "hospital-cluster-search",
+                "Title": "SMART HELP - SUCHE",
+                "Image": "/marienschwerte/img/icon-5.png"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+$BaseColor: #ffffff;
+$AccentColor: #A73836;
+$BackgroundPrimary: #EBE4DF;
+$BackgroundSecondary: #D0C9C3;
+$TextColor: #575756;
+//$iconCircleColor: #e30613;
+$iconCircleColor: #fdc218;
+$ActiveNugget: #585857;
+$NormalNugget: #ebeae9;
+
+$ItemLightColor: #eceae9;
+
+$NavigationHeight: 10vh;
+$emergencyColorRed: #fd0000;
+
+$Bold: OpenSans-Bold;
+$Regular: OpenSans-Regular;
+$SemiBold: OpenSans-Semibold;
+
+
+@font-face {
+    font-family: $Bold;
+    src: url(/ddz/fonts/OpenSans-Bold.ttf);    
+}
+
+@font-face {
+    font-family: $Regular;
+    src: url(/ddz/fonts/OpenSans-Regular.ttf);    
+}
+
+@font-face {
+    font-family: $SemiBold;
+    src: url(/ddz/fonts/OpenSans-Semibold.ttf);    
+}
+
+$TitleFontSize: 3.2vh;
+
+$TextFontSize: 2.6vh;

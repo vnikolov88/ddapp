@@ -1,0 +1,85 @@
+@import "_variables.scss";
+
+.OneRowItemLarge .Link-details p.Menu, .OneRowItemLarge .Link-details p.Menu.Ellipse {
+    font-family: $Bold;
+    //font-size: 1.2em;
+    line-height: inherit;
+    max-height: 13vh;
+}
+
+.OneRowItem .Circle {
+    background: $iconCircleColor;
+}
+
+.OneRowItem.ItemWrapper {
+    margin: 0 0 0.2em;
+}
+
+.OneRowItem {
+    .Link-details {
+        p {
+            font-family: $Bold;
+        }
+    }
+}
+
+.OneRowItem, .OneRowItemLarge {
+    ul {
+        li {
+            &:before {
+                font-size: 20px;
+                vertical-align: sub;
+            }
+        }
+    }
+}
+
+
+.ItemWrapper.OneRowItemLarge {
+    height: auto !important;
+    max-height: unset;
+    background: $ItemLightColor;
+
+    .Circle {
+        width: 5.5vh;
+        height: 5.5vh;
+        margin: 0;
+        background: $iconCircleColor;
+
+        i {
+            color: $BaseColor;
+            line-height: 5.5vh;
+            font-size: 3vh;
+        }
+    }
+}
+
+.LeftSideImg {
+    .Link-details {
+        padding: .8em .5em;
+        height: 100%;
+        align-items: center;
+
+        p {
+            height: auto;
+        }
+    }
+}
+
+.Circle {
+    background: $BackgroundPrimary;
+}
+
+.ItemWrapper {
+    margin-bottom: .2em;
+
+    .Link-details {
+        p.Menu {
+           font-family: $Bold;
+        }
+    }
+}
+
+.OneRowItemIconColorInverted .Circle i {
+    color: $BackgroundPrimary;
+}
