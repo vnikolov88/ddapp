@@ -58,3 +58,7 @@
         font-weight: bolder;
     }
 }
+
+.HasBorder, .Profile {
+    border-bottom-color: $BackgroundPrimary;
+}
