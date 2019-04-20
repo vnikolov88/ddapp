@@ -20,12 +20,16 @@
 }
 
 .navbar .navbar-brand {    
-    max-width: 23%;
+    max-width: 33%;
 }
 
 #NavMenu {
     left: auto !important;
     top: unset !important;
+}
+
+.dropdown {
+    top: 12vh;
 }
 
 @media screen and (min-width: 1024px) {

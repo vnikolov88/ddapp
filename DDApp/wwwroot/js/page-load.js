@@ -72,6 +72,11 @@ function _scrollToTop() {
     });
 }
 
+//adjustNavigation after text is rendered - taking the text's white-space into consideration.
+window.onload = function() {
+    adjustNavigation();
+};
+
 attachLinkClickHandlers(document);
 
 history.replaceState({
@@ -82,5 +87,4 @@ history.replaceState({
 
 (function () {
     nuggetList.init();
-    adjustNavigation();
 })();
