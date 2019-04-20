@@ -143,7 +143,7 @@
             "class": "emergency-contact",
             "href": "/ondevice/tel:+49228-19240",
             "text": "+49 228-19240",
-            "imageSource": "/smarthelp/img/icon-6.png"
+            "imageSource": "img/phone-er_small.png"
           }
         },
         {
@@ -156,7 +156,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/smarthelp/img/img-20.png"
+              "img/childRiskManage.png"
             ]
           }
         },
@@ -184,7 +184,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/smarthelp/img/img-11.png"
+              "img/backStrokes-baby.png"
             ]
           }
         },
@@ -217,7 +217,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/smarthelp/img/img-12.png"
+              "img/chestCompress-baby.png"
             ]
           }
         },
@@ -257,7 +257,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/smarthelp/img/img-13.png"
+              "img/accidentSwallow-child.png"
             ]
           }
         },
@@ -333,7 +333,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/smarthelp/img/img-14.png"
+              "img/checkBreathing-baby.png"
             ]
           }
         },
@@ -365,7 +365,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/smarthelp/img/img-15.png"
+              "img/mouthToMouth-baby.png"
             ]
           }
         },
@@ -402,7 +402,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/smarthelp/img/img-34.png"
+              "img/cardiacMassage-baby.png"
             ]
           }
         },
@@ -481,7 +481,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/smarthelp/img/img-16.png"
+              "img/checkBreathing-child.png"
             ]
           }
         },
@@ -502,7 +502,7 @@
           "model": {
             "title": "Beatmung",
             "sources": [
-              "/smarthelp/img/img-17.png"
+              "img/mouthToMouth-child.png"
             ]
           }
         },
@@ -523,7 +523,7 @@
           "model": {
             "Title": "Herzdruckmassage (Thoraxkompression)",
             "sources": [
-              "/smarthelp/img/img-18.png"
+              "img/cardiacMassage-child.png"
             ]
           }
         },
@@ -550,7 +550,7 @@
           "model": {
             "title": "Inhalt der Kindernotfall-Box",
             "sources": [
-              "/smarthelp/img/img-19.png"
+              "img/emergencyBox-child.png"
             ]
           }
         },
@@ -640,7 +640,7 @@
             "class": "emergency-contact",
             "href": "/ondevice/tel:+49 228-19240",
             "text": "+49 228-19240",
-            "imageSource": "/smarthelp/img/icon-6.png"
+            "imageSource": "img/phone-er_small.png"
           }
         },
         {
@@ -654,7 +654,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/smarthelp/img/img-1.png"
+              "img/intoxication.png"
             ]
           }
         },
@@ -826,7 +826,7 @@
           "model": {
             "title": "Zeckenkarte",
             "sources": [
-              "/smarthelp/img/img-2.png"
+              "img/tick-removal-2.png"
             ]
           }
         },
@@ -840,7 +840,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/smarthelp/img/img-3.png"
+              "img/tick-removal-3.png"
             ]
           }
         },
@@ -854,7 +854,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "/smarthelp/img/img-4.png"
+              "img/tick-removal-4.png"
             ]
           }
         },
@@ -875,7 +875,7 @@
           "model": {
             "Title": "Zeckenzange",
             "sources": [
-              "/smarthelp/img/img-5.png"
+              "img/tick-removal-5.png"
             ]
           }
         },
@@ -890,7 +890,7 @@
           "model": {
             "Title": "Zeckenzange",
             "sources": [
-              "/smarthelp/img/img-6.png"
+              "img/tick-removal-6.png"
             ]
           }
         },
@@ -905,7 +905,7 @@
           "model": {
             "Title": "Zeckenzange",
             "sources": [
-              "/smarthelp/img/img-7.png"
+              "img/tick-removal-7.png"
             ]
           }
         },
