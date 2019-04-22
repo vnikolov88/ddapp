@@ -28,7 +28,8 @@
                 <i class="@Model.Icon"></i>
             </div>
         }
-        else
+
+        @if(!string.IsNullOrEmpty(Model.Image))
         {
             <img src="@(Model.Image?.ProxyRemoteUrl() ?? "/img/image_placeholder.png")" />
         }

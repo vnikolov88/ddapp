@@ -1,0 +1,18 @@
+@import "_variables.scss";
+
+.PageHeader {
+    background: #d4d4d4;
+    border-bottom-color: $iconCircleColor;
+
+    .iconCircle {
+        padding: 0.2em 0.9em;
+
+        i {
+            color: $iconCircleColor;
+        }
+
+        img {
+            display: unset !important;
+        }
+    }
+}

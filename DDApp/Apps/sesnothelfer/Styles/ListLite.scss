@@ -1,0 +1,37 @@
+@import "_variables.scss";
+
+ul {
+    list-style: none;
+    li {
+        &::before {
+            content: "\2022";
+            color: $iconCircleColor;
+            padding: 0 .5em 0 0;
+            font-size: 30px;
+            vertical-align: bottom;
+            display: unset;
+            margin-left: unset;
+            width: unset;
+        }
+    }
+}
+
+ul.ListLite, ol.ListLite {
+    font-family: $Regular;
+    color: $ActiveNugget;
+    padding: .5em;
+    margin: 0;
+    font-size: 2.3vh;
+    line-height: 1.5em;
+    word-break: break-word;
+
+    li {
+        list-style-position: inside;
+        text-indent: -1.5em;
+        padding-left: 2em;
+        span.red-bullet {
+            color: $iconCircleColor;
+            font-weight: bold;
+        }
+    }
+}
