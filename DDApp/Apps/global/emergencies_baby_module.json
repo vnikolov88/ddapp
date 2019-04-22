@@ -1328,7 +1328,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:+49 228-19240",
             "text": "112 NOTRUF",
-            "imageSource": "/smarthelp/img/img-23.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         },
         {

@@ -2,7 +2,7 @@
   "title": "smarthelp",
   "quickCallNumberIcon": "fas fa-phone",
   "quickCallNumberText": "",
-  "logo": "/smarthelp/img/smartHelp-logo.png",
+  "logo": "/smarthelp/img/app-logo.png",
   "navigation": {
     "Baby und Kinder – Notfälle": "/smarthelp/notfallversorgung",
     "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE": "/smarthelp/herzinfarkt-schlaganfall-aneurysma-thrombose",

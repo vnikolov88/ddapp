@@ -501,7 +501,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:112",
             "text": "112 NOTUF",
-            "imageSource": "img/img-23.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         },
         {
@@ -728,7 +728,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:112",
             "text": "112 NOTRUF",
-            "imageSource": "img/icon-6.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         },
         {
@@ -833,7 +833,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:112",
             "text": "112 NOTRUF",
-            "imageSource": "img/img-23.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         },
         {
@@ -897,7 +897,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:112",
             "text": "112 NOTRUF",
-            "imageSource": "img/img-23.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         },
         {
@@ -968,7 +968,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:112",
             "text": "112 NOTRUF",
-            "imageSource": "img/img-23.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         },
         {
@@ -1066,7 +1066,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:112",
             "text": "112 NOTRUF",
-            "imageSource": "img/img-23.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         },
         {
