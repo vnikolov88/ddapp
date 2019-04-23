@@ -8,11 +8,9 @@
     "Baby und Kinder – Notfälle": "/marienschwerte/notfallversorgung",
     "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE": "/marienschwerte/herzinfarkt-schlaganfall-aneurysma-thrombose",
     "DEFIBRILLATOR - SUCHE": "/marienschwerte/defib-suche",
-    "NOTDIENSTE, NOTFÄLLE": "/marienschwerte/notdienste-notfalle",
-    "SMART HELP - SUCHE": "/marienschwerte/smarthelp-suche"
+    "NOTDIENSTE, NOTFÄLLE": "/marienschwerte/notdienste-notfalle"
   },
   "modules": [
-    "hospital",
     "stroke_unit",
     "emergencies",
     "emergencies_baby",
@@ -51,11 +49,6 @@
                 "Image": "/marienschwerte/img/icon-4.png",
                 "Link": "notdienste-notfalle",
                 "Title": "NOTDIENSTE, NOTFÄLLE"
-              },
-              {
-                "Image": "/marienschwerte/img/icon-5.png",
-                "Link": "hospital-cluster-search",
-                "Title": "SMART HELP - SUCHE"
               }
             ]
           }

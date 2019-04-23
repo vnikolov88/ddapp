@@ -8,11 +8,9 @@
     "Baby und Kinder – Notfälle": "/sesnothelfer/notfallversorgung",
     "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE": "/sesnothelfer/herzinfarkt-schlaganfall-aneurysma-thrombose",
     "DEFIBRILLATOR - SUCHE": "/sesnothelfer/defib-suche",
-    "NOTDIENSTE, NOTFÄLLE": "/sesnothelfer/notdienste-notfalle",
-    "SMART HELP - SUCHE": "/sesnothelfer/smarthelp-suche"
+    "NOTDIENSTE, NOTFÄLLE": "/sesnothelfer/notdienste-notfalle"
   },
   "modules": [
-    "hospital",
     "stroke_unit",
     "emergencies",
     "emergencies_baby",
@@ -51,11 +49,6 @@
                 "Image": "/sesnothelfer/img/icon-4.png",
                 "Link": "notdienste-notfalle",
                 "Title": "NOTDIENSTE, NOTFÄLLE"
-              },
-              {
-                "Image": "/sesnothelfer/img/icon-5.png",
-                "Link": "hospital-cluster-search",
-                "Title": "SMART HELP - SUCHE"
               }
             ]
           }
