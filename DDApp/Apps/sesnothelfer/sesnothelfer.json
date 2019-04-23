@@ -11,6 +11,7 @@
     "NOTDIENSTE, NOTFÄLLE": "/sesnothelfer/notdienste-notfalle"
   },
   "modules": [
+    "hospital",
     "stroke_unit",
     "emergencies",
     "emergencies_baby",

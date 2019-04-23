@@ -11,6 +11,7 @@
     "NOTDIENSTE, NOTFÄLLE": "/marienschwerte/notdienste-notfalle"
   },
   "modules": [
+    "hospital",
     "stroke_unit",
     "emergencies",
     "emergencies_baby",
