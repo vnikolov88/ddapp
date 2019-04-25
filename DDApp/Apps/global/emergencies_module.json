@@ -222,7 +222,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "img/img-24.png"
+              "img/chest-compression-1.png"
             ]
           }
         },
@@ -248,7 +248,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "img/img-25.png"
+              "img/chest-compression-2.png"
             ]
           }
         },
@@ -267,7 +267,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "img/img-25.png"
+              "img/chest-compression-3.png"
             ]
           }
         },
@@ -282,7 +282,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "img/img-27.png"
+              "img/chest-compression-4.png"
             ]
           }
         },
@@ -300,7 +300,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "img/img-28.png"
+              "img/chest-compression-5.png"
             ]
           }
         },
@@ -345,7 +345,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "img/img-29.png"
+              "img/chest-compression-6.png"
             ]
           }
         },
@@ -390,7 +390,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "img/img-30.png"
+              "img/schlaganfall-1.png"
             ]
           }
         },
@@ -417,7 +417,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "img/img-8.png"
+              "img/schlaganfall-2.png"
             ]
           }
         },
@@ -444,7 +444,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "img/img-9.png"
+              "img/schlaganfall-3.png"
             ]
           }
         },
@@ -471,7 +471,7 @@
           "renderType": "Article",
           "model": {
             "sources": [
-              "img/img-10.png"
+              "img/schlaganfall-4.png"
             ]
           }
         },
@@ -501,7 +501,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:112",
             "text": "112 NOTUF",
-            "imageSource": "img/img-23.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         },
         {
@@ -530,7 +530,7 @@
         {
           "renderType": "Article",
           "model": {
-            "sources": [ "img/img-31.png" ]
+            "sources": [ "img/call_worried.png" ]
           }
         },
         {
@@ -545,7 +545,7 @@
         {
           "renderType": "Article",
           "model": {
-            "sources": [ "img/img-32.png" ]
+            "sources": [ "img/crawl-to-door.png" ]
           }
         },
         {
@@ -560,7 +560,7 @@
         {
           "renderType": "Article",
           "model": {
-            "sources": [ "img/img-33.png" ],
+            "sources": [ "img/stroke-unit-call.png" ],
             "description": "<br/>"
           }
         },
@@ -728,7 +728,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:112",
             "text": "112 NOTRUF",
-            "imageSource": "img/icon-6.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         },
         {
@@ -833,7 +833,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:112",
             "text": "112 NOTRUF",
-            "imageSource": "img/img-23.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         },
         {
@@ -897,7 +897,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:112",
             "text": "112 NOTRUF",
-            "imageSource": "img/img-23.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         },
         {
@@ -968,7 +968,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:112",
             "text": "112 NOTRUF",
-            "imageSource": "img/img-23.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         },
         {
@@ -1066,7 +1066,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:112",
             "text": "112 NOTRUF",
-            "imageSource": "img/img-23.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         },
         {

@@ -298,7 +298,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "tel:116117",
             "text": "BUNDESWEITE: HOTLINE 116117",
-            "imagesource": "img/img-23.png"
+            "imagesource": "img/phone-er_transparent.png"
           }
         },
         {
@@ -313,7 +313,7 @@
             "class": "emergency-contact emergency-contact-red",
             "href": "tel:+49 030-19240",
             "text": "GIFTNOTRUF 030/1 92 40",
-            "imagesource": "img/img-23.png"
+            "imagesource": "img/phone-er_transparent.png"
           }
         }
       ]

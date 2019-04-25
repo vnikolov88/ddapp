@@ -34,7 +34,6 @@
         /*img grid*/
         order: 2;
         /*img Styles*/
-        //display: none;
         object-fit: contain;
     }
 
@@ -329,8 +328,8 @@
     margin: .2em 0;
 }
 
-.LeftSideImg.grid-container {
-    grid-template-columns: 25% 50% 20%;
+.LeftSideImg.grid-container {    
+    grid-template-columns: 32% 44% 17%;
     grid-template-rows: 100%;
     grid-gap: 1.3%;
     align-items: center;
@@ -384,6 +383,7 @@
             -webkit-box-orient: vertical;
             white-space: unset;
             overflow: hidden;
+            word-break: break-word;
         }
 
         p:nth-child(2):not(empty) {
