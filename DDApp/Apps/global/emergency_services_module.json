@@ -47,9 +47,12 @@
         "OpeningTimes": "IDictionary<string, PharmacyOpeningTime>",
         "DistanceMetric": "System.Double",
         "ElectronicAddresses": "IDictionary<string, PharmacyElectronicAddress>",
-        "PrimaryEmail": "PharmacyElectronicAddress"
+        "PrimaryEmail": "PharmacyElectronicAddress",
+        "StartDateTime": "PharmacyOpeningTimeDate",
+        "EndDateTime": "PharmacyOpeningTimeDate"
       },
       "methods": {
+        "GetOpeningTime": "() => $\"{StartDateTime.Date:HH:mm tt}-{EndDateTime.Date:HH:mm tt}\"",
         "GetOpeningTimes": "() => OpeningTimes.Select(x => x.Value).OrderBy(x => x.Start.Date).Select(x => $\"{x.Start.Date:HH:mm tt}-{x.End.Date:HH:mm tt}\").FirstOrDefault()",
         "GetAllOpeningTimes": "() => string.Join(',', OpeningTimes.Select(x => x.Value).OrderBy(x => x.Start.Date).Select(x => $\"{x.Start.Date}-{x.End.Date}\"))"
       }
@@ -197,7 +200,7 @@
           "renderType": "ResultList",
           "provider": {
             "type": "PharmacyResults",
-            "url": "http://116.203.112.43:9999/api/v2/pharmacy/{{pharmacyType}}?distance=100&address={{base64:search}}&page=1&pageSize=50",
+            "url": "http://ddappservice.doctor-help.com/api/v2/pharmacy/{{pharmacyType}}?distanceKm=100&address={{base64:search}}&page=1&pageSize=50",
             "mapper": [
               {
                 "sourceType": "PharmacyResults",
@@ -212,7 +215,7 @@
                 "destinationType": "ResultItem",
                 "mapping": {
                   "d => d.ItemName": "s => s.Name",
-                  "d => d.DatePublished": "s => s.GetOpeningTimes()",
+                  "d => d.DatePublished": "s => s.GetOpeningTime()",
                   "d => d.AdditionalInfo": "s => $\"{s.DistanceMetric / 1000:0.##} km\"",
                   "d => d.Description": "s => \"Addresse:\"",
                   "d => d.Location": "s => $\"{s.Location.Zip} {s.Location.Street}, {s.Location.City}\"",
@@ -235,7 +238,7 @@
           "renderType": "ItemList",
           "provider": {
             "type": "PharmacyArticleResults",
-            "url": "http://116.203.112.43:9999/api/v2/article/list-emergency?page=1&pageSize=50",
+            "url": "http://ddappservice.doctor-help.com/api/v2/article/list-emergency?page=1&pageSize=50",
             "mapper": [
               {
                 "sourceType": "PharmacyArticleResults",
@@ -267,7 +270,7 @@
           "renderType": "Article",
           "provider": {
             "type": "PharmacyArticleResults",
-            "url": "http://116.203.112.43:9999/api/v2/article/list-emergency?page=1&pageSize=50",
+            "url": "http://ddappservice.doctor-help.com/api/v2/article/list-emergency?page=1&pageSize=50",
             "reducer": "(s, qc) => s.Items.FirstOrDefault(x => x.Id.ToString() == qc.articleId)",
             "mapper": [
               {
