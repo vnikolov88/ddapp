@@ -163,11 +163,9 @@
         {
           "renderType": "Article",
           "model": {
-            "Content": "<span class='red-bullet'><b>*Ineffektives Husten:</b> keine Stimme, leiser oder stiller Husten, Zyanose (bläuliche Verfärbung der Haut), zunehmender Bewußtseinsverlust</span>"
+            "description": "<span class='red-bullet'><b>*Ineffektives Husten:</b> keine Stimme, leiser oder stiller Husten, Zyanose (bläuliche Verfärbung der Haut), zunehmender Bewußtseinsverlust</span> <br/> <b>**Effektiver Husten:</b> Schreien, Weinen, lauter Husten, Einatmen vor dem Husten, Ihr Kind ist wach und ansprechbar"
           }
         }
-
-
       ]
     },
     "saugling": {
