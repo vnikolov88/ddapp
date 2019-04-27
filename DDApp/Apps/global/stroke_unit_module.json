@@ -7,20 +7,21 @@
         "PostCode": "System.String",
         "City": "System.String",
         "Latitude": "System.Double",
-        "Longitude": "System.Double"
+        "Longitude": "System.Double",
+        "DistanceKm": "System.Double"
+      },
+      "methods": {
+        "GetAddressString": "() => $\"{PostCode} {Street}, {City}\"",
+        "GetMapUrl": "(uint zoom) => $\"https://api.mapbox.com/v4/ferdijeute.k8km6fdm/url-bit.ly%2f1JJK3XY({Longitude},{Latitude})/{Longitude},{Latitude},{zoom}/120x80@2x.png?access_token=pk.eyJ1IjoiZmVyZGlqZXV0ZSIsImEiOiIwWkRRUW5ZIn0.aBIsPCWLwLXwmd_QOiJC4w\""
       }
     },
     "StrokeUnitResults": {
-      "attributes": [ "[JsonConverter(typeof(JsonPathConverter))]" ],
       "properties": {
         "TotalItems": "System.Int32",
         "TotalPages": "System.Int32",
         "CurrentPage": "System.Int32",
         "ItemsPerPage": "System.Int32",
-        "Items": {
-          "type": "StrokeUnit[]",
-          "attributes": [ "[JsonProperty(\"$\")]" ]
-        }
+        "Items": "StrokeUnit[]"
       }
     }
   },
@@ -34,13 +35,13 @@
           "renderType": "ResultList",
           "provider": {
             "type": "StrokeUnitResults",
-            "url": "http://116.203.112.43:9999/api/v1/strokeunits/with-location?address={{base64:search}}",
+            "url": "http://ddappservice.doctor-help.com/api/v2/strokeunits/with-location?address={{base64:search}}",
             "mapper": [
               {
                 "sourceType": "StrokeUnitResults",
                 "destinationType": "ResultList",
                 "mapping": {
-                  "d => d.Style": "s => ResultItemStyle.SingleRowResult",
+                  "d => d.Style": "s => ResultItemStyle.ThreeRowsResult",
                   "d => d.Items": "s => s.Items"
                 }
               },
@@ -49,9 +50,12 @@
                 "destinationType": "ResultItem",
                 "mapping": {
                   "d => d.ItemName": "s => s.Name",
-                  "d => d.Description": "s => $\"{s.Name}, {s.Street}, {s.City} \"",
+                  "d => d.AdditionalInfo": "s => $\"{s.DistanceKm:0.##} km\"",
+                  "d => d.Description": "s => \"Addresse:\"",
+                  "d => d.Location": "s => s.GetAddressString()",
                   "d => d.Link": "s => $\"/ondevice/geo:{s.Latitude},{s.Longitude}&q={Uri.EscapeDataString(s.Name)}\"",
-                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fas fa-map-marker-alt\" }"
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fas fa-map-marker-alt\" }",
+                  "d => d.Image": "s => s.GetMapUrl(12)"
                 }
               }
             ]
