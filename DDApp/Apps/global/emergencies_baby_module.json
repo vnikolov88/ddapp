@@ -721,7 +721,6 @@
         {
           "renderType": "Article",
           "model": {
-            "title": "Liebe Eltern,",
             "description": "Wasser übt eine ungemeine Anziehungskraft auf Kinder aus. Die Gefahren werden leider häufig unterschätzt. Für Kleinkinder können schon Wassertiefen von wenigen Zentimetern zur tödlichen Gefahr werden. Ertrinken ist in Deutschland nach Verkehrsunfällen die zweithäufigste tödliche Unfallursache im Kindesalter. Die meisten Kinder ertrinken nicht während des Badeurlaubes, sondern beim Spielen in der häuslichen Umgebung."
           }
         },
@@ -851,15 +850,7 @@
         {
           "renderType": "Article",
           "model": {
-            "sources": [
-              "img/tick-removal-4.png"
-            ]
-          }
-        },
-        {
-          "renderType": "Article",
-          "model": {
-            "description": "<br/> <p><span class='red-bullet'>3.</span>Die entfernte Zecke entsorgen. Einstichstelle beobachten: <br/> An <b>Borreliose</b> denken. Bei ausweitender Rötung: Arzt aufsuchen!<br /><b>Bewohner eines Risikogebiets oder dorthin Reisende sollten sich gegen FSME impfen lassen!</b><br /> Bei Unsicherheit konsultieren Sie bitte Ihren Arzt. Mehr Infos unter <a href='/ondevice/www.zecken.de'><b>www.zecken.de</b></a> ."
+            "description": "<p><span class='red-bullet'>3.</span>Die entfernte Zecke entsorgen. Einstichstelle beobachten: <br/> An <b>Borreliose</b> denken. Bei ausweitender Rötung: Arzt aufsuchen!<br /><b>Bewohner eines Risikogebiets oder dorthin Reisende sollten sich gegen FSME impfen lassen!</b><br /> Bei Unsicherheit konsultieren Sie bitte Ihren Arzt. Mehr Infos unter <a href='/ondevice/www.zecken.de'><b>www.zecken.de</b></a> ."
           }
         }
       ]
