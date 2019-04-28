@@ -16,7 +16,8 @@
     "emergencies",
     "emergencies_baby",
     "emergency_services",
-    "defibrillator"
+    "defibrillator",
+    "youtube"
   ],
   "pages": {
     "Page1": {
