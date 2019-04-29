@@ -575,7 +575,7 @@
                 "Icon": "fas fa-play"
               },
               {
-                "Link": "schlaganfall-video-beispiel",
+                "Link": "PageYouTubeVideo?id=gAxlMZSa4Dk",
                 "Title": "Was kann ich sonst noch tun? (Video-Beispiel)",
                 "Icon": "fas fa-play"
               }
@@ -631,7 +631,19 @@
       "title": "SCHLAGANFALL",
       "titleImage": "img/icon-2.png",
       "components": [
-        //MOVIE component
+        {
+          "renderType": "Movie",
+          "provider": {
+            "type": "YouTubeVideo",
+            "url": "https://www.youtube.com/watch?v=gAxlMZSa4Dk",
+            "mapper": [
+              {
+                "sourceType": "YouTubeVideo",
+                "destinationType": "Movie"
+              }
+            ]
+          }
+        }
       ]
     },
     // Thrombosis

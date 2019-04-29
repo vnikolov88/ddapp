@@ -5,3 +5,18 @@
     padding: 0;
     display: inline-grid;
 }
+
+ul.DescriptionList {
+    counter-reset: foo;
+    display: table;
+
+    li {
+        counter-increment: foo;
+        display: table-row;
+
+        &:before {            
+            display: table-cell; /* aha! */
+            text-align: right;
+        }
+    }
+}

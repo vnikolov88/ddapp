@@ -119,6 +119,17 @@
     }
 }
 
+
+.ThreeRowsResult-ResultItem {
+    @at-root .ResultItem-Row-Three {
+        grid-template-columns: 80% !important;
+    }
+}
+
+.ThreeRowsResult-ResultItem .ResultItem-Row-Three > img.ResultItem-ContactInfo-Image:first-child {
+    justify-self: end !important;
+}
+
 .grid-container.ResultItem.SingleRowResult-ResultItem {
     grid-template-columns: 80% 20%;
     grid-gap: unset;

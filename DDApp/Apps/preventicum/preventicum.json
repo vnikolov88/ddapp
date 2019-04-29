@@ -13,7 +13,8 @@
     "hospital",
     "stroke_unit",
     "emergencies",
-    "emergency_services"
+    "emergency_services",
+    "youtube"
   ],
   "pages": {
     "Page1": {

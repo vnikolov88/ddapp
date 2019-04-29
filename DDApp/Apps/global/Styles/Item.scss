@@ -320,8 +320,26 @@
     }
 }
 
+#PageContainer > .HasBorder.Article + .Container {
+    .LeftSideImg.grid-container:first-child {
+        margin-top: 0;
+    }
+}
+
 .Container .LeftSideImg.grid-container:first-child {
+    margin-top: 0.2em;
+}
+
+
+.Container > .Title:first-child {
     margin-top: 0;
+}
+
+
+.Container {
+    @at-root h4.Title:empty {
+        margin-top: .2em;
+    }
 }
 
 .Container + .LeftSideImg.grid-container {

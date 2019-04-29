@@ -163,11 +163,9 @@
         {
           "renderType": "Article",
           "model": {
-            "Content": "<span class='red-bullet'><b>*Ineffektives Husten:</b> keine Stimme, leiser oder stiller Husten, Zyanose (bläuliche Verfärbung der Haut), zunehmender Bewußtseinsverlust</span>"
+            "description": "<span class='red-bullet'><b>*Ineffektives Husten:</b> keine Stimme, leiser oder stiller Husten, Zyanose (bläuliche Verfärbung der Haut), zunehmender Bewußtseinsverlust</span> <br/> <b>**Effektiver Husten:</b> Schreien, Weinen, lauter Husten, Einatmen vor dem Husten, Ihr Kind ist wach und ansprechbar"
           }
         }
-
-
       ]
     },
     "saugling": {
@@ -591,27 +589,46 @@
                 "Link": "erste-hilfe-intoxikation",
                 "Title": "Erste Hilfe",
                 "Icon": "fas fa-play"
-              },
-              {
-                "Link": "einatmung-intoxikation",
-                "Title": "Erstmaßnahmen bei Einatmung",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "einatmung-intoxikation",
-                "Title": "Erstmaßnahmen bei Augenkontakt",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "einatmung-intoxikation",
-                "Title": "Erstmaßnahmen bei Hautkontakt",
-                "Icon": "fas fa-play"
-              },
-              {
-                "Link": "einatmung-intoxikation",
-                "Title": "Erste Hilfe bei Bewusstlosigkeit",
-                "Icon": "fas fa-play"
               }
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Erstmaßnahmen bei Einatmung",
+            "description": "Für frische Luft sorgen, Vorsicht bei geschlossenen <br/> Räumen, Silos und Gruben.<br/>Betroffene Personen warm zudecken, ruhig halten.<br/>"
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Erstmaßnahmen bei Augenkontakt",
+            "description": "Besonders bei Verätzungen durch Säuren, Laugen und Kalk: Augen sofort mindestens 10 Minuten unter fließendem Wasser spülen. Augenlider dabei gut offen halten. Wasserfluß direkt auf das Auge richten, um noch vorhandene Säure- bzw. Laugenreste so schnell wie möglich zu verdünnen und auszuspülen."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Erstmaßnahmen bei Hautkontakt",
+            "description": "Benetzte Kleider sofort entfernen. <br/> Betroffene Hautpartien ausgiebig unter fließendem Wasser spülen."
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "Title": "Erstmaßnahmen bei Bewusstlosigkeit",
+            "description": "Bewusstlose in stabile Seitenlage bringen, Kopf nach unten gewendet."
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "Keine Flüssigkeiten einflößen",
+              "Keinen Brechversuch unternehmen",
+              "Unverzüglich den Notarzt rufen!"
             ]
           }
         },
@@ -670,52 +687,7 @@
           }
         }
       ]
-    },
-    "einatmung-intoxikation": {
-      "title": "Vergiftung, Intoxikation",
-      "titleImage": "img/icon-1.png",
-      "components": [
-        {
-          "renderType": "Article",
-          "model": {
-            "Title": "Erstmaßnahmen bei Einatmung",
-            "description": "Für frische Luft sorgen, Vorsicht bei geschlossenen <br/> Räumen, Silos und Gruben.<br/>Betroffene Personen warm zudecken, ruhig halten.<br/>"
-          }
-        },
-        {
-          "renderType": "Article",
-          "model": {
-            "Title": "Erstmaßnahmen bei Augenkontakt",
-            "description": "Besonders bei Verätzungen durch Säuren, Laugen und Kalk: Augen sofort mindestens 10 Minuten unter fließendem Wasser spülen. Augenlider dabei gut offen halten. Wasserfluß direkt auf das Auge richten, um noch vorhandene Säure- bzw. Laugenreste so schnell wie möglich zu verdünnen und auszuspülen."
-          }
-        },
-        {
-          "renderType": "Article",
-          "model": {
-            "Title": "Erstmaßnahmen bei Hautkontakt",
-            "description": "Benetzte Kleider sofort entfernen. <br/> Betroffene Hautpartien ausgiebig unter fließendem Wasser spülen."
-          }
-        },
-        {
-          "renderType": "Article",
-          "model": {
-            "Title": "Erstmaßnahmen bei Bewusstlosigkeit",
-            "description": "Bewusstlose in stabile Seitenlage bringen, Kopf nach unten gewendet."
-          }
-        },
-        {
-          "renderType": "ListLite",
-          "model": {
-            "type": "ul",
-            "content": [
-              "Keine Flüssigkeiten einflößen",
-              "Keinen Brechversuch unternehmen",
-              "Unverzüglich den Notarzt rufen!"
-            ]
-          }
-        }
-      ]
-    },
+    },    
     "ertrinkungsunfall-liebe-eltern": {
       "title": "Ertrinkungsunfall",
       "titleImage": "img/icon-1.png",
@@ -723,7 +695,6 @@
         {
           "renderType": "Article",
           "model": {
-            "title": "Liebe Eltern,",
             "description": "Wasser übt eine ungemeine Anziehungskraft auf Kinder aus. Die Gefahren werden leider häufig unterschätzt. Für Kleinkinder können schon Wassertiefen von wenigen Zentimetern zur tödlichen Gefahr werden. Ertrinken ist in Deutschland nach Verkehrsunfällen die zweithäufigste tödliche Unfallursache im Kindesalter. Die meisten Kinder ertrinken nicht während des Badeurlaubes, sondern beim Spielen in der häuslichen Umgebung."
           }
         },
@@ -853,15 +824,7 @@
         {
           "renderType": "Article",
           "model": {
-            "sources": [
-              "img/tick-removal-4.png"
-            ]
-          }
-        },
-        {
-          "renderType": "Article",
-          "model": {
-            "description": "<br/> <p><span class='red-bullet'>3.</span>Die entfernte Zecke entsorgen. Einstichstelle beobachten: <br/> An <b>Borreliose</b> denken. Bei ausweitender Rötung: Arzt aufsuchen!<br /><b>Bewohner eines Risikogebiets oder dorthin Reisende sollten sich gegen FSME impfen lassen!</b><br /> Bei Unsicherheit konsultieren Sie bitte Ihren Arzt. Mehr Infos unter <a href='/ondevice/www.zecken.de'><b>www.zecken.de</b></a> ."
+            "description": "<p><span class='red-bullet'>3.</span>Die entfernte Zecke entsorgen. Einstichstelle beobachten: <br/> An <b>Borreliose</b> denken. Bei ausweitender Rötung: Arzt aufsuchen!<br /><b>Bewohner eines Risikogebiets oder dorthin Reisende sollten sich gegen FSME impfen lassen!</b><br /> Bei Unsicherheit konsultieren Sie bitte Ihren Arzt. Mehr Infos unter <a href='/ondevice/www.zecken.de'><b>www.zecken.de</b></a> ."
           }
         }
       ]

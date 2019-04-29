@@ -32,3 +32,8 @@
         color: $BaseColor;
     }
 }
+
+//only for this application
+body main section#PageContainer .Article + .emergency-contact.emergency-contact-red + .Article + .emergency-contact.emergency-contact-red {
+    
+}
