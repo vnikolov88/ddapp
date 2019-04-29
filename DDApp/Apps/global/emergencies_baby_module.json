@@ -687,52 +687,7 @@
           }
         }
       ]
-    },
-    //"einatmung-intoxikation": {
-    //  "title": "Vergiftung, Intoxikation",
-    //  "titleImage": "img/icon-1.png",
-    //  "components": [
-    //    {
-    //      "renderType": "Article",
-    //      "model": {
-    //        "Title": "Erstmaßnahmen bei Einatmung",
-    //        "description": "Für frische Luft sorgen, Vorsicht bei geschlossenen <br/> Räumen, Silos und Gruben.<br/>Betroffene Personen warm zudecken, ruhig halten.<br/>"
-    //      }
-    //    },
-    //    {
-    //      "renderType": "Article",
-    //      "model": {
-    //        "Title": "Erstmaßnahmen bei Augenkontakt",
-    //        "description": "Besonders bei Verätzungen durch Säuren, Laugen und Kalk: Augen sofort mindestens 10 Minuten unter fließendem Wasser spülen. Augenlider dabei gut offen halten. Wasserfluß direkt auf das Auge richten, um noch vorhandene Säure- bzw. Laugenreste so schnell wie möglich zu verdünnen und auszuspülen."
-    //      }
-    //    },
-    //    {
-    //      "renderType": "Article",
-    //      "model": {
-    //        "Title": "Erstmaßnahmen bei Hautkontakt",
-    //        "description": "Benetzte Kleider sofort entfernen. <br/> Betroffene Hautpartien ausgiebig unter fließendem Wasser spülen."
-    //      }
-    //    },
-    //    {
-    //      "renderType": "Article",
-    //      "model": {
-    //        "Title": "Erstmaßnahmen bei Bewusstlosigkeit",
-    //        "description": "Bewusstlose in stabile Seitenlage bringen, Kopf nach unten gewendet."
-    //      }
-    //    },
-    //    {
-    //      "renderType": "ListLite",
-    //      "model": {
-    //        "type": "ul",
-    //        "content": [
-    //          "Keine Flüssigkeiten einflößen",
-    //          "Keinen Brechversuch unternehmen",
-    //          "Unverzüglich den Notarzt rufen!"
-    //        ]
-    //      }
-    //    }
-    //  ]
-    //},
+    },    
     "ertrinkungsunfall-liebe-eltern": {
       "title": "Ertrinkungsunfall",
       "titleImage": "img/icon-1.png",
