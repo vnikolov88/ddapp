@@ -3,6 +3,16 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
+FROM node:6.4.0 AS npm-tasks
+WORKDIR /src
+COPY . .
+WORKDIR "/src/DDApp"
+RUN ls
+RUN npm install
+RUN npm rebuild node-sass
+RUN npm install gulp@3.8.11 -g
+RUN gulp default
+
 FROM microsoft/dotnet:2.2-sdk-stretch AS build
 WORKDIR /src
 COPY ["DDApp/DDApp.csproj", "DDApp/"]
