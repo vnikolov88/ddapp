@@ -12,12 +12,14 @@ RUN npm install
 RUN npm rebuild node-sass
 RUN npm install gulp@3.8.11 -g
 RUN gulp default
+WORKDIR /src
 
 FROM microsoft/dotnet:2.2-sdk-stretch AS build
+COPY --from=npm-tasks . .
 WORKDIR /src
 COPY ["DDApp/DDApp.csproj", "DDApp/"]
 RUN dotnet restore "DDApp/DDApp.csproj"
-COPY . .
+
 WORKDIR "/src/DDApp"
 RUN dotnet build "DDApp.csproj" -c Release -o /app
 
