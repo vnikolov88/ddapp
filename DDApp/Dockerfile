@@ -7,7 +7,6 @@ FROM node:6.4.0 AS npm-tasks
 WORKDIR /src
 COPY . .
 WORKDIR "/src/DDApp"
-RUN ls
 RUN npm install
 RUN npm rebuild node-sass
 RUN npm install gulp@3.8.11 -g
