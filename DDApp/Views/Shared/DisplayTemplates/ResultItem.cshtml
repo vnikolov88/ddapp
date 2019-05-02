@@ -89,27 +89,24 @@ else
                 }
             </section>
 
+            @if (!string.IsNullOrWhiteSpace(Model.ContactInfo)) { 
             <section class="ResultItem-Row-Three">
 
-                @if (!string.IsNullOrEmpty(Model.ContactInfo))
-                {
-                    <span class="ResultItem-ContactInfo">
-                        @Model.ContactInfo
-                    </span>
-                }
+                <span class="ResultItem-ContactInfo">
+                    @Model.ContactInfo
+                </span>
 
-                @if (!string.IsNullOrEmpty(Model.ContactInfoIcon.Image))
+                @if (!string.IsNullOrEmpty(Model.ContactInfoIcon?.Image))
                 {
                     <img src="@Model.ContactInfoIcon.Image" class="ResultItem-ContactInfo-Image" />
                 }
 
-                @if (!string.IsNullOrEmpty(Model.ContactInfoIcon.Icon))
+                @if (!string.IsNullOrEmpty(Model.ContactInfoIcon?.Icon))
                 {
-
                     <i class="@Model.ContactInfoIcon.Icon"></i>
                 }
             </section>
-
+            }
         }
 
         @if (Model.Style == ResultItemStyle.SingleRowResult)
