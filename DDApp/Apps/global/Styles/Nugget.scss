@@ -26,9 +26,26 @@
 
 #NuggetContainer .Nugget {
     display: none;
+
+    section {
+        color: $TextColor;
+
+        span.red-bullet {
+            color: $EmergencyColor;
+            font-weight: bolder;
+        }
+
+        .strong {
+            font-weight: bold;
+        }
+    }
 }
 
 #NuggetContainer {
+
+    img {
+        max-height: 41vh;
+    }
 
     .Nugget.Active {
         text-align: center;
