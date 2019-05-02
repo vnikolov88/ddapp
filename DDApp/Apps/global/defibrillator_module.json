@@ -49,7 +49,7 @@
           "renderType": "ResultList",
           "provider": {
             "type": "DefibrillatorResults",
-            "url": "http://116.203.112.43:9999/api/v1/defibrillator/list?distance=10&address={{base64:search}}&page=1&pageSize=100",
+            "url": "http://116.203.112.43:9999/api/v1/defibrillator/list?distance=10&address={{base64:search}}&page=1&pageSize=20",
             "mapper": [
               {
                 "sourceType": "DefibrillatorResults",
@@ -67,8 +67,9 @@
                   "d => d.AdditionalInfo": "s => $\"{s.DistanceKm:0.##} km\"",
                   "d => d.Description": "s => \"Addresse:\"",
                   "d => d.Location": "s => $\"{s.Zip} {s.Street}, {s.City}\"",
+                  "d => d.Link": "s => $\"/ondevice/geo:{s.Latitude},{s.Longitude}&q={Uri.EscapeDataString(s.Name)}\"",
                   "d => d.ContactInfo": "s => s.Description",
-                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Image = \"img/icon-6.png\" }",
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fas fa-info-circle\" }",
                   "d => d.Image": "s => s.GetMapUrl(12)"
                 }
               }
