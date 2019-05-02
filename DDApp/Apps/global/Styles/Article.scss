@@ -4,7 +4,7 @@
     display: none;
 }
 
-.Article {    
+.Article {
     background-color: $BaseColor;
     font-family: $Regular;
     color: $TextColor;
@@ -17,6 +17,7 @@
         width: 100%;
         max-width: 100%;
         object-fit: contain;
+        max-height: 50vh;
     }
 
     .Title {
@@ -61,7 +62,7 @@
 
 
 .Article .Title, .Article section {
-    padding: 2vh;
+    padding: 3vh;
 }
 
 .Article .Title + section {
