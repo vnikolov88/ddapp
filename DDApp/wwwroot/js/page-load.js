@@ -23,7 +23,10 @@ function requestPage (link, push) {
         url = url + link.search;
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
-            if (!isOnDevice) {
+            if (isOnDevice) {
+                console.log("This link is meant to be opened on a mobile device !" + url);
+            }
+            else {
                 mainContentArea.innerHTML = xhr.responseText;
                 attachLinkClickHandlers(mainContentArea);
 

@@ -219,8 +219,9 @@
                   "d => d.AdditionalInfo": "s => $\"{s.DistanceMetric / 1000:0.##} km\"",
                   "d => d.Description": "s => \"Addresse:\"",
                   "d => d.Location": "s => $\"{s.Location.Zip} {s.Location.Street}, {s.Location.City}\"",
+                  "d => d.Link": "s => $\"/ondevice/geo:{s.Location.GeographicalPoint.Latitude},{s.Location.GeographicalPoint.Longitude}&q={Uri.EscapeDataString(s.Name)}\"",
                   "d => d.ContactInfo": "s => s.Phone",
-                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Image = \"img/icon-4.png\" }",
+                  "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Image = \"img/phone-er_small.png\" }",
                   "d => d.Image": "s => s.Location.GetMapUrl(12)"
                 }
               }
