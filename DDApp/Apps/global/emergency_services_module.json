@@ -319,6 +319,15 @@
             "text": "GIFTNOTRUF <br /> 030/1 92 40",
             "imagesource": "img/phone-er_transparent.png"
           }
+        },
+        {
+          "renderType": "AnchorLite",
+          "model": {
+            "class": "emergency-contact",
+            "href": "/ondevice/tel:+4922819240",
+            "text": "GIFTNOTRUF <br /> 228/1 92 40",
+            "imageSource": "img/phone-er_small.png"
+          }
         }
       ]
     },

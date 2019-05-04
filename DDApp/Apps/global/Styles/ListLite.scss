@@ -16,6 +16,8 @@ ul li::before {
     content: ".";
     color: black;
     font-weight: bold;
+    padding: 0 .3em 0 0;
+    font-size: 34px;
     display: inline-block;
     width: 1em;
     margin-left: -1em;

@@ -141,7 +141,16 @@
           "renderType": "AnchorLite",
           "model": {
             "class": "emergency-contact",
-            "href": "/ondevice/tel:+49228-19240",
+            "href": "/ondevice/tel:+493019240",
+            "text": "+49 30-19240",
+            "imageSource": "img/phone-er_small.png"
+          }
+        },
+        {
+          "renderType": "AnchorLite",
+          "model": {
+            "class": "emergency-contact",
+            "href": "/ondevice/tel:+4922819240",
             "text": "+49 228-19240",
             "imageSource": "img/phone-er_small.png"
           }
@@ -655,7 +664,16 @@
           "renderType": "AnchorLite",
           "model": {
             "class": "emergency-contact",
-            "href": "/ondevice/tel:+49 228-19240",
+            "href": "/ondevice/tel:+493019240",
+            "text": "+49 30-19240",
+            "imageSource": "img/phone-er_small.png"
+          }
+        },
+        {
+          "renderType": "AnchorLite",
+          "model": {
+            "class": "emergency-contact",
+            "href": "/ondevice/tel:+4922819240",
             "text": "+49 228-19240",
             "imageSource": "img/phone-er_small.png"
           }
@@ -1289,7 +1307,7 @@
           "renderType": "AnchorLite",
           "model": {
             "class": "emergency-contact emergency-contact-red",
-            "href": "/ondevice/tel:+49 228-19240",
+            "href": "/ondevice/tel:112",
             "text": "112 NOTRUF",
             "imageSource": "img/phone-er_transparent.png"
           }

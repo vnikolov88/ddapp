@@ -6,8 +6,7 @@ ul {
         &::before {
             content: "\2022";
             color: $iconCircleColor;
-            padding: 0 .5em 0 0;
-            font-size: 30px;
+
             vertical-align: bottom;
             display: unset;
             margin-left: unset;
@@ -21,7 +20,7 @@ ul.ListLite, ol.ListLite {
     color: $ActiveNugget;
     padding: .5em;
     margin: 0;
-    font-size: 2.3vh;
+    font-size: $TextFontSize;
     line-height: 1.5em;
     word-break: break-word;
 
@@ -29,6 +28,7 @@ ul.ListLite, ol.ListLite {
         list-style-position: inside;
         text-indent: -1.5em;
         padding-left: 2em;
+
         span.red-bullet {
             color: $iconCircleColor;
             font-weight: bold;
