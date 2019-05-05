@@ -2,82 +2,80 @@
   "dataTypes": {
     "Picture": {
       "properties": {
-        "thumb": "System.String",
-        "xs": "System.String",
-        "s": "System.String",
-        "m": "System.String",
-        "l": "System.String",
-        "xl": "System.String"
+        "Thumbnail": "System.String",
+        "SizeXS": "System.String",
+        "SizeS": "System.String",
+        "SizeM": "System.String",
+        "SizeL": "System.String",
+        "SizeXL": "System.String"
       }
     },
     "Address": {
       "properties": {
+        "Email": "System.String",
+        "Phone": "System.String",
+        "Fax": "System.String",
         "Street": "System.String",
         "StreetNr": "System.String",
         "Postcode": "System.String",
-        "Place": "System.String",
+        "City": "System.String",
         "Url": "System.String",
         "Latitude": "System.Nullable<System.Double>",
         "Longitude": "System.Nullable<System.Double>"
       },
       "methods": {
-        "GetAddressString": "() => $\"{Postcode} {Street} {StreetNr}, {Place}\"",
+        "GetAddressString": "() => $\"{Postcode} {Street} {StreetNr}, {City}\"",
         "GetMapUrl": "(uint zoom) => $\"https://api.mapbox.com/v4/ferdijeute.k8km6fdm/url-bit.ly%2f1JJK3XY({Longitude},{Latitude})/{Longitude},{Latitude},{zoom}/120x80@2x.png?access_token=pk.eyJ1IjoiZmVyZGlqZXV0ZSIsImEiOiIwWkRRUW5ZIn0.aBIsPCWLwLXwmd_QOiJC4w\""
       }
     },
-    "ContactPerson": {
+    "Doctor": {
       "properties": {
-        "Title": "System.String",
+        "GUID": "System.String",
+        "Salutation": "System.String",
         "FirstName": "System.String",
         "LastName": "System.String",
-        "MainAreaOfFocus": "System.String",
-        "Phone": "System.String",
-        "Fax": "System.String",
-        "Email": "System.String",
-        "CV": "System.String",
+        "Specialty": "System.String",
+        "CVUrl": "System.String",
         "Address": "Address",
+        "Pictures": "Picture[]",
+        "DistanceFromLocationKm": "System.Double"
+      }
+    },
+    "Certificate": {
+      "properties": {
+        "Name": "System.String",
+        "ExternalUrl": "System.String",
         "Pictures": "Picture[]"
       },
       "methods": {
-        "GetGUID": "() => $\"{Title},{FirstName},{LastName}\".GetGUID()"
-      }
-    },
-    "MedicalService": {
-      "properties": {
-        "Code": "System.String",
-        "Designation": "System.String",
-        "Explanations": "System.String"
-      }
-    },
-    "MedicalEquipment": {
-      "properties": {
-        "Code": "System.String",
-        "Notfallverfuegbarkeit_24h": "System.String",
-        "Explanations": "System.String"
+        "GetThumbnail": "() => Pictures.FirstOrDefault()?.Thumbnail"
       }
     },
     "Department": {
       "properties": {
         "Name": "System.String",
-        "Key": "System.String",
-        "ClassificationNumbers": "System.Collections.Generic.List<System.String>",
+        "GUID": "System.String",
         "Address": "Address",
-        "MedicalServices": "MedicalService[]",
+        "SortOrder": "System.String",
         "Pictures": "Picture[]",
-        "Description": "System.String",
-        "Doctors": "ContactPerson[]"
+        "WorktimeMessageHtml": "System.String",
+        "DescriptionHtml": "System.String",
+        "Certificates": "Certificate[]",
+        "DepartmentClassification": "System.String",
+        "Doctors": "Doctor[]",
+        "DistanceFromLocationKm": "System.Double"
       }
     },
     "Hospital": {
       "properties": {
         "Name": "System.String",
-        "IK": "System.String",
+        "GUID": "System.String",
         "Description": "System.String",
         "Pictures": "Picture[]",
         "Address": "Address",
+        "SortOrder": "System.String",
         "Departments": "System.Collections.Generic.List<Department>",
-        "MedicalEquipments": "System.Collections.Generic.List<MedicalEquipment>",
-        "DistanceFromLocation": "System.Double"
+        "DistanceFromLocationKm": "System.Double"
       },
       "methods": {
         "CurrentDepartment": "() => Departments.FirstOrDefault()"
@@ -90,6 +88,16 @@
         "CurrentPage": "System.Int32",
         "ItemsPerPage": "System.Int32",
         "Items": "Hospital[]"
+      }
+    },
+    "Company": {
+      "properties": {
+        "Name": "System.String",
+        "GUID": "System.String",
+        "Pictures": "Picture[]",
+        "Address": "Address",
+        "SortOrder": "System.String",
+        "Hospitals": "System.Collections.Generic.List<Hospital>"
       }
     },
     "ParamsResults": {
@@ -121,7 +129,7 @@
           "renderType": "ResultList",
           "provider": {
             "type": "HospitalResults",
-            "url": "http://116.203.112.43:9999/api/v1/hospital/{{search-type}}?distance=100&address={{base64:search}}&page=1&pageSize=100&sortByPatientCount=false",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/{{search-type}}?distance=100&address={{base64:search}}&page=1&pageSize=100&sortByPatientCount=false",
             "mapper": [
               {
                 "sourceType": "HospitalResults",
@@ -136,7 +144,7 @@
                 "destinationType": "ResultItem",
                 "mapping": {
                   "d => d.ItemName": "s => s.CurrentDepartment().Name",
-                  "d => d.AdditionalInfo": "s => $\"{s.DistanceFromLocation:0.##} km\"",
+                  "d => d.AdditionalInfo": "s => $\"{s.DistanceFromLocationKm:0.##} km\"",
                   "d => d.Description": "s => \"Addresse:\"",
                   "d => d.Location": "s => $\"{s.CurrentDepartment().Address.GetAddressString()}\"",
                   "d => d.Link": "s => $\"/ondevice/geo:{s.CurrentDepartment().Address.Latitude},{s.CurrentDepartment().Address.Longitude}&q={Uri.EscapeDataString(s.CurrentDepartment().Name)}\"",
@@ -157,7 +165,7 @@
           "renderType": "ResultList",
           "provider": {
             "type": "HospitalResults",
-            "url": "http://116.203.112.43:9999/api/v2/hospital/?param1={{param1}}&param2={{param2}}&param3={{param3}}&distance=1000&address={{base64:search}}&page=1&pageSize=100&sortByPatientCount=true",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/?param1={{param1}}&param2={{param2}}&param3={{param3}}&distance=1000&address={{base64:search}}&page=1&pageSize=100&sortByPatientCount=true",
             "mapper": [
               {
                 "sourceType": "HospitalResults",
@@ -172,7 +180,7 @@
                 "destinationType": "ResultItem",
                 "mapping": {
                   "d => d.ItemName": "s => s.CurrentDepartment().Name",
-                  "d => d.AdditionalInfo": "s => $\"{s.DistanceFromLocation:0.##}km\"",
+                  "d => d.AdditionalInfo": "s => $\"{s.DistanceFromLocationKm:0.##}km\"",
                   "d => d.Image": "s => null",
                   "d => d.Link": "s => $\"/ondevice/geo:{s.CurrentDepartment().Address.Latitude},{s.CurrentDepartment().Address.Longitude}&q={Uri.EscapeDataString(s.CurrentDepartment().Name)}\"",
                   "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Icon = \"fas fa-map-marker-alt\" }",
@@ -195,7 +203,7 @@
           "renderType": "ItemList",
           "provider": {
             "type": "ParamsResults",
-            "url": "http://116.203.112.43:9999/api/v2/clustering?param1={{param1?}}&param2={{param2?}}",
+            "url": "http://ddappservice.doctor-help.com/api/v2/clustering?param1={{param1?}}&param2={{param2?}}",
             "mapper": [
               {
                 "sourceType": "ParamsResults",

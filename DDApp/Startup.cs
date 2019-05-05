@@ -28,6 +28,7 @@ namespace DDApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMemoryCache();
+            services.AddSingleton<IQueryExpressionProvider, QueryExpressionProvider>();
             services.AddSingleton<IAppStorage, FileAppStorage>();
             #region Redis App Storage
             //services.AddSingleton<IAppStorage, RedisAppStorage>();

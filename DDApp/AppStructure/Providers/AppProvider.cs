@@ -12,6 +12,7 @@ namespace DDApp.AppStructure.Providers
     {
         private readonly TimeSpan _appPageTTL = TimeSpan.FromHours(160);
         private readonly JsonSerializerSettings _jsonSettings;
+        private readonly IQueryExpressionProvider _queryExpressionProvider;
         private readonly IServerState _serverState;
         private readonly IMemoryCache _memoryCache;
         private readonly IAppStorage _appStorage;
@@ -21,13 +22,15 @@ namespace DDApp.AppStructure.Providers
             IAppStorage appStorage,
             IServerState serverState,
             IMemoryCache memoryCache,
-            ILogger<AppProvider> logger
+            ILogger<AppProvider> logger,
+            IQueryExpressionProvider queryExpressionProvider
             )
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _appStorage = appStorage ?? throw new ArgumentNullException(nameof(appStorage));
             _serverState = serverState ?? throw new ArgumentNullException(nameof(serverState));
             _memoryCache = memoryCache ?? throw new ArgumentNullException(nameof(memoryCache));
+            _queryExpressionProvider = queryExpressionProvider ?? throw new ArgumentNullException(nameof(queryExpressionProvider));
             _jsonSettings = new JsonSerializerSettings
             {
                 NullValueHandling = NullValueHandling.Ignore,
@@ -90,7 +93,7 @@ namespace DDApp.AppStructure.Providers
                     .AddExpirationToken(changeToken);
 
                 var runtimeProvider = new RuntimeProvider();
-                var modelProvider = new ModelProvider(_logger, _memoryCache, runtimeProvider);
+                var modelProvider = new ModelProvider(_logger, _memoryCache, runtimeProvider, _queryExpressionProvider);
                 var app = await GetAppAsync(appCode);
                 appContext = AppContext.Create(app, modelProvider, runtimeProvider);
                 // Attach all module change tokens
@@ -206,7 +209,7 @@ namespace DDApp.AppStructure.Providers
 
             var queryDictionary = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(query);
 
-            var hydratedPage = new HydratedAppPage(appPage)
+            var hydratedPage = new HydratedAppPage(QueriedAppPageDescription.Create(appPage, _queryExpressionProvider, queryDictionary))
             {
                 // Pass down app properties
                 AppLogo = app.Logo,
@@ -228,6 +231,16 @@ namespace DDApp.AppStructure.Providers
                     hydratedPage.Components.Add(new RenderModels.ErrorIndicator
                     {
                         MainEvent = GetMappingExceptionInfo(ex),
+                        InnerEvent = ex.GetBaseException()?.Message,
+                        StackTrace = ex.StackTrace,
+                    });
+                }
+                catch(System.Reflection.TargetInvocationException ex)
+                {
+                    hydratedPage.CanCache = false;
+                    hydratedPage.Components.Add(new RenderModels.ErrorIndicator
+                    {
+                        MainEvent = "RuntimeProvider Error",
                         InnerEvent = ex.GetBaseException()?.Message,
                         StackTrace = ex.StackTrace,
                     });
