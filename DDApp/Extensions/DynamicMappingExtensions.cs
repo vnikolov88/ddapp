@@ -5,7 +5,6 @@ using DDApp.DynamicMapping;
 using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -117,14 +116,7 @@ namespace DDApp.Extensions
         /// <returns>dynamic object with properties coresponding to the query parameters</returns>
         public static object CreateQueryContext(this IDictionary<string, StringValues> self)
         {
-            var eo = new ExpandoObject();
-            var eoColl = (ICollection<KeyValuePair<string, object>>)eo;
-
-            foreach (var kvp in self)
-            {
-                eoColl.Add(new KeyValuePair<string, object>(kvp.Key, kvp.Value));
-            }
-            return eo;
+            return new NoThrowExpandoObject(self);
         }
     }
 }

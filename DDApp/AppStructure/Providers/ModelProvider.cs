@@ -29,17 +29,20 @@ namespace DDApp.AppStructure.Providers
         private readonly ILogger _logger;
         private readonly IMemoryCache _memoryCache;
         private readonly IRuntimeProvider _runtimeProvider;
+        private readonly IQueryExpressionProvider _queryExpressionProvider;
 
         public IList<string> RenderModels { get; }
 
         public ModelProvider(
             ILogger logger,
             IMemoryCache memoryCache,
-            IRuntimeProvider runtimeProvider)
+            IRuntimeProvider runtimeProvider,
+            IQueryExpressionProvider queryExpressionProvider)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _memoryCache = memoryCache ?? throw new ArgumentNullException(nameof(memoryCache));
             _runtimeProvider = runtimeProvider ?? throw new ArgumentNullException(nameof(runtimeProvider));
+            _queryExpressionProvider = queryExpressionProvider ?? throw new ArgumentNullException(nameof(queryExpressionProvider));
 
             RenderModels = Assembly.GetExecutingAssembly().GetTypes().Where(type =>
                 type.Namespace == RenderModelsNamespace && type.IsClass && !type.IsNested).Select(type => type.Name).ToList();
@@ -112,7 +115,7 @@ namespace DDApp.AppStructure.Providers
                 cfg.CreateMissingTypeMaps = true;
                 cfg.Advanced.AllowAdditiveTypeMapCreation = true;
                 // Create root map
-                cfg.CreateProfile(provider.GUID.ToString(), async profile => {
+                cfg.CreateProfile(provider.GUID.ToString(), profile => {
                     profile.CreateMap(providerSourceType, providerDestinationType, MemberList.None);
                     
                     foreach (var mapping in provider.Mapper)
@@ -121,7 +124,7 @@ namespace DDApp.AppStructure.Providers
                         var destinationType = GetDestinationType(mapping.DestinationType);
 
                         // Create custom mappings and root map for sub-types
-                        await profile.CreateMapAsync(mapping, sourceType, destinationType, _runtimeProvider);
+                        profile.CreateMapAsync(mapping, sourceType, destinationType, _runtimeProvider).GetAwaiter().GetResult();
                     }
                 });
 
@@ -150,11 +153,11 @@ namespace DDApp.AppStructure.Providers
             if (provider.Mapper == null)
                 return Mapper.Instance;
 
-            var response = await _memoryCache.GetOrCreateAsync($"{provider.GUID}:{sourceType.GetGUID()}:{destinationType.GetGUID()}", entry =>
+            var response = await _memoryCache.GetOrCreateAsync($"{provider.GUID}:{sourceType.GetGUID()}:{destinationType.GetGUID()}", async entry =>
             {
                 entry.SlidingExpiration = _mapperTTL;
 
-                return Task.FromResult(BuildCustomMapper(provider, sourceType, destinationType));
+                return await Task.FromResult(BuildCustomMapper(provider, sourceType, destinationType));
             });
 
             return response;
@@ -178,63 +181,8 @@ namespace DDApp.AppStructure.Providers
         private Uri GetProviderUrl(DataProvider provider,
             IDictionary<string, StringValues> query)
         {
-            var routeString = GetQueriedExpresion(provider.Url, query);
+            var routeString = _queryExpressionProvider.GetQueriedExpresion(provider.Url, query);
             return new Uri(routeString);
-        }
-
-        private string GetValueUsingFormater(string queryValue, string formatter)
-        {
-            switch (formatter)
-            {
-                case "base64":
-                    return queryValue.Base64Encode();
-                case null:
-                    return queryValue;
-                default:
-                    throw new ArgumentException($"Trying to apply unknown formatter [{formatter}] to value [{queryValue}]");
-            }
-        }
-
-        /// <summary>
-        /// Get a formated expresion from a template and a query context,
-        /// [Valid template components]
-        /// {{formater:param}}
-        /// {{param}}
-        /// {{param?}}
-        /// {{formater:param?}}
-        /// </summary>
-        /// <param name="template">the template for the url</param>
-        /// <param name="query">the query context of the current page</param>
-        /// <returns>a valid URL</returns>
-        private string GetQueriedExpresion(string template,
-            IDictionary<string, StringValues> query)
-        {
-            Match match;
-            var result = new string(template);
-            while ((match = Regex.Match(result, "{{[^{}]+}}")) != Match.Empty)
-            {
-                var value = string.Empty;
-                var components = Regex.Matches(match.Value, "[^{}:]+");
-                var identifier = components.Last().Value.TrimEnd('?');
-                var isOptional = components.Last().Value.EndsWith('?');
-                var formatter = components.Count == 2 ? components.First().Value: null;
-
-                if (!query.ContainsKey(identifier))
-                {
-                    if (!isOptional)
-                    {
-                        throw new ArgumentException($"Missing parameter from query context in [{template}]",
-                            identifier, new Exception($"Current match state [{result}]"));
-                    }
-                }
-                else
-                {
-                    value = GetValueUsingFormater(query[identifier], formatter);
-                }
-                result = result.Replace(match.Value, value);
-            }
-
-            return result;
         }
 
         private object GetFromQueryString(string queryString, Type dataType)
