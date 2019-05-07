@@ -134,6 +134,7 @@
           "renderType": "Search",
           "model": {
             "Action": "pharmacy-search-results",
+            "AutoSearchText": "Aktueller Standort",
             "Title": "Suche",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
@@ -185,6 +186,7 @@
           "renderType": "Search",
           "model": {
             "Action": "pharmacy-search-extended-results?pharmacyType=list-emergency",
+            "AutoSearchText": "Aktueller Standort",
             "Title": "Suche",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"

@@ -188,6 +188,7 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
+            "AutoSearchText": "Aktueller Standort",
             "Action": "hospital-search-results?search-type=heart-attack&search_name=HERZINFARKT",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
@@ -598,6 +599,7 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
+            "AutoSearchText": "Aktueller Standort",
             "Action": "stroke-units-search-results?search_name=SCHLAGANFALL",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
@@ -757,6 +759,7 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
+            "AutoSearchText": "Aktueller Standort",
             "Action": "hospital-search-results?search-type=aneurysm&search_name=THROMBOSE",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
@@ -862,6 +865,7 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
+            "AutoSearchText": "Aktueller Standort",
             "Action": "hospital-search-results?search-type=aneurysm&search_name=HIRNBLUTUNG",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
@@ -926,6 +930,7 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
+            "AutoSearchText": "Aktueller Standort",
             "Action": "hospital-search-results?search-type=aneurysm&search_name=BRUSTSCHMERZ",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
@@ -1003,6 +1008,7 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
+            "AutoSearchText": "Aktueller Standort",
             "Action": "hospital-search-results?search-type=shock&search_name=BLUTVERGIFTUNG/SEPSIS",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
@@ -1101,6 +1107,7 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
+            "AutoSearchText": "Aktueller Standort",
             "Action": "hospital-search-results?search-type=shock&search_name=ALLERGISCHER SCHOCK",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"

@@ -34,6 +34,7 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
+            "AutoSearchText": "Aktueller Standort",
             "Action": "defibrillator-search-results",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
