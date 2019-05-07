@@ -11,8 +11,8 @@
     "PRAKTISCHE HINWEISE": "/ondevice/https://diabetesinformationsdienst.de/diabetes-cockpit/",
     "DIABETES-ERKLÄRFILME": "PageYouTubeChannel",
     "Impressum": "/ondevice/https://ddz.de/de/impressum",
-    "Datenschutzerklärung": "/ondevice/https://ddz.de/de/haftungsausschluss",
-    "Haftungsausschluss": "/ondevice/https://ddz.de/de/datenschutzerklaerung"
+    "Datenschutzerklärung": "/ondevice/https://ddz.de/de/datenschutzerklaerung",
+    "Haftungsausschluss": "/ondevice/https://ddz.de/de/haftungsausschluss"
   },
   "modules": [
     "hospital",

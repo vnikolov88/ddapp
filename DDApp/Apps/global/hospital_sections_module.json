@@ -312,7 +312,7 @@
                 "destinationType": "ItemList",
                 "mapping": {
                   "d => d.Style": "s => ItemStyle.LeftSideImg",
-                  "d => d.Subject": "s => \"Unsere Fachärzte\"",
+                  "d => d.Subject": "s => \"Unsere FachÃ¤rzte\"",
                   "d => d.Items": "s => s.Doctors"
                 }
               },
@@ -349,6 +349,7 @@
                 "mapping": {
                   "d => d.Style": "s => Article.ImageStyle.Profile",
                   "d => d.Sources": "s => s.Pictures.Select(x => x.Thumbnail)",
+                  "d => d.Description": "s => s.Specialty",
                   "d => d.Title": "s => $\"{s.LastName}, {s.FirstName}, {s.Salutation}\""
                 }
               }

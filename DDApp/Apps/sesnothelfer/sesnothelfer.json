@@ -1,5 +1,6 @@
 {
   "title": "sesnothelfer",
+  "quickCallNumber": "112",
   "quickCallNumberIcon": "fas fa-phone",
   "quickCallNumberText": "",
   "logo": "/sesnothelfer/img/app-logo.png",
@@ -8,7 +9,10 @@
     "Baby und Kinder – Notfälle": "/sesnothelfer/notfallversorgung",
     "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE": "/sesnothelfer/herzinfarkt-schlaganfall-aneurysma-thrombose",
     "DEFIBRILLATOR - SUCHE": "/sesnothelfer/defib-suche",
-    "NOTDIENSTE, NOTFÄLLE": "/sesnothelfer/notdienste-notfalle"
+    "NOTDIENSTE, NOTFÄLLE": "/sesnothelfer/notdienste-notfalle",
+    "Impressum": "/ondevice/https://www.ses-stiftung.de/impressum.html",
+    "Datenschutzerklärung": "/ondevice/https://www.ses-stiftung.de/datenschutz.html",
+    "Haftungsausschluss": "/ondevice/https://www.ses-stiftung.de/kontakt.html"
   },
   "modules": [
     "hospital",
@@ -52,6 +56,110 @@
                 "Image": "/sesnothelfer/img/icon-4.png",
                 "Link": "notdienste-notfalle",
                 "Title": "NOTDIENSTE, NOTFÄLLE"
+              },
+              {
+                "Link": "DisclaimerPage",
+                "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+                "Icon": "fas fa-info-circle"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageCompany": {
+      "title": "{{company_name?}}",
+      "titleImage": "img/icon-6.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "provider": {
+            "type": "Company",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Company",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
+                  "d => d.Sources": "s => new string[] { \"https://www.tlhow.com/cimg_show.html?cimgid=1949&amp;q=100&amp;always=y&amp;crop=y&amp;w=80&amp;h=80\" }",
+                  "d => d.Description": "s => \"Schwester Euthymia Stiftung<br><br>Der Name der seit März 2013 bestehenden Stiftung erinnert an die selige Clemensschwester Maria Euthymia. Als Emma Üffing wurde sie am 8. April 1914 als elftes Kind der Bauersleute Maria und August Üffing in Halverde/Westfalen geboren. Mit 17 Jahren begann sie eine Ausbildung zur Hauswirtschafterin in der Küche des St.-Anna Krankenhauses in Hopsten. Drei Jahre später bat sie um Aufnahme bei den Clemensschwestern. 1936 nahm sie nach ihrer verstorbenen Ausbildungsschwester den Namen Maria Euthymia an.<br><br>Im gleichen Jahr erfolgte ihre Versetzung als Hilfskrankenschwester an das St. Vinzenz Hospital in Dinslaken. 1939 bestand sie die Prüfung zur Krankenschwester, am 15. September 1940 legte sie das ewige Gelübde ab. Während des Zweiten Weltkrieges betreute Schwester Maria Euthymia, die seit ihren 13. Lebensjahr an Rachitis litt, in Dinslaken Kriegsgefangene. In dieser Zeit erwarb sie sich den Beinamen Engel der Liebe. Nach Kriegsende arbeitete sie in der Hauswäscherei, 1948 wechselte sie in das Mutterhaus nach Münster.<br><br>Nach einem Schwächeanfall 1955 diagnostizierte man bei ihr Krebs, dem sie am 9. September 1955 erlag.Am offenen Sarg von Schwester Euthymia soll eine ihrer Mitschwestern, deren Hand in eine Bügelmaschine gekommen war und starke Verbrennungen und Quetschungen erlitten hatte, um Fürbitte gebeten haben. Ihre Hand soll innerhalb kurzer Zeit vollständig geheilt sein.Am 7. Oktober 2001 sprach Papst Johannes Paul II. Schwester Maria Euthymia in Rom selig. Verehrt wird sie an mehreren Orten des Münsterlandes. \""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "Company",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Company",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.OneRowItem",
+                  "d => d.Items": "s => s.Hospitals"
+                }
+              },
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Link": "(s, qc) => $\"PageHospital?hospital_guid={s.GUID}&hospital_name={s.Name}\"",
+                  //"d => d.Image": "s => s.Pictures.Select(x => x.Thumbnail).FirstOrDefault()",
+                  "d => d.Title": "s => s.Name",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "model": {
+            "Style": "LeftSideImg",
+            "Subject": "Zertifikate",
+            "Items": [
+              {
+                "Title": "St. Josef Hospital",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=1947&amp;q=100&amp;always=y&amp;crop=y&amp;w=80&amp;h=80",
+                "Link": "/ondevice/https%3A%2F%2Fwww.tlhow.com%2Fcimg_show.html%3Fcimgid%3D1947%26amp%3Bq%3D100%26amp%3Balways%3Dy%26amp%3Bcrop%3Dy%26amp%3Bw%3D80%26amp%3Bh%3D800"
+              },
+              {
+                "Title": "St. Marienhospital Vechta",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=1948&amp;q=100&amp;always=y&amp;crop=y&amp;w=80&amp;h=80",
+                "Link": "/ondevice/https%3A%2F%2Fwww.tlhow.com%2Fcimg_show.html%3Fcimgid%3D1948%26amp%3Bq%3D100%26amp%3Balways%3Dy%26amp%3Bcrop%3Dy%26amp%3Bw%3D80%26amp%3Bh%3D800"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "DisclaimerPage": {
+      "title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+      "titleIcon": "fas fa-info-circle",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItemLarge",
+            "items": [
+              {
+                "Link": "/ondevice/https://www.ses-stiftung.de/impressum.html",
+                "Title": "Impressum",
+                "Icon": "fas fa-passport"
+              },
+              {
+                "Link": "/ondevice/https://www.ses-stiftung.de/kontakt.html",
+                "Title": "Haftungsauschluss",
+                "Icon": "fas fa-clipboard-check"
+              },
+              {
+                "Link": "/ondevice/https://www.ses-stiftung.de/datenschutz.html",
+                "Title": "Datenschutzerklärung",
+                "Icon": "fas fa-shield-alt"
               }
             ]
           }

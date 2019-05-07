@@ -28,7 +28,7 @@
   "pages": {
     // Search results - schlaganfall
     "stroke-units-search-results": {
-      "title": "",
+      "title": "{{search_name?}} Suche",
       "titleIcon": "fas fa-map-marker-alt",
       "components": [
         {

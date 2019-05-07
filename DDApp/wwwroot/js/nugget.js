@@ -13,9 +13,12 @@ function init() {
     }
 
     function Activate(sequence, target) {
+        if (!target)
+            return;
+
         for(let i = 0; i < sequence.length; i++) {
             if(sequence[i].classList.contains('Active')) {
-               sequence[i].classList.remove('Active')
+                sequence[i].classList.remove('Active');
             }
         }
 
@@ -24,7 +27,7 @@ function init() {
         //    if (element.classList.contains('Active'))
         //        element.classList.remove('Active');
         //});
-
+        
         target.classList.add('Active');
     }
 
@@ -48,11 +51,11 @@ function init() {
             pillTitle.addEventListener('click', function (evt) {
                 var containerTarget = document.getElementById(evt.target.id.slice(0, -4)),
                     titleTarget = evt.target;
-
-                Activate(pillContainers, containerTarget);
-                //changed because the target is the link but we want to highligh the parentElement because it needs to carry the background with the .Active classname.
-                Activate(pillTitles, titleTarget.parentElement);
-
+                if (containerTarget) {
+                    Activate(pillContainers, containerTarget);
+                    //changed because the target is the link but we want to highligh the parentElement because it needs to carry the background with the .Active classname.
+                    Activate(pillTitles, titleTarget.parentElement);
+                }
                 evt.stopPropagation();
 
             });
@@ -66,10 +69,10 @@ function init() {
 
                 var containerTarget = document.getElementById(evt.target.id.slice(0, -4)),
                     titleTarget = evt.target;
-
-                Activate(nuggetContainers, containerTarget);
-                Activate(nuggetTitles, titleTarget);
-
+                if (containerTarget) {
+                    Activate(nuggetContainers, containerTarget);
+                    Activate(nuggetTitles, titleTarget);
+                }
                 evt.stopPropagation();
             });
         });

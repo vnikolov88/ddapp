@@ -222,6 +222,7 @@
                   "d => d.Link": "s => $\"/ondevice/geo:{s.Location.GeographicalPoint.Latitude},{s.Location.GeographicalPoint.Longitude}&q={Uri.EscapeDataString(s.Name)}\"",
                   "d => d.ContactInfo": "s => s.Phone",
                   "d => d.ContactInfoIcon": "s => new ContactInfoIcon{ Image = \"img/phone-er_small.png\" }",
+                  "d => d.ContactInfoLink": "s => s.Phone?.OnDeviceCall()",
                   "d => d.Image": "s => s.Location.GetMapUrl(12)"
                 }
               }
@@ -300,7 +301,7 @@
           "renderType": "AnchorLite",
           "model": {
             "class": "emergency-contact emergency-contact-red",
-            "href": "tel:116117",
+            "href": "/ondevice/tel:116117",
             "text": "BUNDESWEITE: HOTLINE 116117",
             "imagesource": "img/phone-er_transparent.png"
           }
@@ -315,7 +316,7 @@
           "renderType": "AnchorLite",
           "model": {
             "class": "emergency-contact emergency-contact-red",
-            "href": "tel:+49 030-19240",
+            "href": "/ondevice/tel:+49 030-19240",
             "text": "GIFTNOTRUF <br /> 030/1 92 40",
             "imagesource": "img/phone-er_transparent.png"
           }
@@ -323,10 +324,10 @@
         {
           "renderType": "AnchorLite",
           "model": {
-            "class": "emergency-contact",
+            "class": "emergency-contact emergency-contact-red",
             "href": "/ondevice/tel:+4922819240",
             "text": "GIFTNOTRUF <br /> 228/1 92 40",
-            "imageSource": "img/phone-er_small.png"
+            "imageSource": "img/phone-er_transparent.png"
           }
         }
       ]
