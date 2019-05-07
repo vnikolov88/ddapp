@@ -33,7 +33,7 @@
         font-size: $TextFontSize;
 
         span.red-bullet {
-            color: $iconCircleColor;
+            color: $EmergencyColor;
         }
 
         a {
@@ -55,6 +55,7 @@
     }
 
     a.red-bullet {
+        color: $EmergencyColor;
         font-weight: bolder;
     }
 }

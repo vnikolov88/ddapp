@@ -8,5 +8,7 @@
         //Example: Suche / Search
         public string Title { set; get; }
         public string Action { get; set; }
+
+        public string AutoSearchText { get; set; }
     }
 }

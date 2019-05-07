@@ -29,6 +29,7 @@ namespace DDApp.AppStructure.RenderModels
         /// </summary>
         public string ContactInfo { get; set; }
         public ContactInfoIcon ContactInfoIcon { get; set; }
+        public string ContactInfoLink { get; set; }
 
         /// <summary>
         /// The Link is almost always necessary  

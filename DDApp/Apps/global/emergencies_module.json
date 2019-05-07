@@ -188,7 +188,8 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
-            "Action": "hospital-search-results?search-type=heart-attack",
+            "AutoSearchText": "Aktueller Standort",
+            "Action": "hospital-search-results?search-type=heart-attack&search_name=HERZINFARKT",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
           }
@@ -375,7 +376,7 @@
       "titleImage": "img/icon-5.png",
       "tabGroups": {
         "(mögliche) Symptome": 16,
-        "Handeln Sie sofort!": 11,
+        "Handeln Sie sofort!": 12,
         "Kliniksuche": 1
       },
       "components": [
@@ -573,11 +574,23 @@
                 "Link": "schlaganfall-fast-test",
                 "Title": "Hier geht es zum FAST-Test",
                 "Icon": "fas fa-play"
-              },
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Movie",
+          "provider": {
+            "type": "YouTubeVideo",
+            "url": "https://www.googleapis.com/youtube/v3/videos?id=gAxlMZSa4Dk&key=AIzaSyDfqWYR8UqPJFnFYpglCnBH6GfAWUmvBgc&part=player,snippet",
+            "mapper": [
               {
-                "Link": "PageYouTubeVideo?id=gAxlMZSa4Dk",
-                "Title": "Was kann ich sonst noch tun? (Video-Beispiel)",
-                "Icon": "fas fa-play"
+                "sourceType": "YouTubeVideo",
+                "destinationType": "Movie",
+                "mapping": {
+                  "d => d.Title": "s => string.Empty",
+                  "d => d.Description": "s => string.Empty"
+                }
               }
             ]
           }
@@ -586,7 +599,8 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
-            "Action": "stroke-units-search-results",
+            "AutoSearchText": "Aktueller Standort",
+            "Action": "stroke-units-search-results?search_name=SCHLAGANFALL",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
           }
@@ -625,25 +639,6 @@
           }
         }
         //MOVIE
-      ]
-    },
-    "schlaganfall-video-beispiel": {
-      "title": "SCHLAGANFALL",
-      "titleImage": "img/icon-2.png",
-      "components": [
-        {
-          "renderType": "Movie",
-          "provider": {
-            "type": "YouTubeVideo",
-            "url": "https://www.youtube.com/watch?v=gAxlMZSa4Dk",
-            "mapper": [
-              {
-                "sourceType": "YouTubeVideo",
-                "destinationType": "Movie"
-              }
-            ]
-          }
-        }
       ]
     },
     // Thrombosis
@@ -764,7 +759,8 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
-            "Action": "hospital-search-results?search-type=aneurysm",
+            "AutoSearchText": "Aktueller Standort",
+            "Action": "hospital-search-results?search-type=aneurysm&search_name=THROMBOSE",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
           }
@@ -869,7 +865,8 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
-            "Action": "hospital-search-results?search-type=aneurysm",
+            "AutoSearchText": "Aktueller Standort",
+            "Action": "hospital-search-results?search-type=aneurysm&search_name=HIRNBLUTUNG",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
           }
@@ -933,7 +930,8 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
-            "Action": "hospital-search-results?search-type=aneurysm",
+            "AutoSearchText": "Aktueller Standort",
+            "Action": "hospital-search-results?search-type=aneurysm&search_name=BRUSTSCHMERZ",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
           }
@@ -1010,7 +1008,8 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
-            "Action": "hospital-search-results?search-type=shock",
+            "AutoSearchText": "Aktueller Standort",
+            "Action": "hospital-search-results?search-type=shock&search_name=BLUTVERGIFTUNG/SEPSIS",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
           }
@@ -1108,7 +1107,8 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
-            "Action": "hospital-search-results?search-type=shock",
+            "AutoSearchText": "Aktueller Standort",
+            "Action": "hospital-search-results?search-type=shock&search_name=ALLERGISCHER SCHOCK",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
           }

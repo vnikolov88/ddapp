@@ -122,7 +122,7 @@
   },
   "pages": {
     "hospital-search-results": {
-      "title": "",
+      "title": "{{search_name?}} Suche",
       "titleIcon": "fas fa-map-marker-alt",
       "components": [
         {
@@ -227,6 +227,7 @@
           "renderType": "Search",
           "model": {
             "Title": "Suche",
+            "AutoSearchText": "Aktueller Standort",
             "Action": "hospital-search-clustered-results",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"

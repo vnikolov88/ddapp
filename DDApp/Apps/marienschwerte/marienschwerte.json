@@ -1,5 +1,6 @@
 {
   "title": "marienschwerte",
+  "quickCallNumber": "112",
   "quickCallNumberIcon": "fas fa-phone",
   "quickCallNumberText": "",
   "logo": "/marienschwerte/img/app-logo.png",
@@ -8,7 +9,10 @@
     "Baby und Kinder – Notfälle": "/marienschwerte/notfallversorgung",
     "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE": "/marienschwerte/herzinfarkt-schlaganfall-aneurysma-thrombose",
     "DEFIBRILLATOR - SUCHE": "/marienschwerte/defib-suche",
-    "NOTDIENSTE, NOTFÄLLE": "/marienschwerte/notdienste-notfalle"
+    "NOTDIENSTE, NOTFÄLLE": "/marienschwerte/notdienste-notfalle",
+    "Impressum": "/ondevice/https://www.marien-kh.de/impressum/",
+    "Datenschutzerklärung": "/ondevice/https://www.marien-kh.de/datenschutz/",
+    "Haftungsausschluss": "/ondevice/https://www.marien-kh.de/"
   },
   "modules": [
     "hospital",
@@ -52,6 +56,40 @@
                 "Image": "/marienschwerte/img/icon-4.png",
                 "Link": "notdienste-notfalle",
                 "Title": "NOTDIENSTE, NOTFÄLLE"
+              },
+              {
+                "Link": "DisclaimerPage",
+                "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+                "Icon": "fas fa-info-circle"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "DisclaimerPage": {
+      "title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+      "titleIcon": "fas fa-info-circle",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItemLarge",
+            "items": [
+              {
+                "Link": "/ondevice/https://www.marien-kh.de/impressum/",
+                "Title": "Impressum",
+                "Icon": "fas fa-passport"
+              },
+              {
+                "Link": "/ondevice/https://www.marien-kh.de/",
+                "Title": "Haftungsauschluss",
+                "Icon": "fas fa-clipboard-check"
+              },
+              {
+                "Link": "/ondevice/https://www.marien-kh.de/datenschutz/",
+                "Title": "Datenschutzerklärung",
+                "Icon": "fas fa-shield-alt"
               }
             ]
           }

@@ -2,47 +2,47 @@
 
 @if (Model.Style == ResultItemStyle.TwoRowsResultWithItemList)
 {
-<div class="grid-container ResultItem @Model.Style-ResultItem">
-    <section class="ResultItem-Row-One">
-        <span class="ResultItem-Name-Info">
-            @if (!string.IsNullOrEmpty(Model.ItemName))
-            {
-                <span class="ResultItem-ItemName Ellipse">
-                    @Model.ItemName
-                </span>
-            }
-            @if (!string.IsNullOrEmpty(Model.DatePublished))
-            {
-                <span class="ResultItem-DatePublished">
-                    @Model.DatePublished
-                </span>
-            }
-        </span>
-        @if (!string.IsNullOrEmpty(Model.AdditionalInfo))
-        {
-            <span class="ResultItem-ShortDescription">
-                @Model.AdditionalInfo
+    <div class="grid-container ResultItem @Model.Style-ResultItem">
+        <section class="ResultItem-Row-One">
+            <span class="ResultItem-Name-Info">
+                @if (!string.IsNullOrEmpty(Model.ItemName))
+                {
+                    <span class="ResultItem-ItemName Ellipse">
+                        @Model.ItemName
+                    </span>
+                }
+                @if (!string.IsNullOrEmpty(Model.DatePublished))
+                {
+                    <span class="ResultItem-DatePublished">
+                        @Model.DatePublished
+                    </span>
+                }
             </span>
+            @if (!string.IsNullOrEmpty(Model.AdditionalInfo))
+            {
+                <span class="ResultItem-ShortDescription">
+                    @Model.AdditionalInfo
+                </span>
+            }
+        </section>
+
+        <section class="ResultItem-Row-Two">
+            <img src="@(!string.IsNullOrEmpty(Model.Image) ? Model.Image : "/img/hospital_placeholder.png")" alt="@Model.Location" />
+        </section>
+
+        @{
+            Model.Items?.ForEach(x => x.Style = x.Style ?? Model.ItemListStyle);
         }
-    </section>
-
-    <section class="ResultItem-Row-Two">
-        <img src="@(!string.IsNullOrEmpty(Model.Image) ? Model.Image : "/img/hospital_placeholder.png")" alt="@Model.Location" />        
-    </section>
-
-    @{
-        Model.Items?.ForEach(x => x.Style = x.Style ?? Model.ItemListStyle);
-    }
-    <div class="Container grid-container ">
-        @Html.DisplayFor(model => model.Items)
+        <div class="Container grid-container ">
+            @Html.DisplayFor(model => model.Items)
+        </div>
     </div>
-</div>
 }
 else
 {
-    <a class="grid-container ResultItem @Model.Style-ResultItem" href="@Model.Link">
-        @if (Model.Style == ResultItemStyle.ThreeRowsResult)
-        {
+    @if (Model.Style == ResultItemStyle.ThreeRowsResult)
+    {
+        <a class="grid-container ResultItem @Model.Style-ResultItem" href="@Model.Link">
             <section class="ResultItem-Row-One">
                 <span class="ResultItem-Name-Info">
                     @if (!string.IsNullOrEmpty(Model.ItemName))
@@ -88,29 +88,33 @@ else
                     <img src="@Model.Image" alt="@Model.Location" />
                 }
             </section>
-
-            @if (!string.IsNullOrWhiteSpace(Model.ContactInfo)) { 
-            <section class="ResultItem-Row-Three">
-
-                <span class="ResultItem-ContactInfo">
-                    @Model.ContactInfo
-                </span>
-
-                @if (!string.IsNullOrEmpty(Model.ContactInfoIcon?.Image))
-                {
-                    <img src="@Model.ContactInfoIcon.Image" class="ResultItem-ContactInfo-Image" />
-                }
-
-                @if (!string.IsNullOrEmpty(Model.ContactInfoIcon?.Icon))
-                {
-                    <i class="@Model.ContactInfoIcon.Icon"></i>
-                }
-            </section>
-            }
-        }
-
-        @if (Model.Style == ResultItemStyle.SingleRowResult)
+        </a>
+        @if (!string.IsNullOrWhiteSpace(Model.ContactInfo))
         {
+            <a class="grid-container ResultItem @Model.Style-ResultItem" href="@Model.ContactInfoLink">
+                <section class="ResultItem-Row-Three">
+
+                    <span class="ResultItem-ContactInfo">
+                        @Model.ContactInfo
+                    </span>
+
+                    @if (!string.IsNullOrEmpty(Model.ContactInfoIcon?.Image))
+                    {
+                        <img src="@Model.ContactInfoIcon.Image" class="ResultItem-ContactInfo-Image" />
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.ContactInfoIcon?.Icon))
+                    {
+                        <i class="@Model.ContactInfoIcon.Icon"></i>
+                    }
+                </section>
+            </a>
+        }
+    }
+
+    @if (Model.Style == ResultItemStyle.SingleRowResult)
+    {
+        <a class="grid-container ResultItem @Model.Style-ResultItem" href="@Model.Link">
             <section class="ResultItem-Row-One">
                 <span class="ResultItem-Name-Info">
                     @if (!string.IsNullOrEmpty(Model.ItemName))
@@ -150,11 +154,13 @@ else
                 </span>
             </section>
 
-            @if (!string.IsNullOrEmpty(Model.ContactInfoIcon?.Icon))
-            {
+        </a>
+        @if (!string.IsNullOrEmpty(Model.ContactInfoIcon?.Icon))
+        {
+            <a class="grid-container ResultItem @Model.Style-ResultItem" href="@Model.ContactInfoLink">
                 <i class="@Model.ContactInfoIcon.Icon"></i>
-            }
+            </a>
         }
+    }
 
-    </a>
 }
