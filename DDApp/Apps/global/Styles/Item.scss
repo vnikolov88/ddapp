@@ -9,7 +9,6 @@
         li {
             font-family: $Regular;
             color: $TextColor;
-            text-decoration: none;
         }
     }
 }
@@ -92,8 +91,7 @@
 .OneRowItemLarge {    
     background-color: $BackgroundSecondary;
     height: 13vh;
-    max-height: 13.3vh;
-    text-decoration: none;    
+    max-height: 13.3vh;  
 
     img {
         /*img Grid*/
@@ -170,7 +168,6 @@
 
 .OneRowItemIconColorInverted {
     background: $BackgroundSecondary;
-    text-decoration: none;
     
     img[src="/img/image_placeholder.png"] {
         display: none;
@@ -178,7 +175,6 @@
 
     a {
         height: 9vh;
-        text-decoration: none;
         img {
             display: none;
         }

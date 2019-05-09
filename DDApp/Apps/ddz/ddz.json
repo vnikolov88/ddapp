@@ -16,6 +16,7 @@
   },
   "modules": [
     "hospital",
+    "hospital_sections",
     "rss",
     "youtube"
   ],
@@ -28,9 +29,9 @@
             "style": "OneRowItemLarge",
             "items": [
               {
-                "Link": "PageHospital?ik=YWNlNzExNzdhM2MwZTEzMA==",
+                "Link": "PageHospital?hospital_guid=ace71177a3c0e130&hospital_name=DEUTSCHES DIABETES-ZENTRUM",
                 "Title": "DEUTSCHES DIABETES-ZENTRUM",
-                "Image": "/ddz/img/DDZ-roundpng.png"
+                "Image": "img/icon-1.png"
               },
               {
                 "Link": "PageNews",
@@ -74,20 +75,20 @@
     },
     "PageHospital": {
       "title": "DEUTSCHES DIABETES-ZENTRUM",
-      "titleImage": "/ddz/img/DDZ-roundpng.png",
+      "titleImage": "img/icon-1.png",
       "components": [
         {
           "renderType": "Article",
           "provider": {
             "type": "Hospital",
-            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
             "mapper": [
               {
                 "sourceType": "Hospital",
                 "destinationType": "Article",
                 "mapping": {
                   "d => d.Style": "s => Article.ImageStyle.HasBorder",
-                  "d => d.Sources": "s => s.Pictures.Select(x => x.thumb)",
+                  "d => d.Sources": "s => s.Pictures.Select(x => x.Thumbnail)",
                   "d => d.Title": "s => s.Name",
                   "d => d.Description": "s => s.Description"
                 }
@@ -149,7 +150,7 @@
           "renderType": "Item",
           "provider": {
             "type": "Hospital",
-            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
             "mapper": [
               {
                 "sourceType": "Hospital",
@@ -158,7 +159,7 @@
                   "d => d.Style": "s => ItemStyle.LeftSideImg",
                   "d => d.Link": "s => $\"/ondevice/geo:{s.Address.Latitude},{s.Address.Longitude}&q={Uri.EscapeDataString(s.Name)}\"",
                   "d => d.Title": "s => $\"{s.Address.Street} {s.Address.StreetNr}\"",
-                  "d => d.Description": "s => $\"{s.Address.Postcode} {s.Address.Place}\"",
+                  "d => d.Description": "s => $\"{s.Address.Postcode} {s.Address.City}\"",
                   "d => d.Image": "s => s.Address.GetMapUrl(12)",
                   "d => d.Icon": "s => \"fas fa-map-marked\""
                 }
@@ -170,7 +171,7 @@
           "renderType": "ItemList",
           "provider": {
             "type": "Hospital",
-            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
             "mapper": [
               {
                 "sourceType": "Hospital",
@@ -184,244 +185,12 @@
                 "sourceType": "Department",
                 "destinationType": "Item",
                 "mapping": {
-                  "d => d.Link": "s => \"PageDepartment?departmentKey=\" + s.Key",
+                  "d => d.Link": "(s, qc) => $\"PageDepartment?hospital_guid={qc.hospital_guid}&department_guid={s.GUID}&hospital_name={qc.hospital_name}\"",
                   "d => d.Title": "s => s.Name",
                   "d => d.Icon": "s => \"fas fa-play\""
                 }
               }
             ]
-          }
-        }
-      ]
-    },
-    "PageDepartment": {
-      "title": "DEUTSCHES DIABETES-ZENTRUM",
-      "titleImage": "/ddz/img/DDZ-roundpng.png",
-      "components": [
-        {
-          "renderType": "Article",
-          "provider": {
-            "type": "Hospital",
-            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
-            "reducer": "(x, qc) => x.Departments.FirstOrDefault(department => department.Key == qc.departmentKey)",
-            "mapper": [
-              {
-                "sourceType": "Department",
-                "destinationType": "Article",
-                "mapping": {
-                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
-                  "d => d.Sources": "s => s.Pictures.Select(x => x.thumb)",
-                  "d => d.Title": "s => s.Name"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "renderType": "ItemList",
-          "provider": {
-            "type": "Hospital",
-            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
-            "reducer": "(x, qc) => x.Departments.FirstOrDefault(department => department.Key == qc.departmentKey)",
-            "mapper": [
-              {
-                "sourceType": "Department",
-                "destinationType": "ItemList",
-                "mapping": {
-                  "d => d.Style": "s => ItemStyle.LeftSideImg",
-                  "d => d.Items": "s => new Department[] { s }"
-                }
-              },
-              {
-                "sourceType": "Department",
-                "destinationType": "Item",
-                "mapping": {
-                  "d => d.Link": "s => $\"/ondevice/geo:{s.Address.Latitude},{s.Address.Longitude}&q={Uri.EscapeDataString(s.Name)}\"",
-                  "d => d.Title": "s => $\"{s.Address.Street} {s.Address.StreetNr}\"",
-                  "d => d.Description": "s => $\"{s.Address.Postcode} {s.Address.Place}\"",
-                  "d => d.Image": "s => s.Address.GetMapUrl(12)",
-                  "d => d.Icon": "s => \"fas fa-map-marked\""
-                }
-              }
-            ]
-          }
-        },
-        {
-          "renderType": "ItemList",
-          "provider": {
-            "type": "Hospital",
-            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
-            "reducer": "(x, qc) => x.Departments.FirstOrDefault(department => department.Key == qc.departmentKey)",
-            "mapper": [
-              {
-                "sourceType": "Department",
-                "destinationType": "ItemList",
-                "mapping": {
-                  "d => d.Style": "s => ItemStyle.OneRowItem",
-                  "d => d.Items": "s => new Department[] { s }"
-                }
-              },
-              {
-                "sourceType": "Department",
-                "destinationType": "Item",
-                "mapping": {
-                  "d => d.Link": "s => $\"/ondevice/{s.Address.Url}\"",
-                  "d => d.Title": "s => \"Webseite des Instituts\"",
-                  "d => d.Description": "s => string.Empty",
-                  "d => d.Icon": "s => \"fas fa-globe-europe\""
-                }
-              }
-            ]
-          }
-        },
-        {
-          "renderType": "ItemList",
-          "provider": {
-            "type": "Hospital",
-            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
-            "reducer": "(x, qc) => x.Departments.FirstOrDefault(department => department.Key == qc.departmentKey)",
-            "mapper": [
-              {
-                "sourceType": "Department",
-                "destinationType": "ItemList",
-                "mapping": {
-                  "d => d.Style": "s => ItemStyle.LeftSideImg",
-                  "d => d.Items": "s => s.Doctors"
-                }
-              },
-              {
-                "sourceType": "ContactPerson",
-                "destinationType": "Item",
-                "mapping": {
-                  "d => d.Link": "s => $\"PageDoctor?doctor_id={s.GetGUID()}\"",
-                  "d => d.Image": "s => s.Pictures.Select(x => x.thumb).FirstOrDefault()",
-                  "d => d.Title": "s => $\"{s.LastName}, {s.FirstName}, {s.Title}\"",
-                  "d => d.Description": "s => s.MainAreaOfFocus",
-                  "d => d.Icon": "s => \"fas fa-play\""
-                }
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "PageDoctor": {
-      "title": "DEUTSCHES DIABETES-ZENTRUM",
-      "titleImage": "/ddz/img/DDZ-roundpng.png",
-      "components": [
-        {
-          "renderType": "Article",
-          "provider": {
-            "type": "Hospital",
-            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
-            "reducer": "(x, qc) => x.Departments.SelectMany(tlhow => tlhow.Doctors).FirstOrDefault(doctor => doctor.GetGUID().ToString() == qc.doctor_id)",
-            "mapper": [
-              {
-                "sourceType": "ContactPerson",
-                "destinationType": "Article",
-                "mapping": {
-                  "d => d.Style": "s => Article.ImageStyle.Profile",
-                  "d => d.Sources": "s => s.Pictures.Select(x => x.thumb)",
-                  "d => d.Title": "s => $\"{s.LastName}, {s.FirstName}, {s.Title}\""
-                }
-              }
-            ]
-          }
-        },
-        // List of contact details
-        {
-          "renderType": "Item",
-          "provider": {
-            "type": "Hospital",
-            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
-            "reducer": "(x, qc) => x.Departments.SelectMany(tlhow => tlhow.Doctors).FirstOrDefault(doctor => doctor.GetGUID().ToString() == qc.doctor_id)",
-            "mapper": [
-              {
-                "sourceType": "ContactPerson",
-                "destinationType": "Item",
-                "mapping": {
-                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.CV) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
-                  "d => d.Title": "s => s.CV",
-                  "d => d.Link": "s => s.CV.OnDevice()",
-                  "d => d.Icon": "s => \"fas fa-user\""
-                }
-              }
-            ]
-          }
-        },
-        {
-          "renderType": "Item",
-          "provider": {
-            "type": "Hospital",
-            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
-            "reducer": "(x, qc) => x.Departments.SelectMany(tlhow => tlhow.Doctors).FirstOrDefault(doctor => doctor.GetGUID().ToString() == qc.doctor_id)",
-            "mapper": [
-              {
-                "sourceType": "ContactPerson",
-                "destinationType": "Item",
-                "mapping": {
-                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Phone) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
-                  "d => d.Title": "s => s.Phone",
-                  "d => d.Link": "s => s.Phone.OnDeviceCall()",
-                  "d => d.Icon": "s => \"fas fa-phone\""
-                }
-              }
-            ]
-          }
-        },
-        {
-          "renderType": "Item",
-          "provider": {
-            "type": "Hospital",
-            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
-            "reducer": "(x, qc) => x.Departments.SelectMany(tlhow => tlhow.Doctors).FirstOrDefault(doctor => doctor.GetGUID().ToString() == qc.doctor_id)",
-            "mapper": [
-              {
-                "sourceType": "ContactPerson",
-                "destinationType": "Item",
-                "mapping": {
-                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Address?.Url) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
-                  "d => d.Title": "s => s.Address.Url",
-                  "d => d.Link": "s => s.Address.Url.OnDevice()",
-                  "d => d.Icon": "s => \"fas fa-globe-europe\""
-                }
-              }
-            ]
-          }
-        },
-        {
-          "renderType": "Item",
-          "provider": {
-            "type": "Hospital",
-            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
-            "reducer": "(x, qc) => x.Departments.SelectMany(tlhow => tlhow.Doctors).FirstOrDefault(doctor => doctor.GetGUID().ToString() == qc.doctor_id)",
-            "mapper": [
-              {
-                "sourceType": "ContactPerson",
-                "destinationType": "Item",
-                "mapping": {
-                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Email) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
-                  "d => d.Title": "s => s.Email",
-                  "d => d.Link": "s => s.Email.OnDeviceMail()",
-                  "d => d.Icon": "s => \"far fa-envelope\""
-                }
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "PageSearch": {
-      "title": "DIABETES-WEGWEISER",
-      "titleIcon": "fas fa-map-marker-alt",
-      "components": [
-        {
-          "renderType": "Search",
-          "model": {
-            "Title": "Suche",
-            "AutoSearchText": "Aktueller Standort",
-            "FirstIcon": "fas fa-map-marker-alt",
-            "SecondIcon": "fas fa-play"
           }
         }
       ]

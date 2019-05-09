@@ -7,7 +7,6 @@ body {
     max-width: 56em;
     .Title {
         a {
-            text-decoration: none;
             color: $TextColor;
         }
     }
@@ -25,6 +24,9 @@ main .Container.grid-container {
     align-items: center;
 }
 
+a {
+    text-decoration: none;
+}
 
 main {    
     /*main Styles*/
@@ -37,9 +39,6 @@ main {
             font-family: $Bold;
             color: $TextColor;
             line-height: 4vh;
-        }
-        a {
-            text-decoration: none;
         }
     }
 
