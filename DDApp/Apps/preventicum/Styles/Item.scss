@@ -15,13 +15,13 @@
 .ItemWrapper.OneRowItemLarge {
     height: auto !important;
     max-height: unset;
-    background: $ItemLightColor;
+    background: $BackgroundPrimary;
 
     .Circle {
         width: 5.5vh;
         height: 5.5vh;
         margin: 0;
-        background: $BackgroundPrimary;
+        background: $AccentColor;
 
         i {
             color: $BaseColor;
@@ -44,23 +44,9 @@
 }
 
 .Circle {
-    background: $BackgroundPrimary;
+    background: $AccentColor;
 }
 
 .OneRowItem {
     height: 15vw;
-}
-
-.ItemWrapper {
-    margin-bottom: .2em;
-
-    .Link-details {
-        p.Menu {
-           font-family: $Bold;
-        }
-    }
-}
-
-.OneRowItemIconColorInverted .Circle i {
-    color: $BackgroundPrimary;
 }

@@ -425,3 +425,14 @@
         padding: 0;
     }
 }
+
+.ItemWrapper {
+    padding: 0.5em 0;
+    margin-bottom: .2em;
+
+    .Link-details {
+        p.Menu {
+            font-family: $Bold;
+        }
+    }
+}

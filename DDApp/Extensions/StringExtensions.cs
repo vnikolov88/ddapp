@@ -1,16 +1,15 @@
-﻿using System.Web;
-using Convert = System.Convert;
+﻿using Convert = System.Convert;
 using Encoding = System.Text.Encoding;
 
 namespace DDApp.Extensions
 {
     public static class StringExtensions
     {
-        public static string OnDevice(this string url) => $"/ondevice/{HttpUtility.UrlEncode(url)}";
+        public static string OnDevice(this string url) => $"/ondevice/{url}";
 
-        public static string OnDeviceCall(this string number) => $"/ondevice/tel:{HttpUtility.UrlEncode(number)}";
+        public static string OnDeviceCall(this string number) => $"/ondevice/tel:{number}";
 
-        public static string OnDeviceFax(this string fax) => $"/ondevice/fax:{HttpUtility.UrlEncode(fax)}";
+        public static string OnDeviceFax(this string fax) => $"/ondevice/fax:{fax}";
 
         public static string OnDeviceMail(this string email) => $"/ondevice/mailto:{email}";
 

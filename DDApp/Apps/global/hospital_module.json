@@ -109,14 +109,14 @@
         }
       },
       "methods": {
-        "GetNextStepUrl": "(string current, IDictionary<string, object> qc) => qc.ContainsKey(\"param2\") ? GetDestinationSearch(current, qc): GetParams(current, qc)",
+        "GetNextStepUrl": "(string current, dynamic qc) => qc.param2 != null ? GetDestinationSearch(current, qc): GetParams(current, qc)",
         // Helpers for destination search
-        "GetDestinationSearch": "(string current, IDictionary<string, object> qc) => $\"smarthelp-suche?{GetParam1(current, qc)}{GetParam2(current, qc)}{GetParam3(current, qc)}\"",
+        "GetDestinationSearch": "(string current, dynamic qc) => $\"smarthelp-suche?{GetParam1(current, qc)}{GetParam2(current, qc)}{GetParam3(current, qc)}\"",
         // Helpers for params stages of the search
-        "GetParam1": "(string current, IDictionary<string, object> qc) => $\"param1={(qc.ContainsKey(\"param1\") ? qc[\"param1\"]: current)}\"",
-        "GetParam2": "(string current, IDictionary<string, object> qc) => $\"{(qc.ContainsKey(\"param2\") ? $\"&param2={qc[\"param2\"]}\": (qc.ContainsKey(\"param1\") ? $\"&param2={current}\": string.Empty))}\"",
-        "GetParam3": "(string current, IDictionary<string, object> qc) => $\"{(qc.ContainsKey(\"param3\") ? $\"&param3={qc[\"param3\"]}\": (qc.ContainsKey(\"param2\") ? $\"&param3={current}\": string.Empty))}\"",
-        "GetParams": "(string current, IDictionary<string, object> qc) => $\"hospital-cluster-search?{GetParam1(current, qc)}{GetParam2(current, qc)}\""
+        "GetParam1": "(string current, dynamic qc) => $\"param1={(qc.param1 ?? current)}\"",
+        "GetParam2": "(string current, dynamic qc) => $\"{(qc.param2 != null ? $\"&param2={qc.param2}\": (qc.param1 != null ? $\"&param2={current}\": string.Empty))}\"",
+        "GetParam3": "(string current, dynamic qc) => $\"{(qc.param3 != null ? $\"&param3={qc.param3}\": (qc.param2 != null ? $\"&param3={current}\": string.Empty))}\"",
+        "GetParams": "(string current, dynamic qc) => $\"hospital-cluster-search?{GetParam1(current, qc)}{GetParam2(current, qc)}\""
       }
     }
   },
@@ -210,7 +210,7 @@
                 "destinationType": "ItemList",
                 "mapping": {
                   "d => d.Style": "s => ItemStyle.OneRowItem",
-                  "d => d.Items": "(s, qc) => s.Items.Select(item => new Item { Title = item, Link = s.GetNextStepUrl(item.Base64Encode(), qc as IDictionary<string, object>), Icon = \"fas fa-play\" })"
+                  "d => d.Items": "(s, qc) => s.Items.Select(item => new Item { Title = item, Link = s.GetNextStepUrl(item.Base64Encode(), qc), Icon = \"fas fa-play\" })"
                 }
               }
             ]

@@ -255,7 +255,7 @@
                 "sourceType": "Department",
                 "destinationType": "Article",
                 "mapping": {
-                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.WorktimeMessageHtml) ? Article.ImageStyle.Hidden : Article.ImageStyle.HasBorder",
                   "d => d.Description": "s => s.WorktimeMessageHtml"
                 }
               }

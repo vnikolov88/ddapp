@@ -5,11 +5,11 @@
   "quickCallNumberText": "",
   "logo": "/marienschwerte/img/app-logo.png",
   "navigation": {
-    "Marien-Schwerte": "unsere-standorte",
     "Baby und Kinder – Notfälle": "/marienschwerte/notfallversorgung",
     "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE": "/marienschwerte/herzinfarkt-schlaganfall-aneurysma-thrombose",
     "DEFIBRILLATOR - SUCHE": "/marienschwerte/defib-suche",
     "NOTDIENSTE, NOTFÄLLE": "/marienschwerte/notdienste-notfalle",
+    "Marien-Schwerte": "PageCompany?company_guid=95346e43b22d5ad3&company_name=Marien-Schwerte",
     "Impressum": "/ondevice/https://www.marien-kh.de/impressum/",
     "Datenschutzerklärung": "/ondevice/https://www.marien-kh.de/datenschutz/",
     "Haftungsausschluss": "/ondevice/https://www.marien-kh.de/"
@@ -33,11 +33,6 @@
             "style": "OneRowItemLarge",
             "items": [
               {
-                "Link": "PageCompany?company_guid=95346e43b22d5ad3&company_name=Marien-Schwerte",
-                "Title": "Marien-Schwerte",
-                "Image": "/marienschwerte/img/icon-6.png"
-              },
-              {
                 "Image": "/marienschwerte/img/icon-1.png",
                 "Link": "notfallversorgung",
                 "Title": "Baby und Kinder – Notfälle"
@@ -56,6 +51,11 @@
                 "Image": "/marienschwerte/img/icon-4.png",
                 "Link": "notdienste-notfalle",
                 "Title": "NOTDIENSTE, NOTFÄLLE"
+              },
+              {
+                "Link": "PageCompany?company_guid=95346e43b22d5ad3&company_name=Marien-Schwerte",
+                "Title": "Marien-Schwerte",
+                "Image": "/marienschwerte/img/icon-6.png"
               },
               {
                 "Link": "DisclaimerPage",

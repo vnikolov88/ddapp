@@ -14,21 +14,6 @@ $NavigationHeight: 10vh;
 $NavigationOffset: $NavigationHeight + 2vh;
 $PageHeaderPageContainerOffset: $NavigationHeight + 1.5vh;
 
-@font-face {
-    font-family: $Bold;
-    src: url(/ddz/fonts/OpenSans-Bold.ttf);
-}
+$TitleFontSize: 2.7vh;
 
-@font-face {
-    font-family: $Regular;
-    src: url(/ddz/fonts/OpenSans-Regular.ttf);
-}
-
-@font-face {
-    font-family: $SemiBold;
-    src: url(/ddz/fonts/OpenSans-Semibold.ttf);
-}
-
-$TitleFontSize: 3.2vh;
-
-$TextFontSize: 2.6vh;
+$TextFontSize: 2.4vh;

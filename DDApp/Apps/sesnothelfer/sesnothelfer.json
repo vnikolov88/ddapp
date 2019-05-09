@@ -5,11 +5,11 @@
   "quickCallNumberText": "",
   "logo": "/sesnothelfer/img/app-logo.png",
   "navigation": {
-    "SES Nothelfer": "unsere-standorte",
     "Baby und Kinder – Notfälle": "/sesnothelfer/notfallversorgung",
     "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE": "/sesnothelfer/herzinfarkt-schlaganfall-aneurysma-thrombose",
     "DEFIBRILLATOR - SUCHE": "/sesnothelfer/defib-suche",
     "NOTDIENSTE, NOTFÄLLE": "/sesnothelfer/notdienste-notfalle",
+    "SES Nothelfer": "PageCompany?company_guid=0ca7f7883d96e846&company_name=SES Nothelfer",
     "Impressum": "/ondevice/https://www.ses-stiftung.de/impressum.html",
     "Datenschutzerklärung": "/ondevice/https://www.ses-stiftung.de/datenschutz.html",
     "Haftungsausschluss": "/ondevice/https://www.ses-stiftung.de/kontakt.html"
@@ -33,11 +33,6 @@
             "style": "OneRowItemLarge",
             "items": [
               {
-                "Link": "PageCompany?company_guid=0ca7f7883d96e846&company_name=SES Nothelfer",
-                "Title": "SES Nothelfer",
-                "Image": "/sesnothelfer/img/icon-6.png"
-              },
-              {
                 "Image": "/sesnothelfer/img/icon-1.png",
                 "Link": "notfallversorgung",
                 "Title": "Baby und Kinder – Notfälle"
@@ -56,6 +51,11 @@
                 "Image": "/sesnothelfer/img/icon-4.png",
                 "Link": "notdienste-notfalle",
                 "Title": "NOTDIENSTE, NOTFÄLLE"
+              },
+              {
+                "Link": "PageCompany?company_guid=0ca7f7883d96e846&company_name=SES Nothelfer",
+                "Title": "SES Nothelfer",
+                "Image": "/sesnothelfer/img/icon-6.png"
               },
               {
                 "Link": "DisclaimerPage",
