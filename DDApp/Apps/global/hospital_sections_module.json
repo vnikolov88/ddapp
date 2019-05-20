@@ -332,7 +332,7 @@
                 "destinationType": "ItemList",
                 "mapping": {
                   "d => d.Style": "s => ItemStyle.LeftSideImg",
-                  "d => d.Subject": "s => \"Unsere Fachärzte\"",
+                  "d => d.Subject": "s => s.Doctors.Any() ? \"Unsere Fachärzte\" : string.Empty",
                   "d => d.Items": "s => s.Doctors"
                 }
               },

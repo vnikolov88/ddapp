@@ -1,3 +1,4 @@
+@import "_variables.scss";
 // Note: Import only parts of global that are needed
 @import "../../global/Styles/Article";
 @import "../../global/Styles/SocialBar";
@@ -10,7 +11,7 @@
 @import "../../global/Styles/Search";
 @import "../../global/Styles/TitleLite";
 @import "../../global/Styles/ErrorIndicator";
-@import "_variables.scss";
+
 @import "Article.scss";
 @import "Item.scss";
 @import "PageHeader.scss";

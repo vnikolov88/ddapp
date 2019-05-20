@@ -1,24 +1,5 @@
 @import "_variables.scss";
 
-.defib-icon-small {
-    background-image: url("/SmartHelp/img/icon-7.png");
-    background-size: 45px;
-    width: 100%;
-    height: 100%;
-    color: hsl(350, 100%, 88%);
-    background-repeat: no-repeat;
-    background-position: center;
-    display: inline-block;
-    background-color: none;
-    border-radius: 50%;
-}
-
-.navbar .iconCircle {
-    background: $AccentColor;
-    text-decoration: none;
-    color: $BaseColor;
-}
-
 .navbar .navbar-brand {    
     max-width: 23%;
 }

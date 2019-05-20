@@ -21,26 +21,9 @@
         </div>
         @if (!string.IsNullOrEmpty(Model.AutoSearchText))
         {
-            <div class="auto-search" onclick="getLocation()">
+            <div class="auto-search" onclick="getLocationAndNavigateTo('@(Model.Action?.Split('?').FirstOrDefault())?@(string.Join("&", passthrueParameters))&search=')">
                 <span>@Model.AutoSearchText<i class="fas fa-search-location"></i></span>
             </div>
-
-            <script>
-            function getLocation() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(showPosition, showError, {enableHighAccuracy: true, maximumAge: 10000});
-                }
-            }
-
-            function showPosition(position) {
-                window.location = "@Model.Action?.Split('?').FirstOrDefault()?search=" + position.coords.latitude +
-                    " " + position.coords.longitude + "&@string.Join("&", passthrueParameters)";
-            }
-
-            function showError() {
-                // ignore
-            }
-            </script>
         }
     </form>
 </div>

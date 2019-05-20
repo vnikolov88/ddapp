@@ -48,8 +48,13 @@
         @RenderBody()
     </main>
     <script src="~/js/page-load.js" type="module"></script>
-    <script src="~/js/nugget.js"  type="module"></script>
+    <script src="~/js/nugget.js" type="module"></script>
     <script src="~/js/nav-bar.js" type="module"></script>
-    <script src="./app.min.js"></script>
+    <environment names="Development">
+        <script src="./app.js"></script>
+    </environment>
+    <environment names="Production,Stagging">
+        <script src="./app.min.js"></script>
+    </environment>
 </body>
 </html>

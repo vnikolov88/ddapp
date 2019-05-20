@@ -52,6 +52,7 @@
     }
 
     .Circle {
+        background: $AccentColor;
         /*Circle grid*/
         align-self: center;
         justify-self: center;
@@ -352,9 +353,10 @@
     padding: .5em 0em .5em 1em;
 }
 
-.LeftSideImg {       
+.LeftSideImg {
     background: $BackgroundPrimary;
     text-decoration: none;
+
     img {
         /*img grid*/
         order: 1;
@@ -417,6 +419,7 @@
     }
 
     .Circle {
+        background: $AccentColor;
         /*Circle grid*/
         order: 3;
         /*Circle Styles*/

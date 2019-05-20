@@ -3,12 +3,12 @@
 
 var gulp = require("gulp"),
     concat = require("gulp-concat"),
-    uglify = require("gulp-uglify"),
+    minify = require("gulp-babel-minify"),
     cssmin = require("gulp-cssmin"),
     rename = require("gulp-rename"),
     sass = require("gulp-sass");
 
-gulp.task('default', ['styles', 'styles:min', 'code']);
+gulp.task('default', ['styles', 'styles:min', 'code', 'code:min']);
 
 var apps = ['ddz', 'smarthelp', 'preventicum', 'marienschwerte', 'sesnothelfer'];
 
@@ -39,10 +39,20 @@ gulp.task('watch', function () {
 });
 
 gulp.task('code', function () {
-    apps.map(function(app) {
+    apps.map(function (app) {
         return gulp.src('Apps/' + app + '/Code/*.js')
-            .pipe(concat('./app.min.js'))
-            .pipe(uglify())
+            .pipe(concat('./app.js'))
+            .pipe(gulp.dest('wwwroot/' + app + '/'));
+    });
+});
+
+gulp.task('code:min', function () {
+    apps.map(function(app) {
+        return gulp.src('wwwroot/' + app + '/app.js')
+            .pipe(minify().on('error', function (e) {
+                console.log(e);
+            }))
+            .pipe(rename("app.min.js"))
             .pipe(gulp.dest('wwwroot/' + app + '/'));
     });
 });
