@@ -33,6 +33,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Apps\ddz\Code\" />
+    <Folder Include="Apps\global\Code\" />
+    <Folder Include="Apps\marienschwerte\Code\" />
+    <Folder Include="Apps\preventicum\Code\" />
+    <Folder Include="Apps\sesnothelfer\Code\" />
+    <Folder Include="Apps\smarthelp\Code\" />
+  </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptTarget>ES2015</TypeScriptTarget>
     <TypeScriptJSXEmit>None</TypeScriptJSXEmit>

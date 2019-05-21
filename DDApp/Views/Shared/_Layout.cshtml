@@ -6,20 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DDApp 1.1</title>
     <environment names="Development">
-        <link rel="stylesheet" href="~/css/gallery.css" />
+        <link rel="stylesheet" href="~/css/fonts.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="./app.css" />
         <link rel="stylesheet" href="./app.css" />
         <script src="~/js/gallery.js"></script>
     </environment>
     <environment names="Production,Stagging">
         <link rel="stylesheet" href="~/css/gallery.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="~/css/fonts.css" />
         <link rel="stylesheet" href="./app.min.css" />
         <script src="~/js/gallery.js"></script>
+    </environment>
+
+    <environment names="Development">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="./app.js"></script>
+    </environment>
+    <environment names="Production,Stagging">
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="./app.min.js"></script>
     </environment>
 </head>
 
@@ -39,7 +46,7 @@
         <div id="NavMenu" class="dropdown-content" style="display:none;">
             @foreach (var navigationLink in Model.Navigation ?? Enumerable.Empty<KeyValuePair<string, string>>())
             {
-                <a href="@navigationLink.Value">@navigationLink.Key</a>
+            <a href="@navigationLink.Value">@navigationLink.Key</a>
             }
         </div>
     </div>
@@ -50,11 +57,5 @@
     <script src="~/js/page-load.js" type="module"></script>
     <script src="~/js/nugget.js" type="module"></script>
     <script src="~/js/nav-bar.js" type="module"></script>
-    <environment names="Development">
-        <script src="./app.js"></script>
-    </environment>
-    <environment names="Production,Stagging">
-        <script src="./app.min.js"></script>
-    </environment>
 </body>
 </html>

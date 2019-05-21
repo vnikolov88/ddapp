@@ -4,8 +4,7 @@
     passthrueParameters.Add(System.Web.HttpUtility.ParseQueryString(Model.Action?.Split('?').LastOrDefault() ?? string.Empty));
 }
 <div class="Search">
-
-    <form method="get" action="@Model.Action">
+    <form class="search-form" method="get" action="@Model.Action">
         <span>@Model.Title</span>
         <div class="input-container">
             <i class="@Model.FirstIcon colBlue pull-left icon"></i>
@@ -14,16 +13,65 @@
             {
                 <input name="@parameterKey" type="hidden" value="@passthrueParameters[parameterKey]" />
             }
-            <input id="search-field" name="search" type="text" class="input-field" />
-            <button type="submit" class="btn btn-default">
+            <input id="search-field" name="search" type="text" class="input-field" ref="search"/>
+            <button type="submit" class="btn btn-default" ref="submit">
                 <i class="@Model.SecondIcon colBlue pull-right icon"></i>
             </button>
         </div>
         @if (!string.IsNullOrEmpty(Model.AutoSearchText))
         {
-            <div class="auto-search" onclick="getLocationAndNavigateTo('@(Model.Action?.Split('?').FirstOrDefault())?@(string.Join("&", passthrueParameters))&search=')">
+            <div v-if="globalLocationStr != null" class="auto-search" v-on:click="navigateToUsingLocation()">
                 <span>@Model.AutoSearchText<i class="fas fa-search-location"></i></span>
+            </div>
+            <div v-else class="auto-search">
+                <i v-if="unableToGetLocation" class="fas fa-location-slash"></i>
+                <i v-else class="fas fa-spinner fa-pulse"></i>
             </div>
         }
     </form>
+    <script>
+    new Vue({
+        el: '.search-form',
+        data: {
+            globalLocationRetryCounter: 0,
+            globalLocationStr: null,
+            unableToGetLocation: false
+        },
+        methods: {
+            getGlobalLocation: function () {
+                let self = this;
+                let xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState === 4) {
+                        if (this.status === 200 && this.responseText) {
+                            self.globalLocationStr = this.responseText;
+                        }
+                        else if (self.globalLocationRetryCounter < 5) {
+                            self.globalLocationRetryCounter += 1;
+                            setTimeout(self.getGlobalLocation, 1000);
+                        }
+                        else {
+                            self.unableToGetLocation = true;
+                        }
+                    }
+                };
+                xhttp.open("GET", "/ondevice/location:last", true);
+                xhttp.send();
+            },
+            navigateToUsingLocation: function () {
+                if (this.globalLocationStr !== null) {
+                    this.$refs.search.value = this.globalLocationStr;
+                    this.$nextTick(function () {
+                        this.$refs.submit.click()
+                    });
+                }
+            }
+        },
+        mounted: function () {
+            this.$nextTick(function () {
+                this.getGlobalLocation();
+            });
+        }
+    });
+    </script>
 </div>

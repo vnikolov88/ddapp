@@ -40,7 +40,7 @@ gulp.task('watch', function () {
 
 gulp.task('code', function () {
     apps.map(function (app) {
-        return gulp.src('Apps/' + app + '/Code/*.js')
+        return gulp.src(['Apps/global/Code/*.js', 'Apps/' + app + '/Code/*.js'])
             .pipe(concat('./app.js'))
             .pipe(gulp.dest('wwwroot/' + app + '/'));
     });

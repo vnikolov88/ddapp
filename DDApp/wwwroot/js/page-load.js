@@ -29,6 +29,8 @@ function requestPage (link, push) {
             else {
                 mainContentArea.innerHTML = xhr.responseText;
                 attachLinkClickHandlers(mainContentArea);
+                attachFormSubmitHandlers(mainContentArea);
+                execureInlineScriptTags(mainContentArea);
 
                 document.title = xhr.getResponseHeader('Page-Title');
                 if (push)
@@ -42,17 +44,16 @@ function requestPage (link, push) {
         }
     };
 
+    loadingIndication.classList.add('loading');
+
     xhr.open('get', url, true);
     xhr.setRequestHeader('Content-Only', 1);
     xhr.send();
-
-    loadingIndication.classList.add('loading');
-    
 }
 
 function attachLinkClickHandlers (parent) {
     let links = parent.querySelectorAll('a:not([href^="http"])[href]');
-
+    
     [].forEach.call(links, function (link) {
         link.addEventListener('click', function (e) {
             requestPage({
@@ -64,6 +65,36 @@ function attachLinkClickHandlers (parent) {
             e.preventDefault();
             return false;
         });
+    });
+}
+
+function attachFormSubmitHandlers (parent) {
+    let forms = parent.querySelectorAll('form');
+
+    [].forEach.call(forms, function (form) {
+        form.addEventListener('submit', function (e) {
+            let parser = document.createElement('a');
+            parser.href = form.baseURI;
+            let origin = parser.origin;
+            parser.href = form.action;
+            let pathname = parser.pathname;
+            requestPage({
+                href: form.action,
+                origin: origin,
+                search: "?" + new URLSearchParams(new FormData(form)).toString(),
+                pathname: pathname
+            }, true);
+            e.preventDefault();
+            return false;
+        });
+    });
+}
+
+function execureInlineScriptTags (parent) {
+    let scripts = parent.querySelectorAll('script:not([src])');
+
+    [].forEach.call(scripts, function (script) {
+        eval(script.innerHTML);
     });
 }
 
@@ -81,6 +112,7 @@ window.onload = function() {
 };
 
 attachLinkClickHandlers(document);
+attachFormSubmitHandlers(document);
 
 history.replaceState({
     href: location.href,

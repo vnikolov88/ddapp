@@ -59,10 +59,14 @@
     #loading-indicator {
         /*loading-indicator grid*/
         display: none;
-        position: absolute;
+        position: fixed;
         width: 100%;
-        top: calc(100% - 89.5vh);
+        top: calc(100% - 88.5vh);
         z-index: 1000;
+
+        &.loading {
+            display: block;
+        }
 
         .loader {
             height: 4px;
@@ -108,10 +112,6 @@
                 left: 100%;
             }
         }
-    }
-
-    .loading#loading-indicator {
-        display: block;
     }
 
     i {
