@@ -1,4 +1,5 @@
-import nuggetList from "./nugget.js";
+var mainContentArea;
+var loadingIndication;
 
 function adjustNavigation() {
     let navBarHeight = document.getElementById("navbar-1").clientHeight;
@@ -8,13 +9,14 @@ function adjustNavigation() {
         document.getElementById("PageContainer").style.paddingTop = navBar2.clientHeight + "px";
 }
 
-const mainContentArea = document.querySelector('body > main');
-const loadingIndication = document.getElementById('loading-indicator');
 window.addEventListener('popstate', function (e) {
+    e.preventDefault();
     requestPage(e.state, false);
+    return false;
 });
 
-function requestPage (link, push) {
+function requestPage(link, push) {
+    window.stop();
     let xhr = new XMLHttpRequest();
     const isOnDevice = link.pathname.startsWith('/ondevice/');
     let url = link.origin + '/partial' + link.pathname;
@@ -28,19 +30,19 @@ function requestPage (link, push) {
             }
             else {
                 mainContentArea.innerHTML = xhr.responseText;
+                execureInlineScriptTags(mainContentArea);
                 attachLinkClickHandlers(mainContentArea);
                 attachFormSubmitHandlers(mainContentArea);
-                execureInlineScriptTags(mainContentArea);
 
                 document.title = xhr.getResponseHeader('Page-Title');
                 if (push)
                     history.pushState(link, document.title, link.href);
 
                 adjustNavigation();
+                nuggetInit();
+                _scrollToTop();
             }
             loadingIndication.classList.remove('loading');
-            nuggetList.init();
-            _scrollToTop();
         }
     };
 
@@ -73,18 +75,19 @@ function attachFormSubmitHandlers (parent) {
 
     [].forEach.call(forms, function (form) {
         form.addEventListener('submit', function (e) {
+            e.preventDefault();
             let parser = document.createElement('a');
             parser.href = form.baseURI;
             let origin = parser.origin;
             parser.href = form.action;
             let pathname = parser.pathname;
+            let searchParams = "?" + new URLSearchParams(new FormData(form)).toString();
             requestPage({
-                href: form.action,
+                href: form.method.toLowerCase() === 'get' ? form.action + searchParams: form.action,
                 origin: origin,
-                search: "?" + new URLSearchParams(new FormData(form)).toString(),
+                search: searchParams,
                 pathname: pathname
             }, true);
-            e.preventDefault();
             return false;
         });
     });
@@ -107,19 +110,19 @@ function _scrollToTop() {
 }
 
 //adjustNavigation after text is rendered - taking the text's white-space into consideration.
-window.onload = function() {
+window.onload = function () {
+    mainContentArea = document.querySelector('body > main');
+    loadingIndication = document.getElementById('loading-indicator');
     adjustNavigation();
+    nuggetInit();
+    attachLinkClickHandlers(document);
+    attachFormSubmitHandlers(document);
+
+    history.replaceState({
+        href: location.href,
+        origin: location.origin,
+        pathname: location.pathname
+    }, document.title, location.href);
 };
 
-attachLinkClickHandlers(document);
-attachFormSubmitHandlers(document);
 
-history.replaceState({
-    href: location.href,
-    origin: location.origin,
-    pathname: location.pathname
-}, document.title, location.href);
-
-(function () {
-    nuggetList.init();
-})();

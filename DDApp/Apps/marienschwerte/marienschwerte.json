@@ -6,9 +6,9 @@
   "logo": "/marienschwerte/img/app-logo.png",
   "navigation": {
     "Baby und Kinder – Notfälle": "/marienschwerte/notfallversorgung",
-    "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE": "/marienschwerte/herzinfarkt-schlaganfall-aneurysma-thrombose",
-    "DEFIBRILLATOR - SUCHE": "/marienschwerte/defib-suche",
-    "NOTDIENSTE, NOTFÄLLE": "/marienschwerte/notdienste-notfalle",
+    "Herzinfarkt, Schlaganfall, Aneurysma Thrombose": "/marienschwerte/herzinfarkt-schlaganfall-aneurysma-thrombose",
+    "Defibrillator - Suche": "/marienschwerte/defib-suche",
+    "Notdienste, Notfälle": "/marienschwerte/notdienste-notfalle",
     "Marien-Schwerte": "PageCompany?company_guid=95346e43b22d5ad3&company_name=Marien-Schwerte",
     "Impressum": "/ondevice/https://www.marien-kh.de/impressum/",
     "Datenschutzerklärung": "/ondevice/https://www.marien-kh.de/datenschutz/",
@@ -40,17 +40,17 @@
               {
                 "Image": "/marienschwerte/img/icon-2.png",
                 "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
-                "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE"
+                "Title": "Herzinfarkt, Schlaganfall, Aneurysma Thrombose"
               },
               {
                 "Image": "/marienschwerte/img/icon-3.png",
                 "Link": "defib-suche",
-                "Title": "DEFIBRILLATOR - SUCHE"
+                "Title": "Defibrillator - Suche"
               },
               {
                 "Image": "/marienschwerte/img/icon-4.png",
                 "Link": "notdienste-notfalle",
-                "Title": "NOTDIENSTE, NOTFÄLLE"
+                "Title": "Notdienste, Notfälle"
               },
               {
                 "Link": "PageCompany?company_guid=95346e43b22d5ad3&company_name=Marien-Schwerte",

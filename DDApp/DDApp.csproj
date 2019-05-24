@@ -11,6 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\light.css" />
+    <Content Remove="wwwroot\css\light.min.css" />
+    <Content Remove="wwwroot\css\regular.css" />
+    <Content Remove="wwwroot\css\regular.min.css" />
+    <Content Remove="wwwroot\css\solid.css" />
+    <Content Remove="wwwroot\css\solid.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="2.9.0" />

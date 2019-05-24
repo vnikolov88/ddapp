@@ -2,6 +2,7 @@
 "use strict";
 
 var gulp = require("gulp"),
+    gulpif = require("gulp-if"),
     concat = require("gulp-concat"),
     minify = require("gulp-babel-minify"),
     cssmin = require("gulp-cssmin"),
@@ -14,8 +15,12 @@ var apps = ['ddz', 'smarthelp', 'preventicum', 'marienschwerte', 'sesnothelfer']
 
 gulp.task('styles', function () {
     apps.map(function(app) {
-        return gulp.src('Apps/' + app + '/Styles/Main.scss', { sourcemaps: true })
-            .pipe(sass())
+        return gulp.src([
+            'wwwroot/css/fonts.css',
+            'wwwroot/css/gallery.css',
+            'Apps/' + app + '/Styles/Main.scss'
+        ], { sourcemaps: true })
+            .pipe(gulpif(/[.]scss$/, sass()))
             .pipe(concat('./app.css'))
             .pipe(gulp.dest('wwwroot/' + app + '/', { sourcemaps: true }));
     });
@@ -40,7 +45,15 @@ gulp.task('watch', function () {
 
 gulp.task('code', function () {
     apps.map(function (app) {
-        return gulp.src(['Apps/global/Code/*.js', 'Apps/' + app + '/Code/*.js'])
+        return gulp.src([
+            'wwwroot/js/page-load.js',
+            'wwwroot/js/gallery.js',
+            'wwwroot/js/nav-bar.js',
+            'wwwroot/js/nugget.js',
+            'wwwroot/js/vue.js',
+            'Apps/global/Code/*.js',
+            'Apps/' + app + '/Code/*.js'
+        ])
             .pipe(concat('./app.js'))
             .pipe(gulp.dest('wwwroot/' + app + '/'));
     });

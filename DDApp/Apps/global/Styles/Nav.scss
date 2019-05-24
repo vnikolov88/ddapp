@@ -172,7 +172,7 @@
 
     #NavMenu.dropdown-content {
         /*NavMenu grid*/
-        position: relative;
+        position: fixed;
         z-index: 4;
         -webkit-opacity: 0;
         -moz-opacity: 0;

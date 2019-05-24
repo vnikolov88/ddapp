@@ -20,7 +20,7 @@
         </div>
         @if (!string.IsNullOrEmpty(Model.AutoSearchText))
         {
-            <div v-if="globalLocationStr != null" class="auto-search" v-on:click="navigateToUsingLocation()">
+            <div v-if="globalLocationStr != null" class="auto-search" v-on:click="navigateToUsingLocation">
                 <span>@Model.AutoSearchText<i class="fas fa-search-location"></i></span>
             </div>
             <div v-else class="auto-search">
@@ -43,10 +43,13 @@
                 let xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
                     if (this.readyState === 4) {
-                        if (this.status === 200 && this.responseText) {
+                        if (this.status === 200 &&
+                            this.responseText !== null &&
+                            this.responseText !== '' &&
+                            this.responseText !== ',' ) {
                             self.globalLocationStr = this.responseText;
                         }
-                        else if (self.globalLocationRetryCounter < 5) {
+                        else if (self.globalLocationRetryCounter < 5 /*&& this.status !== 0*/) {
                             self.globalLocationRetryCounter += 1;
                             setTimeout(self.getGlobalLocation, 1000);
                         }
@@ -62,7 +65,7 @@
                 if (this.globalLocationStr !== null) {
                     this.$refs.search.value = this.globalLocationStr;
                     this.$nextTick(function () {
-                        this.$refs.submit.click()
+                        this.$refs.submit.click();
                     });
                 }
             }
