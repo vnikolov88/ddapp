@@ -12,7 +12,7 @@
     "Marien-Schwerte": "PageCompany?company_guid=95346e43b22d5ad3&company_name=Marien-Schwerte",
     "Impressum": "/ondevice/https://www.marien-kh.de/impressum/",
     "Datenschutzerklärung": "/ondevice/https://www.marien-kh.de/datenschutz/",
-    "Haftungsausschluss": "/ondevice/https://www.marien-kh.de/"
+    //"Haftungsausschluss": "/ondevice/https://www.marien-kh.de/"
   },
   "modules": [
     "hospital",
@@ -59,7 +59,7 @@
               },
               {
                 "Link": "DisclaimerPage",
-                "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+                "Title": "Impressum – Datenschutzerklärung", // – Haftungsausschluss
                 "Icon": "fas fa-info-circle"
               }
             ]
@@ -68,7 +68,7 @@
       ]
     },
     "DisclaimerPage": {
-      "title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+      "title": "Impressum – Datenschutzerklärung", // – Haftungsausschluss
       "titleIcon": "fas fa-info-circle",
       "components": [
         {
@@ -81,11 +81,11 @@
                 "Title": "Impressum",
                 "Icon": "fas fa-passport"
               },
-              {
+              /*{
                 "Link": "/ondevice/https://www.marien-kh.de/",
                 "Title": "Haftungsauschluss",
                 "Icon": "fas fa-clipboard-check"
-              },
+              },*/
               {
                 "Link": "/ondevice/https://www.marien-kh.de/datenschutz/",
                 "Title": "Datenschutzerklärung",

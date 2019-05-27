@@ -12,7 +12,7 @@
     "SES Nothelfer": "PageCompany?company_guid=0ca7f7883d96e846&company_name=SES Nothelfer",
     "Impressum": "/ondevice/https://www.ses-stiftung.de/impressum.html",
     "Datenschutzerklärung": "/ondevice/https://www.ses-stiftung.de/datenschutz.html",
-    "Haftungsausschluss": "/ondevice/https://www.ses-stiftung.de/kontakt.html"
+    //"Haftungsausschluss": "/ondevice/https://www.ses-stiftung.de/kontakt.html"
   },
   "modules": [
     "hospital",
@@ -59,7 +59,7 @@
               },
               {
                 "Link": "DisclaimerPage",
-                "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+                "Title": "Impressum – Datenschutzerklärung", // – Haftungsausschluss
                 "Icon": "fas fa-info-circle"
               }
             ]
@@ -138,7 +138,7 @@
       ]
     },
     "DisclaimerPage": {
-      "title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+      "title": "Impressum – Datenschutzerklärung", //– Haftungsausschluss
       "titleIcon": "fas fa-info-circle",
       "components": [
         {
@@ -151,11 +151,11 @@
                 "Title": "Impressum",
                 "Icon": "fas fa-passport"
               },
-              {
+              /*{
                 "Link": "/ondevice/https://www.ses-stiftung.de/kontakt.html",
                 "Title": "Haftungsauschluss",
                 "Icon": "fas fa-clipboard-check"
-              },
+              },*/
               {
                 "Link": "/ondevice/https://www.ses-stiftung.de/datenschutz.html",
                 "Title": "Datenschutzerklärung",
