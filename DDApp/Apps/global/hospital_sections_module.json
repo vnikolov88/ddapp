@@ -133,6 +133,69 @@
           }
         },
         {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => s.Departments.Any(department => department.Type == 1) ? ItemStyle.OneRowItem : ItemStyle.Hidden",
+                  "d => d.Title": "s => \"Abteilungen\"",
+                  "d => d.Link": "(s, qc) => $\"PageDepartmentList?hospital_guid={qc.hospital_guid}&hospital_name={qc.hospital_name}\"",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => s.Departments.Any(department => department.Type == 3) ? ItemStyle.OneRowItem : ItemStyle.Hidden",
+                  "d => d.Title": "s => \"Zentren\"",
+                  "d => d.Link": "(s, qc) => $\"PageCentersList?hospital_guid={qc.hospital_guid}&hospital_name={qc.hospital_name}\"",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "(s, qc) => string.IsNullOrWhiteSpace(qc.rss_feed) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Title": "s => \"News\"",
+                  "d => d.Link": "(s, qc) => $\"PageNews?rss_feed={qc.rss_feed}\"",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageDepartmentList": {
+      "title": "{{hospital_name?}} Abteilungen",
+      "titleImage": "img/icon-4.png",
+      "components": [
+        {
           "renderType": "ItemList",
           "provider": {
             "type": "Hospital",
@@ -143,7 +206,39 @@
                 "destinationType": "ItemList",
                 "mapping": {
                   "d => d.Style": "s => ItemStyle.OneRowItem",
-                  "d => d.Items": "s => s.Departments"
+                  "d => d.Items": "s => s.Departments.Where(department => department.Type == 1)"
+                }
+              },
+              {
+                "sourceType": "Department",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Link": "(s, qc) => $\"PageDepartment?hospital_guid={qc.hospital_guid}&department_guid={s.GUID}&hospital_name={qc.hospital_name}\"",
+                  "d => d.Title": "s => s.Name",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageCentersList": {
+      "title": "{{hospital_name?}} Zentren",
+      "titleImage": "img/icon-4.png",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.OneRowItem",
+                  "d => d.Items": "s => s.Departments.Where(department => department.Type == 3)"
                 }
               },
               {
@@ -443,6 +538,114 @@
             "type": "Hospital",
             "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
             "reducer": "(x, qc) => x.Departments.SelectMany(department => department.Doctors).FirstOrDefault(doctor => doctor.GUID == qc.doctor_guid)",
+            "mapper": [
+              {
+                "sourceType": "Doctor",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Address.Email) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
+                  "d => d.Title": "s => s.Address.Email",
+                  "d => d.Link": "s => s.Address.Email.OnDeviceMail()",
+                  "d => d.Icon": "s => \"far fa-envelope\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    // Page for the personal- we shuld unify this under get-personal in the API
+    "PageDoctorFromPersonal": {
+      "title": "{{hospital_name?}}",
+      "titleImage": "img/icon-1.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "provider": {
+            "type": "Company",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
+            "reducer": "(x, qc) => x.Personal.FirstOrDefault(doctor => qc.doctor_guid == doctor.GUID)",
+            "mapper": [
+              {
+                "sourceType": "Doctor",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Style": "s => Article.ImageStyle.Profile",
+                  "d => d.Sources": "s => s.Pictures.Select(x => x.Thumbnail)",
+                  "d => d.Description": "s => s.Specialty",
+                  "d => d.Title": "s => $\"{s.LastName}, {s.FirstName}, {s.Salutation}\""
+                }
+              }
+            ]
+          }
+        },
+        // List of contact details
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Company",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
+            "reducer": "(x, qc) => x.Personal.FirstOrDefault(doctor => qc.doctor_guid == doctor.GUID)",
+            "mapper": [
+              {
+                "sourceType": "Doctor",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.CVUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
+                  "d => d.Title": "s => s.CVUrl",
+                  "d => d.Link": "s => s.CVUrl.OnDevice()",
+                  "d => d.Icon": "s => \"fas fa-user\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Company",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
+            "reducer": "(x, qc) => x.Personal.FirstOrDefault(doctor => qc.doctor_guid == doctor.GUID)",
+            "mapper": [
+              {
+                "sourceType": "Doctor",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Address.Phone) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
+                  "d => d.Title": "s => s.Address.Phone",
+                  "d => d.Link": "s => s.Address.Phone != null ? s.Address.Phone.OnDeviceCall() : string.Empty",
+                  "d => d.Icon": "s => \"fas fa-phone\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Company",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
+            "reducer": "(x, qc) => x.Personal.FirstOrDefault(doctor => qc.doctor_guid == doctor.GUID)",
+            "mapper": [
+              {
+                "sourceType": "Doctor",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Address?.Url) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
+                  "d => d.Title": "s => s.Address.Url",
+                  "d => d.Link": "s => s.Address.Url.OnDevice()",
+                  "d => d.Icon": "s => \"fas fa-globe-europe\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Company",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
+            "reducer": "(x, qc) => x.Personal.FirstOrDefault(doctor => qc.doctor_guid == doctor.GUID)",
             "mapper": [
               {
                 "sourceType": "Doctor",

@@ -4,9 +4,9 @@
   "quickCallNumberIcon": "fas fa-phone",
   "navigation": {
     "DEUTSCHES\nDIABETES-ZENTRUM": "PageHospital?hospital_guid=ace71177a3c0e130&hospital_name=DEUTSCHES DIABETES-ZENTRUM",
-    "NEWS": "PageNews",
-    "VERANSTALTUNGEN": "PageEvents",
-    "KLINISCHE STUDIEN": "PageStudies",
+    "NEWS": "PageNews?rss_feed=https://ddz.de/de/news.rss",
+    "VERANSTALTUNGEN": "PageEvents?rss_feed=https://ddz.de/de/events.rss",
+    "KLINISCHE STUDIEN": "PageStudies?rss_feed=https://ddz.de/de/studies.rss",
     "DIABETES-WEGWEISER": "/ondevice/http://wegweiser.rin-diabetes.de/",
     "PRAKTISCHE HINWEISE": "/ondevice/https://diabetesinformationsdienst.de/diabetes-cockpit/",
     "DIABETES-ERKLÄRFILME": "PageYouTubeChannel",
@@ -34,17 +34,17 @@
                 "Image": "img/icon-1.png"
               },
               {
-                "Link": "PageNews",
+                "Link": "PageNews?rss_feed=https://ddz.de/de/news.rss",
                 "Title": "NEWS",
                 "Icon": "fas fa-newspaper"
               },
               {
-                "Link": "PageEvents",
+                "Link": "PageEvents?rss_feed=https://ddz.de/de/events.rss",
                 "Title": "VERANSTALTUNGEN",
                 "Icon": "fas fa-info"
               },
               {
-                "Link": "PageStudies",
+                "Link": "PageStudies?rss_feed=https://ddz.de/de/studies.rss",
                 "Title": "KLINISCHE STUDIEN",
                 "Icon": "fas fa-microscope"
               },
@@ -381,6 +381,76 @@
                 "Link": "/ondevice/https://ddz.de/de/datenschutzerklaerung",
                 "Title": "Datenschutzerklärung",
                 "Icon": "fas fa-shield-alt"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageEvents2": {
+      "title": "VERANSTALTUNGEN",
+      "titleIcon": "fas fa-info",
+      "components": [
+        {
+          "renderType": "Article",
+          "provider": {
+            "type": "RSS",
+            "url": "{{rss_feed}}",
+            "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
+            "mapper": [
+              {
+                "sourceType": "RssItem",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
+                  "d => d.Sources": "s => s.Enclosure?.Select(x => x.Url)"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "/ondevice/tel:+49-(0)-211-33-82-692",
+                "Title": "+49-(0)-211-33-82-692",
+                "Icon": "fas fa-phone"
+              },
+              {
+                "Link": "/ondevice/mailto:annette.behrend@ddz.de",
+                "Title": "annette.behrend@ddz.de",
+                "Icon": "far fa-envelope"
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "RSS",
+            "url": "{{rss_feed}}",
+            "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
+            "mapper": [
+              {
+                "sourceType": "RssItem",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.OneRowItem",
+                  "d => d.Subject": "s => string.Empty",
+                  "d => d.Items": "s => new RssItem[]{ s }"
+                }
+              },
+              {
+                "sourceType": "RssItem",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Title": "s => \"Weiterlesen\"",
+                  "d => d.Link": "s => s.Link.OnDevice()",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
               }
             ]
           }

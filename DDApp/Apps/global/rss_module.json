@@ -116,7 +116,7 @@
           "renderType": "ItemList",
           "provider": {
             "type": "RSS",
-            "url": "https://ddz.de/de/news.rss",
+            "url": "{{rss_feed}}",
             "mapper": [
               {
                 "sourceType": "RSS",
@@ -133,7 +133,7 @@
                 "mapping": {
                   "d => d.Image": "s => s?.Enclosure?.FirstOrDefault()?.Url",
                   "d => d.DatePublished": "s => s.PubDate",
-                  "d => d.Link": "s => \"PageNews2?id=\" + s.Title.GetGUID()",
+                  "d => d.Link": "(s, qc) => $\"PageNews2?rss_feed={qc.rss_feed}&id={s.Title.GetGUID()}\"",
                   "d => d.Icon": "s => \"fas fa-play\""
                 }
               }
@@ -150,7 +150,7 @@
           "renderType": "Article",
           "provider": {
             "type": "RSS",
-            "url": "https://ddz.de/de/news.rss",
+            "url": "{{rss_feed}}",
             "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
             "mapper": [
               {
@@ -168,7 +168,7 @@
           "renderType": "ItemList",
           "provider": {
             "type": "RSS",
-            "url": "https://ddz.de/de/news.rss",
+            "url": "{{rss_feed}}",
             "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
             "mapper": [
               {
@@ -202,7 +202,7 @@
           "renderType": "ItemList",
           "provider": {
             "type": "RSS",
-            "url": "https://ddz.de/de/events.rss",
+            "url": "{{rss_feed}}",
             "mapper": [
               {
                 "sourceType": "RSS",
@@ -219,7 +219,7 @@
                 "mapping": {
                   "d => d.Image": "s => s.Enclosure?.FirstOrDefault()?.Url",
                   "d => d.DatePublished": "s => s.PubDate",
-                  "d => d.Link": "s => \"PageEvents2?id=\" + s.Title.GetGUID()",
+                  "d => d.Link": "(s, qc) => $\"PageEvents2?rss_feed={qc.rss_feed}&id={s.Title.GetGUID()}\"",
                   "d => d.Icon": "s => \"fas fa-play\""
                 }
               }
@@ -236,7 +236,7 @@
           "renderType": "Article",
           "provider": {
             "type": "RSS",
-            "url": "https://ddz.de/de/events.rss",
+            "url": "{{rss_feed}}",
             "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
             "mapper": [
               {
@@ -252,27 +252,9 @@
         },
         {
           "renderType": "ItemList",
-          "model": {
-            "style": "OneRowItem",
-            "items": [
-              {
-                "Link": "/ondevice/tel:+49-(0)-211-33-82-692",
-                "Title": "+49-(0)-211-33-82-692",
-                "Icon": "fas fa-phone"
-              },
-              {
-                "Link": "/ondevice/mailto:annette.behrend@ddz.de",
-                "Title": "annette.behrend@ddz.de",
-                "Icon": "far fa-envelope"
-              }
-            ]
-          }
-        },
-        {
-          "renderType": "ItemList",
           "provider": {
             "type": "RSS",
-            "url": "https://ddz.de/de/events.rss",
+            "url": "{{rss_feed}}",
             "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
             "mapper": [
               {
@@ -306,7 +288,7 @@
           "renderType": "ItemList",
           "provider": {
             "type": "RSS",
-            "url": "https://ddz.de/de/studies.rss",
+            "url": "{{rss_feed}}",
             "mapper": [
               {
                 "sourceType": "RSS",
@@ -323,7 +305,7 @@
                 "mapping": {
                   "d => d.Image": "s => s.Enclosure?.FirstOrDefault()?.Url",
                   "d => d.DatePublished": "s => s.PubDate",
-                  "d => d.Link": "s => \"PageStudies2?id=\" + s.Title.GetGUID()",
+                  "d => d.Link": "(s, qc) => $\"PageStudies2?rss_feed={qc.rss_feed}&id={s.Title.GetGUID()}\"",
                   "d => d.Icon": "s => \"fas fa-play\""
                 }
               }
@@ -340,7 +322,7 @@
           "renderType": "Article",
           "provider": {
             "type": "RSS",
-            "url": "https://ddz.de/de/studies.rss",
+            "url": "{{rss_feed}}",
             "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
             "mapper": [
               {
@@ -358,7 +340,7 @@
           "renderType": "ItemList",
           "provider": {
             "type": "RSS",
-            "url": "https://ddz.de/de/studies.rss",
+            "url": "{{rss_feed}}",
             "reducer": "(x, qc) => x.Channel.Items.FirstOrDefault(rss => rss.Title.GetGUID().ToString() == qc.id)",
             "mapper": [
               {

@@ -55,6 +55,7 @@
       "properties": {
         "Name": "System.String",
         "GUID": "System.String",
+        "Type": "System.UInt32",
         "Address": "Address",
         "SortOrder": "System.String",
         "Pictures": "Picture[]",
@@ -93,8 +94,11 @@
     "Company": {
       "properties": {
         "Name": "System.String",
+        "DescriptionHtml": "System.String",
+        "Certificates": "Certificate[]",
         "GUID": "System.String",
         "Pictures": "Picture[]",
+        "Personal": "Doctor[]",
         "Address": "Address",
         "SortOrder": "System.String",
         "Hospitals": "System.Collections.Generic.List<Hospital>"
