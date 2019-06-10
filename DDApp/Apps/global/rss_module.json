@@ -131,7 +131,7 @@
                 "sourceType": "RssItem",
                 "destinationType": "Item",
                 "mapping": {
-                  "d => d.Image": "s => s?.Enclosure?.FirstOrDefault()?.Url",
+                  "d => d.Image": "s => s?.Enclosure?.FirstOrDefault()?.Url ?? \"/img/image_placeholder.png\"",
                   "d => d.DatePublished": "s => s.PubDate",
                   "d => d.Link": "(s, qc) => $\"PageNews2?rss_feed={qc.rss_feed}&id={s.Title.GetGUID()}\"",
                   "d => d.Icon": "s => \"fas fa-play\""
@@ -158,7 +158,7 @@
                 "destinationType": "Article",
                 "mapping": {
                   "d => d.Style": "s => Article.ImageStyle.HasBorder",
-                  "d => d.Sources": "s => s.Enclosure.Select(x => x.Url)"
+                  "d => d.Sources": "s => s.Enclosure?.Select(x => x.Url)"
                 }
               }
             ]
@@ -217,7 +217,7 @@
                 "sourceType": "RssItem",
                 "destinationType": "Item",
                 "mapping": {
-                  "d => d.Image": "s => s.Enclosure?.FirstOrDefault()?.Url",
+                  "d => d.Image": "s => s.Enclosure?.FirstOrDefault()?.Url ?? \"/img/image_placeholder.png\"",
                   "d => d.DatePublished": "s => s.PubDate",
                   "d => d.Link": "(s, qc) => $\"PageEvents2?rss_feed={qc.rss_feed}&id={s.Title.GetGUID()}\"",
                   "d => d.Icon": "s => \"fas fa-play\""
