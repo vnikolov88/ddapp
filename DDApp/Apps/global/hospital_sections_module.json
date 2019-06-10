@@ -290,7 +290,7 @@
                 "sourceType": "Department",
                 "destinationType": "Item",
                 "mapping": {
-                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Address.Phone) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Address.Phone) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
                   "d => d.Title": "s => s.Address.Phone",
                   "d => d.Link": "s => s.Address.Phone.OnDeviceCall()",
                   "d => d.Icon": "s => \"fas fa-phone\""
@@ -310,7 +310,7 @@
                 "sourceType": "Department",
                 "destinationType": "Item",
                 "mapping": {
-                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Address.Email) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Address.Email) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
                   "d => d.Title": "s => s.Address.Email",
                   "d => d.Link": "s => s.Address.Email.OnDeviceMail()",
                   "d => d.Icon": "s => \"far fa-envelope\""
@@ -330,7 +330,7 @@
                 "sourceType": "Department",
                 "destinationType": "Item",
                 "mapping": {
-                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Address.Url) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Address.Url) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
                   "d => d.Title": "s => s.Address.Url",
                   "d => d.Link": "s => s.Address.Url.OnDevice()",
                   "d => d.Icon": "s => \"fas fa-globe-europe\""
@@ -399,7 +399,7 @@
                 "mapping": {
                   "d => d.Style": "s => ItemStyle.LeftSideImg",
                   "d => d.Subject": "s => \"Zertifikate\"",
-                  "d => d.Items": "s => s.Certificates"
+                  "d => d.Items": "s => s.Certificates.Where(x => x.Name != \"Doctor-Help\")"
                 }
               },
               {
