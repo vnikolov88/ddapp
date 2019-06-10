@@ -213,9 +213,9 @@ namespace DDApp.AppStructure.Providers
             {
                 // Pass down app properties
                 AppLogo = app.Logo,
-                AppQuickCallNumber = app.QuickCallNumber,
-                AppQuickCallNumberIcon = app.QuickCallNumberIcon,
-                AppQuickCallNumberText = app.QuickCallNumberText,
+                AppQuickActionUrl = app.QuickActionUrl,
+                AppQuickActionIcon = app.QuickActionIcon,
+                AppQuickActionText = app.QuickActionText,
                 Navigation = app.Navigation
             };
             
