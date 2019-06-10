@@ -59,6 +59,7 @@
         i {
             line-height: 8.5vh;
             font-size: 4vh;
+            color: $iconCircleColor;
         }
     }
 }
@@ -87,4 +88,8 @@
 
 .OneRowItemIconColorInverted .Circle i {
     color: $BackgroundPrimary;
+}
+
+.OneRowItem .Circle {
+    background: $iconCircleColor;
 }
