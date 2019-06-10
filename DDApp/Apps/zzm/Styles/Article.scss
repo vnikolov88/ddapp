@@ -1,0 +1,14 @@
+﻿@import "_variables.scss";
+
+.Article {
+    padding: unset;
+    background: $BackgroundSecondary;
+
+    section {
+        background: $BackgroundPrimary
+    }
+
+    h4, section {
+        padding: 2vh;
+    }
+}

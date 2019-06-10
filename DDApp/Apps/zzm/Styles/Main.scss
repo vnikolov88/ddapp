@@ -1,0 +1,30 @@
+@import "../../global/Styles/Article";
+@import "../../global/Styles/SocialBar";
+@import "../../global/Styles/Contact";
+@import "../../global/Styles/General";
+@import "../../global/Styles/Item";
+@import "../../global/Styles/Movie";
+@import "../../global/Styles/Nav";
+@import "../../global/Styles/PageHeader";
+@import "../../global/Styles/Search";
+@import "../../global/Styles/TitleLite";
+@import "../../global/Styles/ErrorIndicator";
+@import "../../zzm/Styles/PageHeader";
+@import "../../zzm/Styles/Article";
+@import "../../zzm/Styles/Item";
+@import "../../zzm/Styles/SocialBar";
+@import "../../zzm/Styles/Nav";
+
+.Ellipse {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;    
+}
