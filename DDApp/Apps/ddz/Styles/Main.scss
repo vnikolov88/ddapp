@@ -1,3 +1,5 @@
+@import "_variables.scss";
+// Note: Import only parts of global that are needed
 @import "../../global/Styles/Article";
 @import "../../global/Styles/SocialBar";
 @import "../../global/Styles/Contact";
@@ -9,10 +11,10 @@
 @import "../../global/Styles/Search";
 @import "../../global/Styles/TitleLite";
 @import "../../global/Styles/ErrorIndicator";
-@import "../../ddz/Styles/PageHeader";
-@import "../../ddz/Styles/Article";
-@import "../../ddz/Styles/Item";
-@import "../../ddz/Styles/SocialBar";
+
+@import "Article.scss";
+@import "Item.scss";
+@import "PageHeader.scss";
 
 .Ellipse {
     text-overflow: ellipsis;
@@ -26,4 +28,19 @@
 
 .bold {
     font-weight: bold;    
+}
+
+@font-face {
+    font-family: $Bold;
+    src: url(/ddz/fonts/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: $Regular;
+    src: url(/ddz/fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: $SemiBold;
+    src: url(/ddz/fonts/OpenSans-Semibold.ttf);
 }

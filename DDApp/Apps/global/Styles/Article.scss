@@ -50,7 +50,6 @@
         line-height: 3.4vh;
 
         a {
-            text-decoration: none;
             color: inherit;
         }
 
@@ -83,8 +82,17 @@
     background-color: $BaseColor;
 }
 
-.HasBorder, .Profile {
-    border-bottom: 3px solid $AccentColor;
+.Article {
+    .Hidden {
+        display: none;
+    }
+
+    margin-bottom: .2em;
+
+    .HasBorder, .Profile {
+        margin-bottom: unset;
+        border-bottom: 3px solid $AccentColor;
+    }
 }
 
 .Profile > div {

@@ -1,34 +1,19 @@
-$BaseColor: #ffffff;
-$AccentColor: #1A4C89;
-$BackgroundPrimary: #eceae9;
-$BackgroundSecondary: #d4d3d3;
-$TextColor: #575756;
+$BaseColor: #ffffff !default;
+$AccentColor: #1A4C89 !default;
+$BackgroundPrimary: #eceae9 !default;
+$BackgroundSecondary: #d4d3d3 !default;
+$TextColor: #575756 !default;
 
-$Bold: OpenSans-Bold;
-$Regular: OpenSans-Regular;
-$SemiBold: OpenSans-Semibold;
+$Bold: OpenSans-Bold !default;
+$Regular: OpenSans-Regular !default;
+$SemiBold: OpenSans-Semibold !default;
 
-$EmergencyColor: #e30613;
+$EmergencyColor: #e30613 !default;
 
-$NavigationHeight: 10vh;
-$NavigationOffset: $NavigationHeight + 2vh;
-$PageHeaderPageContainerOffset: $NavigationHeight + 1.5vh;
+$NavigationHeight: 10vh !default;
+$NavigationOffset: $NavigationHeight + 2vh !default;
+$PageHeaderPageContainerOffset: $NavigationHeight + 1.5vh !default;
 
-@font-face {
-    font-family: $Bold;
-    src: url(/ddz/fonts/OpenSans-Bold.ttf);
-}
+$TitleFontSize: 2.7vh !default;
 
-@font-face {
-    font-family: $Regular;
-    src: url(/ddz/fonts/OpenSans-Regular.ttf);
-}
-
-@font-face {
-    font-family: $SemiBold;
-    src: url(/ddz/fonts/OpenSans-Semibold.ttf);
-}
-
-$TitleFontSize: 3.2vh;
-
-$TextFontSize: 2.6vh;
+$TextFontSize: 2.4vh !default;

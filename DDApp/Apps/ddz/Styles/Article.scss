@@ -11,4 +11,20 @@
     h4, section {
         padding: 2vh;
     }
+
+    .Profile {
+        background-color: $BackgroundPrimary;
+        border-bottom: 3px solid $AccentColor;
+
+        .Title {
+            background: $BackgroundSecondary;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    }
 }

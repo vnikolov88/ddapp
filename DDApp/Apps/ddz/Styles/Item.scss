@@ -11,30 +11,6 @@
     }
 }
 
-.ItemWrapper {
-    margin-bottom: .2em;
-}
-
-.HasBorder {
-    border-bottom: 3px solid $AccentColor;
-}
-
-.Profile {
-    background-color: $BackgroundPrimary;
-    border-bottom: 3px solid $AccentColor;
-
-    .Title {
-        background: $BackgroundSecondary;
-    }
-
-    img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-    }
-}
-
 .OneRowItem, .OneRowItemLarge {
     ul {
         li {
@@ -45,7 +21,6 @@
         }
     }
 }
-
 
 .ItemWrapper.OneRowItemLarge {
     height: auto !important;
@@ -73,18 +48,4 @@
             height: auto;
         }
     }
-}
-
-.ItemWrapper {
-    margin-bottom: .2em;
-
-    .Link-details {
-        p.Menu {
-           font-family: $Bold;
-        }
-    }
-}
-
-.OneRowItemIconColorInverted .Circle i {
-    color: $BackgroundPrimary;
 }

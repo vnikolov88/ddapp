@@ -1,4 +1,4 @@
-function init() {
+function nuggetInit() {
     var nuggetTitles = document.querySelectorAll('.NuggetTitle'),
         nuggetContainers = document.querySelectorAll(".Nugget"),
         pillTitles = document.querySelectorAll('.nav-pills > .nav-item'), // the target is suppose to be the .nav-item instead of the .nav-item.
@@ -78,8 +78,3 @@ function init() {
         });
     }
 }
-
-
-export default {
-    init
-};

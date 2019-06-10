@@ -11,11 +11,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\light.css" />
+    <Content Remove="wwwroot\css\light.min.css" />
+    <Content Remove="wwwroot\css\regular.css" />
+    <Content Remove="wwwroot\css\regular.min.css" />
+    <Content Remove="wwwroot\css\solid.css" />
+    <Content Remove="wwwroot\css\solid.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="2.9.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.9.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="2.9.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
@@ -31,6 +41,15 @@
     <None Update="DDApp.service">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Apps\ddz\Code\" />
+    <Folder Include="Apps\global\Code\" />
+    <Folder Include="Apps\marienschwerte\Code\" />
+    <Folder Include="Apps\preventicum\Code\" />
+    <Folder Include="Apps\sesnothelfer\Code\" />
+    <Folder Include="Apps\smarthelp\Code\" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptTarget>ES2015</TypeScriptTarget>

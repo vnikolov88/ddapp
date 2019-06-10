@@ -2,7 +2,8 @@
 {
     public class Article
     {
-        public enum ImageStyle{
+        public enum ImageStyle {
+            Hidden,
             HasBorder,
             Profile
         }

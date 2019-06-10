@@ -8,7 +8,7 @@
 }
 
 .OneRowItem .Circle {
-    background: $iconCircleColor;
+    background: $AccentColor;
 }
 
 .OneRowItem.ItemWrapper {
@@ -38,13 +38,13 @@
 .ItemWrapper.OneRowItemLarge {
     height: auto !important;
     max-height: unset;
-    background: $ItemLightColor;
+    background: $BackgroundPrimary;
 
     .Circle {
         width: 5.5vh;
         height: 5.5vh;
         margin: 0;
-        background: $iconCircleColor;
+        background: $AccentColor;
 
         i {
             color: $BaseColor;
@@ -68,18 +68,4 @@
 
 .Circle {
     background: $BackgroundPrimary;
-}
-
-.ItemWrapper {
-    margin-bottom: .2em;
-
-    .Link-details {
-        p.Menu {
-           font-family: $Bold;
-        }
-    }
-}
-
-.OneRowItemIconColorInverted .Circle i {
-    color: $BackgroundPrimary;
 }

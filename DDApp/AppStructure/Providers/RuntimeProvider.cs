@@ -127,8 +127,11 @@ namespace DDApp.AppStructure.Providers
                 assemblyName,
                 classDefinition,
                 new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary, optimizationLevel: OptimizationLevel.Release)
-                    .WithUsings(_usings)
-                );
+                    .WithUsings(_usings),
+                // Load the runtime for the "dynamic" keyword from Microsoft.CSharp package 
+                new MetadataReference[] {
+                    MetadataReference.CreateFromFile(typeof(Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo).Assembly.Location)
+                });
 
             var libImage = EmitToArray(lib);
 
@@ -168,7 +171,6 @@ namespace DDApp.AppStructure.Providers
         private static Assembly GetAppDomainAssemblyByName(string name)
         {
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            var tests = assemblies.Select(x => x.GetName()).ToList();
             var assembly = assemblies.SingleOrDefault(x => x.GetName().Name == name);
             if (assembly == null)
                 throw new AppDomainUnloadedException($"{name} is not loaded in the currect app domain.");

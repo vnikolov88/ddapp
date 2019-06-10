@@ -116,7 +116,21 @@ namespace DDApp.Extensions
         /// <returns>dynamic object with properties coresponding to the query parameters</returns>
         public static object CreateQueryContext(this IDictionary<string, StringValues> self)
         {
-            return new NoThrowExpandoObject(self);
+            Dictionary<string, object> _properties = new Dictionary<string, object>();
+            foreach (var kvp in self)
+            {
+                object value;
+                if (kvp.Value.Count > 1)
+                {
+                    value = kvp.Value.ToArray();
+                }
+                else
+                {
+                    value = kvp.Value.FirstOrDefault();
+                }
+                _properties.Add(kvp.Key, value);
+            }
+            return new NoThrowExpandoObject(_properties);
         }
     }
 }

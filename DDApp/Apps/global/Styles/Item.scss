@@ -9,7 +9,6 @@
         li {
             font-family: $Regular;
             color: $TextColor;
-            text-decoration: none;
         }
     }
 }
@@ -53,6 +52,7 @@
     }
 
     .Circle {
+        background: $AccentColor;
         /*Circle grid*/
         align-self: center;
         justify-self: center;
@@ -92,8 +92,7 @@
 .OneRowItemLarge {    
     background-color: $BackgroundSecondary;
     height: 13vh;
-    max-height: 13.3vh;
-    text-decoration: none;    
+    max-height: 13.3vh;  
 
     img {
         /*img Grid*/
@@ -170,7 +169,6 @@
 
 .OneRowItemIconColorInverted {
     background: $BackgroundSecondary;
-    text-decoration: none;
     
     img[src="/img/image_placeholder.png"] {
         display: none;
@@ -178,7 +176,6 @@
 
     a {
         height: 9vh;
-        text-decoration: none;
         img {
             display: none;
         }
@@ -356,9 +353,10 @@
     padding: .5em 0em .5em 1em;
 }
 
-.LeftSideImg {       
+.LeftSideImg {
     background: $BackgroundPrimary;
     text-decoration: none;
+
     img {
         /*img grid*/
         order: 1;
@@ -421,11 +419,23 @@
     }
 
     .Circle {
+        background: $AccentColor;
         /*Circle grid*/
         order: 3;
         /*Circle Styles*/
         position: relative;
         margin: 0;
         padding: 0;
+    }
+}
+
+.ItemWrapper {
+    padding: 0.5em 0;
+    margin-bottom: .2em;
+
+    .Link-details {
+        p.Menu {
+            font-family: $Bold;
+        }
     }
 }

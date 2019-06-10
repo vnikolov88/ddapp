@@ -10,18 +10,3 @@ $SemiBold: OpenSans-Semibold;
 
 $NavigationHeight: 10vh;
 $NavigationOffset: $NavigationHeight + 1vh;
-
-@font-face {
-    font-family: $Bold;
-    src: url(/ddz/fonts/OpenSans-Bold.ttf);
-}
-
-@font-face {
-    font-family: $Regular;
-    src: url(/ddz/fonts/OpenSans-Regular.ttf);
-}
-
-@font-face {
-    font-family: $SemiBold;
-    src: url(/ddz/fonts/OpenSans-Semibold.ttf);
-}
