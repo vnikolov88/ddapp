@@ -29,9 +29,9 @@ namespace DDApp.AppStructure
 
         #region Pass-down propertoes
         public string AppLogo { get; set; }
-        public string AppQuickCallNumber { get; set; }
-        public string AppQuickCallNumberIcon { get; set; }
-        public string AppQuickCallNumberText { get; set; }
+        public string AppQuickActionUrl { get; set; }
+        public string AppQuickActionIcon { get; set; }
+        public string AppQuickActionText { get; set; }
         public IDictionary<string, string> Navigation { get; set; }
         #endregion Pass-down propertoes
     }

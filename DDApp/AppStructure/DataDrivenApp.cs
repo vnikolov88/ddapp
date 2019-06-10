@@ -17,9 +17,9 @@ namespace DDApp.AppStructure
         };
         
         public string Logo { get; set; }
-        public string QuickCallNumber { get; set; }
-        public string QuickCallNumberIcon { get; set; }
-        public string QuickCallNumberText { get; set; }
+        public string QuickActionUrl { get; set; }
+        public string QuickActionIcon { get; set; }
+        public string QuickActionText { get; set; }
         public IList<string> Modules { get; set; }
         public IDictionary<string, DataDrivenAppDataType> DataTypes { get; set; }
         public IDictionary<string, string> Navigation { get; set; }
@@ -54,9 +54,9 @@ namespace DDApp.AppStructure
             {
                 ulong result = 0;
                 result = (result * 397) ^ Logo?.GetGUID() ?? result;
-                result = (result * 397) ^ QuickCallNumber?.GetGUID() ?? result;
-                result = (result * 397) ^ QuickCallNumberIcon?.GetGUID() ?? result;
-                result = (result * 397) ^ QuickCallNumberText?.GetGUID() ?? result;
+                result = (result * 397) ^ QuickActionUrl?.GetGUID() ?? result;
+                result = (result * 397) ^ QuickActionIcon?.GetGUID() ?? result;
+                result = (result * 397) ^ QuickActionText?.GetGUID() ?? result;
                 foreach (var dataType in DataTypes ?? Enumerable.Empty<KeyValuePair<string, DataDrivenAppDataType>>())
                 {
                     result = (result * 397) ^ dataType.Key?.GetGUID() ?? result;

@@ -1,7 +1,7 @@
 {
   "logo": "/ddz/img/app-logo.png",
-  "quickCallNumber": "+4921133820",
-  "quickCallNumberIcon": "fas fa-phone",
+  "quickActionUrl": "/ondevice/tel:+4921133820",
+  "quickActionIcon": "fas fa-phone",
   "navigation": {
     "DEUTSCHES\nDIABETES-ZENTRUM": "PageHospital?hospital_guid=ace71177a3c0e130&hospital_name=DEUTSCHES DIABETES-ZENTRUM",
     "NEWS": "PageNews?rss_feed=https://ddz.de/de/news.rss",

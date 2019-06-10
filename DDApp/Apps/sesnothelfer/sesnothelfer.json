@@ -1,8 +1,8 @@
 {
   "title": "sesnothelfer",
-  "quickCallNumber": "112",
-  "quickCallNumberIcon": "fas fa-phone",
-  "quickCallNumberText": "",
+  "quickActionUrl": "PageCompanyContacts?company_guid=0ca7f7883d96e846&company_name=SES Nothelfer",
+  "quickActionIcon": "fas fa-phone",
+  "quickActionText": "",
   "logo": "/sesnothelfer/img/app-logo.png",
   "navigation": {
     "Baby und Kinder – Notfälle": "/sesnothelfer/notfallversorgung",
