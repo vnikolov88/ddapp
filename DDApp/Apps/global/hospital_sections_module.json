@@ -222,9 +222,47 @@
                 "sourceType": "Hospital",
                 "destinationType": "Item",
                 "mapping": {
-                  "d => d.Style": "(s, qc) => string.IsNullOrWhiteSpace(qc.rss_feed) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Style": "s => string.IsNullOrEmpty(s.Social.NewsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
                   "d => d.Title": "s => \"News\"",
-                  "d => d.Link": "(s, qc) => $\"PageNews?rss_feed={qc.rss_feed}\"",
+                  "d => d.Link": "s => $\"PageNews?rss_feed={s.Social.NewsUrl}\"",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrEmpty(s.Social.EventsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Title": "s => \"Veranstaltungen\"",
+                  "d => d.Link": "s => $\"PageEvents?rss_feed={s.Social.EventsUrl}\"",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrEmpty(s.Social.JobsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Title": "s => \"Arbeitsplätze\"",
+                  "d => d.Link": "s => s.Social.JobsUrl.OnDevice()",
                   "d => d.Icon": "s => \"fas fa-play\""
                 }
               }

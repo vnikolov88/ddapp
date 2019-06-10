@@ -91,25 +91,6 @@
           }
         },
         {
-          "renderType": "Item",
-          "provider": {
-            "type": "Company",
-            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
-            "mapper": [
-              {
-                "sourceType": "Company",
-                "destinationType": "Item",
-                "mapping": {
-                  "d => d.Style": "s => ItemStyle.OneRowItem",
-                  "d => d.Title": "s => \"News\"",
-                  "d => d.Link": "(s, qc) => $\"PageNews?rss_feed=https://www.ses-stiftung.de/rss.xml\"",
-                  "d => d.Icon": "s => \"fas fa-play\""
-                }
-              }
-            ]
-          }
-        },
-        {
           "renderType": "ItemList",
           "provider": {
             "type": "Company",
@@ -128,7 +109,7 @@
                 "sourceType": "Hospital",
                 "destinationType": "Item",
                 "mapping": {
-                  "d => d.Link": "(s, qc) => $\"PageHospital?hospital_guid={s.GUID}&hospital_name={s.Name}&rss_feed={(s.GUID == \"260341182\" ? \"https://www.josefshospital-cloppenburg.de/rss.xml\" : (s.GUID == \"260340579\" ? \"https://www.franziskushospital-lohne.de/rss.xml\" : \"https://www.marienhospital-vechta.de/rss.xml\"))}\"",
+                  "d => d.Link": "(s, qc) => $\"PageHospital?hospital_guid={s.GUID}&hospital_name={s.Name}\"",
                   "d => d.Title": "s => s.Name",
                   "d => d.Icon": "s => \"fas fa-play\""
                 }
@@ -165,25 +146,6 @@
             ]
           }
         }
-        //{
-        //  "renderType": "ItemList",
-        //  "model": {
-        //    "Style": "LeftSideImg",
-        //    "Subject": "Zertifikate",
-        //    "Items": [
-        //      {
-        //        "Title": "St. Josef Hospital",
-        //        "Image": "https://www.tlhow.com/cimg_show.html?cimgid=1947&amp;q=100&amp;always=y&amp;crop=y&amp;w=80&amp;h=80",
-        //        "Link": "/ondevice/https://www.tlhow.com/cimg_show.html?cimgid=1947&amp;q=100&amp;always=y&amp;crop=y&amp;w=80&amp;h=80"
-        //      },
-        //      {
-        //        "Title": "St. Marienhospital Vechta",
-        //        "Image": "https://www.tlhow.com/cimg_show.html?cimgid=1948&amp;q=100&amp;always=y&amp;crop=y&amp;w=80&amp;h=80",
-        //        "Link": "/ondevice/https://www.tlhow.com/cimg_show.html?cimgid=1947&amp;q=100&amp;always=y&amp;crop=y&amp;w=80&amp;h=80"
-        //      }
-        //    ]
-        //  }
-        //}
       ]
     },
     "DisclaimerPage": {
