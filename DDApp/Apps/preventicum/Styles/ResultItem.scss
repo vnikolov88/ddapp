@@ -7,7 +7,7 @@
 
 .ThreeRowsResult-ResultItem {
     section {
-        background: $ItemLightColor;
+        background: $BackgroundPrimary;
         color: $TextColor;
     }
 
@@ -45,15 +45,15 @@
 
 
 .SingleRowResult-ResultItem {
-    background: $ItemLightColor;
-    
+    background: $BackgroundPrimary;
+
 
     section {
         color: $TextColor;
     }
 
     i {
-        color: $iconCircleColor;
+        color: $AccentColor;
     }
 
     .ResultItem-Row-One {

@@ -11,7 +11,7 @@
     position: fixed;
 }
 
-.navbar {    
+.navbar {
     font-family: $SemiBold !important;
     margin: 0;
     padding: 0.5em 0;
@@ -44,15 +44,29 @@
         /*iconCircle Styles*/
         font-size: 4vh;
         padding: 1.13em;
+        background-color: $AccentColor;
+        text-decoration: none;
+        color: $BaseColor;
+        border-radius: 50%;
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        justify-content: center;
+        align-items: stretch;
+        max-width: 0%;
     }
 
     #loading-indicator {
         /*loading-indicator grid*/
         display: none;
-        position: absolute;
+        position: fixed;
         width: 100%;
-        top: calc(100% - 89.5vh);
+        top: calc(100% - 88.5vh);
         z-index: 1000;
+
+        &.loading {
+            display: block;
+        }
 
         .loader {
             height: 4px;
@@ -100,10 +114,6 @@
         }
     }
 
-    .loading#loading-indicator {
-        display: block;
-    }
-
     i {
         font-size: 6vh;
         cursor: pointer;
@@ -139,8 +149,6 @@
     order: 3;
 }
 
-
-
 .dropdown {
     display: block;
     z-index: 9;
@@ -164,7 +172,7 @@
 
     #NavMenu.dropdown-content {
         /*NavMenu grid*/
-        position: relative;
+        position: fixed;
         z-index: 4;
         -webkit-opacity: 0;
         -moz-opacity: 0;
@@ -187,7 +195,6 @@
             font-family: $Bold;
             color: $TextColor;
             padding: 1.5vh 3vw;
-            text-decoration: none;
             display: block;
             border-top: solid $BackgroundPrimary 0.8vh;
 

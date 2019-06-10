@@ -7,14 +7,11 @@ namespace DDApp.DynamicMapping
 {
     public class NoThrowExpandoObject : DynamicObject
     {
-        private Dictionary<string, object> _properties = new Dictionary<string, object>();
+        private Dictionary<string, object> _properties;
 
-        public NoThrowExpandoObject(IDictionary<string, StringValues> properties)
+        public NoThrowExpandoObject(Dictionary<string, object> properties)
         {
-            foreach (var kvp in properties)
-            {
-                _properties.Add(kvp.Key, kvp.Value);
-            }
+            _properties = properties ?? throw new ArgumentNullException(nameof(properties));
         }
 
         public override bool TryGetMember(GetMemberBinder binder, out object result)

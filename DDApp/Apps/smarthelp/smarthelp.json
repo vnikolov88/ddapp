@@ -1,7 +1,8 @@
 {
   "title": "smarthelp",
+  "quickCallNumber": "112",
   "quickCallNumberIcon": "fas fa-phone",
-  "quickCallNumberText": "112",
+  "quickCallNumberText": "",
   "logo": "/smarthelp/img/app-logo.png",
   "navigation": {
     "Baby und Kinder – Notfälle": "/smarthelp/notfallversorgung",

@@ -2,13 +2,13 @@
 
 .PageHeader {
     background: #d4d4d4;
-    border-bottom-color: $iconCircleColor;
+    border-bottom-color: $AccentColor;
 
     .iconCircle {
         padding: 0.2em 0.9em;
 
         i {
-            color: $iconCircleColor;
+            color: $AccentColor;
         }
 
         img {

@@ -1,3 +1,5 @@
+@import "_variables.scss";
+// Note: Import only parts of global that are needed
 @import "../../global/Styles/AnchorLite";
 @import "../../global/Styles/Article";
 @import "../../global/Styles/Contact";
@@ -16,17 +18,32 @@
 @import "../../global/Styles/ResultList";
 @import "../../global/Styles/ResultItem";
 @import "../../global/Styles/SocialBar";
-@import "../../sesnothelfer/Styles/AnchorLite";
-@import "../../sesnothelfer/Styles/Article";
-@import "../../sesnothelfer/Styles/Item";
-@import "../../sesnothelfer/Styles/ListLite";
-@import "../../sesnothelfer/Styles/Nav";
-@import "../../sesnothelfer/Styles/Nugget";
-@import "../../sesnothelfer/Styles/Tabs";
-@import "../../sesnothelfer/Styles/PageHeader";
-@import "../../sesnothelfer/Styles/Search";
-@import "../../sesnothelfer/Styles/ResultItem";
-@import "../../sesnothelfer/Styles/SocialBar";
+
+@import "AnchorLite.scss";
+@import "Article.scss";
+@import "Item.scss";
+@import "ListLite.scss";
+@import "Nav.scss";
+@import "Nugget.scss";
+@import "PageHeader.scss";
+@import "ResultItem.scss";
+@import "Search.scss";
+@import "Tabs.scss";
+
+@font-face {
+    font-family: $Bold;
+    src: url(/ddz/fonts/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: $Regular;
+    src: url(/ddz/fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: $SemiBold;
+    src: url(/ddz/fonts/OpenSans-Semibold.ttf);
+}
 
 .Ellipse {
     text-overflow: ellipsis;

@@ -1,4 +1,5 @@
-import nuggetList from "./nugget.js";
+var mainContentArea;
+var loadingIndication;
 
 function adjustNavigation() {
     let navBarHeight = document.getElementById("navbar-1").clientHeight;
@@ -8,13 +9,14 @@ function adjustNavigation() {
         document.getElementById("PageContainer").style.paddingTop = navBar2.clientHeight + "px";
 }
 
-const mainContentArea = document.querySelector('body > main');
-const loadingIndication = document.getElementById('loading-indicator');
 window.addEventListener('popstate', function (e) {
+    e.preventDefault();
     requestPage(e.state, false);
+    return false;
 });
 
-function requestPage (link, push) {
+function requestPage(link, push) {
+    window.stop();
     let xhr = new XMLHttpRequest();
     const isOnDevice = link.pathname.startsWith('/ondevice/');
     let url = link.origin + '/partial' + link.pathname;
@@ -28,31 +30,32 @@ function requestPage (link, push) {
             }
             else {
                 mainContentArea.innerHTML = xhr.responseText;
+                execureInlineScriptTags(mainContentArea);
                 attachLinkClickHandlers(mainContentArea);
+                attachFormSubmitHandlers(mainContentArea);
 
                 document.title = xhr.getResponseHeader('Page-Title');
                 if (push)
                     history.pushState(link, document.title, link.href);
 
                 adjustNavigation();
+                nuggetInit();
+                _scrollToTop();
             }
             loadingIndication.classList.remove('loading');
-            nuggetList.init();
-            _scrollToTop();
         }
     };
+
+    loadingIndication.classList.add('loading');
 
     xhr.open('get', url, true);
     xhr.setRequestHeader('Content-Only', 1);
     xhr.send();
-
-    loadingIndication.classList.add('loading');
-    
 }
 
 function attachLinkClickHandlers (parent) {
     let links = parent.querySelectorAll('a:not([href^="http"])[href]');
-
+    
     [].forEach.call(links, function (link) {
         link.addEventListener('click', function (e) {
             requestPage({
@@ -67,6 +70,37 @@ function attachLinkClickHandlers (parent) {
     });
 }
 
+function attachFormSubmitHandlers (parent) {
+    let forms = parent.querySelectorAll('form');
+
+    [].forEach.call(forms, function (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let parser = document.createElement('a');
+            parser.href = form.baseURI;
+            let origin = parser.origin;
+            parser.href = form.action;
+            let pathname = parser.pathname;
+            let searchParams = "?" + new URLSearchParams(new FormData(form)).toString();
+            requestPage({
+                href: form.method.toLowerCase() === 'get' ? form.action + searchParams: form.action,
+                origin: origin,
+                search: searchParams,
+                pathname: pathname
+            }, true);
+            return false;
+        });
+    });
+}
+
+function execureInlineScriptTags (parent) {
+    let scripts = parent.querySelectorAll('script:not([src])');
+
+    [].forEach.call(scripts, function (script) {
+        eval(script.innerHTML);
+    });
+}
+
 function _scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -76,18 +110,19 @@ function _scrollToTop() {
 }
 
 //adjustNavigation after text is rendered - taking the text's white-space into consideration.
-window.onload = function() {
+window.onload = function () {
+    mainContentArea = document.querySelector('body > main');
+    loadingIndication = document.getElementById('loading-indicator');
     adjustNavigation();
+    nuggetInit();
+    attachLinkClickHandlers(document);
+    attachFormSubmitHandlers(document);
+
+    history.replaceState({
+        href: location.href,
+        origin: location.origin,
+        pathname: location.pathname
+    }, document.title, location.href);
 };
 
-attachLinkClickHandlers(document);
 
-history.replaceState({
-    href: location.href,
-    origin: location.origin,
-    pathname: location.pathname
-}, document.title, location.href);
-
-(function () {
-    nuggetList.init();
-})();

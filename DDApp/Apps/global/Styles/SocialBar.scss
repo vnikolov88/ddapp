@@ -7,6 +7,7 @@
     align-items: center;
     justify-items: baseline;
     justify-content: space-between;
+    margin-bottom: .2em;
 
     a {
         padding: 2em 2em;
@@ -32,4 +33,32 @@
 
 #social-bar a > span:empty {
     display: none;
+}
+
+#social-bar {
+    a {
+        padding: 0.5em;
+        width: 21.11%;
+        margin: 0;
+    }
+
+    .twitter-social-item {
+        background: hsl(198, 90%, 61%);
+    }
+
+    .google-social-item {
+        background: hsl(7, 80%, 61%);
+    }
+
+    .facebook-social-item {
+        background: hsl(221, 56%, 59%);
+    }
+
+    .whatsapp-social-item {
+        background: hsl(127, 66%, 55%);
+    }
+
+    .mail-social-item {
+        background: hsl(200, 100%, 40%);
+    }
 }

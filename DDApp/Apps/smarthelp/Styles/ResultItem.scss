@@ -1,16 +1,16 @@
 @import "_variables.scss";
 
 .ResultList:last-child {
-    border-bottom: 3.5px solid $iconCircleColor;    
+    border-bottom: 3.5px solid $AccentColor;
 }
 
 .ResultItem {
-    border-bottom-color: $iconCircleColor;
+    border-bottom-color: $AccentColor;
 }
 
 .ThreeRowsResult-ResultItem {
     section {
-        background: $ItemLightColor;
+        background: $BackgroundPrimary;
         color: $TextColor;
         font-family: $Bold;
         padding: .8em .2em
@@ -19,7 +19,7 @@
     .ResultItem-Row-One {
         .ResultItem-ShortDescription {
             font-family: $Bold;
-            color: $iconCircleColor;
+            color: $AccentColor;
         }
 
         .ResultItem-DatePublished {
@@ -38,15 +38,15 @@
 
 
 .SingleRowResult-ResultItem {
-    background: $ItemLightColor;
-    
+    background: $BackgroundPrimary;
+
 
     section {
         color: $TextColor;
     }
 
     i {
-        color: $iconCircleColor;
+        color: $AccentColor;
     }
 
     .ResultItem-Row-One {
@@ -72,7 +72,7 @@
 
 .TwoRowsResultWithItemList-ResultItem {
     section {
-        background: $ItemLightColor;
+        background: $BackgroundPrimary;
         color: $TextColor;
         font-family: $Bold;
         line-height: 1em;
@@ -82,7 +82,7 @@
     .ResultItem-Row-One {
         .ResultItem-ShortDescription {
             font-family: $Bold;
-            color: $iconCircleColor;
+            color: $AccentColor;
         }
 
         .ResultItem-DatePublished {

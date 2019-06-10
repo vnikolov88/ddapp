@@ -2,11 +2,11 @@
 
 ul {
     list-style: none;
+
     li {
         &::before {
             content: "\2022";
-            color: $iconCircleColor;
-
+            color: $AccentColor;
             vertical-align: bottom;
             display: unset;
             margin-left: unset;
