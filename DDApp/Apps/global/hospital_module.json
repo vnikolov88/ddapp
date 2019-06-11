@@ -10,6 +10,17 @@
         "SizeXL": "System.String"
       }
     },
+    "SocialInformation": {
+      "properties": {
+        "FBUrl": "System.String",
+        "TWUrl": "System.String",
+        "DataPrivacyUrl": "System.String",
+        "ImprintUrl": "System.String",
+        "JobsUrl": "System.String",
+        "NewsUrl": "System.String",
+        "EventsUrl": "System.String"
+      }
+    },
     "Address": {
       "properties": {
         "Email": "System.String",
@@ -76,6 +87,7 @@
         "Address": "Address",
         "SortOrder": "System.String",
         "Departments": "System.Collections.Generic.List<Department>",
+        "Social": "SocialInformation",
         "DistanceFromLocationKm": "System.Double"
       },
       "methods": {

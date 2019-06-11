@@ -2,6 +2,48 @@
   "dataTypes": {
   },
   "pages": {
+    "PageCompanyContacts": {
+      "title": "{{company_name?}}",
+      "titleImage": "img/icon-6.png",
+      "components": [
+        {
+          "renderType": "AnchorLite",
+          "model": {
+            "class": "emergency-contact emergency-contact-red",
+            "href": "/ondevice/tel:112",
+            "text": "112 NOTRUF",
+            "imageSource": "img/phone-er_transparent.png"
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "Company",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Company",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.OneRowItem",
+                  "d => d.Items": "s => s.Hospitals"
+                }
+              },
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Link": "s => s.Address.Phone.OnDeviceCall()",
+                  //"d => d.Image": "s => s.Pictures.Select(x => x.Thumbnail).FirstOrDefault()",
+                  "d => d.Title": "s => s.Name",
+                  "d => d.Icon": "s => \"fas fa-phone\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
     "PageCompany": {
       "title": "{{company_name?}}",
       "titleImage": "img/icon-6.png",
@@ -180,9 +222,47 @@
                 "sourceType": "Hospital",
                 "destinationType": "Item",
                 "mapping": {
-                  "d => d.Style": "(s, qc) => string.IsNullOrWhiteSpace(qc.rss_feed) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Style": "s => string.IsNullOrEmpty(s.Social.NewsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
                   "d => d.Title": "s => \"News\"",
-                  "d => d.Link": "(s, qc) => $\"PageNews?rss_feed={qc.rss_feed}\"",
+                  "d => d.Link": "s => $\"PageNews?rss_feed={s.Social.NewsUrl}\"",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrEmpty(s.Social.EventsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Title": "s => \"Veranstaltungen\"",
+                  "d => d.Link": "s => $\"PageEvents?rss_feed={s.Social.EventsUrl}\"",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrEmpty(s.Social.JobsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Title": "s => \"Arbeitsplätze\"",
+                  "d => d.Link": "s => s.Social.JobsUrl.OnDevice()",
                   "d => d.Icon": "s => \"fas fa-play\""
                 }
               }
