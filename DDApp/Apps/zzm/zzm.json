@@ -1,9 +1,9 @@
 {
   "logo": "/zzm/img/app-logo.png",
-  "appQuickActionText": "+4921133820",
-  "appQuickActionIcon": "fas fa-phone",
+  "quickActionUrl": "/ondevice/tel:+4921133820",
+  "quickActionIcon": "fas fa-phone",
   "navigation": {
-    "DEUTSCHES\nDIABETES-ZENTRUM": "PageHospital?ik=MjAwMDAwMDAwMQ==",
+    "ZAHN ZENTRUM MOERS": "PageHospital?ik=MjAwMDAwMDAwMQ==",
     "NEWS": "PageNews",
     "VERANSTALTUNGEN": "PageEvents",
     "KLINISCHE STUDIEN": "PageStudies",
@@ -28,8 +28,8 @@
             "style": "OneRowItemLarge",
             "items": [
               {
-                "Link": "PageHospital?ik=MjAwMDAwMDAwMQ==",
-                "Title": "DEUTSCHES DIABETES-ZENTRUM",
+                "Link": "PageHospital?ik=MjAwMDAwMDAwMA==",
+                "Title": "ZAHN ZENTRUM MOERS",
                 "Image": "/zzm/img/ZZM-roundpng.png"
               },
               {
