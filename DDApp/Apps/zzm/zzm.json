@@ -1,9 +1,9 @@
 {
   "logo": "/zzm/img/app-logo.png",
-  "quickCallNumber": "+4921133820",
-  "quickCallNumberIcon": "fas fa-phone",
+  "appQuickActionText": "+4921133820",
+  "appQuickActionIcon": "fas fa-phone",
   "navigation": {
-    "DEUTSCHES\nDIABETES-ZENTRUM": "PageHospital?ik=YWNlNzExNzdhM2MwZTEzMA==",
+    "DEUTSCHES\nDIABETES-ZENTRUM": "PageHospital?ik=MjAwMDAwMDAwMQ==",
     "NEWS": "PageNews",
     "VERANSTALTUNGEN": "PageEvents",
     "KLINISCHE STUDIEN": "PageStudies",
@@ -28,9 +28,9 @@
             "style": "OneRowItemLarge",
             "items": [
               {
-                "Link": "PageHospital?ik=YWNlNzExNzdhM2MwZTEzMA==",
+                "Link": "PageHospital?ik=MjAwMDAwMDAwMQ==",
                 "Title": "DEUTSCHES DIABETES-ZENTRUM",
-                "Image": "/ddz/img/DDZ-roundpng.png"
+                "Image": "/zzm/img/ZZM-roundpng.png"
               },
               {
                 "Link": "PageNews",
@@ -80,7 +80,7 @@
           "renderType": "Article",
           "provider": {
             "type": "Hospital",
-            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=YWNlNzExNzdhM2MwZTEzMA==",
+            "url": "http://doctor-help.com:8668/api/v1/hospitals/api_v1_getbyik?ik=MjAwMDAwMDAwMQ==",
             "mapper": [
               {
                 "sourceType": "Hospital",
