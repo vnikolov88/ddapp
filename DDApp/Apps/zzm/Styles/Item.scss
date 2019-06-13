@@ -1,16 +1,5 @@
 @import "_variables.scss";
 
-.LeftSideImg {
-    .Link-details {
-        padding: .8em .5em;
-        height: 100%;
-        align-items: center;
-        p {
-            height: auto;
-        }
-    }
-}
-
 .ItemWrapper {
     margin-bottom: .2em;
 }
@@ -65,6 +54,9 @@
 }
 
 .LeftSideImg {
+    .Circle {
+        background: $iconCircleColor;
+    }
     .Link-details {
         padding: .8em .5em;
         height: 100%;
@@ -78,7 +70,6 @@
 
 .ItemWrapper {
     margin-bottom: .2em;
-
     .Link-details {
         p.Menu {
            font-family: $Bold;
@@ -87,7 +78,7 @@
 }
 
 .OneRowItemIconColorInverted .Circle i {
-    color: $BackgroundPrimary;
+    color: $iconCircleColor;
 }
 
 .OneRowItem .Circle {
