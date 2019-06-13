@@ -3,8 +3,10 @@
    Model.Items?.ForEach(x => x.Style = x.Style ?? Model.Style);
 }
 <div class="Container grid-container ">
-    @if (!string.IsNullOrEmpty(Model.Subject)) { 
-        <h4 class="Title">@Model.Subject</h4>
+    @if(Model.Items.Any()) { 
+        @if (!string.IsNullOrEmpty(Model.Subject)) { 
+            <h4 class="Title">@Model.Subject</h4>
+        }
+        @Html.DisplayFor(model => model.Items)
     }
-    @Html.DisplayFor(model => model.Items)
 </div>

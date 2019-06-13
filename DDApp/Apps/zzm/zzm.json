@@ -1,0 +1,121 @@
+{
+  "logo": "/zzm/img/app-logo.png",
+  "quickActionUrl": "/ondevice/tel:+4921133820",
+  "quickActionIcon": "fas fa-phone",
+  "navigation": {
+    "ZAHN ZENTRUM MOERS": "PageHospital?hospital_guid=2000000000",
+    "NEWS": "PageNews",
+    "VERANSTALTUNGEN": "PageEvents",
+    "KLINISCHE STUDIEN": "PageStudies",
+    "DIABETES-WEGWEISER": "/ondevice/http://wegweiser.rin-diabetes.de/",
+    "PRAKTISCHE HINWEISE": "/ondevice/https://diabetesinformationsdienst.de/diabetes-cockpit/",
+    "DIABETES-ERKLÄRFILME": "PageYouTubeChannel",
+    "Impressum": "/ondevice/https://ddz.de/de/impressum",
+    "Datenschutzerklärung": "/ondevice/https://ddz.de/de/datenschutzerklaerung",
+    "Haftungsausschluss": "/ondevice/https://ddz.de/de/haftungsausschluss"
+  },
+  "modules": [
+    "hospital",
+    "hospital_sections",
+    "rss",
+    "youtube"
+  ],
+  "pages": {
+    "Page1": {
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItemLarge",
+            "items": [
+              {
+                "Link": "PageCompany?company_guid=2000000000&company_name=Zahn Zentrum Moers",
+                "Title": "ZAHN ZENTRUM MOERS",
+                "Image": "/zzm/img/icon-6.png"
+              },
+              {
+                "Link": "PageNews",
+                "Title": "NEWS",
+                "Icon": "fas fa-newspaper"
+              },
+              {
+                "Link": "PageEvents",
+                "Title": "VERANSTALTUNGEN",
+                "Icon": "fas fa-info"
+              },
+              {
+                "Link": "PageStudies",
+                "Title": "KLINISCHE STUDIEN",
+                "Icon": "fas fa-microscope"
+              },
+              {
+                "Link": "/ondevice/http://wegweiser.rin-diabetes.de/",
+                "Title": "DIABETES-WEGWEISER",
+                "Icon": "fas fa-map-marker-alt"
+              },
+              {
+                "Link": "/ondevice/https://diabetesinformationsdienst.de/diabetes-cockpit/",
+                "Title": "PRAKTISCHE HINWEISE",
+                "Icon": "fas fa-heartbeat"
+              },
+              {
+                "Link": "PageYouTubeChannel",
+                "Title": "DIABETES-ERKLÄRFILME",
+                "Icon": "fab fa-youtube"
+              },
+              {
+                "Link": "DisclaimerPage",
+                "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+                "Icon": "fas fa-info-circle"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageSearch": {
+      "title": "DIABETES-WEGWEISER",
+      "titleIcon": "fas fa-map-marker-alt",
+      "components": [
+        {
+          "renderType": "Search",
+          "model": {
+            "Title": "Suche",
+            "AutoSearchText": "Aktueller Standort",
+            "FirstIcon": "fas fa-map-marker-alt",
+            "SecondIcon": "fas fa-play"
+          }
+        }
+      ]
+    },
+    "DisclaimerPage": {
+      "title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+      "titleIcon": "fas fa-info-circle",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItemLarge",
+            "items": [
+              {
+                "Link": "/ondevice/https://ddz.de/de/impressum",
+                "Title": "Impressum",
+                "Icon": "fas fa-passport"
+              },
+              {
+                "Link": "/ondevice/https://ddz.de/de/haftungsausschluss",
+                "Title": "Haftungsauschluss",
+                "Icon": "fas fa-clipboard-check"
+              },
+              {
+                "Link": "/ondevice/https://ddz.de/de/datenschutzerklaerung",
+                "Title": "Datenschutzerklärung",
+                "Icon": "fas fa-shield-alt"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
