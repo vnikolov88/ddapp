@@ -261,7 +261,7 @@
                 "destinationType": "Item",
                 "mapping": {
                   "d => d.Style": "s => string.IsNullOrEmpty(s.Social.JobsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
-                  "d => d.Title": "s => \"Arbeitsplätze\"",
+                  "d => d.Title": "s => \"Stellenangebote\"",
                   "d => d.Link": "s => s.Social.JobsUrl.OnDevice()",
                   "d => d.Icon": "s => \"fas fa-play\""
                 }
@@ -477,7 +477,7 @@
                 "sourceType": "Department",
                 "destinationType": "ItemList",
                 "mapping": {
-                  "d => d.Style": "s => ItemStyle.LeftSideImg",
+                  "d => d.Style": "s => s.Certificates.Any(x => x.Name != \"Doctor-Help\") ? ItemStyle.LeftSideImg : ItemStyle.Hidden",
                   "d => d.Subject": "s => \"Zertifikate\"",
                   "d => d.Items": "s => s.Certificates.Where(x => x.Name != \"Doctor-Help\")"
                 }
