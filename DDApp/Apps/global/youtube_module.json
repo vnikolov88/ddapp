@@ -103,14 +103,14 @@
   },
   "pages": {
     "PageYouTubeChannel": {
-      "title": "DIABETES-ERKLÄRFILME",
+      //"title": "DIABETES-ERKLÄRFILME",
       "titleIcon": "fab fa-youtube",
       "components": [
         {
           "renderType": "ItemList",
           "provider": {
             "type": "YouTubeChannel",
-            "url": "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyDfqWYR8UqPJFnFYpglCnBH6GfAWUmvBgc&channelId=UCNxwshEljrBJXPri-w9IiLg&part=snippet&maxResults=25",
+            "url": "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyDfqWYR8UqPJFnFYpglCnBH6GfAWUmvBgc&channelId={{channel_id}}&part=snippet&maxResults=25",
             "mapper": [
               {
                 "sourceType": "YouTubeChannel",

@@ -3,16 +3,10 @@
   "quickActionUrl": "/ondevice/tel:+4921133820",
   "quickActionIcon": "fas fa-phone",
   "navigation": {
-    "ZAHN ZENTRUM MOERS": "PageHospital?hospital_guid=2000000000",
-    "NEWS": "PageNews",
-    "VERANSTALTUNGEN": "PageEvents",
-    "KLINISCHE STUDIEN": "PageStudies",
-    "DIABETES-WEGWEISER": "/ondevice/http://wegweiser.rin-diabetes.de/",
-    "PRAKTISCHE HINWEISE": "/ondevice/https://diabetesinformationsdienst.de/diabetes-cockpit/",
-    "DIABETES-ERKLÄRFILME": "PageYouTubeChannel",
-    "Impressum": "/ondevice/https://ddz.de/de/impressum",
-    "Datenschutzerklärung": "/ondevice/https://ddz.de/de/datenschutzerklaerung",
-    "Haftungsausschluss": "/ondevice/https://ddz.de/de/haftungsausschluss"
+    "ZAHNZENTRUM MOERS": "PageDepartment?hospital_guid=2000000001&department_guid=20000000011&hospital_name=Zahnzentrum Moers",
+    "ZAHN MOERS": "/ondevice/https://www.zahnmoers.de",
+    "Zahnzentrum Moers-ERKLÄRFILME": "PageYouTubeChannel?channel_id=UCnKr-n932Obg-PqxwQvgqTg",
+    "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage"
   },
   "modules": [
     "hospital",
@@ -29,38 +23,18 @@
             "style": "OneRowItemLarge",
             "items": [
               {
-                "Link": "PageCompany?company_guid=2000000000&company_name=Zahn Zentrum Moers",
-                "Title": "ZAHN ZENTRUM MOERS",
+                "Link": "PageDepartment?hospital_guid=2000000001&department_guid=20000000011&hospital_name=Zahnzentrum Moers",
+                "Title": "ZAHNZENTRUM MOERS",
                 "Image": "/zzm/img/icon-6.png"
               },
               {
-                "Link": "PageNews",
-                "Title": "NEWS",
-                "Icon": "fas fa-newspaper"
-              },
-              {
-                "Link": "PageEvents",
-                "Title": "VERANSTALTUNGEN",
-                "Icon": "fas fa-info"
-              },
-              {
-                "Link": "PageStudies",
-                "Title": "KLINISCHE STUDIEN",
-                "Icon": "fas fa-microscope"
-              },
-              {
-                "Link": "/ondevice/http://wegweiser.rin-diabetes.de/",
-                "Title": "DIABETES-WEGWEISER",
+                "Link": "/ondevice/https://www.zahnmoers.de",
+                "Title": "Zahn Moers",
                 "Icon": "fas fa-map-marker-alt"
               },
               {
-                "Link": "/ondevice/https://diabetesinformationsdienst.de/diabetes-cockpit/",
-                "Title": "PRAKTISCHE HINWEISE",
-                "Icon": "fas fa-heartbeat"
-              },
-              {
-                "Link": "PageYouTubeChannel",
-                "Title": "DIABETES-ERKLÄRFILME",
+                "Link": "PageYouTubeChannel?channel_id=UCnKr-n932Obg-PqxwQvgqTg",
+                "Title": "Zahnzentrum Moers-ERKLÄRFILME",
                 "Icon": "fab fa-youtube"
               },
               {
