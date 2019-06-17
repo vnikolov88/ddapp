@@ -103,7 +103,7 @@
   },
   "pages": {
     "PageYouTubeChannel": {
-      //"title": "DIABETES-ERKLÄRFILME",
+      "title": "{{channel_title}}",
       "titleIcon": "fab fa-youtube",
       "components": [
         {
