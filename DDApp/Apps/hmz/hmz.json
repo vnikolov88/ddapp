@@ -1,0 +1,95 @@
+{
+  "logo": "/hmz/img/app-logo.png",
+  "quickActionUrl": "/ondevice/tel:+4921133820",
+  "quickActionIcon": "fas fa-phone",
+  "navigation": {
+    "ZAHNZENTRUM MOERS": "PageDepartment?hospital_guid=2000000001&department_guid=20000000011&hospital_name=Zahnzentrum Moers",
+    "ZAHN MOERS": "/ondevice/https://www.zahnmoers.de",
+    "Zahnzentrum Moers-ERKLÄRFILME": "PageYouTubeChannel?channel_id=UCnKr-n932Obg-PqxwQvgqTg",
+    "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage"
+  },
+  "modules": [
+    "hospital",
+    "hospital_sections",
+    "rss",
+    "youtube"
+  ],
+  "pages": {
+    "Page1": {
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItemLarge",
+            "items": [
+              {
+                "Link": "PageDepartment?hospital_guid=2000000190&department_guid=20000000011&hospital_name=Hausarztpraxis im med-Z",
+                "Title": "ZAHNZENTRUM MOERS",
+                "Image": "/zzm/img/icon-6.png"
+              },
+              {
+                "Link": "/ondevice/http://www.hausarztpraxis-im-med-z.de/",
+                "Title": "Zahn Moers",
+                "Icon": "fas fa-map-marker-alt"
+              },
+              {
+                "Link": "PageYouTubeChannel?channel_id=UCnKr-n932Obg-PqxwQvgqTg",
+                "Title": "Zahnzentrum Moers-ERKLÄRFILME",
+                "Icon": "fab fa-youtube"
+              },
+              {
+                "Link": "DisclaimerPage",
+                "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+                "Icon": "fas fa-info-circle"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageSearch": {
+      "title": "DIABETES-WEGWEISER",
+      "titleIcon": "fas fa-map-marker-alt",
+      "components": [
+        {
+          "renderType": "Search",
+          "model": {
+            "Title": "Suche",
+            "AutoSearchText": "Aktueller Standort",
+            "FirstIcon": "fas fa-map-marker-alt",
+            "SecondIcon": "fas fa-play"
+          }
+        }
+      ]
+    },
+    "DisclaimerPage": {
+      "title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+      "titleIcon": "fas fa-info-circle",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItemLarge",
+            "items": [
+              {
+                "Link": "/ondevice/https://ddz.de/de/impressum",
+                "Title": "Impressum",
+                "Icon": "fas fa-passport"
+              },
+              {
+                "Link": "/ondevice/https://ddz.de/de/haftungsausschluss",
+                "Title": "Haftungsauschluss",
+                "Icon": "fas fa-clipboard-check"
+              },
+              {
+                "Link": "/ondevice/https://ddz.de/de/datenschutzerklaerung",
+                "Title": "Datenschutzerklärung",
+                "Icon": "fas fa-shield-alt"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
