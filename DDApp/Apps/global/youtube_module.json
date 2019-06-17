@@ -103,7 +103,7 @@
   },
   "pages": {
     "PageYouTubeChannel": {
-      "title": "{{channel_title}}",
+      "title": "{{channel_title?}}",
       "titleIcon": "fab fa-youtube",
       "components": [
         {
