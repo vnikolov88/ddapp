@@ -1,18 +1,15 @@
 {
   "logo": "/hmz/img/app-logo.png",
-  "quickActionUrl": "/ondevice/tel:+4921133820",
+  "quickActionUrl": "/ondevice/tel:+49211667011",
   "quickActionIcon": "fas fa-phone",
   "navigation": {
-    "ZAHNZENTRUM MOERS": "PageDepartment?hospital_guid=2000000001&department_guid=20000000011&hospital_name=Zahnzentrum Moers",
-    "ZAHN MOERS": "/ondevice/https://www.zahnmoers.de",
-    "Zahnzentrum Moers-ERKLÄRFILME": "PageYouTubeChannel?channel_id=UCnKr-n932Obg-PqxwQvgqTg",
+    "Hausarztpraxis im med-Z": "PageDepartment?hospital_guid=200000019&department_guid=2000000191&hospital_name=Hausarztpraxis im med-Z",
+    "Hausarztpraxis im med-Z Standort": "/ondevice/http://www.eisenstein.de/",
     "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage"
   },
   "modules": [
     "hospital",
-    "hospital_sections",
-    "rss",
-    "youtube"
+    "hospital_sections"
   ],
   "pages": {
     "Page1": {
@@ -23,19 +20,14 @@
             "style": "OneRowItemLarge",
             "items": [
               {
-                "Link": "PageDepartment?hospital_guid=2000000190&department_guid=20000000011&hospital_name=Hausarztpraxis im med-Z",
-                "Title": "ZAHNZENTRUM MOERS",
-                "Image": "/zzm/img/icon-6.png"
+                "Link": "PageDepartment?hospital_guid=200000019&department_guid=2000000191&hospital_name=Hausarztpraxis im med-Z",
+                "Title": "Hausarztpraxis im med-Z",
+                "Image": "/hmz/img/icon-6.png"
               },
               {
-                "Link": "/ondevice/http://www.hausarztpraxis-im-med-z.de/",
-                "Title": "Zahn Moers",
+                "Link": "/ondevice/http://www.eisenstein.de/",
+                "Title": "Hausarztpraxis im med-Z Standort",
                 "Icon": "fas fa-map-marker-alt"
-              },
-              {
-                "Link": "PageYouTubeChannel?channel_id=UCnKr-n932Obg-PqxwQvgqTg",
-                "Title": "Zahnzentrum Moers-ERKLÄRFILME",
-                "Icon": "fab fa-youtube"
               },
               {
                 "Link": "DisclaimerPage",
