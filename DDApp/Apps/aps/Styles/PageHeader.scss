@@ -1,0 +1,15 @@
+@import "_variables.scss";
+
+body main > .PageHeader .iconCircle > img {
+    display: unset;
+}
+
+
+.PageHeader {
+    border-bottom-color: $iconCircleColor;    
+}
+
+
+.PageHeader .iconCircle i {
+   color: $iconCircleColor;
+}
