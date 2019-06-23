@@ -1,0 +1,87 @@
+{
+  "logo": "/aps/img/app-logo.png",
+  "quickActionUrl": "/ondevice/tel:+492102399192",
+  "quickActionIcon": "fas fa-phone",
+  "navigation": {
+    "Arztpraxis Pascha": "PageDepartment?hospital_guid=200000018&department_guid=2000000181&hospital_name=Arztpraxis Pascha",
+    "Arztpraxis Pascha Standort": "/ondevice/http://www.arzt-ratingen.de/",
+    "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage"
+  },
+  "modules": [
+    "hospital",
+    "hospital_sections"
+  ],
+  "pages": {
+    "Page1": {
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItemLarge",
+            "items": [
+              {
+                "Link": "PageDepartment?hospital_guid=200000018&department_guid=2000000181&hospital_name=Arztpraxis Pascha",
+                "Title": "Hausarztpraxis im med-Z",
+                "Image": "/aps/img/icon-6.png"
+              },
+              {
+                "Link": "/ondevice/http://www.arzt-ratingen.de/",
+                "Title": "Arztpraxis Pascha Standort",
+                "Icon": "fas fa-map-marker-alt"
+              },
+              {
+                "Link": "DisclaimerPage",
+                "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+                "Icon": "fas fa-info-circle"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageSearch": {
+      "title": "DIABETES-WEGWEISER",
+      "titleIcon": "fas fa-map-marker-alt",
+      "components": [
+        {
+          "renderType": "Search",
+          "model": {
+            "Title": "Suche",
+            "AutoSearchText": "Aktueller Standort",
+            "FirstIcon": "fas fa-map-marker-alt",
+            "SecondIcon": "fas fa-play"
+          }
+        }
+      ]
+    },
+    "DisclaimerPage": {
+      "title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+      "titleIcon": "fas fa-info-circle",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItemLarge",
+            "items": [
+              {
+                "Link": "/ondevice/https://ddz.de/de/impressum",
+                "Title": "Impressum",
+                "Icon": "fas fa-passport"
+              },
+              {
+                "Link": "/ondevice/https://ddz.de/de/haftungsausschluss",
+                "Title": "Haftungsauschluss",
+                "Icon": "fas fa-clipboard-check"
+              },
+              {
+                "Link": "/ondevice/https://ddz.de/de/datenschutzerklaerung",
+                "Title": "Datenschutzerklärung",
+                "Icon": "fas fa-shield-alt"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
