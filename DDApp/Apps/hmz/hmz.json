@@ -1,0 +1,87 @@
+{
+  "logo": "/hmz/img/app-logo.png",
+  "quickActionUrl": "/ondevice/tel:+49211667011",
+  "quickActionIcon": "fas fa-phone",
+  "navigation": {
+    "Hausarztpraxis im med-Z": "PageDepartment?hospital_guid=200000019&department_guid=2000000191&hospital_name=Hausarztpraxis im med-Z",
+    "Hausarztpraxis im med-Z Standort": "/ondevice/http://www.eisenstein.de/",
+    "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage"
+  },
+  "modules": [
+    "hospital",
+    "hospital_sections"
+  ],
+  "pages": {
+    "Page1": {
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItemLarge",
+            "items": [
+              {
+                "Link": "PageDepartment?hospital_guid=200000019&department_guid=2000000191&hospital_name=Hausarztpraxis im med-Z",
+                "Title": "Hausarztpraxis im med-Z",
+                "Image": "/hmz/img/icon-6.png"
+              },
+              {
+                "Link": "/ondevice/http://www.eisenstein.de/",
+                "Title": "Hausarztpraxis im med-Z Standort",
+                "Icon": "fas fa-map-marker-alt"
+              },
+              {
+                "Link": "DisclaimerPage",
+                "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+                "Icon": "fas fa-info-circle"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageSearch": {
+      "title": "DIABETES-WEGWEISER",
+      "titleIcon": "fas fa-map-marker-alt",
+      "components": [
+        {
+          "renderType": "Search",
+          "model": {
+            "Title": "Suche",
+            "AutoSearchText": "Aktueller Standort",
+            "FirstIcon": "fas fa-map-marker-alt",
+            "SecondIcon": "fas fa-play"
+          }
+        }
+      ]
+    },
+    "DisclaimerPage": {
+      "title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+      "titleIcon": "fas fa-info-circle",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItemLarge",
+            "items": [
+              {
+                "Link": "/ondevice/https://ddz.de/de/impressum",
+                "Title": "Impressum",
+                "Icon": "fas fa-passport"
+              },
+              {
+                "Link": "/ondevice/https://ddz.de/de/haftungsausschluss",
+                "Title": "Haftungsauschluss",
+                "Icon": "fas fa-clipboard-check"
+              },
+              {
+                "Link": "/ondevice/https://ddz.de/de/datenschutzerklaerung",
+                "Title": "Datenschutzerklärung",
+                "Icon": "fas fa-shield-alt"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
