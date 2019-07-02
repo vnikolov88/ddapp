@@ -6,7 +6,14 @@ function adjustNavigation() {
     document.getElementsByTagName("main")[0].style.paddingTop = navBarHeight + "px";
     let navBar2 = document.getElementById("navbar-2");
     if (navBar2 !== null)
-        document.getElementById("PageContainer").style.paddingTop = navBar2.clientHeight + "px";
+        document.getElementById("PageContainer").style.paddingTop = navBar2.clientHeight + 20 + "px";
+}
+
+function adjustDropdownNavigation() {
+    let dropdownNav = document.querySelector(".dropdown #NavMenu");
+    let navBarHeight = document.getElementById("navbar-1").clientHeight;
+    dropdownNav.style.top = navBarHeight + "px";
+
 }
 
 window.addEventListener('popstate', function (e) {
@@ -39,6 +46,7 @@ function requestPage(link, push) {
                     history.pushState(link, document.title, link.href);
 
                 adjustNavigation();
+                adjustDropdownNavigation();
                 nuggetInit();
                 _scrollToTop();
             }
@@ -114,6 +122,7 @@ window.onload = function () {
     mainContentArea = document.querySelector('body > main');
     loadingIndication = document.getElementById('loading-indicator');
     adjustNavigation();
+    adjustDropdownNavigation();
     nuggetInit();
     attachLinkClickHandlers(document);
     attachFormSubmitHandlers(document);
