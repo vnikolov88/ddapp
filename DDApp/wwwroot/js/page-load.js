@@ -1,9 +1,11 @@
 var mainContentArea;
 var loadingIndication;
 
-function adjustNavigation() {
+function adjustNavigation() {    
     let navBarHeight = document.getElementById("navbar-1").clientHeight;
     document.getElementsByTagName("main")[0].style.paddingTop = navBarHeight + "px";
+    let loadingIndicator = document.getElementById("loading-indicator");
+    loadingIndicator.style.top = navBarHeight - 2 + "px";
     let navBar2 = document.getElementById("navbar-2");
     if (navBar2 !== null)
         document.getElementById("PageContainer").style.paddingTop = navBar2.clientHeight + 20 + "px";
@@ -13,7 +15,6 @@ function adjustDropdownNavigation() {
     let dropdownNav = document.querySelector(".dropdown #NavMenu");
     let navBarHeight = document.getElementById("navbar-1").clientHeight;
     dropdownNav.style.top = navBarHeight + "px";
-
 }
 
 window.addEventListener('popstate', function (e) {
