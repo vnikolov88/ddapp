@@ -11,6 +11,11 @@
             "style": "OneRowItemLarge",
             "items": [
               {
+                "Link": "suche-disclaimer",
+                "Title": "Suche disclamer",
+                "Icon": "fas fa-play"
+              },
+              {
                 "Link": "herzinfarkt",
                 "Title": "Herzinfarkt",
                 "Icon": "fas fa-play",
@@ -96,6 +101,37 @@
                 }
               }
             ]
+          }
+        }
+      ]
+    },
+    // Search disclaimer
+    "suche-disclaimer": {
+      "title": "Suche disclamer",
+      "titleIcon": "fas fa-info-circle",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "„Smart-help“ und alle Applikationen die „Smart-help“ Programme nutzen  listet Kliniken und deren Abteilungen  nach dem Qualitätsbericht 2016 (G-BA= gemeinsamer Bundesausschuss www.g-ba.de), die ihrer ausgewählte Suche entsprechen können."
+          }
+        },
+        {
+          "renderType": "ListLite",
+          "model": {
+            "type": "ul",
+            "content": [
+              "für die Klinik- Suche : Herzinfarkt =  FA- 0300 ( Kardiologie)  / FA- 0103 ( Innere - Abteilungen mit Schwerpunkt Kardiologie)",
+              "für die Klinik- Suche  Schlaganfall : zertifizierte  „Stroke-Units“ nach der deutschen Schlaganfall Gesellschaft / Stand Dezember  2017",
+              "für die Klinik- Suche : Aneurysma / Thrombose  =  FA-1800  ( Gefäßchirurgie)",
+              "für die Klinik- Suche : Blutvergiftung / Schwerer allergischer Schock  =  FA-100  ( Innere Abteilungen)"
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "„smart-help“  erhebt keinen Anspruch auf Vollständigkeit der Aufzählung aller med. Abteilungen in Deutschland Weitere Krankenhausabteilungen können zusätzlich gelistet seien zu einzelnen „Kliniksuchen“ ,auch wenn diese die  Abteilungen - gemäß QB- 2016  und Zertifizierung „deutscher Schlaganfall Gesellschaft „ nicht entsprechen. Dies geschieht ausschießlich  auf Wunsch der Kliniken."
           }
         }
       ]
