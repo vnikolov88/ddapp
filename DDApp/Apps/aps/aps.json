@@ -9,7 +9,9 @@
   },
   "modules": [
     "hospital",
-    "hospital_sections"
+    "hospital_sections",
+    "emergencies",
+    "emergency_services"
   ],
   "pages": {
     "Page1": {
@@ -22,7 +24,7 @@
               {
                 "Link": "PageDepartment?hospital_guid=200000018&department_guid=2000000181&hospital_name=Arztpraxis Pascha",
                 "Title": "Arztpraxis Pascha",
-                "Image": "/aps/img/icon-6.png"
+                "Image": "/aps/img/icon-4.png"
               },
               {
                 "Link": "/ondevice/http://www.arzt-ratingen.de/",
@@ -33,6 +35,16 @@
                 "Link": "DisclaimerPage",
                 "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
                 "Icon": "fas fa-info-circle"
+              },
+              {
+                "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
+                "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE",
+                "Image": "/aps/img/icon-5.png"
+              },
+              {
+                "Link": "notdienste-notfalle",
+                "Title": "NOTDIENSTE, NOTFÄLLE",
+                "Image": "/aps/img/icon-6.png"
               }
             ]
           }
