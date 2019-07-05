@@ -16,12 +16,12 @@
 @import "../../global/Styles/Search";
 @import "../../global/Styles/ResultList";
 @import "../../global/Styles/ResultItem";
-@import "../../aps/Styles/PageHeader";
-@import "../../aps/Styles/Article";
-@import "../../aps/Styles/Item";
-@import "../../aps/Styles/SocialBar";
-@import "../../aps/Styles/Nav";
 
+@import "PageHeader.scss";
+@import "Article.scss";
+@import "Item.scss";
+@import "SocialBar.scss";
+@import "Nav.scss";
 @import "Nugget.scss";
 @import "Tabs.scss";
 @import "TitleLite.scss";

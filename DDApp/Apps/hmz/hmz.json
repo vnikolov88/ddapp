@@ -9,7 +9,9 @@
   },
   "modules": [
     "hospital",
-    "hospital_sections"
+    "hospital_sections",
+    "emergencies",
+    "emergency_services"
   ],
   "pages": {
     "Page1": {
@@ -33,6 +35,16 @@
                 "Link": "DisclaimerPage",
                 "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
                 "Icon": "fas fa-info-circle"
+              },
+              {
+                "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
+                "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE",
+                "Image": "/hmz/img/icon-5.png"
+              },
+              {
+                "Link": "notdienste-notfalle",
+                "Title": "NOTDIENSTE, NOTFÄLLE",
+                "Image": "/hmz/img/icon-4.png"
               }
             ]
           }
