@@ -1,0 +1,10 @@
+ul#pills-tab.nav.nav-pills li::before {
+    content: none;
+}
+
+#pills-tab .nav-item .nav-link {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: unset;
+}

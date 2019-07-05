@@ -9,11 +9,28 @@
 @import "../../global/Styles/Search";
 @import "../../global/Styles/TitleLite";
 @import "../../global/Styles/ErrorIndicator";
-@import "../../zzm/Styles/PageHeader";
-@import "../../zzm/Styles/Article";
-@import "../../zzm/Styles/Item";
-@import "../../zzm/Styles/SocialBar";
-@import "../../zzm/Styles/Nav";
+
+@import "../../global/Styles/Nugget";
+@import "../../global/Styles/Tabs";
+@import "../../global/Styles/ListLite";
+@import "../../global/Styles/AnchorLite";
+@import "../../global/Styles/Search";
+@import "../../global/Styles/ResultList";
+@import "../../global/Styles/ResultItem";
+
+
+@import "PageHeader.scss";
+@import "Article.scss";
+@import "Item.scss";
+@import "SocialBar.scss";
+@import "Nav.scss";
+@import "Nugget.scss";
+@import "Tabs.scss";
+@import "TitleLite.scss";
+@import "ListLite.scss";
+@import "AnchorLite.scss";
+@import "Search.scss";
+@import "ResultItem.scss";
 
 .Ellipse {
     text-overflow: ellipsis;

@@ -5,7 +5,9 @@
   "navigation": {
     "Hausarztpraxis im med-Z": "PageDepartment?hospital_guid=200000019&department_guid=2000000191&hospital_name=Hausarztpraxis im med-Z",
     "Hausarztpraxis im med-Z Standort": "/ondevice/http://www.eisenstein.de/",
-    "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage"
+    "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage",
+    "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE": "herzinfarkt-schlaganfall-aneurysma-thrombose",
+    "NOTDIENSTE, NOTFÄLLE": "notdienste-notfalle"
   },
   "modules": [
     "hospital",

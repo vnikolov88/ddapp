@@ -6,13 +6,17 @@
     "ZAHNZENTRUM MOERS": "PageDepartment?hospital_guid=2000000001&department_guid=20000000011&hospital_name=Zahnzentrum Moers",
     "ZAHN MOERS": "/ondevice/https://www.zahnmoers.de",
     "Zahnzentrum Moers-ERKLÄRFILME": "PageYouTubeChannel?channel_id=UCnKr-n932Obg-PqxwQvgqTg",
-    "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage"
+    "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage",
+    "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE": "herzinfarkt-schlaganfall-aneurysma-thrombose",
+    "NOTDIENSTE, NOTFÄLLE": "notdienste-notfalle"
   },
   "modules": [
     "hospital",
     "hospital_sections",
     "rss",
-    "youtube"
+    "youtube",
+    "emergencies",
+    "emergency_services"
   ],
   "pages": {
     "Page1": {
@@ -41,6 +45,16 @@
                 "Link": "DisclaimerPage",
                 "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
                 "Icon": "fas fa-info-circle"
+              },
+              {
+                "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
+                "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE",
+                "Image": "/zzm/img/icon-5.png"
+              },
+              {
+                "Link": "notdienste-notfalle",
+                "Title": "NOTDIENSTE, NOTFÄLLE",
+                "Image": "/zzm/img/icon-4.png"
               }
             ]
           }
