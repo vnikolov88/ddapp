@@ -60,6 +60,9 @@
     }
 }
 
+.Container+.Article {
+    padding-top: 0.2em;
+}
 
 .Article .Title, .Article section {
     padding: 3vh;

@@ -1,0 +1,30 @@
+@import "_variables";
+
+ul li::before {
+    content: "\2022";
+    color: $iconCircleColor;
+    vertical-align: bottom;
+    display: unset;
+    margin-left: unset;
+    width: unset;
+}
+
+ul {
+    list-style: none;
+}
+
+ul.ListLite, ol.ListLite {
+    font-family: $Regular;
+    color: $ActiveNugget;
+    padding: .5em;
+    margin: 0;
+    font-size: $TextFontSize;
+    line-height: 1.5em;
+    word-break: break-word;
+
+    li {
+        list-style-position: inside;
+        text-indent: -1.5em;
+        padding-left: 2em;
+    }
+}

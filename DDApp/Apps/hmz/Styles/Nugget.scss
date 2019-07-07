@@ -1,0 +1,21 @@
+@import "_variables.scss";
+
+.NuggetTitle, body main #pills-tab .nav-item {
+    font-family: $Bold;
+    color: $ActiveNugget;
+}
+
+#NuggetPillsContainer > .NuggetTitle, body main #pills-tab .nav-item {
+    background: $NormalNugget;
+    font-family: $Bold;
+    color: $ActiveNugget;
+}
+
+#NuggetPillsContainer > .NuggetTitle.Active, body main #pills-tab .nav-item.Active {
+    background: $ActiveNugget;
+    color: $BaseColor;
+}
+
+body main #pills-tab {
+    padding: 0.2em 0;
+}

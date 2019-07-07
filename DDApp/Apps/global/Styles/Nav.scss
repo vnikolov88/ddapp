@@ -16,10 +16,10 @@
     margin: 0;
     padding: 0.5em 0;
     background-color: $BaseColor;
-    color: #1b4b89;
-    box-shadow: 0vw 0.4vh 1vh #888888;
+    color: #1b4b89;    
     border: none;
     z-index: 10;
+    height: $NavigationHeight;
     max-height: $NavigationHeight;
     position: fixed;
     max-width: inherit;
@@ -61,7 +61,7 @@
         display: none;
         position: fixed;
         width: 100%;
-        top: calc(100% - 88.5vh);
+        top: calc(100% - 85.5vh);
         z-index: 1000;
 
         &.loading {

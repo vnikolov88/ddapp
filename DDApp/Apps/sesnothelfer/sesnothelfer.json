@@ -73,24 +73,6 @@
       "titleImage": "img/icon-6.png",
       "components": [
         {
-          "renderType": "Article",
-          "provider": {
-            "type": "Company",
-            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
-            "mapper": [
-              {
-                "sourceType": "Company",
-                "destinationType": "Article",
-                "mapping": {
-                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
-                  "d => d.Sources": "s => s.Pictures.Select(x => x.Thumbnail)",
-                  "d => d.Description": "s => s.DescriptionHtml"
-                }
-              }
-            ]
-          }
-        },
-        {
           "renderType": "ItemList",
           "provider": {
             "type": "Company",
@@ -112,6 +94,24 @@
                   "d => d.Link": "(s, qc) => $\"PageHospital?hospital_guid={s.GUID}&hospital_name={s.Name}\"",
                   "d => d.Title": "s => s.Name",
                   "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Article",
+          "provider": {
+            "type": "Company",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Company",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
+                  "d => d.Sources": "s => s.Pictures.Select(x => x.Thumbnail)",
+                  "d => d.Description": "s => s.DescriptionHtml"
                 }
               }
             ]
