@@ -1,0 +1,86 @@
+@import "_variables.scss";
+
+.ItemWrapper {
+    margin-bottom: .2em;
+}
+
+.HasBorder {
+    border-bottom: 3px solid $AccentColor;
+}
+
+.Profile {
+    background-color: $BackgroundPrimary;
+    border-bottom: 3px solid $AccentColor;
+
+    .Title {
+        background: $BackgroundSecondary;
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+}
+
+.OneRowItem, .OneRowItemLarge {
+    ul {
+        li {
+            &:before {
+                font-size: 20px;
+                vertical-align: sub;
+            }
+        }
+    }
+}
+
+
+.ItemWrapper.OneRowItemLarge {
+    height: auto !important;
+    max-height: unset;
+
+    .Circle {
+        width: 8vh;
+        height: 8vh;
+        margin: 0;
+
+        i {
+            line-height: 8.5vh;
+            font-size: 5vh;
+            color: $iconCircleColor;
+        }
+    }
+}
+
+.LeftSideImg {
+    .Circle {
+        background: $iconCircleColor;
+    }
+    .Link-details {
+        padding: .8em .5em;
+        height: 100%;
+        align-items: center;
+
+        p {
+            height: auto;
+        }
+    }
+}
+
+.ItemWrapper {
+    margin-bottom: .2em;
+    .Link-details {
+        p.Menu {
+           font-family: $Bold;
+        }
+    }
+}
+
+.OneRowItemIconColorInverted .Circle i {
+    color: $iconCircleColor;
+}
+
+.OneRowItem .Circle {
+    background: $iconCircleColor;
+}
