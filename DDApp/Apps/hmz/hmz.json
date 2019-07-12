@@ -4,10 +4,9 @@
   "quickActionIcon": "fas fa-phone",
   "navigation": {
     "Hausarztpraxis im med-Z": "PageDepartment?hospital_guid=200000019&department_guid=2000000191&hospital_name=Hausarztpraxis im med-Z",
-    "Hausarztpraxis im med-Z Standort": "/ondevice/http://www.eisenstein.de/",
-    "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage",
     "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE": "herzinfarkt-schlaganfall-aneurysma-thrombose",
-    "NOTDIENSTE, NOTFÄLLE": "notdienste-notfalle"
+    "NOTDIENSTE, NOTFÄLLE": "notdienste-notfalle",
+    "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage"
   },
   "modules": [
     "hospital",
@@ -29,16 +28,6 @@
                 "Image": "/hmz/img/icon-6.png"
               },
               {
-                "Link": "/ondevice/http://www.eisenstein.de/",
-                "Title": "Hausarztpraxis im med-Z Standort",
-                "Icon": "fas fa-map-marker-alt"
-              },
-              {
-                "Link": "DisclaimerPage",
-                "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
-                "Icon": "fas fa-info-circle"
-              },
-              {
                 "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
                 "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE",
                 "Image": "/hmz/img/icon-5.png"
@@ -47,6 +36,11 @@
                 "Link": "notdienste-notfalle",
                 "Title": "NOTDIENSTE, NOTFÄLLE",
                 "Image": "/hmz/img/icon-4.png"
+              },
+              {
+                "Link": "DisclaimerPage",
+                "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+                "Icon": "fas fa-info-circle"
               }
             ]
           }

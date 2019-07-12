@@ -4,11 +4,10 @@
   "quickActionIcon": "fas fa-phone",
   "navigation": {
     "ZAHNZENTRUM MOERS": "PageDepartment?hospital_guid=2000000001&department_guid=20000000011&hospital_name=Zahnzentrum Moers",
-    "ZAHN MOERS": "/ondevice/https://www.zahnmoers.de",
     "Zahnzentrum Moers-ERKLÄRFILME": "PageYouTubeChannel?channel_id=UCnKr-n932Obg-PqxwQvgqTg",
-    "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage",
     "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE": "herzinfarkt-schlaganfall-aneurysma-thrombose",
-    "NOTDIENSTE, NOTFÄLLE": "notdienste-notfalle"
+    "NOTDIENSTE, NOTFÄLLE": "notdienste-notfalle",
+    "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage"
   },
   "modules": [
     "hospital",
@@ -32,19 +31,14 @@
                 "Image": "/zzm/img/icon-6.png"
               },
               {
-                "Link": "/ondevice/https://www.zahnmoers.de",
-                "Title": "Zahn Moers",
-                "Icon": "fas fa-map-marker-alt"
+                "Link": "service",
+                "Title": "UNSER SERVICE FÜR SIE",
+                "Image": "/zzm/img/icon-2.png"
               },
               {
                 "Link": "PageYouTubeChannel?channel_id=UCnKr-n932Obg-PqxwQvgqTg&channel_title=Zahnzentrum Moers-ERKLÄRFILME",
                 "Title": "Zahnzentrum Moers-ERKLÄRFILME",
                 "Icon": "fab fa-youtube"
-              },
-              {
-                "Link": "DisclaimerPage",
-                "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
-                "Icon": "fas fa-info-circle"
               },
               {
                 "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
@@ -55,6 +49,11 @@
                 "Link": "notdienste-notfalle",
                 "Title": "NOTDIENSTE, NOTFÄLLE",
                 "Image": "/zzm/img/icon-4.png"
+              },
+              {
+                "Link": "DisclaimerPage",
+                "Title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
+                "Icon": "fas fa-info-circle"
               }
             ]
           }
@@ -72,6 +71,36 @@
             "AutoSearchText": "Aktueller Standort",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
+          }
+        }
+      ]
+    },
+    "service": {
+      "title": "UNSER SERVICE FÜR SIE",
+      "titleImage": "/zzm/img/icon-2.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "Description": "hier können sie ihre Rezepte schriftlich hinterlegen / oder per Foto hochladen neue Rezepte bestellen ,sowie den Einnahmerythmus  hinterlegen"
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "/ondevice/mailto:rezept@preventicum.de",
+                "Title": "Rezeptbestellung",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "/ondevice/mailto:termin@preventicum.de",
+                "Title": "Terminanfrage",
+                "Icon": "fas fa-play"
+              }
+            ]
           }
         }
       ]

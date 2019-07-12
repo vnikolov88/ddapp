@@ -11,11 +11,6 @@
             "style": "OneRowItemLarge",
             "items": [
               {
-                "Link": "suche-disclaimer",
-                "Title": "Suche disclamer",
-                "Icon": "fas fa-play"
-              },
-              {
                 "Link": "herzinfarkt",
                 "Title": "Herzinfarkt",
                 "Icon": "fas fa-play",
@@ -113,7 +108,7 @@
         {
           "renderType": "Article",
           "model": {
-            "description": "„Smart-help“ und alle Applikationen die „Smart-help“ Programme nutzen  listet Kliniken und deren Abteilungen  nach dem Qualitätsbericht 2016 (G-BA= gemeinsamer Bundesausschuss www.g-ba.de), die ihrer ausgewählte Suche entsprechen können."
+            "description": "„Diese App / diese Homepage“ und alle Applikationen die „ Smart-help“ Programme nutzen  listet medizinische Einrichtungen und deren Abteilungen  nach dem aktuellen Qualitätsbericht (G-BA= gemeinsamer Bundesausschuss www.g-ba.de), die der ausgewählte Suche entsprechen .Diese Einrichtungen befinden sich in Deutschland"
           }
         },
         {
@@ -121,9 +116,9 @@
           "model": {
             "type": "ul",
             "content": [
-              "für die Klinik- Suche : Herzinfarkt =  FA- 0300 ( Kardiologie)  / FA- 0103 ( Innere - Abteilungen mit Schwerpunkt Kardiologie)",
-              "für die Klinik- Suche  Schlaganfall : zertifizierte  „Stroke-Units“ nach der deutschen Schlaganfall Gesellschaft / Stand Dezember  2017",
-              "für die Klinik- Suche : Aneurysma / Thrombose  =  FA-1800  ( Gefäßchirurgie)",
+              "für die Klinik- Suche : Herzinfarkt =  FA-0300 ( Kardiologie)  / FA-0103 ( Innere - Abteilungen mit Schwerpunkt Kardiologie)",
+              "für die Klinik- Suche  Schlaganfall : zertifizierte  „Stroke-Units“ nach der deutschen Schlaganfall Gesellschaft / Stand Dezember  2018",
+              "für die Klinik- Suche : Aneurysma / Thrombose  =  FA- 1800  ( Gefäßchirurgie)",
               "für die Klinik- Suche : Blutvergiftung / Schwerer allergischer Schock  =  FA-100  ( Innere Abteilungen)"
             ]
           }
@@ -131,7 +126,7 @@
         {
           "renderType": "Article",
           "model": {
-            "description": "„smart-help“  erhebt keinen Anspruch auf Vollständigkeit der Aufzählung aller med. Abteilungen in Deutschland Weitere Krankenhausabteilungen können zusätzlich gelistet seien zu einzelnen „Kliniksuchen“ ,auch wenn diese die  Abteilungen - gemäß QB- 2016  und Zertifizierung „deutscher Schlaganfall Gesellschaft „ nicht entsprechen. Dies geschieht ausschießlich  auf Wunsch der Kliniken."
+            "description": "„Diese App / diese Homepage“ und alle Applikationen die „ Smart-help“ Programme nutzen “  erhebt keinen Anspruch auf Vollständigkeit der Aufzählung aller med. Abteilungen in Deutschland Weitere Krankenhausabteilungen können zusätzlich gelistet seien zu einzelnen „Kliniksuchen“ ,auch wenn diese die  Abteilungen - gemäß QB-  und Zertifizierung „deutscher Schlaganfall Gesellschaft „ nicht entsprechen. Dies geschieht ausschießlich  auf Wunsch der einzelnen Betreiber ( APP und Web )."
           }
         }
       ]
@@ -143,7 +138,7 @@
       "tabGroups": {
         "(mögliche) Symptome": 1,
         "Handeln Sie sofort!": 5,
-        "Kliniksuche": 1
+        "Kliniksuche": 2
       },
       "components": [
         {
@@ -218,6 +213,15 @@
                 "Icon": "fas fa-play"
               }
             ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "model": {
+            "Style": "OneRowItemLarge",
+            "Link": "suche-disclaimer",
+            "Title": "Einschränkung der „Kliniksuche“",
+            "Icon": "fas fa-play"
           }
         },
         {
@@ -413,7 +417,7 @@
       "tabGroups": {
         "(mögliche) Symptome": 16,
         "Handeln Sie sofort!": 12,
-        "Kliniksuche": 1
+        "Kliniksuche": 2
       },
       "components": [
         {
@@ -632,6 +636,15 @@
           }
         },
         {
+          "renderType": "Item",
+          "model": {
+            "Style": "OneRowItemLarge",
+            "Link": "suche-disclaimer",
+            "Title": "Einschränkung der „Kliniksuche“",
+            "Icon": "fas fa-play"
+          }
+        },
+        {
           "renderType": "Search",
           "model": {
             "Title": "Suche",
@@ -684,7 +697,7 @@
       "tabGroups": {
         "(mögliche) Symptome": 8,
         "Handeln Sie sofort!": 6,
-        "Kliniksuche": 1
+        "Kliniksuche": 2
       },
       "components": [
         {
@@ -792,6 +805,15 @@
           }
         },
         {
+          "renderType": "Item",
+          "model": {
+            "Style": "OneRowItemLarge",
+            "Link": "suche-disclaimer",
+            "Title": "Einschränkung der „Kliniksuche“",
+            "Icon": "fas fa-play"
+          }
+        },
+        {
           "renderType": "Search",
           "model": {
             "Title": "Suche",
@@ -849,7 +871,7 @@
       "tabGroups": {
         "(mögliche) Symptome": 1,
         "Handeln Sie sofort!": 4,
-        "Kliniksuche": 1
+        "Kliniksuche": 2
       },
       "components": [
         {
@@ -898,6 +920,15 @@
           }
         },
         {
+          "renderType": "Item",
+          "model": {
+            "Style": "OneRowItemLarge",
+            "Link": "suche-disclaimer",
+            "Title": "Einschränkung der „Kliniksuche“",
+            "Icon": "fas fa-play"
+          }
+        },
+        {
           "renderType": "Search",
           "model": {
             "Title": "Suche",
@@ -915,7 +946,7 @@
       "tabGroups": {
         "(mögliche) Symptome": 1,
         "Handeln Sie sofort!": 4,
-        "Kliniksuche": 1
+        "Kliniksuche": 2
       },
       "components": [
         {
@@ -963,6 +994,15 @@
           }
         },
         {
+          "renderType": "Item",
+          "model": {
+            "Style": "OneRowItemLarge",
+            "Link": "suche-disclaimer",
+            "Title": "Einschränkung der „Kliniksuche“",
+            "Icon": "fas fa-play"
+          }
+        },
+        {
           "renderType": "Search",
           "model": {
             "Title": "Suche",
@@ -982,7 +1022,7 @@
       "tabGroups": {
         "(mögliche) Symptome": 1,
         "Handeln Sie sofort!": 5,
-        "Kliniksuche": 1
+        "Kliniksuche": 2
       },
       "components": [
         {
@@ -1041,6 +1081,15 @@
           }
         },
         {
+          "renderType": "Item",
+          "model": {
+            "Style": "OneRowItemLarge",
+            "Link": "suche-disclaimer",
+            "Title": "Einschränkung der „Kliniksuche“",
+            "Icon": "fas fa-play"
+          }
+        },
+        {
           "renderType": "Search",
           "model": {
             "Title": "Suche",
@@ -1059,7 +1108,7 @@
       "tabGroups": {
         "(mögliche) Symptome": 1,
         "Handeln Sie sofort!": 7,
-        "Kliniksuche": 1
+        "Kliniksuche": 2
       },
       "components": [
         {
@@ -1137,6 +1186,15 @@
               "Nicht den Hausarzt anrufen: dauert zu lange!",
               "Einen Angehörigen, Freund oder Nachbarn benachrichtigen."
             ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "model": {
+            "Style": "OneRowItemLarge",
+            "Link": "suche-disclaimer",
+            "Title": "Einschränkung der „Kliniksuche“",
+            "Icon": "fas fa-play"
           }
         },
         {
