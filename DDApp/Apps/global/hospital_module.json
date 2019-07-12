@@ -74,6 +74,7 @@
         "DescriptionHtml": "System.String",
         "Certificates": "Certificate[]",
         "DepartmentClassification": "System.String",
+        "PersonalHeadline": "System.String",
         "Doctors": "Doctor[]",
         "DistanceFromLocationKm": "System.Double"
       }
