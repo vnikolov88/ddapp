@@ -31,27 +31,27 @@
               {
                 "Link": "notfallversorgung",
                 "Title": "Baby und Kinder – Notfälle",
-                "Image": "/smarthelp/img/icon-1.png"
+                "Image": "/smarthelp/img/baby-und-kinder.png"
               },
               {
                 "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
                 "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE",
-                "Image": "/smarthelp/img/icon-2.png"
+                "Image": "/smarthelp/img/herzinfarkt-schlaganfall-aneurysma-thrombose.png"
               },
               {
                 "Link": "defib-suche",
                 "Title": "DEFIBRILLATOR - SUCHE",
-                "Image": "/smarthelp/img/icon-3.png"
+                "Image": "/smarthelp/img/defib-search.png"
               },
               {
                 "Link": "notdienste-notfalle",
                 "Title": "NOTDIENSTE, NOTFÄLLE",
-                "Image": "/smarthelp/img/icon-4.png"
+                "Image": "/smarthelp/img/notdienste-notfalle.png"
               },
               {
                 "Link": "hospital-cluster-search",
                 "Title": "SMART HELP - SUCHE",
-                "Image": "/smarthelp/img/icon-5.png"
+                "Image": "/smarthelp/img/hospital-search.png"
               }
             ]
           }

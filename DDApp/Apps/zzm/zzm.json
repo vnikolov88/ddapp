@@ -29,7 +29,7 @@
               {
                 "Link": "PageDepartment?hospital_guid=2000000001&department_guid=20000000011&hospital_name=Zahnzentrum Moers",
                 "Title": "ZAHNZENTRUM MOERS",
-                "Image": "/zzm/img/icon-6.png"
+                "Image": "/zzm/img/app-icon-logo.png"
               },
               {
                 "Link": "/ondevice/https://www.zahnmoers.de",
@@ -49,12 +49,12 @@
               {
                 "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
                 "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE",
-                "Image": "/zzm/img/icon-5.png"
+                "Image": "/zzm/img/herzinfarkt-schlaganfall-aneurysma-thrombose.png"
               },
               {
                 "Link": "notdienste-notfalle",
                 "Title": "NOTDIENSTE, NOTFÄLLE",
-                "Image": "/zzm/img/icon-4.png"
+                "Image": "/zzm/img/notdienste-notfalle.png"
               }
             ]
           }

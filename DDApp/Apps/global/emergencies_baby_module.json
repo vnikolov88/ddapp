@@ -3,7 +3,7 @@
     // Main page
     "notfallversorgung": {
       "title": "Baby und Kinder – Notfälle",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/baby-und-kinder.png",
       "components": [
         {
           "renderType": "ItemList",

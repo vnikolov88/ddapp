@@ -31,7 +31,7 @@
               {
                 "Link": "PageHospital?hospital_guid=ace71177a3c0e130&hospital_name=DEUTSCHES DIABETES-ZENTRUM",
                 "Title": "DEUTSCHES DIABETES-ZENTRUM",
-                "Image": "img/icon-1.png"
+                "Image": "img/app-icon-logo.png"
               },
               {
                 "Link": "PageNews?rss_feed=https://ddz.de/de/news.rss",
@@ -75,7 +75,7 @@
     },
     "PageHospital": {
       "title": "DEUTSCHES DIABETES-ZENTRUM",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -197,7 +197,7 @@
     },
     "PageDepartment": {
       "title": "{{hospital_name?}}",
-      "titleImage": "img/icon-4.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",

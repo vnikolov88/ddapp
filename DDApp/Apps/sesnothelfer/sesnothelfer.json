@@ -34,29 +34,29 @@
             "style": "OneRowItemLarge",
             "items": [
               {
-                "Image": "/sesnothelfer/img/icon-1.png",
+                "Image": "/sesnothelfer/img/baby-und-kinder.png",
                 "Link": "notfallversorgung",
                 "Title": "Baby und Kinder – Notfälle"
               },
               {
-                "Image": "/sesnothelfer/img/icon-2.png",
+                "Image": "/sesnothelfer/img/herzinfarkt-schlaganfall-aneurysma-thrombose.png",
                 "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
                 "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE"
               },
               {
-                "Image": "/sesnothelfer/img/icon-3.png",
+                "Image": "/sesnothelfer/img/defib-search.png",
                 "Link": "defib-suche",
                 "Title": "DEFIBRILLATOR - SUCHE"
               },
               {
-                "Image": "/sesnothelfer/img/icon-4.png",
+                "Image": "/sesnothelfer/img/notdienste-notfalle.png",
                 "Link": "notdienste-notfalle",
                 "Title": "NOTDIENSTE, NOTFÄLLE"
               },
               {
                 "Link": "PageCompany?company_guid=0ca7f7883d96e846&company_name=SES Nothelfer",
                 "Title": "SES Nothelfer",
-                "Image": "/sesnothelfer/img/icon-6.png"
+                "Image": "/sesnothelfer/img/app-icon-logo.png"
               },
               {
                 "Link": "DisclaimerPage",
@@ -70,7 +70,7 @@
     },
     "PageCompany": {
       "title": "{{company_name?}}",
-      "titleImage": "img/icon-6.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "ItemList",

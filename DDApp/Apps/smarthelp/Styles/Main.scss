@@ -1,20 +1,5 @@
 @import "_variables.scss";
 
-@font-face {
-    font-family: $Bold;
-    src: url(./fonts/OpenSans-Bold.ttf);
-}
-
-@font-face {
-    font-family: $Regular;
-    src: url(./fonts/OpenSans-Regular.ttf);
-}
-
-@font-face {
-    font-family: $SemiBold;
-    src: url(./fonts/OpenSans-Semibold.ttf);
-}
-
 // Import Only parts of global that are needed
 @import "../../global/Styles/AnchorLite";
 @import "../../global/Styles/Article";

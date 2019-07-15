@@ -15,3 +15,18 @@ $SemiBold: OpenSans-Semibold;
 $TitleFontSize: 3.2vh;
 
 $TextFontSize: 2.6vh;
+
+@font-face {
+    font-family: $Bold;
+    src: url(/webfonts/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: $Regular;
+    src: url(/webfonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: $SemiBold;
+    src: url(/webfonts/OpenSans-Semibold.ttf);
+}

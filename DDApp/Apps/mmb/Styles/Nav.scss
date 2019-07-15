@@ -1,7 +1,7 @@
 @import "_variables.scss";
 
 .navbar .iconCircle {
-    background: none;
+    background: $iconCircleColor;
 }
 
 .navbar .navbar-brand {
@@ -9,7 +9,7 @@
 }
 
 .navbar .navbar-brand img {
-    max-width: 40%;
+    max-width: 80%;
 }
 
 .navbar #loading-indicator .loader:before {

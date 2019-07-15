@@ -3,7 +3,7 @@
   "quickActionUrl": "/ondevice/tel:+4921133820",
   "quickActionIcon": "fas fa-phone",
   "navigation": {
-    "PREVENTICUM": "unsere-standorte",
+    "PREVENTICUM": "PageCompany?company_guid=b8ea0af0611a1883&company_name=PREVENTICUM",
     "UNSER SERVICE FÜR SIE": "service",
     "AKTUELLES & \nVERANSTALTUNGEN": "veranstaltungen",
     "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE": "herzinfarkt-schlaganfall-aneurysma-thrombose",
@@ -28,27 +28,27 @@
               {
                 "Link": "PageCompany?company_guid=b8ea0af0611a1883&company_name=PREVENTICUM",
                 "Title": "PREVENTICUM",
-                "Image": "/preventicum/img/icon-1.png"
+                "Image": "/preventicum/img/app-icon-logo.png"
               },
               {
                 "Link": "service",
                 "Title": "UNSER SERVICE FÜR SIE",
-                "Image": "/preventicum/img/icon-2.png"
+                "Image": "/preventicum/img/service-for-you.png"
               },
               {
                 "Link": "veranstaltungen",
                 "Title": "AKTUELLES & \nVERANSTALTUNGEN",
-                "Image": "/preventicum/img/icon-3.png"
+                "Image": "/preventicum/img/veranstaltungen.png"
               },
               {
                 "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
                 "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE",
-                "Image": "/preventicum/img/icon-5.png"
+                "Image": "/preventicum/img/herzinfarkt-schlaganfall-aneurysma-thrombose.png"
               },
               {
                 "Link": "notdienste-notfalle",
                 "Title": "NOTDIENSTE, NOTFÄLLE",
-                "Image": "/preventicum/img/icon-6.png"
+                "Image": "/preventicum/img/notdienste-notfalle.png"
               }
             ]
           }
@@ -292,7 +292,7 @@
     // Empty pages
     "service": {
       "title": "UNSER SERVICE FÜR SIE",
-      "titleImage": "/preventicum/img/icon-2.png",
+      "titleImage": "/preventicum/img/service-for-you.png",
       "components": [
         {
           "renderType": "ItemList",
@@ -326,7 +326,7 @@
     },
     "veranstaltungen": {
       "title": "AKTUELLES & VERANSTALTUNGEN",
-      "titleImage": "/preventicum/img/icon-3.png",
+      "titleImage": "/preventicum/img/veranstaltungen.png",
       "components": [
         {
           "renderType": "ItemList",

@@ -46,7 +46,7 @@
     },
     "PageCompany": {
       "title": "{{company_name?}}",
-      "titleImage": "img/icon-6.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         //{
         //  "renderType": "Article",
@@ -96,7 +96,7 @@
     },
     "PageHospital": {
       "title": "{{hospital_name?}}",
-      "titleImage": "img/icon-4.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -273,7 +273,7 @@
     },
     "PageDepartmentList": {
       "title": "{{hospital_name?}} Abteilungen",
-      "titleImage": "img/icon-4.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "ItemList",
@@ -305,7 +305,7 @@
     },
     "PageCentersList": {
       "title": "{{hospital_name?}} Zentren",
-      "titleImage": "img/icon-4.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "ItemList",
@@ -337,7 +337,7 @@
     },
     "PageDepartment": {
       "title": "{{hospital_name?}}",
-      "titleImage": "img/icon-4.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",

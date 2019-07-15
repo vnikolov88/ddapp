@@ -1,19 +1,20 @@
 {
   "logo": "/mmb/img/app-logo.png",
-  "quickActionUrl": "/ondevice/tel:+49211667011",
-  "quickActionIcon": "fas fa-cog",
+  "quickActionUrl": "/ondevice/tel:+49021047730",
+  "quickActionIcon": "fas fa-phone",
   "navigation": {
-    "Hausarztpraxis im med-Z": "PageDepartment?hospital_guid=200000019&department_guid=2000000191&hospital_name=Hausarztpraxis im med-Z",
-    "Hausarztpraxis im med-Z Standort": "/ondevice/http://www.eisenstein.de/",
-    "Impressum – Datenschutzerklärung – Haftungsausschluss": "DisclaimerPage",
+    "Mettmann GmbH": "PageHospital?hospital_guid=260511144&hospital_name=Evangelisches Krankenhaus Mettmann GmbH",
+    "Evangelisches Krankenhaus Mettmann GmbH": "/ondevice/http://www.evk-mettmann.de",
     "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE": "herzinfarkt-schlaganfall-aneurysma-thrombose",
     "NOTDIENSTE, NOTFÄLLE": "notdienste-notfalle"
   },
   "modules": [
     "hospital",
     "hospital_sections",
+    "stroke_unit",
     "emergencies",
-    "emergency_services"
+    "emergency_services",
+    "youtube"
   ],
   "pages": {
     "Page1": {
@@ -24,61 +25,19 @@
             "style": "OneRowItemLarge",
             "items": [
               {
-                "Link": "PageDepartment?hospital_guid=200000019&department_guid=2000000191&hospital_name=Hausarztpraxis im med-Z",
-                "Title": "WIR STELLEN UNS VOR",
-                "Image": "/mmb/img/icon-6.png"
-              },
-              {
-                "Link": "/ondevice/http://www.eisenstein.de/",
-                "Title": "VERANSTALTUNGSKALENDER/ELTERNSCHULE",
-                "Icon": "far fa-calendar-alt"
-              },
-              {
-                "Link": "DisclaimerPage",
-                "Title": "DIE ENTBINDUNGSAMPEL",
-                "Icon": "far fa-traffic-light"
+                "Link": "PageHospital?hospital_guid=260511144&hospital_name=Evangelisches Krankenhaus Mettmann GmbH",
+                "Title": "Evangelisches Krankenhaus Mettmann GmbH",
+                "Image": "/mmb/img/app-icon-logo.png"
               },
               {
                 "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
-                "Title": "DAS SOLLTEN SIE WISSEN",
-                "Image": "/mmb/img/icon-5.png"
+                "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE",
+                "Image": "/mmb/img/herzinfarkt-schlaganfall-aneurysma-thrombose.png"
               },
               {
                 "Link": "notdienste-notfalle",
-                "Title": "BEWERTEN SIE UNS",
-                "Image": "/mmb/img/icon-4.png"
-              }
-            ]
-          }
-        },
-        {
-          "renderType": "SocialBar",
-          "model": {
-            "items": [
-              {
-                "Href": "/ondevice/http://www.facebook.com/sharer.php?u=https://diabetesinformationsdienst.de/diabetes-cockpit/",
-                "Class": "facebook-social-item",
-                "Icon": "fab fa-facebook-f"
-              },
-              {
-                "Href": "/ondevice/https://twitter.com/intent/tweet?text=Diabetes-Cockpit+%E2%80%93+BMI%2C+Blutdruck%2C+Blutzucker+bewerten%20via%20%40diabinfodienst&url=https://diabetesinformationsdienst.de/diabetes-cockpit/",
-                "Class": "twitter-social-item",
-                "Icon": "fab fa-twitter"
-              },
-              {
-                "Href": "/ondevice/https://plusone.google.com/_/+1/confirm?hl=en&url=https://diabetesinformationsdienst.de/diabetes-cockpit/&name=Diabetes-Cockpit+%E2%80%93+BMI%2C+Blutdruck%2C+Blutzucker+bewerten",
-                "Class": "google-social-item",
-                "Icon": "fab fa-google"
-              },
-              {
-                "Href": "/ondevice/whatsapp://send?text=Diabetes-Cockpit+%E2%80%93+BMI%2C+Blutdruck%2C+Blutzucker+bewerten - https://diabetesinformationsdienst.de/diabetes-cockpit/",
-                "Class": "whatsapp-social-item",
-                "Icon": "fab fa-whatsapp"
-              },
-              {
-                "Href": "/ondevice/tg://msg?text=Diabetes-Cockpit+%E2%80%93+BMI%2C+Blutdruck%2C+Blutzucker+bewerten - https://diabetesinformationsdienst.de/diabetes-cockpit/",
-                "Class": "mail-social-item",
-                "Icon": "fas fa-paper-plane"
+                "Title": "NOTDIENSTE, NOTFÄLLE",
+                "Image": "/mmb/img/notdienste-notfalle.png"
               }
             ]
           }
@@ -96,35 +55,6 @@
             "AutoSearchText": "Aktueller Standort",
             "FirstIcon": "fas fa-map-marker-alt",
             "SecondIcon": "fas fa-play"
-          }
-        }
-      ]
-    },
-    "DisclaimerPage": {
-      "title": "Impressum – Datenschutzerklärung – Haftungsausschluss",
-      "titleIcon": "fas fa-info-circle",
-      "components": [
-        {
-          "renderType": "ItemList",
-          "model": {
-            "style": "OneRowItemLarge",
-            "items": [
-              {
-                "Link": "/ondevice/https://ddz.de/de/impressum",
-                "Title": "Impressum",
-                "Icon": "fas fa-passport"
-              },
-              {
-                "Link": "/ondevice/https://ddz.de/de/haftungsausschluss",
-                "Title": "Haftungsauschluss",
-                "Icon": "fas fa-clipboard-check"
-              },
-              {
-                "Link": "/ondevice/https://ddz.de/de/datenschutzerklaerung",
-                "Title": "Datenschutzerklärung",
-                "Icon": "fas fa-shield-alt"
-              }
-            ]
           }
         }
       ]
