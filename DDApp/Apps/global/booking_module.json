@@ -1,0 +1,29 @@
+{
+  "dataTypes": {
+  },
+  "pages": {
+    "PageBooking": {
+      "title": "{{hospital_name?}} Termine online",
+      "titleIcon": "fas fa-user-md",
+      "components": [
+        {
+          "renderType": "ExternalFrame",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "reducer": "(x, qc) => x.Departments.FirstOrDefault(department => department.GUID == qc.department_guid)",
+            "mapper": [
+              {
+                "sourceType": "Department",
+                "destinationType": "ExternalFrame",
+                "mapping": {
+                  "d => d.Source": "(s, qc) => s.BookingUrl"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

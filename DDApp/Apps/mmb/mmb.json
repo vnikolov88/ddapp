@@ -30,9 +30,9 @@
                 "Image": "/mmb/img/app-icon-logo.png"
               },
               {
-                "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
-                "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE",
-                "Image": "/mmb/img/herzinfarkt-schlaganfall-aneurysma-thrombose.png"
+                "Link": "PageChatBot",
+                "Title": "DIE ENTBINDUNGSAMPEL",
+                "Icon": "fas fa-traffic-light"
               },
               {
                 "Link": "notdienste-notfalle",
@@ -44,20 +44,17 @@
         }
       ]
     },
-    "PageSearch": {
-      "title": "DIABETES-WEGWEISER",
-      "titleIcon": "fas fa-map-marker-alt",
+    "PageChatBot": {
+      "title": "DIE ENTBINDUNGSAMPEL",
+      "titleIcon": "fas fa-traffic-light",
       "components": [
         {
-          "renderType": "Search",
+          "renderType": "ChatBot",
           "model": {
-            "Title": "Suche",
-            "AutoSearchText": "Aktueller Standort",
-            "FirstIcon": "fas fa-map-marker-alt",
-            "SecondIcon": "fas fa-play"
+            "index": "https://landbot.io/u/H-214650-QFOFN51JK9L1A07F/index.html"
           }
         }
       ]
-    }
+    },
   }
 }

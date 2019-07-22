@@ -11,6 +11,7 @@
   },
   "modules": [
     "hospital",
+    "booking",
     "hospital_sections",
     "rss",
     "youtube",
@@ -56,21 +57,6 @@
                 "Icon": "fas fa-info-circle"
               }
             ]
-          }
-        }
-      ]
-    },
-    "PageSearch": {
-      "title": "DIABETES-WEGWEISER",
-      "titleIcon": "fas fa-map-marker-alt",
-      "components": [
-        {
-          "renderType": "Search",
-          "model": {
-            "Title": "Suche",
-            "AutoSearchText": "Aktueller Standort",
-            "FirstIcon": "fas fa-map-marker-alt",
-            "SecondIcon": "fas fa-play"
           }
         }
       ]
