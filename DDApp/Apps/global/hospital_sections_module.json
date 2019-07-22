@@ -529,7 +529,7 @@
     },
     "PageDoctor": {
       "title": "{{hospital_name?}}",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -637,7 +637,7 @@
     // Page for the personal- we shuld unify this under get-personal in the API
     "PageDoctorFromPersonal": {
       "title": "{{hospital_name?}}",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
