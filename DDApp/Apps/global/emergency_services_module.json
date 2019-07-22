@@ -90,7 +90,7 @@
     // Main page
     "notdienste-notfalle": {
       "title": "NOTDIENSTE, NOTFÄLLE",
-      "titleImage": "img/icon-4.png",
+      "titleImage": "img/notdienste-notfalle.png",
       "components": [
         {
           "renderType": "ItemList",

@@ -159,7 +159,6 @@
     position: absolute;
     //the exact max-height of NavMenu
     top: 10vh;
-    left: 0;
 
     &:hover, :focus, :active {
         border: none;
@@ -183,7 +182,7 @@
         -o-transition: all 1s ease;
         transition: all 1s ease;
         background-color: $BaseColor;
-        width: 70vw;
+        width: 70vw;     
         overflow: hidden;
         z-index: 4;
         box-shadow: 0.4vh 0.4vh 1vh #888888;

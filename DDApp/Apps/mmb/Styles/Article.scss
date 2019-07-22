@@ -1,0 +1,17 @@
+@import "_variables.scss";
+
+.Article {
+    padding: unset;
+
+
+    h4, section {
+        padding: 2vh;
+    }
+
+    
+}
+
+
+.Article.HasBorder {
+    border-bottom-color: $iconCircleColor;        
+}

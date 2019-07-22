@@ -1,0 +1,17 @@
+@import "_variables.scss";
+
+.navbar .iconCircle {
+    background: $iconCircleColor;
+}
+
+.navbar .navbar-brand {
+    max-width: unset;
+}
+
+.navbar .navbar-brand img {
+    max-width: 80%;
+}
+
+.navbar #loading-indicator .loader:before {
+    background: $iconCircleColor;
+}

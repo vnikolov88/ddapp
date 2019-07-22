@@ -28,7 +28,7 @@
   "pages": {
     "defib-suche": {
       "title": "DEFIBRILLATOR - SUCHE",
-      "titleImage": "img/icon-3.png",
+      "titleImage": "img/defib-search.png",
       "components": [
         {
           "renderType": "Search",
@@ -44,7 +44,7 @@
     },
     "defibrillator-search-results": {
       "title": "DEFIBRILLATOR - SUCHE",
-      "titleImage": "img/icon-3.png",
+      "titleImage": "img/defib-search.png",
       "components": [
         {
           "renderType": "ResultList",

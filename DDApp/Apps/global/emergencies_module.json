@@ -3,7 +3,7 @@
     // Main page
     "herzinfarkt-schlaganfall-aneurysma-thrombose": {
       "title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE",
-      "titleImage": "img/icon-2.png",
+      "titleImage": "img/herzinfarkt-schlaganfall-aneurysma-thrombose.png",
       "components": [
         {
           "renderType": "ItemList",

@@ -25,12 +25,12 @@
               {
                 "Link": "PageDepartment?hospital_guid=200000019&department_guid=2000000191&hospital_name=Hausarztpraxis im med-Z",
                 "Title": "Hausarztpraxis im med-Z",
-                "Image": "/hmz/img/icon-6.png"
+                "Image": "/hmz/img/app-icon-logo.png"
               },
               {
                 "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
                 "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE",
-                "Image": "/hmz/img/icon-5.png"
+                "Image": "/hmz/img/herzinfarkt-schlaganfall-aneurysma-thrombose.png"
               },
               {
                 "Link": "notdienste-notfalle",

@@ -33,29 +33,29 @@
             "style": "OneRowItemLarge",
             "items": [
               {
-                "Image": "/marienschwerte/img/icon-1.png",
+                "Image": "/marienschwerte/img/baby-und-kinder.png",
                 "Link": "notfallversorgung",
                 "Title": "Baby und Kinder – Notfälle"
               },
               {
-                "Image": "/marienschwerte/img/icon-2.png",
+                "Image": "/marienschwerte/img/herzinfarkt-schlaganfall-aneurysma-thrombose.png",
                 "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
                 "Title": "Herzinfarkt, Schlaganfall, Aneurysma Thrombose"
               },
               {
-                "Image": "/marienschwerte/img/icon-3.png",
+                "Image": "/marienschwerte/img/defib-search.png",
                 "Link": "defib-suche",
                 "Title": "Defibrillator - Suche"
               },
               {
-                "Image": "/marienschwerte/img/icon-4.png",
+                "Image": "/marienschwerte/img/notdienste-notfalle.png",
                 "Link": "notdienste-notfalle",
                 "Title": "Notdienste, Notfälle"
               },
               {
                 "Link": "PageCompany?company_guid=95346e43b22d5ad3&company_name=Marien-Schwerte",
                 "Title": "Marien-Schwerte",
-                "Image": "/marienschwerte/img/icon-6.png"
+                "Image": "/marienschwerte/img/app-icon-logo.png"
               },
               {
                 "Link": "DisclaimerPage",

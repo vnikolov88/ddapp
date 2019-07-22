@@ -11,7 +11,7 @@ var gulp = require("gulp"),
 
 gulp.task('default', ['styles', 'styles:min', 'code', 'code:min']);
 
-var apps = ['ddz', 'smarthelp', 'preventicum', 'marienschwerte', 'sesnothelfer', 'zzm', 'aps', 'hmz'];
+var apps = ['ddz', 'smarthelp', 'preventicum', 'marienschwerte', 'sesnothelfer', 'zzm', 'aps', 'hmz', 'mmb'];
 
 gulp.task('styles', function () {
     apps.map(function(app) {

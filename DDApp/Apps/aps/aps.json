@@ -25,12 +25,12 @@
               {
                 "Link": "PageDepartment?hospital_guid=200000018&department_guid=2000000181&hospital_name=Arztpraxis Pascha",
                 "Title": "Arztpraxis Pascha",
-                "Image": "/aps/img/icon-4.png"
+                "Image": "/aps/img/app-icon-logo.png"
               },
               {
                 "Link": "herzinfarkt-schlaganfall-aneurysma-thrombose",
                 "Title": "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE",
-                "Image": "/aps/img/icon-5.png"
+                "Image": "/aps/img/herzinfarkt-schlaganfall-aneurysma-thrombose.png"
               },
               {
                 "Link": "notdienste-notfalle",

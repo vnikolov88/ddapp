@@ -3,7 +3,7 @@
     // Main page
     "notfallversorgung": {
       "title": "Baby und Kinder – Notfälle",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/baby-und-kinder.png",
       "components": [
         {
           "renderType": "ItemList",
@@ -88,7 +88,7 @@
     },
     "fremdkorper": {
       "title": "Verschlucken, Fremdkörper, (Ersticken)",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "ItemList",
@@ -128,7 +128,7 @@
     },
     "erste-hilfe-fremdkorper": {
       "title": "Verschlucken, Fremdkörper, (Ersticken)",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -179,7 +179,7 @@
     },
     "saugling": {
       "title": "Verschlucken, Fremdkörper, (Ersticken)",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "TitleLite",
@@ -212,7 +212,7 @@
     },
     "kompressionen-beim-baby": {
       "title": "Verschlucken, Fremdkörper, (Ersticken)",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "TitleLite",
@@ -251,7 +251,7 @@
     },
     "handgriff-beim-kind": {
       "title": "Verschlucken, Fremdkörper, (Ersticken)",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -287,7 +287,7 @@
     },
     "wiederbelebung-baby": {
       "title": "Wiederbelebung bei Babys ( Reanimation)",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -328,7 +328,7 @@
     },
     "atmung-baby": {
       "title": "Wiederbelebung bei Babys ( Reanimation)",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "TitleLite",
@@ -360,7 +360,7 @@
     },
     "beatmung-baby": {
       "title": "Wiederbelebung bei Babys ( Reanimation)",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "TitleLite",
@@ -397,7 +397,7 @@
     },
     "herzdruckmassage-baby": {
       "title": "Wiederbelebung bei Babys ( Reanimation)",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "TitleLite",
@@ -434,7 +434,7 @@
     },
     "wiederbelebung-kind": {
       "title": "Wiederbelebung bei Kindern (Reanimation)",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -476,7 +476,7 @@
     },
     "atmung-kind": {
       "title": "Wiederbelebung bei Kindern (Reanimation)",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "TitleLite",
@@ -502,7 +502,7 @@
     },
     "beatmung-kind": {
       "title": "Wiederbelebung bei Kindern (Reanimation)",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -523,7 +523,7 @@
     },
     "herzdruckmassage-kind": {
       "title": "Wiederbelebung bei Kindern (Reanimation)",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -544,7 +544,7 @@
     },
     "kinder-notfallbox": {
       "title": "Kindernotfallbox",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -587,7 +587,7 @@
     },
     "vergiftung-intoxikation": {
       "title": "Vergiftung, Intoxikation",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "ItemList",
@@ -651,7 +651,7 @@
     },
     "erste-hilfe-intoxikation": {
       "title": "Vergiftung, Intoxikation",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -708,7 +708,7 @@
     },    
     "ertrinkungsunfall-liebe-eltern": {
       "title": "Ertrinkungsunfall",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -764,7 +764,7 @@
     },
     "zeckenentfernung": {
       "title": "Zeckenschutz – Entenfernung",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -808,7 +808,7 @@
     },
     "zeckenentfernung-zeckenkarte": {
       "title": "Zeckenschutz – Entenfernung",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -849,7 +849,7 @@
     },
     "zeckenentfernung-zeckenzange": {
       "title": "Zeckenschutz – Entenfernung",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -901,7 +901,7 @@
     },
     "plotzlicher-kindstod": {
       "title": "Plötzlicher Kindstod/SIDS",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -975,7 +975,7 @@
     },
     "zahnverletzung": {
       "title": "Zahnverletzung",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -1046,7 +1046,7 @@
     },
     "pseudokrupp": {
       "title": "Pseudokrupp",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -1129,7 +1129,7 @@
     },
     "fieber": {
       "title": "Fieber",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -1171,7 +1171,7 @@
     },
     "stabile-seitenlage": {
       "title": "Stabile Seitenlage",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
@@ -1222,7 +1222,7 @@
     },
     "verbrennung": {
       "title": "Verbrennung",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "ItemList",
@@ -1287,7 +1287,7 @@
     },
     "verbrennung-handeln-sie-sofort": {
       "title": "Verbrennung",
-      "titleImage": "img/icon-1.png",
+      "titleImage": "img/app-icon-logo.png",
       "components": [
         {
           "renderType": "Article",
