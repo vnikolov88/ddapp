@@ -25,19 +25,29 @@
             "style": "OneRowItemLarge",
             "items": [
               {
-                "Link": "PageHospital?hospital_guid=260511144&hospital_name=Evangelisches Krankenhaus Mettmann GmbH",
-                "Title": "Evangelisches Krankenhaus Mettmann GmbH",
+                "Link": "PageHospital?hospital_guid=260511144&hospital_name=mein Baby im Evk- Mettmann",
+                "Title": "WIR STELLEN UNS VOR",
                 "Image": "/mmb/img/app-icon-logo.png"
+              },
+              {
+                "Link": "",
+                "Title": "ELTERNSCHULE",
+                "Icon": "far fa-calendar-alt"
+              },
+              {
+                "Link": "",
+                "Title": "DIE ENTBINDUNGSAMPEL",
+                "Icon": "far fa-traffic-light"
+              },
+              {
+                "Link": "",
+                "Title": "DAS SOLLTEN SIE WISSEN",
+                "Image": "/mmb/img/veranstaltungen.png"
               },
               {
                 "Link": "PageChatBot",
                 "Title": "DIE ENTBINDUNGSAMPEL",
-                "Icon": "fas fa-traffic-light"
-              },
-              {
-                "Link": "notdienste-notfalle",
-                "Title": "NOTDIENSTE, NOTFÄLLE",
-                "Image": "/mmb/img/notdienste-notfalle.png"
+                "Icon": ""
               }
             ]
           }
