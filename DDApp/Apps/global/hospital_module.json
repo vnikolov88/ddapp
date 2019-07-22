@@ -70,6 +70,8 @@
         "Address": "Address",
         "SortOrder": "System.String",
         "Pictures": "Picture[]",
+        "BookingUrl": "System.String",
+        "WorktimeMessageHeadline": "System.String",
         "WorktimeMessageHtml": "System.String",
         "DescriptionHtml": "System.String",
         "Certificates": "Certificate[]",
