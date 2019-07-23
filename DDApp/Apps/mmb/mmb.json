@@ -3,10 +3,12 @@
   "quickActionUrl": "/ondevice/tel:+49021047730",
   "quickActionIcon": "fas fa-phone",
   "navigation": {
-    "Mettmann GmbH": "PageHospital?hospital_guid=260511144&hospital_name=Evangelisches Krankenhaus Mettmann GmbH",
-    "Evangelisches Krankenhaus Mettmann GmbH": "/ondevice/http://www.evk-mettmann.de",
-    "HERZINFARKT, SCHLAGANFALL, ANEURYSMA, THROMBOSE": "herzinfarkt-schlaganfall-aneurysma-thrombose",
-    "NOTDIENSTE, NOTFÄLLE": "notdienste-notfalle"
+    "WIR STELLEN UNS VOR": "PageHospital?hospital_guid=260511144&hospital_name=mein Baby im Evk- Mettmann",
+    "ELTERNSCHULE": "",
+    "DIE ENTBINDUNGSAMPEL": "herzinfarkt-schlaganfall-aneurysma-thrombose",
+    "DAS SOLLTEN SIE WISSEN": "veranstaltungen",
+    "Baby Und Kinder – Notfälle": "notfallversorgung",
+    "BEWERTEN SIE UNS": "PageChatBot"
   },
   "modules": [
     "hospital",
@@ -14,6 +16,7 @@
     "stroke_unit",
     "emergencies",
     "emergency_services",
+    "emergencies_baby",
     "youtube"
   ],
   "pages": {
@@ -40,14 +43,53 @@
                 "Icon": "far fa-traffic-light"
               },
               {
-                "Link": "",
+                "Link": "veranstaltungen",
                 "Title": "DAS SOLLTEN SIE WISSEN",
                 "Image": "/mmb/img/veranstaltungen.png"
               },
               {
+                "Link": "notfallversorgung",
+                "Title": "Baby Und Kinder – Notfälle",
+                "Image": "/mmb/img/baby-und-kinder.png"
+              },
+              {
                 "Link": "PageChatBot",
-                "Title": "DIE ENTBINDUNGSAMPEL",
-                "Icon": ""
+                "Title": "BEWERTEN SIE UNS",
+                "Image": "/mmb/img/bewerten-sie-uns.png"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "veranstaltungen": {
+      "title": "DAS SOLLTEN SIE WISSEN",
+      "titleImage": "/mmb/img/veranstaltungen.png",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "/ondevice/https://www.bmfsfj.de/blob/94398/b235a06e6fa9ece3d1a6effbc5a510ee/mutterschutzgesetz-data.pdf",
+                "Title": "Leitfaden zum Mutterschutz",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "/ondevice/https://www.bmfsfj.de/blob/95324/4f89dcdf6b057778f8f1e04b9a2b4c31/so-sag-ich-s-meinen-vorgesetzten-data.pdf",
+                "Title": "So sage ich es meinem Vorgesetzten",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "/ondevice/https://www.bmfsfj.de/blob/94000/bfd3200f2792b1f2e3caeff3dbaee289/hilfe-und-unterstuetzung-in-der-schwangerschaft-bundesstiftung-mutter-und-kind-data.pdf",
+                "Title": "Hilfe und Unterstützung in der Schwangerschaft",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "/ondevice/https://www.familienplanung.de/schwangerschaft/nach-der-geburt/",
+                "Title": "nformationen nach der Entbindung",
+                "Icon": "fas fa-play"
               }
             ]
           }
@@ -55,7 +97,7 @@
       ]
     },
     "PageChatBot": {
-      "title": "DIE ENTBINDUNGSAMPEL",
+      "title": "BEWERTEN SIE UNS",
       "titleIcon": "fas fa-traffic-light",
       "components": [
         {
@@ -65,6 +107,6 @@
           }
         }
       ]
-    },
+    }
   }
 }
