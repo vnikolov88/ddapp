@@ -8,10 +8,14 @@
         padding: 2vh;
     }
 
-    
-}
+    section {
+        span.red-bullet {
+            color: $iconCircleColor;
+        }
+    }
+    }
 
 
-.Article.HasBorder {
-    border-bottom-color: $iconCircleColor;        
-}
+    .Article.HasBorder {
+        border-bottom-color: $iconCircleColor;
+    }
