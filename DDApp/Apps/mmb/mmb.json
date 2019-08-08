@@ -4,11 +4,12 @@
   "quickActionIcon": "fas fa-phone",
   "navigation": {
     "WIR STELLEN UNS VOR": "PageHospital?hospital_guid=260511144&hospital_name=mein Baby im Evk- Mettmann",
-    "ELTERNSCHULE": "",
+    "ELTERNSCHULE": "PageDepartment?hospital_guid=260511144&department_guid=1663851841&hospital_name=mein Baby im Evk- Mettmann",
     "DIE ENTBINDUNGSAMPEL": "herzinfarkt-schlaganfall-aneurysma-thrombose",
     "DAS SOLLTEN SIE WISSEN": "veranstaltungen",
     "Baby Und Kinder – Notfälle": "notfallversorgung",
-    "BEWERTEN SIE UNS": "PageChatBot"
+    "BEWERTEN SIE UNS": "PageComingSoon",
+    "Impressum – Datenschutzerklärung": "DisclaimerPage"
   },
   "modules": [
     "hospital",
@@ -23,6 +24,23 @@
     "Page1": {
       "components": [
         {
+          "renderType": "Article",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid=260511144",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
+                  "d => d.Sources": "s => s.Pictures.Select(x => x.Thumbnail)"
+                }
+              }
+            ]
+          }
+        },
+        {
           "renderType": "ItemList",
           "model": {
             "style": "OneRowItemLarge",
@@ -33,12 +51,12 @@
                 "Image": "/mmb/img/app-icon-logo.png"
               },
               {
-                "Link": "",
+                "Link": "PageDepartment?hospital_guid=260511144&department_guid=1663851841&hospital_name=mein Baby im Evk- Mettmann",
                 "Title": "ELTERNSCHULE",
                 "Icon": "far fa-calendar-alt"
               },
               {
-                "Link": "",
+                "Link": "PageChatBot",
                 "Title": "DIE ENTBINDUNGSAMPEL",
                 "Icon": "far fa-traffic-light"
               },
@@ -49,13 +67,50 @@
               },
               {
                 "Link": "notfallversorgung",
-                "Title": "Baby Und Kinder – Notfälle",
+                "Title": "Baby und Kinder – Notfälle",
                 "Image": "/mmb/img/baby-und-kinder.png"
               },
               {
-                "Link": "PageChatBot",
+                "Link": "PageComingSoon",
                 "Title": "BEWERTEN SIE UNS",
                 "Image": "/mmb/img/bewerten-sie-uns.png"
+              },
+              {
+                "Link": "DisclaimerPage",
+                "Title": "Impressum – Datenschutzerklärung",
+                "Icon": "fas fa-info-circle"
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "SocialBar",
+          "model": {
+            "items": [
+              {
+                "Href": "/ondevice/https://www.facebook.com/Gyn%C3%A4kologie-Geburtshilfe-EVK-Mettmann-742642149148434/?epa=SEARCH_BOX",
+                "Class": "facebook-social-item",
+                "Icon": "fab fa-facebook-f"
+              },
+              {
+                "Href": "/ondevice/",
+                "Class": "twitter-social-item",
+                "Icon": "fab fa-twitter"
+              },
+              {
+                "Href": "/ondevice/",
+                "Class": "google-social-item",
+                "Icon": "fab fa-google"
+              },
+              {
+                "Href": "/ondevice/",
+                "Class": "whatsapp-social-item",
+                "Icon": "fab fa-whatsapp"
+              },
+              {
+                "Href": "/ondevice/mailto:info@evk-mettmann.de",
+                "Class": "mail-social-item",
+                "Icon": "fas fa-paper-plane"
               }
             ]
           }
@@ -73,12 +128,12 @@
             "items": [
               {
                 "Link": "/ondevice/https://www.bmfsfj.de/blob/94398/b235a06e6fa9ece3d1a6effbc5a510ee/mutterschutzgesetz-data.pdf",
-                "Title": "Leitfaden zum Mutterschutz",
+                "Title": "Leitfaden zum Mutterschutz*",
                 "Icon": "fas fa-play"
               },
               {
                 "Link": "/ondevice/https://www.bmfsfj.de/blob/95324/4f89dcdf6b057778f8f1e04b9a2b4c31/so-sag-ich-s-meinen-vorgesetzten-data.pdf",
-                "Title": "So sage ich es meinem Vorgesetzten",
+                "Title": "So sage ich es meinem Vorgesetzten*",
                 "Icon": "fas fa-play"
               },
               {
@@ -93,6 +148,12 @@
               }
             ]
           }
+        },
+        {
+          "renderType": "Article",
+          "model": {
+            "description": "*Bundesministerium für Familie, Senioren, Frauen und Jugend"
+          }
         }
       ]
     },
@@ -104,6 +165,226 @@
           "renderType": "ChatBot",
           "model": {
             "index": "https://landbot.io/u/H-214650-QFOFN51JK9L1A07F/index.html"
+          }
+        }
+      ]
+    },
+    "PageComingSoon": {
+      "title": "BEWERTEN SIE UNS",
+      "titleImage": "/mmb/img/bewerten-sie-uns.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "title": "Coming soon"
+          }
+        }
+      ]
+    },
+    "DisclaimerPage": {
+      "title": "Impressum – Datenschutzerklärung",
+      "titleIcon": "fas fa-info-circle",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItemLarge",
+            "items": [
+              {
+                "Link": "/ondevice/https://www.evk-mettmann.de/de/footer-navigation/impressum.html",
+                "Title": "Impressum",
+                "Icon": "fas fa-passport"
+              },
+              {
+                "Link": "/ondevice/https://www.evk-mettmann.de/de/footer-navigation/datenschutz.html",
+                "Title": "Datenschutzerklärung",
+                "Icon": "fas fa-shield-alt"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageHospital": {
+      "title": "{{hospital_name?}}",
+      "titleImage": "img/app-icon-logo.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
+                  "d => d.Sources": "s => s.Pictures.Select(x => x.Thumbnail)"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Address.Phone) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Title": "s => s.Address.Phone",
+                  "d => d.Link": "s => s.Address.Phone.OnDeviceCall()",
+                  "d => d.Icon": "s => \"fas fa-phone\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrWhiteSpace(s.Address.Email) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Title": "s => s.Address.Email",
+                  "d => d.Link": "s => s.Address.Email.OnDeviceMail()",
+                  "d => d.Icon": "s => \"far fa-envelope\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.LeftSideImg",
+                  "d => d.Link": "s => $\"/ondevice/geo:{s.Address.Latitude},{s.Address.Longitude}&q={Uri.EscapeDataString(s.Name)}\"",
+                  "d => d.Title": "s => $\"{s.Address.Street} {s.Address.StreetNr}\"",
+                  "d => d.Description": "s => $\"{s.Address.Postcode} {s.Address.City}\"",
+                  "d => d.Image": "s => s.Address.GetMapUrl(12)",
+                  "d => d.Icon": "s => \"fas fa-map-marked\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.OneRowItem",
+                  "d => d.Items": "s => s.Departments.Where(department => department.Name.Contains(\"Geburtshilfe\") || department.Name.Contains(\"Gynäkologie\") || department.Name.Contains(\"Hebammen\"))"
+                }
+              },
+              {
+                "sourceType": "Department",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Link": "(s, qc) => $\"PageDepartment?hospital_guid={qc.hospital_guid}&department_guid={s.GUID}&hospital_name={qc.hospital_name}\"",
+                  "d => d.Title": "s => s.Name",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => s.Departments.Any(department => department.Type == 3) ? ItemStyle.OneRowItem : ItemStyle.Hidden",
+                  "d => d.Title": "s => \"Zentren\"",
+                  "d => d.Link": "(s, qc) => $\"PageCentersList?hospital_guid={qc.hospital_guid}&hospital_name={qc.hospital_name}\"",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrEmpty(s.Social.NewsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Title": "s => \"News\"",
+                  "d => d.Link": "s => $\"PageNews?rss_feed={s.Social.NewsUrl}\"",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrEmpty(s.Social.EventsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Title": "s => \"Veranstaltungen\"",
+                  "d => d.Link": "s => $\"PageEvents?rss_feed={s.Social.EventsUrl}\"",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "Item",
+          "provider": {
+            "type": "Hospital",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Style": "s => string.IsNullOrEmpty(s.Social.JobsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+                  "d => d.Title": "s => \"Stellenangebote\"",
+                  "d => d.Link": "s => s.Social.JobsUrl.OnDevice()",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
           }
         }
       ]
