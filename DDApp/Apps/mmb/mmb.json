@@ -5,9 +5,9 @@
   "navigation": {
     "WIR STELLEN UNS VOR": "PageHospital?hospital_guid=260511144&hospital_name=mein Baby im Evk- Mettmann",
     "ELTERNSCHULE": "PageDepartment?hospital_guid=260511144&department_guid=1663851841&hospital_name=mein Baby im Evk- Mettmann",
-    "DIE ENTBINDUNGSAMPEL": "herzinfarkt-schlaganfall-aneurysma-thrombose",
+    "DIE ENTBINDUNGSAMPEL": "PageChatBot",
     "DAS SOLLTEN SIE WISSEN": "veranstaltungen",
-    "Baby Und Kinder – Notfälle": "notfallversorgung",
+    "Baby und Kinder – Notfälle": "notfallversorgung",
     "BEWERTEN SIE UNS": "PageComingSoon",
     "Impressum – Datenschutzerklärung": "DisclaimerPage"
   },
@@ -51,7 +51,7 @@
                 "Image": "/mmb/img/app-icon-logo.png"
               },
               {
-                "Link": "PageDepartment?hospital_guid=260511144&department_guid=1663851841&hospital_name=mein Baby im Evk- Mettmann",
+                "Link": "PageDepartment?hospital_guid=260511144&department_guid=1663851841&hospital_name=Kursprogramm Elternschule",
                 "Title": "ELTERNSCHULE",
                 "Icon": "far fa-calendar-alt"
               },
