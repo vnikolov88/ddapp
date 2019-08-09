@@ -93,7 +93,7 @@
 
     margin-bottom: .2em;
 
-    .HasBorder, .Profile {
+    .HasBorder {
         margin-bottom: unset;
         border-bottom: 3px solid $AccentColor;
     }
@@ -109,5 +109,4 @@
     }
 
     background-color: $BackgroundPrimary;
-    border-bottom: 3px solid $AccentColor;
 }
