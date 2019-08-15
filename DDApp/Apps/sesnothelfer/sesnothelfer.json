@@ -9,9 +9,9 @@
     "HERZINFARKT, SCHLAGANFALL, ANEURYSMA THROMBOSE": "/sesnothelfer/herzinfarkt-schlaganfall-aneurysma-thrombose",
     "DEFIBRILLATOR - SUCHE": "/sesnothelfer/defib-suche",
     "NOTDIENSTE, NOTFÄLLE": "/sesnothelfer/notdienste-notfalle",
-    "SES Nothelfer": "PageCompany?company_guid=0ca7f7883d96e846&company_name=SES Nothelfer",
+    "SES KLINIKEN": "PageCompany?company_guid=0ca7f7883d96e846&company_name=SES KLINIKEN",
     "Impressum": "/ondevice/https://www.ses-stiftung.de/impressum.html",
-    "Datenschutzerklärung": "/ondevice/https://www.ses-stiftung.de/datenschutz.html",
+    "Datenschutzerklärung": "/ondevice/https://www.ses-stiftung.de/datenschutz.html"
     //"Haftungsausschluss": "/ondevice/https://www.ses-stiftung.de/kontakt.html"
   },
   "modules": [
@@ -54,8 +54,8 @@
                 "Title": "NOTDIENSTE, NOTFÄLLE"
               },
               {
-                "Link": "PageCompany?company_guid=0ca7f7883d96e846&company_name=SES Nothelfer",
-                "Title": "SES Nothelfer",
+                "Link": "PageCompany?company_guid=0ca7f7883d96e846&company_name=SES KLINIKEN",
+                "Title": "SES KLINIKEN",
                 "Image": "/sesnothelfer/img/app-icon-logo.png"
               },
               {
