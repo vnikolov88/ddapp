@@ -158,7 +158,7 @@
       ]
     },
     "PageChatBot": {
-      "title": "BEWERTEN SIE UNS",
+      "title": "DIE ENTBINDUNGSAMPEL",
       "titleIcon": "fas fa-traffic-light",
       "components": [
         {
@@ -311,25 +311,25 @@
             ]
           }
         },
-        {
-          "renderType": "Item",
-          "provider": {
-            "type": "Hospital",
-            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
-            "mapper": [
-              {
-                "sourceType": "Hospital",
-                "destinationType": "Item",
-                "mapping": {
-                  "d => d.Style": "s => s.Departments.Any(department => department.Type == 3) ? ItemStyle.OneRowItem : ItemStyle.Hidden",
-                  "d => d.Title": "s => \"Zentren\"",
-                  "d => d.Link": "(s, qc) => $\"PageCentersList?hospital_guid={qc.hospital_guid}&hospital_name={qc.hospital_name}\"",
-                  "d => d.Icon": "s => \"fas fa-play\""
-                }
-              }
-            ]
-          }
-        },
+        //{
+        //  "renderType": "Item",
+        //  "provider": {
+        //    "type": "Hospital",
+        //    "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+        //    "mapper": [
+        //      {
+        //        "sourceType": "Hospital",
+        //        "destinationType": "Item",
+        //        "mapping": {
+        //          "d => d.Style": "s => s.Departments.Any(department => department.Type == 3) ? ItemStyle.OneRowItem : ItemStyle.Hidden",
+        //          "d => d.Title": "s => \"Zentren\"",
+        //          "d => d.Link": "(s, qc) => $\"PageCentersList?hospital_guid={qc.hospital_guid}&hospital_name={qc.hospital_name}\"",
+        //          "d => d.Icon": "s => \"fas fa-play\""
+        //        }
+        //      }
+        //    ]
+        //  }
+        //},
         {
           "renderType": "Item",
           "provider": {

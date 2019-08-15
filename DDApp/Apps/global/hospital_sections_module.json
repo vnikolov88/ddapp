@@ -286,7 +286,7 @@
                 "destinationType": "ItemList",
                 "mapping": {
                   "d => d.Style": "s => ItemStyle.OneRowItem",
-                  "d => d.Items": "s => s.Departments.Where(department => department.Type == 1)"
+                  "d => d.Items": "s => s.Departments.Where(department => department.Type == 1).OrderBy(department => department.SortOrder)"
                 }
               },
               {
@@ -318,7 +318,7 @@
                 "destinationType": "ItemList",
                 "mapping": {
                   "d => d.Style": "s => ItemStyle.OneRowItem",
-                  "d => d.Items": "s => s.Departments.Where(department => department.Type == 3)"
+                  "d => d.Items": "s => s.Departments.Where(department => department.Type == 3).OrderBy(department => department.SortOrder)"
                 }
               },
               {
