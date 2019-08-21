@@ -8,7 +8,7 @@ function adjustNavigation() {
     loadingIndicator.style.top = navBarHeight - 2 + "px";
     let navBar2 = document.getElementById("navbar-2");
     if (navBar2 !== null)
-        document.getElementById("PageContainer").style.paddingTop = navBar2.clientHeight + 20 + "px";
+        document.getElementById("PageContainer").style.paddingTop = navBar2.clientHeight + "px";
 }
 
 function adjustDropdownNavigation() {
@@ -24,7 +24,8 @@ window.addEventListener('popstate', function (e) {
 });
 
 function requestPage(link, push) {
-    window.stop();
+    const isUninterupted = link.pathname.includes('isUninterupted');
+    if (!isUninterupted) window.stop();
     let xhr = new XMLHttpRequest();
     const isOnDevice = link.pathname.startsWith('/ondevice/');
     let url = link.origin + '/partial' + link.pathname;
