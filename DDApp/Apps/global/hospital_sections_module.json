@@ -286,7 +286,7 @@
                 "destinationType": "ItemList",
                 "mapping": {
                   "d => d.Style": "s => ItemStyle.OneRowItem",
-                  "d => d.Items": "s => s.Departments.Where(department => department.Type == 1).OrderBy(department => department.SortOrder)"
+                  "d => d.Items": "s => s.Departments.Where(department => department.Type == 1).OrderBy(department => string.IsNullOrEmpty(department.SortOrder) ? 0 : Convert.ToDouble(department.SortOrder))"
                 }
               },
               {
@@ -294,7 +294,7 @@
                 "destinationType": "Item",
                 "mapping": {
                   "d => d.Link": "(s, qc) => $\"PageDepartment?hospital_guid={qc.hospital_guid}&department_guid={s.GUID}&hospital_name={qc.hospital_name}\"",
-                  "d => d.Title": "s => s.Name",
+                  "d => d.Title": "s => $\"{s.Name}\"",
                   "d => d.Icon": "s => \"fas fa-play\""
                 }
               }
@@ -318,7 +318,7 @@
                 "destinationType": "ItemList",
                 "mapping": {
                   "d => d.Style": "s => ItemStyle.OneRowItem",
-                  "d => d.Items": "s => s.Departments.Where(department => department.Type == 3).OrderBy(department => department.SortOrder)"
+                  "d => d.Items": "s => s.Departments.Where(department => department.Type == 3).OrderBy(department => string.IsNullOrEmpty(department.SortOrder) ? 0 : Convert.ToDouble(department.SortOrder))"
                 }
               },
               {
@@ -326,7 +326,7 @@
                 "destinationType": "Item",
                 "mapping": {
                   "d => d.Link": "(s, qc) => $\"PageDepartment?hospital_guid={qc.hospital_guid}&department_guid={s.GUID}&hospital_name={qc.hospital_name}\"",
-                  "d => d.Title": "s => s.Name",
+                  "d => d.Title": "s => $\"{s.Name}\"",
                   "d => d.Icon": "s => \"fas fa-play\""
                 }
               }

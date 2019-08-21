@@ -5,10 +5,10 @@
   "navigation": {
     "WIR STELLEN UNS VOR": "PageHospital?hospital_guid=260511144&hospital_name=mein Baby im Evk- Mettmann",
     "ELTERNSCHULE": "PageDepartment?hospital_guid=260511144&department_guid=1663851841&hospital_name=mein Baby im Evk- Mettmann",
-    "DIE ENTBINDUNGSAMPEL": "PageChatBot",
+    "DIE ENTBINDUNGSAMPEL": "PageTraficLight",
     "DAS SOLLTEN SIE WISSEN": "veranstaltungen",
     "Baby und Kinder – Notfälle": "notfallversorgung",
-    "BEWERTEN SIE UNS": "PageComingSoon",
+    "BEWERTEN SIE UNS": "PageRateUs",
     "Impressum – Datenschutzerklärung": "DisclaimerPage"
   },
   "modules": [
@@ -56,7 +56,7 @@
                 "Icon": "far fa-calendar-alt"
               },
               {
-                "Link": "PageChatBot",
+                "Link": "PageTraficLight",
                 "Title": "DIE ENTBINDUNGSAMPEL",
                 "Icon": "far fa-traffic-light"
               },
@@ -71,7 +71,7 @@
                 "Image": "/mmb/img/baby-und-kinder.png"
               },
               {
-                "Link": "PageComingSoon",
+                "Link": "PageRateUs",
                 "Title": "BEWERTEN SIE UNS",
                 "Image": "/mmb/img/bewerten-sie-uns.png"
               },
@@ -93,24 +93,14 @@
                 "Icon": "fab fa-facebook-f"
               },
               {
-                "Href": "/ondevice/",
-                "Class": "twitter-social-item",
-                "Icon": "fab fa-twitter"
+                "Href": "/ondevice/https://www.youtube.com/channel/UCSSqFL86UB8QhYDWOgpwAzA",
+                "Class": "youtube-social-item",
+                "Icon": "fab fa-youtube"
               },
               {
-                "Href": "/ondevice/",
-                "Class": "google-social-item",
-                "Icon": "fab fa-google"
-              },
-              {
-                "Href": "/ondevice/",
-                "Class": "whatsapp-social-item",
-                "Icon": "fab fa-whatsapp"
-              },
-              {
-                "Href": "/ondevice/mailto:info@evk-mettmann.de",
-                "Class": "mail-social-item",
-                "Icon": "fas fa-paper-plane"
+                "Href": "/ondevice/https://www.instagram.com/evkmettmann/?hl=de",
+                "Class": "instagram-social-item",
+                "Icon": "fab fa-instagram"
               }
             ]
           }
@@ -157,7 +147,7 @@
         }
       ]
     },
-    "PageChatBot": {
+    "PageTraficLight": {
       "title": "DIE ENTBINDUNGSAMPEL",
       "titleIcon": "fas fa-traffic-light",
       "components": [
@@ -169,14 +159,14 @@
         }
       ]
     },
-    "PageComingSoon": {
+    "PageRateUs": {
       "title": "BEWERTEN SIE UNS",
       "titleImage": "/mmb/img/bewerten-sie-uns.png",
       "components": [
         {
-          "renderType": "Article",
+          "renderType": "ChatBot",
           "model": {
-            "title": "Coming soon"
+            "index": "https://landbot.io/u/H-237466-U3AIMT5SZXFV8ZUP/index.html"
           }
         }
       ]
