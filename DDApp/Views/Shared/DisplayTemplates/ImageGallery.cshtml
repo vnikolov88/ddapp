@@ -15,10 +15,10 @@
         </div>
 
         <ul class="slides">
-            <li class="skeleton"><img src="@Model.Sources?.FirstOrDefault()" onload="new simpleGallery(this.parentElement.parentElement.parentElement);"></li>
+            <li class="skeleton"><img src="@Model.Sources?.FirstOrDefault()?.ProxyRemoteUrl()" onload="new simpleGallery(this.parentElement.parentElement.parentElement);"></li>
             @foreach (var source in Model.Sources)
             {
-                <li><img src="@source"></li>
+                <li><img src="@source?.ProxyRemoteUrl()"></li>
             }
         </ul>
     </div>

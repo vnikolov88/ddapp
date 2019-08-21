@@ -3,7 +3,7 @@
 <div id="chatbot-containet" style="height: 75vh;"></div>
 <script>
     var myLandbot = new LandbotFrameWidget({
-        index: '@Model.Index',
+        index: '@Model.Index?.ProxyRemoteUrl()',
         container: '#chatbot-containet',
     });
 </script>
