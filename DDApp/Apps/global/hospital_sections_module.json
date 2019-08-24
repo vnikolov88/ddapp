@@ -498,7 +498,7 @@
                 "sourceType": "Department",
                 "destinationType": "ItemList",
                 "mapping": {
-                  "d => d.Style": "s => s.Certificates.Any(x => x.Name != \"Doctor-Help\") ? ItemStyle.LeftSideImg : ItemStyle.Hidden",
+                  "d => d.Style": "s => s.Certificates.Any(x => x.Name != \"Doctor-Help\") ? ItemStyle.OneRowItemLarge : ItemStyle.Hidden",
                   "d => d.Subject": "s => \"Zertifikate\"",
                   "d => d.Items": "s => s.Certificates.Where(x => x.Name != \"Doctor-Help\")"
                 }
@@ -509,8 +509,8 @@
                 "mapping": {
                   "d => d.Link": "s => s.ExternalUrl.OnDevice()",
                   "d => d.Title": "s => s.Name",
-                  "d => d.Image": "s => s.GetThumbnail()",
-                  "d => d.Icon": "s => \"fas fa-play\""
+                  "d => d.Image": "s => s.GetThumbnail()"
+                  //"d => d.Icon": "s => \"fas fa-play\""
                 }
               }
             ]
