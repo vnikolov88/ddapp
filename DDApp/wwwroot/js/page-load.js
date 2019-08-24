@@ -24,7 +24,7 @@ window.addEventListener('popstate', function (e) {
 });
 
 function requestPage(link, push) {
-    const isUninterupted = link.search.includes('isUninterupted');
+    const isUninterupted = link.search !== undefined && link.search.includes('isUninterupted');
     if (!isUninterupted) window.stop();
     let xhr = new XMLHttpRequest();
     const isOnDevice = link.pathname.startsWith('/ondevice/');
