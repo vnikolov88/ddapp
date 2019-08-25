@@ -54,7 +54,11 @@ namespace DDApp.AppStructure.Providers
 
             // Check if Model is defined inline
             if (component.Provider?.Url == null && component.Model != null)
-                return JsonConvert.DeserializeObject(component.Model, destinationType);
+            {
+                return JsonConvert.DeserializeObject(
+                    _queryExpressionProvider.GetQueriedExpresion(component.Model, query),
+                    destinationType);
+            }
 
             var sourceType = GetSourceType(component.Provider?.Type);
 

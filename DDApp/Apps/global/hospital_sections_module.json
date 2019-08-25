@@ -507,7 +507,7 @@
                 "sourceType": "Certificate",
                 "destinationType": "Item",
                 "mapping": {
-                  "d => d.Link": "s => s.ExternalUrl.OnDevice()",
+                  "d => d.Link": "s => $\"PageCertificate?certificate_name={s.Name}&certificate_image={s.GetThumbnail()}&certificate_url={(string.IsNullOrWhiteSpace(s.ExternalUrl) ? s.Pictures.FirstOrDefault()?.SizeL: s.ExternalUrl.OnDevice())}\"",
                   "d => d.Title": "s => s.Name",
                   "d => d.Image": "s => s.GetThumbnail()"
                   //"d => d.Icon": "s => \"fas fa-play\""
@@ -544,6 +544,18 @@
                 }
               }
             ]
+          }
+        }
+      ]
+    },
+    "PageCertificate": {
+      "title": "{{certificate_name?}} Zertifikate",
+      "titleImage": "{{certificate_image?}}",
+      "components": [
+        {
+          "renderType": "ExternalFrame",
+          "model": {
+            "Source": "{{certificate_url}}"
           }
         }
       ]
