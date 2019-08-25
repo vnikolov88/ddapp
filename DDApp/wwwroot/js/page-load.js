@@ -39,18 +39,20 @@ function requestPage(link, push) {
             }
             else {
                 mainContentArea.innerHTML = xhr.responseText;
-                execureInlineScriptTags(mainContentArea);
-                attachLinkClickHandlers(mainContentArea);
-                attachFormSubmitHandlers(mainContentArea);
+                setTimeout(() => {
+                    execureInlineScriptTags(mainContentArea);
+                    attachLinkClickHandlers(mainContentArea);
+                    attachFormSubmitHandlers(mainContentArea);
 
-                document.title = xhr.getResponseHeader('Page-Title');
-                if (push)
-                    history.pushState(link, document.title, link.href);
+                    document.title = xhr.getResponseHeader('Page-Title');
+                    if (push)
+                        history.pushState(link, document.title, link.href);
 
-                adjustNavigation();
-                adjustDropdownNavigation();
-                nuggetInit();
-                _scrollToTop();
+                    adjustNavigation();
+                    adjustDropdownNavigation();
+                    nuggetInit();
+                    _scrollToTop();
+                }, 100);
             }
             loadingIndication.classList.remove('loading');
         }
