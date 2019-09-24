@@ -12,6 +12,7 @@
     "Impressum – Datenschutzerklärung": "DisclaimerPage"
   },
   "modules": [
+    "rss",
     "hospital",
     "hospital_sections",
     "stroke_unit",
@@ -47,7 +48,7 @@
             "items": [
               {
                 "Link": "PageHospital?hospital_guid=260511144&hospital_name=mein Baby im Evk- Mettmann",
-                "Title": "WIR STELLEN UNS VOR",
+                "Title": "IHR WEG ZU UNS - EVK METTMANN",
                 "Image": "/mmb/img/app-icon-logo.png"
               },
               {
@@ -467,7 +468,7 @@
           "renderType": "Item",
           "model": {
             "Style": "OneRowItemIconColorInverted",
-            "Title": "Unsere Angebote",
+            "Title": "Unsere aktuellen Programm Angebote",
             "Link": "/ondevice/https://www.evk-mettmann.de/fileadmin/user_upload/downloads/kursheft/Kursprogramm_Elternschule.pdf",
             "Icon": "fas fa-link"
           }
