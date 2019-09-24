@@ -53,7 +53,7 @@
                 "Title": "Notdienste, Notfälle"
               },
               {
-                "Link": "PageCompany?company_guid=95346e43b22d5ad3&company_name=Marien-Schwerte",
+                "Link": "PageCompany?company_guid=95346e43b22d5ad3&company_name=Marienkrankenhaus Schwerte",
                 "Title": "Marien-Schwerte",
                 "Image": "/marienschwerte/img/app-icon-logo.png"
               },
@@ -61,6 +61,87 @@
                 "Link": "DisclaimerPage",
                 "Title": "Impressum – Datenschutzerklärung", // – Haftungsausschluss
                 "Icon": "fas fa-info-circle"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageCompany": {
+      "title": "{{company_name?}}",
+      "titleImage": "img/app-icon-logo.png",
+      "components": [
+        {
+          "renderType": "Article",
+          "provider": {
+            "type": "Company",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Company",
+                "destinationType": "Article",
+                "mapping": {
+                  "d => d.Style": "s => Article.ImageStyle.HasBorder",
+                  "d => d.Title": "s => s.Name",
+                  "d => d.Sources": "s => s.Pictures.Select(x => x.Thumbnail)",
+                  "d => d.Description": "s => s.DescriptionHtml"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "Company",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Company",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.OneRowItem",
+                  "d => d.Subject": "s => \"Kliniken\"",
+                  "d => d.Items": "s => s.Hospitals"
+                }
+              },
+              {
+                "sourceType": "Hospital",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Link": "(s, qc) => $\"PageHospital?hospital_guid={s.GUID}&hospital_name={s.Name}\"",
+                  "d => d.Title": "s => s.Name",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "renderType": "ItemList",
+          "provider": {
+            "type": "Company",
+            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get-company?guid={{company_guid}}",
+            "mapper": [
+              {
+                "sourceType": "Company",
+                "destinationType": "ItemList",
+                "mapping": {
+                  "d => d.Style": "s => ItemStyle.LeftSideImg",
+                  "d => d.Subject": "s => s.Personal.Any() ? \"Leitung\" : string.Empty",
+                  "d => d.Items": "s => s.Personal"
+                }
+              },
+              {
+                "sourceType": "Doctor",
+                "destinationType": "Item",
+                "mapping": {
+                  "d => d.Link": "(s, qc) => $\"PageDoctorFromPersonal?company_guid={qc.company_guid}&doctor_guid={s.GUID}&hospital_name={s.Specialty}\"",
+                  "d => d.Image": "s => s.Pictures.Select(x => x.Thumbnail).FirstOrDefault() ?? \"/img/image_placeholder.png\"",
+                  "d => d.Title": "s => $\"{s.LastName}, {s.FirstName}, {s.Salutation}\"",
+                  "d => d.Description": "s => s.Specialty",
+                  "d => d.Icon": "s => \"fas fa-play\""
+                }
               }
             ]
           }
