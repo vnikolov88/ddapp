@@ -3,7 +3,7 @@
   "quickActionUrl": "/ondevice/tel:+49021047730",
   "quickActionIcon": "fas fa-phone",
   "navigation": {
-    "WIR STELLEN UNS VOR": "PageHospital?hospital_guid=260511144&hospital_name=mein Baby im Evk- Mettmann",
+    "IHR WEG ZU UNS - EVK METTMANN": "PageHospital?hospital_guid=260511144&hospital_name=mein Baby im Evk- Mettmann",
     "ELTERNSCHULE": "PageDepartmentTemp?hospital_guid=260511144&department_guid=1663851841&hospital_name=mein Baby im Evk- Mettmann",
     "DIE ENTBINDUNGSAMPEL": "PageTraficLight?isUninterupted=true",
     "DAS SOLLTEN SIE WISSEN": "veranstaltungen",
