@@ -597,7 +597,7 @@
                 "destinationType": "Item",
                 "mapping": {
                   "d => d.Style": "s => string.IsNullOrWhiteSpace(s.CVUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItemIconColorInverted",
-                  "d => d.Title": "s => s.CVUrl",
+                  "d => d.Title": "s => \"Zusatzqualifikationen\"",
                   "d => d.Link": "s => s.CVUrl.OnDevice()",
                   "d => d.Icon": "s => \"fas fa-user\""
                 }
