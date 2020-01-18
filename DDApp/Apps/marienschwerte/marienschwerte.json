@@ -9,9 +9,9 @@
     "Herzinfarkt, Schlaganfall, Aneurysma Thrombose": "/marienschwerte/herzinfarkt-schlaganfall-aneurysma-thrombose",
     "Defibrillator - Suche": "/marienschwerte/defib-suche",
     "Notdienste, Notfälle": "/marienschwerte/notdienste-notfalle",
-    "Marien-Schwerte": "PageCompany?company_guid=95346e43b22d5ad3&company_name=Marien-Schwerte",
+    "Marienkrankenhaus Schwerte": "PageCompany?company_guid=95346e43b22d5ad3&company_name=Marienkrankenhaus Schwerte",
     "Impressum": "/ondevice/https://www.marien-kh.de/impressum/",
-    "Datenschutzerklärung": "/ondevice/https://www.marien-kh.de/datenschutz/",
+    "Datenschutzerklärung": "/ondevice/https://www.marien-kh.de/datenschutz/"
     //"Haftungsausschluss": "/ondevice/https://www.marien-kh.de/"
   },
   "modules": [
@@ -54,7 +54,7 @@
               },
               {
                 "Link": "PageCompany?company_guid=95346e43b22d5ad3&company_name=Marienkrankenhaus Schwerte",
-                "Title": "Marien-Schwerte",
+                "Title": "Marienkrankenhaus Schwerte",
                 "Image": "/marienschwerte/img/app-icon-logo.png"
               },
               {

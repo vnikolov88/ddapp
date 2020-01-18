@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StackExchange.Redis;
 
 namespace DDApp
 {
@@ -29,12 +30,21 @@ namespace DDApp
         {
             services.AddMemoryCache();
             services.AddSingleton<IQueryExpressionProvider, QueryExpressionProvider>();
-            services.AddSingleton<IAppStorage, FileAppStorage>();
-            #region Redis App Storage
-            //services.AddSingleton<IAppStorage, RedisAppStorage>();
-            //services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost,abortConnect=false"));
-            //services.AddSingleton<IRedisCache, RedisCache>();
-            #endregion Redis App Storage
+
+            #region App Storage
+            string redisAppStoreConnectionString = Configuration.GetConnectionString("RedisAppStore");
+            if (!string.IsNullOrWhiteSpace(redisAppStoreConnectionString))
+            {
+                services.AddSingleton<IAppStorage, RedisAppStorage>();
+                services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(redisAppStoreConnectionString));
+                services.AddSingleton<IRedisCache, RedisCache>();
+            }
+            else
+            {
+                services.AddSingleton<IAppStorage, FileAppStorage>();
+            }
+            #endregion App Storage
+
             services.AddSingleton<IAppProvider, AppProvider>();
             services.AddSingleton<IServerState, ServerState>();
 
@@ -48,11 +58,14 @@ namespace DDApp
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseStaticFiles();
-
-            var appProvider = app.ApplicationServices
+            else
+            {
+                var appProvider = app.ApplicationServices
                     .GetRequiredService<IAppProvider>();
-            appProvider.PreCacheAppsAsync();
+                appProvider.PreCacheAppsAsync();
+            }
+            app.UseStaticFiles();
+            
             app.UseMvc();
         }
     }

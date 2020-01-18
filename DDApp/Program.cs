@@ -23,7 +23,6 @@ namespace DDApp
                     }
                 })
                 .ConfigureKestrel(options => options.AddServerHeader = false)
-                //.UseUrls(args)
                 .UseStartup<Startup>();
     }
 }
