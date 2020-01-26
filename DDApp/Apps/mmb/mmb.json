@@ -4,16 +4,20 @@
   "quickActionIcon": "fas fa-phone",
   "navigation": {
     "IHR WEG ZU UNS - EVK METTMANN": "PageHospital?hospital_guid=260511144&hospital_name=mein Baby im Evk- Mettmann",
+    "TERMINE ONLINE - GEBURTSPLANUNG": "PageBooking?hospital_guid=260511144&department_guid=166385184&hospital_name=mein Baby im Evk- Mettmann",
+    "INFORMATIONEN - RUND UM DIE GEBURT": "PageExternalImage1?hospital_name=mein Baby im Evk- Mettmann",
     "ELTERNSCHULE": "PageDepartmentTemp?hospital_guid=260511144&department_guid=1663851841&hospital_name=mein Baby im Evk- Mettmann",
     "DIE ENTBINDUNGSAMPEL": "PageTraficLight?isUninterupted=true",
     "DAS SOLLTEN SIE WISSEN": "veranstaltungen",
-    "Baby und Kinder – Notfälle": "notfallversorgung",
+    "BABY UND KINDER - NOTFÄLLE": "notfallversorgung",
+    "KINDERÄRZTE IN METTMANN": "/ondevice/https://www.kvno.de/20patienten/10arztsuche/index.html?search_multi=mettmann&liste_taetigkeit=taetigkeiten&search_taetigkeit=Kinder-+und+Jugendmedizin",
     "BEWERTEN SIE UNS": "PageRateUs?isUninterupted=true",
-    "Impressum – Datenschutzerklärung": "DisclaimerPage"
+    "IMPRESSUM – DATENSCHUTZERKLÄRUNG": "DisclaimerPage"
   },
   "modules": [
     "rss",
     "hospital",
+    "booking",
     "hospital_sections",
     "stroke_unit",
     "emergencies",
@@ -52,6 +56,16 @@
                 "Image": "/mmb/img/app-icon-logo.png"
               },
               {
+                "Link": "PageBooking?hospital_guid=260511144&department_guid=166385184&hospital_name=mein Baby im Evk- Mettmann",
+                "Title": "TERMINE ONLINE - GEBURTSPLANUNG",
+                "Icon": "fas fa-user-md"
+              },
+              {
+                "Link": "ExternalImages?hospital_name=mein Baby im Evk- Mettmann",
+                "Title": "INFORMATIONEN - RUND UM DIE GEBURT",
+                "Icon": "fas fa-user-md"
+              },
+              {
                 "Link": "PageDepartmentTemp?hospital_guid=260511144&department_guid=1663851841&hospital_name=Kursprogramm Elternschule",
                 "Title": "ELTERNSCHULE",
                 "Icon": "far fa-calendar-alt"
@@ -68,8 +82,13 @@
               },
               {
                 "Link": "notfallversorgung",
-                "Title": "Baby und Kinder – Notfälle",
+                "Title": "BABY UND KINDER - NOTFÄLLE",
                 "Image": "/mmb/img/baby-und-kinder.png"
+              },
+              {
+                "Link": "/ondevice/https://www.kvno.de/20patienten/10arztsuche/index.html?search_multi=mettmann&liste_taetigkeit=taetigkeiten&search_taetigkeit=Kinder-+und+Jugendmedizin",
+                "Title": "KINDERÄRZTE IN METTMANN",
+                "Icon": "fas fa-info-circle"
               },
               {
                 "Link": "PageRateUs?isUninterupted=true",
@@ -78,7 +97,7 @@
               },
               {
                 "Link": "DisclaimerPage",
-                "Title": "Impressum – Datenschutzerklärung",
+                "Title": "IMPRESSUM – DATENSCHUTZERKLÄRUNG",
                 "Icon": "fas fa-info-circle"
               }
             ]
@@ -104,6 +123,117 @@
                 "Icon": "fab fa-instagram"
               }
             ]
+          }
+        }
+      ]
+    },
+    "ExternalImages": {
+      "title": "INFORMATIONEN - RUND UM DIE GEBURT",
+      "titleIcon": "fas fa-info",
+      "components": [
+        {
+          "renderType": "ItemList",
+          "model": {
+            "style": "OneRowItem",
+            "items": [
+              {
+                "Link": "PageExternalImage1?Title=Infoabend rund um die Geburt&Img=https://www.tlhow.com/cimg_show.html?cimgid=2234&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Infoabend rund um die Geburt",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Was sollten Sie in die Klinik mitnehmen&Img=https://www.tlhow.com/cimg_show.html?cimgid=2203&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Was sollten Sie in die Klinik mitnehmen",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Grundausstattung für ihr Baby&Img=https://www.tlhow.com/cimg_show.html?cimgid=2204&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Grundausstattung für ihr Baby",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Vorbereitung auf die Stillzeit&Img=https://www.tlhow.com/cimg_show.html?cimgid=2205&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Vorbereitung auf die Stillzeit",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Partnerhilfen&Img=https://www.tlhow.com/cimg_show.html?cimgid=2206&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Partnerhilfen",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Spickzettel für den Partner&Img=https://www.tlhow.com/cimg_show.html?cimgid=2207&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Spickzettel für den Partner",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Checkliste für den Klinikaufenthalt&Img=https://www.tlhow.com/cimg_show.html?cimgid=2208&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Checkliste für den Klinikaufenthalt",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Ihre Zeit im EvK - Privatshäre&Img=https://www.tlhow.com/cimg_show.html?cimgid=2209&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Ihre Zeit im EvK - Privatshäre",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Standesamt Mettmann - Beurkundung von Geburten&Img=https://www.tlhow.com/cimg_show.html?cimgid=2210&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Standesamt Mettmann - Beurkundung von Geburten",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Geburtsvorbereitungskurse - Elternschule&Img=https://www.tlhow.com/cimg_show.html?cimgid=2211&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Geburtsvorbereitungskurse - Elternschule",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Die richtige Ernährung während der Stillzeit&Img=https://www.tlhow.com/cimg_show.html?cimgid=2212&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Die richtige Ernährung während der Stillzeit",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Hebammen im Kreis Mettmann&Img=https://www.tlhow.com/cimg_show.html?cimgid=2218&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Hebammen im Kreis Mettmann",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Für den Vater&Img=https://www.tlhow.com/cimg_show.html?cimgid=2224&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Für den Vater",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Ernährung des Neugeborenen&Img=https://www.tlhow.com/cimg_show.html?cimgid=2226&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Ernährung des Neugeborenen",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Das sollten Sie zuhause haben- nach dem Klinikaufenthalt&Img=https://www.tlhow.com/cimg_show.html?cimgid=2228&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Das sollten Sie zuhause haben- nach dem Klinikaufenthalt",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Informationen über das Stillen&Img=https://www.tlhow.com/cimg_show.html?cimgid=2230&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Informationen über das Stillen",
+                "Icon": "fas fa-play"
+              },
+              {
+                "Link": "PageExternalImage1?Title=Wissenswertes und Empfehlungen für die ersten Tage&Img=https://www.tlhow.com/cimg_show.html?cimgid=2233&amp;q=100&amp;always=y&amp;h=800",
+                "Title": "Wissenswertes und Empfehlungen für die ersten Tage",
+                "Icon": "fas fa-play"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PageExternalImage1": {
+      "title": "{{title?}}",
+      "titleIcon": "fas fa-info",
+      "components": [
+        {
+          "renderType": "ExternalFrame",
+          "model": {
+            "source": "{{img}}"
           }
         }
       ]
