@@ -46,6 +46,7 @@
         "FirstName": "System.String",
         "LastName": "System.String",
         "Specialty": "System.String",
+        "CVHtml": "System.String",
         "CVUrl": "System.String",
         "Address": "Address",
         "Pictures": "Picture[]",

@@ -3,8 +3,8 @@
   "quickActionUrl": "/ondevice/tel:+49021047730",
   "quickActionIcon": "fas fa-phone",
   "navigation": {
-    "IHR WEG ZU UNS - EVK METTMANN": "PageHospital?hospital_guid=260511144&hospital_name=mein Baby im Evk- Mettmann",
-    "TERMINE ONLINE - GEBURTSPLANUNG": "PageBooking?hospital_guid=260511144&department_guid=166385184&hospital_name=mein Baby im Evk- Mettmann",
+    "IHR WEG ZU UNS - EVK METTMANN": "PageHospital?hospital_guid=260511144&hospital_name=EvK - Mettmann",
+    "TERMINE ONLINE - GEBURTSPLANUNG": "PageBooking?hospital_guid=260511144&department_guid=166385184&hospital_name=Evk - Mettmann - Geburtsplanung online buchen",
     "INFORMATIONEN - RUND UM DIE GEBURT": "PageExternalImage1?hospital_name=mein Baby im Evk- Mettmann",
     "ELTERNSCHULE": "PageDepartmentTemp?hospital_guid=260511144&department_guid=1663851841&hospital_name=mein Baby im Evk- Mettmann",
     "DIE ENTBINDUNGSAMPEL": "PageTraficLight?isUninterupted=true",
@@ -51,12 +51,12 @@
             "style": "OneRowItemLarge",
             "items": [
               {
-                "Link": "PageHospital?hospital_guid=260511144&hospital_name=mein Baby im Evk- Mettmann",
+                "Link": "PageHospital?hospital_guid=260511144&hospital_name=EvK - Mettmann",
                 "Title": "IHR WEG ZU UNS - EVK METTMANN",
                 "Image": "/mmb/img/app-icon-logo.png"
               },
               {
-                "Link": "PageBooking?hospital_guid=260511144&department_guid=166385184&hospital_name=mein Baby im Evk- Mettmann",
+                "Link": "PageBooking?hospital_guid=260511144&department_guid=166385184&hospital_name=Evk - Mettmann - Geburtsplanung online buchen",
                 "Title": "TERMINE ONLINE - GEBURTSPLANUNG",
                 "Icon": "fas fa-user-md"
               },
@@ -134,94 +134,123 @@
         {
           "renderType": "ItemList",
           "model": {
-            "style": "OneRowItem",
+            "style": "LeftSideImg",
             "items": [
               {
                 "Link": "PageExternalImage1?Title=Infoabend rund um die Geburt&Img=https://www.tlhow.com/cimg_show.html?cimgid=2234&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Infoabend rund um die Geburt",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2234&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Was sollten Sie in die Klinik mitnehmen&Img=https://www.tlhow.com/cimg_show.html?cimgid=2203&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Was sollten Sie in die Klinik mitnehmen",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2203&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Grundausstattung für ihr Baby&Img=https://www.tlhow.com/cimg_show.html?cimgid=2204&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Grundausstattung für ihr Baby",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2204&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Vorbereitung auf die Stillzeit&Img=https://www.tlhow.com/cimg_show.html?cimgid=2205&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Vorbereitung auf die Stillzeit",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2205&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Partnerhilfen&Img=https://www.tlhow.com/cimg_show.html?cimgid=2206&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Partnerhilfen",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2206&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Spickzettel für den Partner&Img=https://www.tlhow.com/cimg_show.html?cimgid=2207&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Spickzettel für den Partner",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2207&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Checkliste für den Klinikaufenthalt&Img=https://www.tlhow.com/cimg_show.html?cimgid=2208&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Checkliste für den Klinikaufenthalt",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2208&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Ihre Zeit im EvK - Privatshäre&Img=https://www.tlhow.com/cimg_show.html?cimgid=2209&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Ihre Zeit im EvK - Privatshäre",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2209&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Standesamt Mettmann - Beurkundung von Geburten&Img=https://www.tlhow.com/cimg_show.html?cimgid=2210&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Standesamt Mettmann - Beurkundung von Geburten",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2210&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Geburtsvorbereitungskurse - Elternschule&Img=https://www.tlhow.com/cimg_show.html?cimgid=2211&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Geburtsvorbereitungskurse - Elternschule",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2211&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Die richtige Ernährung während der Stillzeit&Img=https://www.tlhow.com/cimg_show.html?cimgid=2212&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Die richtige Ernährung während der Stillzeit",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2212&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Hebammen im Kreis Mettmann&Img=https://www.tlhow.com/cimg_show.html?cimgid=2218&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Hebammen im Kreis Mettmann",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2218&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Für den Vater&Img=https://www.tlhow.com/cimg_show.html?cimgid=2224&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Für den Vater",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2224&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Ernährung des Neugeborenen&Img=https://www.tlhow.com/cimg_show.html?cimgid=2226&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Ernährung des Neugeborenen",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2226&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Das sollten Sie zuhause haben- nach dem Klinikaufenthalt&Img=https://www.tlhow.com/cimg_show.html?cimgid=2228&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Das sollten Sie zuhause haben- nach dem Klinikaufenthalt",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2228&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Informationen über das Stillen&Img=https://www.tlhow.com/cimg_show.html?cimgid=2230&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Informationen über das Stillen",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2230&amp;q=100&amp;always=y&amp;h=800"
               },
               {
                 "Link": "PageExternalImage1?Title=Wissenswertes und Empfehlungen für die ersten Tage&Img=https://www.tlhow.com/cimg_show.html?cimgid=2233&amp;q=100&amp;always=y&amp;h=800",
                 "Title": "Wissenswertes und Empfehlungen für die ersten Tage",
-                "Icon": "fas fa-play"
+                "Icon": "fas fa-play",
+                "Image": "https://www.tlhow.com/cimg_show.html?cimgid=2233&amp;q=100&amp;always=y&amp;h=800"
               }
             ]
+          }
+        }
+      ]
+    },
+    "PageExternalImage2": {
+      "title": "{{title?}}",
+      "titleIcon": "fas fa-info",
+      "components": [
+        {
+          "renderType": "Article",
+          "model": {
+            "sources": [ "{{img}}" ]
           }
         }
       ]
@@ -431,7 +460,7 @@
               }
             ]
           }
-        },
+        }
         //{
         //  "renderType": "Item",
         //  "provider": {
@@ -451,63 +480,63 @@
         //    ]
         //  }
         //},
-        {
-          "renderType": "Item",
-          "provider": {
-            "type": "Hospital",
-            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
-            "mapper": [
-              {
-                "sourceType": "Hospital",
-                "destinationType": "Item",
-                "mapping": {
-                  "d => d.Style": "s => string.IsNullOrEmpty(s.Social.NewsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
-                  "d => d.Title": "s => \"News\"",
-                  "d => d.Link": "s => $\"PageNews?rss_feed={s.Social.NewsUrl}\"",
-                  "d => d.Icon": "s => \"fas fa-play\""
-                }
-              }
-            ]
-          }
-        },
-        {
-          "renderType": "Item",
-          "provider": {
-            "type": "Hospital",
-            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
-            "mapper": [
-              {
-                "sourceType": "Hospital",
-                "destinationType": "Item",
-                "mapping": {
-                  "d => d.Style": "s => string.IsNullOrEmpty(s.Social.EventsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
-                  "d => d.Title": "s => \"Veranstaltungen\"",
-                  "d => d.Link": "s => $\"PageEvents?rss_feed={s.Social.EventsUrl}\"",
-                  "d => d.Icon": "s => \"fas fa-play\""
-                }
-              }
-            ]
-          }
-        },
-        {
-          "renderType": "Item",
-          "provider": {
-            "type": "Hospital",
-            "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
-            "mapper": [
-              {
-                "sourceType": "Hospital",
-                "destinationType": "Item",
-                "mapping": {
-                  "d => d.Style": "s => string.IsNullOrEmpty(s.Social.JobsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
-                  "d => d.Title": "s => \"Stellenangebote\"",
-                  "d => d.Link": "s => s.Social.JobsUrl.OnDevice()",
-                  "d => d.Icon": "s => \"fas fa-play\""
-                }
-              }
-            ]
-          }
-        }
+        //{
+        //  "renderType": "Item",
+        //  "provider": {
+        //    "type": "Hospital",
+        //    "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+        //    "mapper": [
+        //      {
+        //        "sourceType": "Hospital",
+        //        "destinationType": "Item",
+        //        "mapping": {
+        //          "d => d.Style": "s => string.IsNullOrEmpty(s.Social.NewsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+        //          "d => d.Title": "s => \"News\"",
+        //          "d => d.Link": "s => $\"PageNews?rss_feed={s.Social.NewsUrl}\"",
+        //          "d => d.Icon": "s => \"fas fa-play\""
+        //        }
+        //      }
+        //    ]
+        //  }
+        //},
+        //{
+        //  "renderType": "Item",
+        //  "provider": {
+        //    "type": "Hospital",
+        //    "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+        //    "mapper": [
+        //      {
+        //        "sourceType": "Hospital",
+        //        "destinationType": "Item",
+        //        "mapping": {
+        //          "d => d.Style": "s => string.IsNullOrEmpty(s.Social.EventsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+        //          "d => d.Title": "s => \"Veranstaltungen\"",
+        //          "d => d.Link": "s => $\"PageEvents?rss_feed={s.Social.EventsUrl}\"",
+        //          "d => d.Icon": "s => \"fas fa-play\""
+        //        }
+        //      }
+        //    ]
+        //  }
+        //},
+        //{
+        //  "renderType": "Item",
+        //  "provider": {
+        //    "type": "Hospital",
+        //    "url": "http://ddappservice.doctor-help.com/api/v2/hospital/get?guid={{hospital_guid}}",
+        //    "mapper": [
+        //      {
+        //        "sourceType": "Hospital",
+        //        "destinationType": "Item",
+        //        "mapping": {
+        //          "d => d.Style": "s => string.IsNullOrEmpty(s.Social.JobsUrl) ? ItemStyle.Hidden : ItemStyle.OneRowItem",
+        //          "d => d.Title": "s => \"Stellenangebote\"",
+        //          "d => d.Link": "s => s.Social.JobsUrl.OnDevice()",
+        //          "d => d.Icon": "s => \"fas fa-play\""
+        //        }
+        //      }
+        //    ]
+        //  }
+        //}
       ]
     },
     "PageDepartmentTemp": {
